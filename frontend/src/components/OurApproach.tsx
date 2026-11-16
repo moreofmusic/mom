@@ -60,7 +60,7 @@ export default function OurApproach({ onOpenLeadModal }: { onOpenLeadModal: () =
         </div>
 
         {/* 5-Step Connected Timeline Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative">
           {steps.map((s, index) => {
             const Icon = s.icon;
             return (

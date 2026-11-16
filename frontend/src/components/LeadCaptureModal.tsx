@@ -152,9 +152,9 @@ export default function LeadCaptureModal({
                 </h3>
               </div>
               <img
-                src="/mom-logo.png"
+                src="/mom-logo-transparent.png"
                 alt="MOM Logo"
-                className={`h-10 w-auto object-contain rounded hidden sm:block transition-all ${
+                className={`h-10 w-auto object-contain hidden sm:block transition-all ${
                   theme === 'light' ? 'invert' : ''
                 }`}
               />

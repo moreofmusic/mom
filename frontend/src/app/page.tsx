@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <main
-      className="relative min-h-screen bg-black text-white overflow-hidden transition-colors duration-300"
+      className="relative min-h-screen dark:bg-black dark:text-white bg-[#F8FAFC] text-zinc-900 overflow-hidden transition-colors duration-300"
       suppressHydrationWarning
     >
       {/* Navigation Header */}

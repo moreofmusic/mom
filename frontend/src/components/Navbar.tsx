@@ -51,18 +51,18 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         <div className="flex items-center justify-between">
           
-          {/* Official Brand Logo (Inverted in Light Mode for Seamless White Aesthetic) */}
-          <a href="#home" className="flex items-center gap-4 group py-1">
-            <div className="relative h-12 sm:h-15 md:h-16 flex items-center">
+          {/* Official Brand Logo (Transparent & Smart Theme Adaptive) */}
+          <a href="#home" className="flex items-center gap-3 sm:gap-4 group py-1">
+            <div className="relative h-11 sm:h-13 md:h-14 flex items-center">
               <img
-                src="/mom-logo.png"
+                src="/mom-logo-transparent.png"
                 alt="MOM - More of Music & Moments of Marketing"
-                className={`h-12 sm:h-14 md:h-15 w-auto object-contain rounded transition-all duration-300 group-hover:scale-105 ${
+                className={`h-11 sm:h-13 md:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                   theme === 'light' ? 'invert' : ''
                 }`}
               />
             </div>
-            <div className="hidden sm:flex flex-col border-l dark:border-white/15 border-zinc-300 pl-3.5 justify-center">
+            <div className="hidden sm:flex flex-col border-l dark:border-white/15 border-zinc-300 pl-3 justify-center">
               <span className="text-xs sm:text-sm font-bold tracking-widest uppercase dark:text-white dark:group-hover:text-zinc-200 text-zinc-900 group-hover:text-black transition-colors">
                 Moments of Marketing
               </span>

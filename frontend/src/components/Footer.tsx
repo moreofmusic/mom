@@ -22,9 +22,9 @@ export default function Footer() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <img
-                src="/mom-logo.png"
+                src="/mom-logo-transparent.png"
                 alt="MOM Logo"
-                className={`h-13 sm:h-14 w-auto object-contain rounded transition-all ${
+                className={`h-13 sm:h-14 w-auto object-contain transition-all ${
                   theme === 'light' ? 'invert' : ''
                 }`}
               />

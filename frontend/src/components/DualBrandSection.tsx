@@ -58,10 +58,10 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
               <div className="lg:col-span-7 space-y-5">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/mom-logo.png"
+                    src="/mom-logo-transparent.png"
                     alt="MOM Logo"
-                    className={`h-10 w-auto object-contain rounded border dark:border-white/10 border-zinc-300 p-0.5 transition-all ${
-                      theme === 'light' ? 'invert' : 'bg-black'
+                    className={`h-10 w-auto object-contain transition-all ${
+                      theme === 'light' ? 'invert' : ''
                     }`}
                   />
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border dark:border-white/15 dark:bg-white/[0.04] dark:text-white border-zinc-200 bg-zinc-100 text-zinc-800 text-[10px] tracking-widest uppercase font-mono">
@@ -146,10 +146,10 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
               <div className="lg:col-span-7 space-y-5">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/mom-logo.png"
+                    src="/mom-logo-transparent.png"
                     alt="MOM More of Music Logo"
-                    className={`h-10 w-auto object-contain rounded border dark:border-white/10 border-zinc-300 p-0.5 transition-all ${
-                      theme === 'light' ? 'invert' : 'bg-black'
+                    className={`h-10 w-auto object-contain transition-all ${
+                      theme === 'light' ? 'invert' : ''
                     }`}
                   />
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border dark:border-white/15 dark:bg-white/[0.04] dark:text-white border-zinc-200 bg-zinc-100 text-zinc-800 text-[10px] tracking-widest uppercase font-mono">
