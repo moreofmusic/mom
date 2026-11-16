@@ -1,0 +1,24 @@
+{
+  "name": "mom-website",
+  "version": "1.0.0",
+  "description": "Moments of Marketing (MOM) - Official Frontend Agency Website",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "start": "npm run start --prefix frontend",
+    "lint": "npm run lint --prefix frontend"
+  },
+  "keywords": [
+    "mom",
+    "moments-of-marketing",
+    "more-of-music",
+    "nextjs",
+    "tailwind"
+  ],
+  "author": "Moments of Marketing",
+  "license": "ISC"
+}

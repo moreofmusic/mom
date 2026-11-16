@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #000000;
+  --bg-surface: #070708;
+  --bg-card: rgba(255, 255, 255, 0.025);
+  --bg-card-hover: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.35);
+  --text-primary: #FFFFFF;
+  --text-muted: #94A3B8;
+  --accent-gold: #FFFFFF;
+  --accent-white: #FFFFFF;
+  --accent-silver: #E2E8F0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 15% 45%, rgba(255, 255, 255, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 85% 65%, rgba(255, 255, 255, 0.025) 0%, transparent 50%),
+    radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+  background-attachment: fixed;
+}
+
+/* Luminous Platinum Silver Gradient Text (Pure Luxury Monochrome) */
+.gradient-editorial-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 28%, #E2E8F0 60%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Luxury Pitch-Black Editorial Card with Frosted White Glass Borders */
+.editorial-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.006) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.9), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.editorial-card:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95), 0 0 35px -10px rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Pro Card with Top Edge Platinum Highlight */
+.pro-card {
+  background: linear-gradient(160deg, rgba(16, 16, 18, 0.6) 0%, rgba(8, 8, 10, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pro-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  transition: left 0.7s ease;
+}
+
+.pro-card:hover::before {
+  left: 100%;
+}
+
+.pro-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95), 0 0 30px -8px rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Hairline Editorial Borders */
+.hairline-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.hairline-border:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Minimalist Outline Buttons with White Glow */
+.editorial-btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial-btn-outline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.editorial-btn-outline:hover::after {
+  opacity: 1;
+}
+
+.editorial-btn-outline:hover {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Primary High-Contrast Action Button */
+.btn-primary-glow {
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 30px -8px rgba(255, 255, 255, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.btn-primary-glow:hover {
+  background: #F1F5F9;
+  box-shadow: 0 15px 40px -5px rgba(255, 255, 255, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Minimal Dark Form Inputs */
+.editorial-input {
+  background: rgba(14, 14, 16, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  transition: all 0.25s ease;
+}
+
+.editorial-input:focus {
+  outline: none;
+  border-color: #FFFFFF;
+  background: rgba(20, 20, 24, 0.95);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #52525B;
+}
