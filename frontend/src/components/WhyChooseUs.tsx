@@ -48,17 +48,17 @@ export default function WhyChooseUs({ onOpenLeadModal }: { onOpenLeadModal: () =
           
           {/* Left Column (Sticky on desktop) */}
           <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-32">
-            <span className="text-[11px] font-semibold tracking-widest2 uppercase text-zinc-400 block font-mono">
+            <span className="text-[11px] font-semibold tracking-widest2 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
               04 &mdash; Strategic Edge
             </span>
-            <h2 className="text-3xl sm:text-5xl font-light text-white leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-light dark:text-white text-zinc-950 leading-tight">
               Why Choose <br />
               <span className="italic font-serif gradient-editorial-text">MOM?</span>
             </h2>
-            <p className="text-base font-normal text-white">
+            <p className="text-base font-normal dark:text-white text-zinc-900">
               Creative Mastery. Strategic Execution. Compounding Growth.
             </p>
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-light">
+            <p className="text-xs sm:text-sm dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
               We eliminate disjointed vendors, vanity metrics, and passive retainers. You gain an elite marketing and creative partner dedicated to compounding your brand equity and real revenue pipeline.
             </p>
             <div className="pt-2">
@@ -82,18 +82,18 @@ export default function WhyChooseUs({ onOpenLeadModal }: { onOpenLeadModal: () =
                   className="pro-card p-6 rounded-2xl flex items-start gap-5 group"
                 >
                   <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                    <span className="text-lg font-mono font-bold text-white">
+                    <span className="text-lg font-mono font-bold dark:text-white text-zinc-900">
                       {p.num}
                     </span>
-                    <div className="w-8 h-8 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-white/30 transition-all">
+                    <div className="w-8 h-8 rounded-lg border dark:border-white/10 border-zinc-200 flex items-center justify-center dark:text-zinc-400 text-zinc-600 dark:group-hover:text-white group-hover:text-zinc-950 dark:group-hover:border-white/30 group-hover:border-zinc-400 transition-all">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
                   <div className="space-y-1.5 pt-0.5">
-                    <h3 className="text-base font-normal text-white group-hover:text-zinc-200 transition-colors">
+                    <h3 className="text-base font-normal dark:text-white text-zinc-950 transition-colors">
                       {p.title}
                     </h3>
-                    <p className="text-xs text-zinc-300 leading-relaxed font-light">
+                    <p className="text-xs dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
                       {p.desc}
                     </p>
                   </div>

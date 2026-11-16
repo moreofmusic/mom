@@ -44,37 +44,39 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-black/90 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.8)]'
+          ? 'dark:bg-black/90 bg-white/90 backdrop-blur-xl dark:border-white/[0.08] border-zinc-200 py-3.5 dark:shadow-[0_10px_30px_rgba(0,0,0,0.8)] shadow-[0_10px_30px_rgba(0,0,0,0.06)] border-b'
           : 'bg-transparent py-5 sm:py-7'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         <div className="flex items-center justify-between">
           
-          {/* Official Brand Logo (Enlarged & Prominent) */}
+          {/* Official Brand Logo (Inverted in Light Mode for Seamless White Aesthetic) */}
           <a href="#home" className="flex items-center gap-4 group py-1">
             <div className="relative h-12 sm:h-15 md:h-16 flex items-center">
               <img
                 src="/mom-logo.png"
                 alt="MOM - More of Music & Moments of Marketing"
-                className="h-12 sm:h-14 md:h-15 w-auto object-contain rounded transition-transform duration-300 group-hover:scale-105"
+                className={`h-12 sm:h-14 md:h-15 w-auto object-contain rounded transition-all duration-300 group-hover:scale-105 ${
+                  theme === 'light' ? 'invert' : ''
+                }`}
               />
             </div>
-            <div className="hidden sm:flex flex-col border-l border-white/15 pl-3.5 justify-center">
-              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-white group-hover:text-zinc-200 transition-colors">
+            <div className="hidden sm:flex flex-col border-l dark:border-white/15 border-zinc-300 pl-3.5 justify-center">
+              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase dark:text-white dark:group-hover:text-zinc-200 text-zinc-900 group-hover:text-black transition-colors">
                 Moments of Marketing
               </span>
               <div className="flex items-center gap-1.5 pt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-[9px] sm:text-[10px] tracking-widest2 uppercase text-zinc-400 font-mono">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[9px] sm:text-[10px] tracking-widest2 uppercase dark:text-zinc-400 text-zinc-500 font-mono">
                   Agency &bull; Q1 Live
                 </span>
               </div>
             </div>
           </a>
 
-          {/* Centered Spaced Navigation with Active White Pill */}
-          <nav className="hidden md:flex items-center gap-1.5 p-1 rounded-full border border-white/[0.08] bg-black/60 backdrop-blur-md">
+          {/* Centered Spaced Navigation with Active Pill */}
+          <nav className="hidden md:flex items-center gap-1.5 p-1 rounded-full border dark:border-white/[0.08] dark:bg-black/60 border-zinc-200 bg-white/80 backdrop-blur-md shadow-sm">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -83,8 +85,8 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
                   href={link.href}
                   className={`px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest2 transition-all duration-300 ${
                     isActive
-                      ? 'bg-white/10 text-white border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)]'
-                      : 'text-zinc-400 hover:text-white border border-transparent'
+                      ? 'dark:bg-white/10 dark:text-white dark:border-white/20 dark:shadow-[0_0_15px_rgba(255,255,255,0.1)] bg-zinc-950 text-white border border-zinc-950 shadow-sm'
+                      : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950 border border-transparent'
                   }`}
                 >
                   {link.label}
@@ -100,7 +102,7 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
               href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20discuss%20our%20brand%20growth."
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-full border border-white/10 hover:border-emerald-400/50 text-zinc-400 hover:text-emerald-400 transition-all hover:scale-105"
+              className="p-2 rounded-full border dark:border-white/10 dark:hover:border-emerald-400/50 dark:text-zinc-400 dark:hover:text-emerald-400 border-zinc-300 text-zinc-600 hover:border-emerald-500/50 hover:text-emerald-600 transition-all hover:scale-105"
               title="Chat on WhatsApp (+91 9226042236)"
               aria-label="WhatsApp"
             >
@@ -110,21 +112,21 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
             {/* Dark / Light Toggle */}
             <button
               onClick={toggleTheme}
-              className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-white/30 transition-all"
+              className="w-9 h-9 rounded-full border dark:border-white/10 dark:text-zinc-400 dark:hover:text-white dark:hover:border-white/30 border-zinc-300 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer"
               aria-label="Toggle theme"
               title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme`}
             >
               {theme === 'dark' ? (
                 <Sun className="w-4 h-4 text-amber-300" />
               ) : (
-                <Moon className="w-4 h-4 text-zinc-300" />
+                <Moon className="w-4 h-4 text-zinc-900" />
               )}
             </button>
 
             {/* Outline CTA in Minimalist Monochrome */}
             <button
               onClick={onOpenLeadModal}
-              className="px-5 py-2 rounded-lg editorial-btn-outline text-xs font-semibold"
+              className="px-5 py-2 rounded-lg editorial-btn-outline text-xs font-semibold cursor-pointer"
             >
               LET&apos;S TALK
             </button>
@@ -136,21 +138,21 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
               href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
               target="_blank"
               rel="noreferrer"
-              className="p-2 text-zinc-400 hover:text-emerald-400"
+              className="p-2 dark:text-zinc-400 dark:hover:text-emerald-400 text-zinc-600 hover:text-emerald-600"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
             </a>
             <button
               onClick={toggleTheme}
-              className="p-2 text-zinc-400"
+              className="p-2 dark:text-zinc-400 text-zinc-700 cursor-pointer"
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-300" /> : <Moon className="w-4 h-4" />}
+              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-300" /> : <Moon className="w-4 h-4 text-zinc-900" />}
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-white border border-white/15 rounded-md"
+              className="p-2 dark:text-white dark:border-white/15 text-zinc-900 border border-zinc-300 rounded-md cursor-pointer"
               aria-label="Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -161,14 +163,14 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-3 mx-4 p-5 rounded-2xl border border-white/10 bg-black/95 backdrop-blur-2xl shadow-2xl animate-in fade-in">
+        <div className="md:hidden mt-3 mx-4 p-5 rounded-2xl border dark:border-white/10 dark:bg-black/95 border-zinc-200 bg-white/95 backdrop-blur-2xl shadow-2xl animate-in fade-in">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-xs font-semibold tracking-widest2 text-zinc-300 hover:text-white py-2 border-b border-white/[0.05]"
+                className="text-xs font-semibold tracking-widest2 dark:text-zinc-300 dark:hover:text-white dark:border-white/[0.05] text-zinc-700 hover:text-zinc-950 py-2 border-b border-zinc-200"
               >
                 {link.label}
               </a>
@@ -179,7 +181,7 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
                   setMobileMenuOpen(false);
                   onOpenLeadModal();
                 }}
-                className="w-full py-2.5 rounded-lg btn-primary-glow text-xs font-bold uppercase tracking-wider"
+                className="w-full py-2.5 rounded-lg btn-primary-glow text-xs font-bold uppercase tracking-wider cursor-pointer"
               >
                 LET&apos;S TALK
               </button>

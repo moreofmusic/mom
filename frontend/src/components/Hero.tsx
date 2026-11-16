@@ -12,9 +12,9 @@ interface HeroProps {
 export default function Hero({ onOpenLeadModal }: HeroProps) {
   return (
     <section id="home" className="relative min-h-[85vh] lg:min-h-[88vh] flex items-center pt-20 pb-8 sm:pt-24 sm:pb-12 overflow-hidden">
-      {/* Subtle Ambient Radial Lighting in Neutral Monochrome White */}
-      <div className="absolute top-1/4 left-1/4 w-[520px] h-[520px] bg-white/[0.035] rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 w-[580px] h-[580px] bg-white/[0.02] rounded-full blur-[150px] pointer-events-none" />
+      {/* Subtle Ambient Radial Lighting */}
+      <div className="absolute top-1/4 left-1/4 w-[520px] h-[520px] dark:bg-white/[0.035] bg-black/[0.02] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[580px] h-[580px] dark:bg-white/[0.02] bg-black/[0.015] rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
@@ -22,23 +22,23 @@ export default function Hero({ onOpenLeadModal }: HeroProps) {
           {/* Left Column: Big Airy Editorial Typography */}
           <div className="lg:col-span-6 space-y-5 sm:space-y-6">
             {/* Tagline Pill in Clean White / Silver Accent */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-white/15 bg-white/[0.04] text-[11px] font-semibold tracking-widest2 uppercase text-white/90 shadow-[0_0_15px_rgba(255,255,255,0.06)]">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border dark:border-white/15 dark:bg-white/[0.04] dark:text-white/90 border-zinc-300 bg-white/90 text-zinc-900 text-[11px] font-semibold tracking-widest2 uppercase shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
               <span>Moments of Marketing &bull; Creating Growth</span>
             </div>
 
             {/* Headline with Platinum Silver to White Gradient */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tight leading-[1.05]">
-              <span className="block gradient-editorial-text font-serif italic drop-shadow-[0_0_35px_rgba(255,255,255,0.2)]">
+              <span className="block gradient-editorial-text font-serif italic drop-shadow-sm">
                 Creativity
               </span>
-              <span className="block font-sans font-light tracking-tight text-white">
+              <span className="block font-sans font-light tracking-tight dark:text-white text-zinc-950">
                 never ends
               </span>
             </h1>
 
             {/* Short, non-congested clean subtext */}
-            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-lg font-light">
+            <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 leading-relaxed max-w-lg font-light">
               More than marketing. A premier growth partner. We turn meaningful moments into lasting brand equity, high-intent enterprise pipeline, and acoustic brand resonance.
             </p>
 
@@ -60,42 +60,42 @@ export default function Hero({ onOpenLeadModal }: HeroProps) {
               </a>
             </div>
 
-            {/* Live Agency Metrics Ticker Bar in Crisp Monochrome */}
-            <div className="pt-3 grid grid-cols-3 gap-4 border-t border-white/[0.08] max-w-lg">
+            {/* Live Agency Metrics Ticker Bar */}
+            <div className="pt-3 grid grid-cols-3 gap-4 border-t dark:border-white/[0.08] border-zinc-200 max-w-lg">
               <div>
-                <span className="block text-xl sm:text-2xl font-serif font-light text-white">
+                <span className="block text-xl sm:text-2xl font-serif font-light dark:text-white text-zinc-950">
                   340%
                 </span>
-                <span className="text-[10px] font-mono tracking-wider text-zinc-400 uppercase">
+                <span className="text-[10px] font-mono tracking-wider dark:text-zinc-400 text-zinc-500 uppercase">
                   Avg. ROAS
                 </span>
               </div>
               <div>
-                <span className="block text-xl sm:text-2xl font-serif font-light text-white">
+                <span className="block text-xl sm:text-2xl font-serif font-light dark:text-white text-zinc-950">
                   10M+
                 </span>
-                <span className="text-[10px] font-mono tracking-wider text-zinc-400 uppercase">
+                <span className="text-[10px] font-mono tracking-wider dark:text-zinc-400 text-zinc-500 uppercase">
                   Reach Generated
                 </span>
               </div>
               <div>
-                <span className="block text-xl sm:text-2xl font-serif font-light text-white">
+                <span className="block text-xl sm:text-2xl font-serif font-light dark:text-white text-zinc-950">
                   &lt; 2h
                 </span>
-                <span className="text-[10px] font-mono tracking-wider text-zinc-400 uppercase">
+                <span className="text-[10px] font-mono tracking-wider dark:text-zinc-400 text-zinc-500 uppercase">
                   Response SLA
                 </span>
               </div>
             </div>
 
             {/* Social Icons at bottom left */}
-            <div className="pt-2 flex items-center gap-6 text-zinc-400">
+            <div className="pt-2 flex items-center gap-6 dark:text-zinc-400 text-zinc-500">
               {/* Twitter/X */}
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-white transition-colors"
+                className="dark:hover:text-white hover:text-zinc-950 transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -108,7 +108,7 @@ export default function Hero({ onOpenLeadModal }: HeroProps) {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-white transition-colors"
+                className="dark:hover:text-white hover:text-zinc-950 transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@ export default function Hero({ onOpenLeadModal }: HeroProps) {
                 href="https://instagram.com/momentsofmarketingofficial"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-white transition-colors"
+                className="dark:hover:text-white hover:text-zinc-950 transition-colors"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="w-4 h-4 stroke-current" />

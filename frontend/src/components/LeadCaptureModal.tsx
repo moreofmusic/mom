@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2 } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 interface LeadCaptureModalProps {
   isOpen: boolean;
@@ -14,6 +15,7 @@ export default function LeadCaptureModal({
   onClose,
   defaultService,
 }: LeadCaptureModalProps) {
+  const { theme } = useTheme();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -87,11 +89,11 @@ export default function LeadCaptureModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-in fade-in">
-      <div className="pro-card bg-[#0A0A0C] w-full max-w-lg p-8 rounded-3xl relative shadow-2xl border border-white/10">
+      <div className="pro-card dark:bg-[#0A0A0C] bg-white w-full max-w-lg p-8 rounded-3xl relative shadow-2xl dark:border-white/10 border-zinc-200">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-1.5 rounded-full hairline-border text-zinc-400 hover:text-white transition-colors"
+          className="absolute top-6 right-6 p-1.5 rounded-full hairline-border dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950 transition-colors cursor-pointer"
           aria-label="Close"
         >
           <X className="w-4 h-4" />
@@ -99,11 +101,11 @@ export default function LeadCaptureModal({
 
         {submitted ? (
           <div className="text-center py-6 space-y-4">
-            <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white mx-auto">
+            <div className="w-12 h-12 rounded-full border dark:border-white/30 border-zinc-400 flex items-center justify-center dark:text-white text-zinc-900 mx-auto">
               <CheckCircle2 className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-light text-white">Inquiry Received</h3>
-            <p className="text-xs text-zinc-300 max-w-sm mx-auto leading-relaxed">
+            <h3 className="text-xl font-light dark:text-white text-zinc-950">Inquiry Received</h3>
+            <p className="text-xs dark:text-zinc-300 text-zinc-600 max-w-sm mx-auto leading-relaxed">
               Thank you, {formData.fullName}. We are opening WhatsApp to connect with you directly. You can also send via email.
             </p>
             {links.whatsappUrl && (
@@ -119,7 +121,7 @@ export default function LeadCaptureModal({
                 {links.mailtoUrl && (
                   <a
                     href={links.mailtoUrl}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/20 text-white text-xs font-semibold transition-all"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl dark:bg-white/[0.06] dark:hover:bg-white/[0.12] dark:border-white/20 dark:text-white bg-zinc-100 hover:bg-zinc-200 border-zinc-300 text-zinc-900 text-xs font-semibold transition-all"
                   >
                     <span>✉ Send Email</span>
                   </a>
@@ -132,7 +134,7 @@ export default function LeadCaptureModal({
                   setSubmitted(false);
                   onClose();
                 }}
-                className="px-5 py-2 rounded-md editorial-btn-outline text-xs font-semibold"
+                className="px-5 py-2 rounded-md editorial-btn-outline text-xs font-semibold cursor-pointer"
               >
                 CLOSE
               </button>
@@ -142,24 +144,26 @@ export default function LeadCaptureModal({
           <div>
             <div className="mb-6 flex items-center justify-between">
               <div>
-                <span className="text-[10px] tracking-widest uppercase font-mono text-zinc-400 block mb-1">
+                <span className="text-[10px] tracking-widest uppercase font-mono dark:text-zinc-400 text-zinc-500 block mb-1">
                   Consultation Request
                 </span>
-                <h3 className="text-xl sm:text-2xl font-light text-white">
+                <h3 className="text-xl sm:text-2xl font-light dark:text-white text-zinc-950">
                   Let&apos;s Talk About Your Growth
                 </h3>
               </div>
               <img
                 src="/mom-logo.png"
                 alt="MOM Logo"
-                className="h-10 w-auto object-contain rounded hidden sm:block"
+                className={`h-10 w-auto object-contain rounded hidden sm:block transition-all ${
+                  theme === 'light' ? 'invert' : ''
+                }`}
               />
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-3.5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-zinc-400 mb-1">
+                  <label className="block text-[10px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1 font-medium">
                     Your Name *
                   </label>
                   <input
@@ -173,7 +177,7 @@ export default function LeadCaptureModal({
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-zinc-400 mb-1">
+                  <label className="block text-[10px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1 font-medium">
                     Phone *
                   </label>
                   <input
@@ -189,7 +193,7 @@ export default function LeadCaptureModal({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-zinc-400 mb-1">
+                  <label className="block text-[10px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1 font-medium">
                     Work Email *
                   </label>
                   <input
@@ -203,7 +207,7 @@ export default function LeadCaptureModal({
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-zinc-400 mb-1">
+                  <label className="block text-[10px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1 font-medium">
                     Company
                   </label>
                   <input
@@ -217,13 +221,13 @@ export default function LeadCaptureModal({
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-zinc-400 mb-1">
+                <label className="block text-[10px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1 font-medium">
                   Service of Interest
                 </label>
                 <select
                   value={formData.serviceInterest}
                   onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-                  className="w-full px-3.5 py-2 rounded-lg editorial-input text-xs bg-black"
+                  className="w-full px-3.5 py-2 rounded-lg editorial-input text-xs dark:bg-black bg-white"
                 >
                   <option value="Digital Marketing">01. Digital Marketing</option>
                   <option value="Social Media Management">02. Social Media Management</option>
@@ -240,7 +244,7 @@ export default function LeadCaptureModal({
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-zinc-400 mb-1">
+                <label className="block text-[10px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1 font-medium">
                   Brief Requirements *
                 </label>
                 <textarea

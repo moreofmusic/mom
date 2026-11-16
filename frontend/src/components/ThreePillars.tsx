@@ -40,13 +40,13 @@ export default function ThreePillars({ onSelectService }: { onSelectService: (se
         
         {/* Section Header */}
         <div className="max-w-2xl mb-16 space-y-3">
-          <span className="text-[11px] font-semibold tracking-widest2 uppercase text-zinc-400 block font-mono">
+          <span className="text-[11px] font-semibold tracking-widest2 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
             02 &mdash; Core Foundations
           </span>
-          <h2 className="text-3xl sm:text-5xl font-light text-white">
+          <h2 className="text-3xl sm:text-5xl font-light dark:text-white text-zinc-950">
             Three Pillars <span className="italic font-serif gradient-editorial-text">of Growth</span>
           </h2>
-          <p className="text-sm text-zinc-400 font-light leading-relaxed">
+          <p className="text-sm dark:text-zinc-400 text-zinc-600 font-light leading-relaxed">
             Every campaign, asset, and sonic signature we engineer is anchored in three proven growth disciplines.
           </p>
         </div>
@@ -58,44 +58,44 @@ export default function ThreePillars({ onSelectService }: { onSelectService: (se
             return (
               <div
                 key={pillar.number}
-                className="pro-card p-8 sm:p-10 rounded-3xl flex flex-col justify-between group hover:border-white/30"
+                className="pro-card p-8 sm:p-10 rounded-3xl flex flex-col justify-between group dark:hover:border-white/30 hover:border-zinc-400 transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-8">
-                    <span className="text-4xl font-serif font-light text-zinc-500 group-hover:text-white transition-colors">
+                    <span className="text-4xl font-serif font-light dark:text-zinc-500 text-zinc-400 dark:group-hover:text-white group-hover:text-zinc-950 transition-colors">
                       {pillar.number}
                     </span>
-                    <div className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-white/30 transition-all">
+                    <div className="w-10 h-10 rounded-xl border dark:border-white/10 border-zinc-200 dark:bg-white/[0.02] bg-zinc-100 flex items-center justify-center dark:text-zinc-400 text-zinc-600 dark:group-hover:text-white group-hover:text-zinc-950 dark:group-hover:border-white/30 group-hover:border-zinc-400 transition-all">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-normal text-white mb-2 group-hover:text-white transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-normal dark:text-white text-zinc-950 mb-2 transition-colors">
                     {pillar.title}
                   </h3>
 
-                  <p className="text-xs font-semibold text-zinc-300 mb-4 font-mono">
+                  <p className="text-xs font-semibold dark:text-zinc-300 text-zinc-700 mb-4 font-mono">
                     {pillar.tagline}
                   </p>
 
-                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-light mb-6">
+                  <p className="text-xs sm:text-sm dark:text-zinc-300 text-zinc-600 leading-relaxed font-light mb-6">
                     {pillar.description}
                   </p>
 
-                  <div className="space-y-2 pt-2 border-t border-white/[0.06]">
+                  <div className="space-y-2 pt-2 border-t dark:border-white/[0.06] border-zinc-200">
                     {pillar.deliverables.map((d) => (
-                      <div key={d} className="flex items-center gap-2 text-[11px] text-zinc-400">
-                        <Check className="w-3.5 h-3.5 text-white flex-shrink-0" />
+                      <div key={d} className="flex items-center gap-2 text-[11px] dark:text-zinc-400 text-zinc-600">
+                        <Check className="w-3.5 h-3.5 dark:text-white text-zinc-900 flex-shrink-0" />
                         <span>{d}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-8 mt-8 border-t border-white/[0.08]">
+                <div className="pt-8 mt-8 border-t dark:border-white/[0.08] border-zinc-200">
                   <button
                     onClick={() => onSelectService(pillar.title)}
-                    className="w-full py-2.5 rounded-lg border border-white/15 bg-white/[0.02] hover:bg-white hover:text-black hover:border-white text-xs tracking-wider uppercase font-semibold text-white flex items-center justify-center gap-2 transition-all group-hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] cursor-pointer"
+                    className="w-full py-2.5 rounded-lg border dark:border-white/15 border-zinc-300 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs tracking-wider uppercase font-semibold dark:text-white text-zinc-900 flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm"
                   >
                     <span>Inquire for {pillar.title}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

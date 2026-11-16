@@ -105,14 +105,14 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
         
         {/* Section Header */}
         <div className="max-w-2xl mb-16 space-y-3">
-          <span className="text-[11px] font-semibold tracking-widest2 uppercase text-zinc-400 block font-mono">
+          <span className="text-[11px] font-semibold tracking-widest2 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
             07 &mdash; Contact
           </span>
-          <h2 className="text-3xl sm:text-5xl font-light text-white">
+          <h2 className="text-3xl sm:text-5xl font-light dark:text-white text-zinc-950">
             Let&apos;s Make Your <br />
             <span className="italic font-serif gradient-editorial-text">Next Moment Count.</span>
           </h2>
-          <p className="text-sm text-zinc-400 font-light leading-relaxed">
+          <p className="text-sm dark:text-zinc-400 text-zinc-600 font-light leading-relaxed">
             Ready to build a stronger brand? Whether you want to increase visibility, generate quality enquiries, or create an effective digital presence, MOM is ready to help you take the next step.
           </p>
         </div>
@@ -122,7 +122,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
           {/* Left Column: Direct Info */}
           <div className="lg:col-span-5 space-y-6">
             <div className="pro-card p-8 rounded-3xl space-y-6">
-              <span className="text-xs font-mono tracking-widest uppercase text-white bg-white/[0.08] px-3 py-1 rounded-full border border-white/15">
+              <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-100 px-3 py-1 rounded-full border dark:border-white/15 border-zinc-300">
                 Direct Channels
               </span>
 
@@ -130,28 +130,28 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                 {/* Phone */}
                 <a
                   href="tel:+919226042236"
-                  className="flex items-center gap-4 p-4 rounded-xl hairline-border hover:border-white transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-xl hairline-border dark:hover:border-white hover:border-zinc-500 dark:bg-transparent bg-zinc-50/80 transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+                  <div className="w-9 h-9 rounded-full border dark:border-white/10 border-zinc-200 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] tracking-wider uppercase text-zinc-400 block">Phone</span>
-                    <span className="text-sm font-semibold text-white">+91 9226042236</span>
+                    <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block">Phone</span>
+                    <span className="text-sm font-semibold dark:text-white text-zinc-950">+91 9226042236</span>
                   </div>
                 </a>
 
                 {/* Email */}
                 <a
                   href="mailto:Contact@momentsofmarketing.in"
-                  className="flex items-center gap-4 p-4 rounded-xl hairline-border hover:border-white transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-xl hairline-border dark:hover:border-white hover:border-zinc-500 dark:bg-transparent bg-zinc-50/80 transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+                  <div className="w-9 h-9 rounded-full border dark:border-white/10 border-zinc-200 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] tracking-wider uppercase text-zinc-400 block">Email</span>
-                    <span className="text-sm font-semibold text-white break-all">Contact@momentsofmarketing.in</span>
+                    <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block">Email</span>
+                    <span className="text-sm font-semibold dark:text-white text-zinc-950 break-all">Contact@momentsofmarketing.in</span>
                   </div>
                 </a>
 
@@ -160,24 +160,24 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   href="https://instagram.com/momentsofmarketingofficial"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl hairline-border hover:border-white transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-xl hairline-border dark:hover:border-white hover:border-zinc-500 dark:bg-transparent bg-zinc-50/80 transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+                  <div className="w-9 h-9 rounded-full border dark:border-white/10 border-zinc-200 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
                     <InstagramIcon className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] tracking-wider uppercase text-zinc-400 block">Instagram</span>
-                    <span className="text-sm font-semibold text-white">@momentsofmarketingofficial</span>
+                    <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block">Instagram</span>
+                    <span className="text-sm font-semibold dark:text-white text-zinc-950">@momentsofmarketingofficial</span>
                   </div>
                 </a>
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl hairline-border text-center bg-white/[0.01]">
-              <span className="text-xs tracking-widest uppercase font-semibold text-white block">
+            <div className="p-6 rounded-2xl hairline-border text-center dark:bg-white/[0.01] bg-white shadow-sm">
+              <span className="text-xs tracking-widest uppercase font-semibold dark:text-white text-zinc-950 block">
                 Moments of Marketing
               </span>
-              <p className="text-xs text-zinc-400 font-light mt-1">
+              <p className="text-xs dark:text-zinc-400 text-zinc-600 font-light mt-1">
                 Creating Moments. Building Brands. Driving Growth.
               </p>
             </div>
@@ -187,10 +187,10 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
           <div className="lg:col-span-7">
             <div className="pro-card p-8 sm:p-10 rounded-3xl">
               <div className="mb-6">
-                <span className="text-xs font-mono tracking-widest uppercase text-zinc-400 block mb-1">
+                <span className="text-xs font-mono tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block mb-1">
                   Start Your Inquiry
                 </span>
-                <h3 className="text-xl sm:text-2xl font-light text-white">
+                <h3 className="text-xl sm:text-2xl font-light dark:text-white text-zinc-950">
                   Let&apos;s Talk About Your Growth
                 </h3>
               </div>
@@ -200,12 +200,12 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   <div
                     className={`p-4 rounded-xl flex items-start gap-3 ${
                       status.type === 'success'
-                        ? 'bg-white/[0.08] border border-white/20 text-white'
-                        : 'bg-rose-500/10 border border-rose-500/20 text-rose-400'
+                        ? 'dark:bg-white/[0.08] dark:border-white/20 dark:text-white bg-zinc-100 border-zinc-300 text-zinc-900'
+                        : 'bg-rose-500/10 border border-rose-500/20 text-rose-600 dark:text-rose-400'
                     }`}
                   >
                     {status.type === 'success' ? (
-                      <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 text-white" />
+                      <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 dark:text-white text-zinc-900" />
                     ) : (
                       <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
                     )}
@@ -225,7 +225,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                       {status.mailtoUrl && (
                         <a
                           href={status.mailtoUrl}
-                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/20 text-white text-xs font-semibold transition-all"
+                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl dark:bg-white/[0.06] dark:hover:bg-white/[0.12] dark:border-white/20 dark:text-white bg-zinc-100 hover:bg-zinc-200 border-zinc-300 text-zinc-900 text-xs font-semibold transition-all"
                         >
                           <span>✉ Open in Email</span>
                         </a>
@@ -238,7 +238,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider text-zinc-400 mb-1.5 font-medium">
+                    <label className="block text-[11px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1.5 font-medium">
                       Your Name *
                     </label>
                     <input
@@ -252,7 +252,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider text-zinc-400 mb-1.5 font-medium">
+                    <label className="block text-[11px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1.5 font-medium">
                       Company / Brand
                     </label>
                     <input
@@ -267,7 +267,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider text-zinc-400 mb-1.5 font-medium">
+                    <label className="block text-[11px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1.5 font-medium">
                       Work Email *
                     </label>
                     <input
@@ -281,7 +281,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider text-zinc-400 mb-1.5 font-medium">
+                    <label className="block text-[11px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1.5 font-medium">
                       Phone Number *
                     </label>
                     <input
@@ -297,13 +297,13 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider text-zinc-400 mb-1.5 font-medium">
+                    <label className="block text-[11px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1.5 font-medium">
                       Service of Interest
                     </label>
                     <select
                       value={formData.serviceInterest}
                       onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-lg editorial-input text-xs bg-black"
+                      className="w-full px-4 py-2.5 rounded-lg editorial-input text-xs dark:bg-black bg-white"
                     >
                       <option value="Digital Marketing">Digital Marketing</option>
                       <option value="Social Media Management">Social Media Management</option>
@@ -320,13 +320,13 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider text-zinc-400 mb-1.5 font-medium">
+                    <label className="block text-[11px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1.5 font-medium">
                       Budget Range
                     </label>
                     <select
                       value={formData.budgetRange}
                       onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-lg editorial-input text-xs bg-black"
+                      className="w-full px-4 py-2.5 rounded-lg editorial-input text-xs dark:bg-black bg-white"
                     >
                       <option value="< ₹50,000">&lt; ₹50,000</option>
                       <option value="₹50,000 - ₹1,50,000">₹50,000 - ₹1,50,000</option>

@@ -110,21 +110,21 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
         {/* Header & Filter Tabs */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 pb-8 border-b border-white/[0.08]">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
           <div className="space-y-3 max-w-xl">
-            <span className="text-[11px] font-semibold tracking-widest2 uppercase text-zinc-400 block font-mono">
+            <span className="text-[11px] font-semibold tracking-widest2 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
               03 &mdash; Capabilities
             </span>
-            <h2 className="text-3xl sm:text-5xl font-light text-white">
+            <h2 className="text-3xl sm:text-5xl font-light dark:text-white text-zinc-950">
               Our <span className="italic font-serif gradient-editorial-text">Services</span>
             </h2>
-            <p className="text-sm text-zinc-400 font-light leading-relaxed">
+            <p className="text-sm dark:text-zinc-400 text-zinc-600 font-light leading-relaxed">
               Ten integrated growth disciplines engineered to work in harmony under one unified strategic partner.
             </p>
           </div>
 
           {/* Minimalist Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-2 p-1 rounded-full border border-white/10 bg-black/60 backdrop-blur-md">
+          <div className="flex flex-wrap items-center gap-2 p-1 rounded-full border dark:border-white/10 dark:bg-black/60 border-zinc-200 bg-zinc-100/90 backdrop-blur-md">
             {[
               { id: 'all', label: 'All (10)' },
               { id: 'growth', label: 'Growth & Ads' },
@@ -134,10 +134,10 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
               <button
                 key={t.id}
                 onClick={() => setFilter(t.id as any)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 cursor-pointer ${
                   filter === t.id
-                    ? 'bg-white text-black font-bold shadow-[0_0_15px_rgba(255,255,255,0.25)]'
-                    : 'text-zinc-400 hover:text-white'
+                    ? 'dark:bg-white dark:text-black bg-zinc-950 text-white font-bold shadow-md'
+                    : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
                 }`}
               >
                 {t.label}
@@ -157,31 +157,31 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <span className="text-xs font-mono font-bold text-white bg-white/[0.08] px-2.5 py-1 rounded border border-white/15">
+                    <span className="text-xs font-mono font-bold dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-100 px-2.5 py-1 rounded border dark:border-white/15 border-zinc-300">
                       {s.number}
                     </span>
-                    <div className="w-8 h-8 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-white/30 transition-all">
+                    <div className="w-8 h-8 rounded-lg border dark:border-white/10 border-zinc-200 flex items-center justify-center dark:text-zinc-400 text-zinc-600 dark:group-hover:text-white group-hover:text-zinc-950 dark:group-hover:border-white/30 group-hover:border-zinc-400 transition-all">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-normal text-white mb-1.5 group-hover:text-zinc-200 transition-colors">
+                  <h3 className="text-lg font-normal dark:text-white text-zinc-950 mb-1.5 transition-colors">
                     {s.title}
                   </h3>
 
-                  <p className="text-xs text-zinc-300 font-medium mb-3 italic">
+                  <p className="text-xs dark:text-zinc-300 text-zinc-700 font-medium mb-3 italic">
                     {s.tagline}
                   </p>
 
-                  <p className="text-xs text-zinc-400 leading-relaxed font-light mb-5">
+                  <p className="text-xs dark:text-zinc-400 text-zinc-600 leading-relaxed font-light mb-5">
                     {s.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/[0.06]">
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t dark:border-white/[0.06] border-zinc-200">
                     {s.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded text-[10px] border border-white/[0.08] text-zinc-300 bg-white/[0.02] group-hover:border-white/20 transition-colors"
+                        className="px-2.5 py-1 rounded text-[10px] border dark:border-white/[0.08] dark:text-zinc-300 dark:bg-white/[0.02] border-zinc-200 text-zinc-700 bg-zinc-100/80 group-hover:border-zinc-400 dark:group-hover:border-white/20 transition-colors"
                       >
                         {tag}
                       </span>
@@ -189,10 +189,10 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-white/[0.06]">
+                <div className="pt-6 mt-6 border-t dark:border-white/[0.06] border-zinc-200">
                   <button
                     onClick={() => onSelectService(s.title)}
-                    className="w-full py-2.5 rounded-lg border border-white/15 bg-white/[0.02] hover:bg-white hover:text-black hover:border-white text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer"
+                    className="w-full py-2.5 rounded-lg border dark:border-white/15 border-zinc-300 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm dark:text-white text-zinc-900"
                   >
                     <span>Inquire Now</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

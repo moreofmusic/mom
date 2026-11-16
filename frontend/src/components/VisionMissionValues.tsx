@@ -33,13 +33,13 @@ export default function VisionMissionValues() {
         
         {/* Section Header */}
         <div className="max-w-2xl mb-16 space-y-3">
-          <span className="text-[11px] font-semibold tracking-widest2 uppercase text-zinc-400 block font-mono">
+          <span className="text-[11px] font-semibold tracking-widest2 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
             06 &mdash; Philosophy
           </span>
-          <h2 className="text-3xl sm:text-5xl font-light text-white">
+          <h2 className="text-3xl sm:text-5xl font-light dark:text-white text-zinc-950">
             Mission &amp; <span className="italic font-serif gradient-editorial-text">Core Values</span>
           </h2>
-          <p className="text-sm text-zinc-400 font-light leading-relaxed">
+          <p className="text-sm dark:text-zinc-400 text-zinc-600 font-light leading-relaxed">
             The guiding ethos behind every campaign, visual design system, and client partnership at MOM.
           </p>
         </div>
@@ -48,30 +48,30 @@ export default function VisionMissionValues() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="pro-card p-8 sm:p-10 rounded-3xl space-y-4 group">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono tracking-widest uppercase text-white bg-white/[0.08] px-3 py-1 rounded-full border border-white/15">
+              <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-100 px-3 py-1 rounded-full border dark:border-white/15 border-zinc-300">
                 Our Vision
               </span>
-              <Sparkles className="w-4 h-4 text-white" />
+              <Sparkles className="w-4 h-4 dark:text-white text-zinc-900" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-light text-white leading-snug">
+            <h3 className="text-xl sm:text-2xl font-light dark:text-white text-zinc-950 leading-snug">
               Catalyzing ambitious brands into defining cultural &amp; market category leaders.
             </h3>
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-light">
+            <p className="text-xs sm:text-sm dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
               To transform emerging enterprises and visionary founders through resonant storytelling, high-impact creative moments, and data-backed digital marketing excellence.
             </p>
           </div>
 
           <div className="pro-card p-8 sm:p-10 rounded-3xl space-y-4 group">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono tracking-widest uppercase text-white bg-white/[0.08] px-3 py-1 rounded-full border border-white/15">
+              <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-100 px-3 py-1 rounded-full border dark:border-white/15 border-zinc-300">
                 Our Mission
               </span>
-              <Compass className="w-4 h-4 text-white" />
+              <Compass className="w-4 h-4 dark:text-white text-zinc-900" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-light text-white leading-snug">
+            <h3 className="text-xl sm:text-2xl font-light dark:text-white text-zinc-950 leading-snug">
               To turn meaningful moments into lasting brand value and sustainable business growth.
             </h3>
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-light">
+            <p className="text-xs sm:text-sm dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
               We align purpose-driven creativity with rigorous commercial accountability to produce compounding customer acquisition, high-margin sales pipelines, and long-term brand equity.
             </p>
           </div>
@@ -84,20 +84,20 @@ export default function VisionMissionValues() {
             return (
               <div
                 key={v.name}
-                className="pro-card p-6 rounded-2xl flex flex-col justify-between group hover:border-white/30"
+                className="pro-card p-6 rounded-2xl flex flex-col justify-between group dark:hover:border-white/30 hover:border-zinc-400 transition-all"
               >
                 <div>
-                  <div className="w-9 h-9 rounded-xl border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-white/30 transition-all mb-4">
+                  <div className="w-9 h-9 rounded-xl border dark:border-white/10 border-zinc-200 flex items-center justify-center dark:text-zinc-400 text-zinc-600 dark:group-hover:text-white group-hover:text-zinc-950 dark:group-hover:border-white/30 group-hover:border-zinc-400 transition-all mb-4">
                     <Icon className="w-4 h-4" />
                   </div>
-                  <h4 className="text-base font-normal text-white mb-2 group-hover:text-zinc-200 transition-colors">
+                  <h4 className="text-base font-normal dark:text-white text-zinc-950 mb-2 transition-colors">
                     {v.name}
                   </h4>
-                  <p className="text-xs text-zinc-300 leading-relaxed font-light">
+                  <p className="text-xs dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
                     {v.desc}
                   </p>
                 </div>
-                <div className="pt-4 mt-4 border-t border-white/[0.06] text-[10px] text-zinc-400 uppercase tracking-wider font-mono">
+                <div className="pt-4 mt-4 border-t dark:border-white/[0.06] border-zinc-200 text-[10px] dark:text-zinc-400 text-zinc-500 uppercase tracking-wider font-mono">
                   MOM Standard
                 </div>
               </div>
