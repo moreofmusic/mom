@@ -20,82 +20,104 @@ export default function Hero({ onOpenLeadModal }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Big Airy Editorial Typography */}
-          <div className="lg:col-span-7 xl:col-span-6 space-y-5 sm:space-y-6 text-left">
-            {/* Tagline Pill in Clean White / Silver Accent */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border dark:border-white/15 dark:bg-white/[0.04] dark:text-white/90 border-zinc-300 bg-white/90 text-zinc-900 text-[10px] sm:text-[11px] font-semibold tracking-widest2 uppercase shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+          <div className="lg:col-span-7 xl:col-span-6 space-y-6 sm:space-y-7 text-left">
+            {/* Tagline Pill (Non-clickable: NO OUTLINE per strict design rule) */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full dark:bg-white/[0.08] bg-zinc-200/80 dark:text-white text-zinc-900 text-[11px] sm:text-xs font-semibold tracking-widest2 uppercase shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               <span>Moments of Marketing &bull; Creating Growth</span>
             </div>
 
-            {/* Headline with Platinum Silver to White Gradient */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-normal tracking-tight leading-[1.08]">
-              <span className="block gradient-editorial-text font-serif italic drop-shadow-sm">
+            {/* Headline with High-Impact Represent Editorial Typography */}
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1.02] uppercase font-display">
+              <span className="block dark:text-white text-zinc-950">
                 Creativity
               </span>
-              <span className="block font-sans font-light tracking-tight dark:text-white text-zinc-950">
-                never ends
+              <span className="block font-serif italic font-normal gradient-editorial-text tracking-normal">
+                Never Ends.
               </span>
             </h1>
 
-            {/* Short, non-congested clean subtext */}
-            <p className="text-xs sm:text-sm md:text-base dark:text-zinc-300 text-zinc-600 leading-relaxed max-w-lg font-light">
-              More than marketing. A premier growth partner. We turn meaningful moments into lasting brand equity, high-intent enterprise pipeline, and acoustic brand resonance.
-            </p>
+            {/* Exact PPT Deck Content: Slide 3 */}
+            <div className="space-y-3 max-w-xl">
+              <h2 className="text-base sm:text-lg md:text-xl font-bold dark:text-white text-zinc-900 font-display">
+                More Than Marketing. A Partner in Your Growth.
+              </h2>
+              <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
+                At MOM &mdash; Moments of Marketing, we believe great marketing creates more than visibility. It creates connections, builds trust, and drives business forward.
+              </p>
+              <p className="text-xs sm:text-sm dark:text-zinc-400 text-zinc-500 leading-relaxed font-light hidden sm:block">
+                Whether you&apos;re launching a new brand, expanding your market presence, or scaling your business, we bring the right mix of creativity, strategy, and execution to help you move forward with confidence.
+              </p>
+            </div>
 
-            {/* Action Buttons: Primary Glow & Minimalist Outline */}
-            <div className="pt-1 flex flex-wrap items-center gap-3 sm:gap-4">
+            {/* Action Buttons: Clickable elements have crisp outlines and smooth transitions */}
+            <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={onOpenLeadModal}
-                className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl btn-primary-glow text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-md"
+                className="px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl btn-primary-glow text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2.5 cursor-pointer shadow-lg active:scale-[0.97] transition-all duration-300 border border-transparent dark:hover:border-white/40 hover:border-black"
               >
-                <span>LET&apos;S TALK</span>
+                <span>LET&apos;S TALK ABOUT YOUR GROWTH</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
 
               <a
                 href="#services"
-                className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl editorial-btn-outline text-xs font-semibold"
+                className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl border border-zinc-300 dark:border-white/20 hover:border-black dark:hover:border-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 active:scale-[0.97] dark:text-white text-zinc-900 dark:bg-white/[0.02] bg-white/60 shadow-sm"
               >
-                SERVICES &rarr;
+                OUR 10 DESKS &rarr;
               </a>
             </div>
 
             {/* Live Agency Metrics Ticker Bar */}
-            <div className="pt-3 grid grid-cols-3 gap-2 sm:gap-4 border-t dark:border-white/[0.08] border-zinc-200 max-w-lg">
+            <div className="pt-4 grid grid-cols-3 gap-4 border-t dark:border-white/[0.08] border-zinc-200 max-w-lg">
               <div>
-                <span className="block text-lg sm:text-xl md:text-2xl font-serif font-light dark:text-white text-zinc-950">
+                <span className="block text-2xl sm:text-3xl md:text-4xl font-black font-display dark:text-white text-zinc-950">
                   340%
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-mono tracking-wider dark:text-zinc-400 text-zinc-500 uppercase">
+                <span className="text-[10px] sm:text-xs font-mono tracking-wider dark:text-zinc-400 text-zinc-500 uppercase font-medium">
                   Avg. ROAS
                 </span>
               </div>
               <div>
-                <span className="block text-lg sm:text-xl md:text-2xl font-serif font-light dark:text-white text-zinc-950">
+                <span className="block text-2xl sm:text-3xl md:text-4xl font-black font-display dark:text-white text-zinc-950">
                   10M+
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-mono tracking-wider dark:text-zinc-400 text-zinc-500 uppercase">
+                <span className="text-[10px] sm:text-xs font-mono tracking-wider dark:text-zinc-400 text-zinc-500 uppercase font-medium">
                   Reach Generated
                 </span>
               </div>
               <div>
-                <span className="block text-lg sm:text-xl md:text-2xl font-serif font-light dark:text-white text-zinc-950">
+                <span className="block text-2xl sm:text-3xl md:text-4xl font-black font-display dark:text-white text-zinc-950">
                   &lt; 2h
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-mono tracking-wider dark:text-zinc-400 text-zinc-500 uppercase">
+                <span className="text-[10px] sm:text-xs font-mono tracking-wider dark:text-zinc-400 text-zinc-500 uppercase font-medium">
                   Response SLA
                 </span>
               </div>
             </div>
 
-            {/* Social Icons at bottom left */}
-            <div className="pt-2 flex items-center gap-5 sm:gap-6 dark:text-zinc-400 text-zinc-500">
+            {/* Social Icons at bottom left: Clickable elements with outlines */}
+            <div className="pt-2 flex items-center gap-4 dark:text-zinc-400 text-zinc-600">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mr-1">Connect:</span>
+              
+              {/* Instagram */}
+              <a
+                href="https://instagram.com/momentsofmarketingofficial"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 rounded-full border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:hover:text-white hover:text-zinc-950 transition-all duration-300 active:scale-95 shadow-sm"
+                aria-label="Instagram @momentsofmarketingofficial"
+                title="@momentsofmarketingofficial"
+              >
+                <InstagramIcon className="w-4 h-4 stroke-current" />
+              </a>
+
               {/* Twitter/X */}
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noreferrer"
-                className="dark:hover:text-white hover:text-zinc-950 transition-colors"
+                className="p-2.5 rounded-full border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:hover:text-white hover:text-zinc-950 transition-all duration-300 active:scale-95 shadow-sm"
                 aria-label="Twitter"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -108,23 +130,12 @@ export default function Hero({ onOpenLeadModal }: HeroProps) {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="dark:hover:text-white hover:text-zinc-950 transition-colors"
+                className="p-2.5 rounded-full border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:hover:text-white hover:text-zinc-950 transition-all duration-300 active:scale-95 shadow-sm"
                 aria-label="Facebook"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.667 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z" />
                 </svg>
-              </a>
-
-              {/* Instagram */}
-              <a
-                href="https://instagram.com/momentsofmarketingofficial"
-                target="_blank"
-                rel="noreferrer"
-                className="dark:hover:text-white hover:text-zinc-950 transition-colors"
-                aria-label="Instagram"
-              >
-                <InstagramIcon className="w-4 h-4 stroke-current" />
               </a>
             </div>
           </div>

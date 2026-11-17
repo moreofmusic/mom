@@ -11,94 +11,110 @@ export default function ThreePillars({ onSelectService }: { onSelectService: (se
       tagline: 'Get noticed. Stay remembered.',
       icon: Eye,
       description:
-        'Build a magnetic brand presence that captures high-value attention and commands industry prestige through narrative storytelling, aesthetic craft, and omni-channel reach.',
-      deliverables: ['Visual Identity & Systems', 'Social Brand Positioning', 'High-Converting Creative Direction'],
+        'Build a distinctive brand presence that captures attention and earns recognition. We help your business stand out through strategic branding, engaging content, and consistent digital communication.',
+      deliverables: [
+        'Strategic Branding & Visual Identity',
+        'Engaging Multi-Platform Content',
+        'Consistent Digital Communication',
+      ],
     },
     {
       number: '02',
       title: 'Lead Generation',
-      tagline: 'Reach the right buyers. Drive intent.',
+      tagline: 'Reach the right people. Create real opportunities.',
       icon: Target,
       description:
-        'Acquire high-intent clients and turn their initial curiosity into revenue pipeline using laser-targeted paid acquisition, smart landing funnels, and automated CRM routing.',
-      deliverables: ['Paid Social (Meta/LinkedIn)', 'Google Search & Performance Max', 'Conversion Funnel Architecture'],
+        'Attract relevant audiences and turn their interest into valuable enquiries. Our targeted campaigns and conversion-focused strategies help create opportunities for your sales team.',
+      deliverables: [
+        'Targeted Google & Meta Campaigns',
+        'Conversion-Focused Landing Funnels',
+        'Direct Sales Pipeline Inquiries',
+      ],
     },
     {
       number: '03',
-      title: 'Business Scale',
-      tagline: 'Turn momentum into lasting enterprise equity.',
+      title: 'Business Growth',
+      tagline: 'Turn opportunities into lasting progress.',
       icon: TrendingUp,
       description:
-        'Maximize ROI and lower CAC through advanced cohort analysis, rigorous conversion rate optimization (CRO), and sonic resonance that compounds loyalty over time.',
-      deliverables: ['Real-Time Attribution Modeling', 'CRO & Landing Page Sprints', 'Sonic Branding & Sound Identity'],
+        'Make your marketing work harder for your business. Through performance analysis, customer engagement, and continuous optimization, we help you make informed marketing decisions and build a foundation for sustainable growth.',
+      deliverables: [
+        'Performance Analysis & Analytics',
+        'Customer Engagement & Retention',
+        'Continuous Campaign Optimization',
+      ],
     },
   ];
 
   return (
-    <section id="pillars" className="py-24 relative overflow-hidden">
+    <section id="pillars" className="py-24 sm:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
-        {/* Section Header */}
-        <div className="max-w-2xl mb-16 space-y-3">
-          <span className="text-[11px] font-semibold tracking-widest2 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
-            02 &mdash; Core Foundations
+        {/* Section Header: Represent Management Scale */}
+        <div className="max-w-3xl mb-16 space-y-3">
+          {/* Non-clickable Badge: Strictly NO OUTLINE */}
+          <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
+            03 &mdash; Core Foundations (From PPT Slide 5)
           </span>
-          <h2 className="text-3xl sm:text-5xl font-light dark:text-white text-zinc-950">
-            Three Pillars <span className="italic font-serif gradient-editorial-text">of Growth</span>
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950">
+            Our Three Pillars <span className="italic font-serif font-normal gradient-editorial-text tracking-normal">of Growth</span>
           </h2>
-          <p className="text-sm dark:text-zinc-400 text-zinc-600 font-light leading-relaxed">
-            Every campaign, asset, and sonic signature we engineer is anchored in three proven growth disciplines.
+          <p className="text-sm sm:text-base dark:text-zinc-400 text-zinc-600 font-light leading-relaxed">
+            Every strategy, campaign, and digital touchpoint we build is anchored in the three core pillars of MOM.
           </p>
         </div>
 
-        {/* 3 Clean Editorial Columns */}
+        {/* 3 Pillars Grid: Cards are clickable to inquire */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pillars.map((pillar) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={pillar.number}
-                className="pro-card p-8 sm:p-10 rounded-3xl flex flex-col justify-between group dark:hover:border-white/30 hover:border-zinc-400 transition-all"
+                className="pro-card p-8 sm:p-10 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-md"
               >
                 <div>
                   <div className="flex items-center justify-between mb-8">
-                    <span className="text-4xl font-serif font-light dark:text-zinc-500 text-zinc-400 dark:group-hover:text-white group-hover:text-zinc-950 transition-colors">
+                    {/* Non-clickable number: NO OUTLINE */}
+                    <span className="text-5xl sm:text-6xl font-black font-display dark:text-zinc-600 text-zinc-300 dark:group-hover:text-white group-hover:text-zinc-950 transition-colors">
                       {pillar.number}
                     </span>
-                    <div className="w-10 h-10 rounded-xl border dark:border-white/10 border-zinc-200 dark:bg-white/[0.02] bg-zinc-100 flex items-center justify-center dark:text-zinc-400 text-zinc-600 dark:group-hover:text-white group-hover:text-zinc-950 dark:group-hover:border-white/30 group-hover:border-zinc-400 transition-all">
-                      <Icon className="w-4 h-4" />
+                    {/* Non-clickable icon container: NO OUTLINE */}
+                    <div className="w-12 h-12 rounded-2xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-white text-zinc-900 transition-colors">
+                      <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-normal dark:text-white text-zinc-950 mb-2 transition-colors">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold uppercase font-display dark:text-white text-zinc-950 mb-2 transition-colors">
                     {pillar.title}
                   </h3>
 
-                  <p className="text-xs font-semibold dark:text-zinc-300 text-zinc-700 mb-4 font-mono">
+                  <p className="text-xs sm:text-sm font-semibold dark:text-zinc-300 text-zinc-700 mb-4 font-mono">
                     {pillar.tagline}
                   </p>
 
-                  <p className="text-xs sm:text-sm dark:text-zinc-300 text-zinc-600 leading-relaxed font-light mb-6">
+                  <p className="text-sm dark:text-zinc-300 text-zinc-600 leading-relaxed font-light mb-8">
                     {pillar.description}
                   </p>
 
-                  <div className="space-y-2 pt-2 border-t dark:border-white/[0.06] border-zinc-200">
+                  <div className="space-y-3 pt-4 border-t dark:border-white/[0.06] border-zinc-200">
                     {pillar.deliverables.map((d) => (
-                      <div key={d} className="flex items-center gap-2 text-[11px] dark:text-zinc-400 text-zinc-600">
-                        <Check className="w-3.5 h-3.5 dark:text-white text-zinc-900 flex-shrink-0" />
+                      <div key={d} className="flex items-center gap-2.5 text-xs sm:text-sm dark:text-zinc-300 text-zinc-700">
+                        <Check className="w-4 h-4 dark:text-white text-zinc-900 flex-shrink-0" />
                         <span>{d}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
+                {/* Clickable CTA Button: CRISP OUTLINE & Smooth Transitions */}
                 <div className="pt-8 mt-8 border-t dark:border-white/[0.08] border-zinc-200">
                   <button
                     onClick={() => onSelectService(pillar.title)}
-                    className="w-full py-2.5 rounded-lg border dark:border-white/15 border-zinc-300 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs tracking-wider uppercase font-semibold dark:text-white text-zinc-900 flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm"
+                    className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm tracking-wider uppercase font-bold dark:text-white text-zinc-900 flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer shadow-sm active:scale-95"
                   >
                     <span>Inquire for {pillar.title}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>

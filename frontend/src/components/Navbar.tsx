@@ -14,7 +14,7 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'pillars', 'services', 'approach', 'about', 'contact'];
+      const sections = ['home', 'pillars', 'roster', 'services', 'approach', 'about', 'contact'];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
@@ -34,7 +34,8 @@ export default function Navbar({ onOpenLeadModal }: { onOpenLeadModal: () => voi
   const navLinks = [
     { id: 'home', label: 'HOME', href: '#home' },
     { id: 'pillars', label: 'PILLARS', href: '#pillars' },
-    { id: 'services', label: 'SERVICES', href: '#services' },
+    { id: 'roster', label: 'ROSTER', href: '#roster' },
+    { id: 'services', label: 'DESKS', href: '#services' },
     { id: 'approach', label: 'APPROACH', href: '#approach' },
     { id: 'about', label: 'ABOUT', href: '#about' },
     { id: 'contact', label: 'CONTACT', href: '#contact' },

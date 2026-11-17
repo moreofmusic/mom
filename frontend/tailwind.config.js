@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ['Syne', '"Plus Jakarta Sans"', 'sans-serif'],
+      },
       colors: {
         black: {
           DEFAULT: '#000000',

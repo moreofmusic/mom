@@ -77,9 +77,9 @@ export default function MomVisualUniverse({ onOpenLeadModal }: MomVisualUniverse
         className="absolute -bottom-24 -right-24 w-88 h-88 rounded-full blur-[120px] pointer-events-none bg-white/[0.03] transition-all duration-700"
       />
 
-      {/* Floating Accent Token: Top-Left Status Pill */}
+      {/* Floating Accent Token: Top-Left Status Pill (Non-clickable: NO OUTLINE) */}
       <div
-        className="absolute top-4 sm:top-6 left-4 sm:left-6 flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-white/15 bg-black/80 backdrop-blur-md text-[9px] sm:text-[10px] tracking-wider font-mono text-white/90 z-20 shadow-lg"
+        className="absolute top-4 sm:top-6 left-4 sm:left-6 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/85 backdrop-blur-md text-[9px] sm:text-[10px] tracking-wider font-mono text-white/90 z-20 shadow-lg"
         style={{ transform: `translate3d(${mousePos.x * 0.4}px, ${mousePos.y * 0.4}px, 0)` }}
       >
         <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
@@ -152,9 +152,9 @@ export default function MomVisualUniverse({ onOpenLeadModal }: MomVisualUniverse
           <div className="absolute top-1/2 -right-1 w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.7)]" />
         </div>
 
-        {/* Floating Creative Badges */}
+        {/* Floating Creative Badges (Non-clickable: NO OUTLINE) */}
         <div
-          className="absolute -top-12 sm:-top-16 right-14 px-3.5 py-1.5 rounded-full border border-white/15 bg-black/85 backdrop-blur-md flex items-center gap-1.5 text-[10px] font-mono text-zinc-300 shadow-xl"
+          className="absolute -top-12 sm:-top-16 right-14 px-3.5 py-1.5 rounded-full bg-black/90 backdrop-blur-md flex items-center gap-1.5 text-[10px] font-mono text-zinc-300 shadow-xl"
           style={{ animation: 'float 5s ease-in-out infinite' }}
         >
           <TrendingUp className="w-3 h-3 text-white" />
@@ -162,7 +162,7 @@ export default function MomVisualUniverse({ onOpenLeadModal }: MomVisualUniverse
         </div>
 
         <div
-          className="absolute bottom-24 left-8 px-3.5 py-1.5 rounded-full border border-white/15 bg-black/85 backdrop-blur-md flex items-center gap-1.5 text-[10px] font-mono text-zinc-300 shadow-xl"
+          className="absolute bottom-24 left-8 px-3.5 py-1.5 rounded-full bg-black/90 backdrop-blur-md flex items-center gap-1.5 text-[10px] font-mono text-zinc-300 shadow-xl"
           style={{ animation: 'float 6s ease-in-out infinite', animationDelay: '1.5s' }}
         >
           <Music className="w-3 h-3 text-white" />
@@ -218,8 +218,8 @@ export default function MomVisualUniverse({ onOpenLeadModal }: MomVisualUniverse
             </div>
           </div>
 
-          {/* Elegant Arch Base with EST. 2026 (Safely layered BEHIND the cloud with z-0) */}
-          <div className="relative z-0 w-26 sm:w-30 h-28 sm:h-32 bg-gradient-to-b from-white/10 via-white/5 to-transparent rounded-t-full -mt-8 border border-white/15 border-b-0 flex flex-col items-center justify-end pb-3">
+          {/* Elegant Arch Base with EST. 2026 (Safely layered BEHIND the cloud with z-0, NO OUTLINE) */}
+          <div className="relative z-0 w-26 sm:w-30 h-28 sm:h-32 bg-gradient-to-b from-white/10 via-white/5 to-transparent rounded-t-full -mt-8 flex flex-col items-center justify-end pb-3">
             <span className="text-[9px] font-mono tracking-widest uppercase text-zinc-400">
               EST. 2026
             </span>

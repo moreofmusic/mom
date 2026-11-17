@@ -103,17 +103,21 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
-        {/* Section Header */}
-        <div className="max-w-2xl mb-16 space-y-3">
-          <span className="text-[11px] font-semibold tracking-widest2 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
-            07 &mdash; Contact
+        {/* Section Header: Represent Management Scale */}
+        <div className="max-w-3xl mb-16 space-y-3">
+          {/* Non-clickable Badge: Strictly NO OUTLINE */}
+          <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
+            08 &mdash; Get In Touch (From PPT Slide 7)
           </span>
-          <h2 className="text-3xl sm:text-5xl font-light dark:text-white text-zinc-950">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950 leading-[1.05]">
             Let&apos;s Make Your <br />
-            <span className="italic font-serif gradient-editorial-text">Next Moment Count.</span>
+            <span className="italic font-serif font-normal gradient-editorial-text tracking-normal">Next Moment Count.</span>
           </h2>
-          <p className="text-sm dark:text-zinc-400 text-zinc-600 font-light leading-relaxed">
-            Ready to build a stronger brand? Whether you want to increase visibility, generate quality enquiries, or create an effective digital presence, MOM is ready to help you take the next step.
+          <p className="text-base sm:text-lg dark:text-white text-zinc-900 font-semibold font-display">
+            Ready to Build a Stronger Brand?
+          </p>
+          <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
+            Whether you want to increase visibility, generate quality enquiries, or create a more effective digital presence, MOM is ready to help you take the next step. Let&apos;s turn your marketing goals into a clear strategy and your ideas into meaningful opportunities.
           </p>
         </div>
 
@@ -121,61 +125,62 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
           
           {/* Left Column: Direct Info */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="pro-card p-8 rounded-3xl space-y-6">
-              <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-100 px-3 py-1 rounded-full border dark:border-white/15 border-zinc-300">
+            <div className="pro-card p-8 rounded-3xl space-y-6 border border-zinc-200 dark:border-white/10 shadow-sm">
+              {/* Non-clickable Chip: Strictly NO OUTLINE */}
+              <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3.5 py-1.5 rounded-full font-bold">
                 Direct Channels
               </span>
 
               <div className="space-y-4 pt-2">
-                {/* Phone */}
+                {/* Phone: Clickable so OUTLINED */}
                 <a
                   href="tel:+919226042236"
-                  className="flex items-center gap-4 p-4 rounded-xl hairline-border dark:hover:border-white hover:border-zinc-500 dark:bg-transparent bg-zinc-50/80 transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-zinc-50 transition-all duration-300 group active:scale-[0.98] shadow-sm"
                 >
-                  <div className="w-9 h-9 rounded-full border dark:border-white/10 border-zinc-200 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-200/70 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block">Phone</span>
-                    <span className="text-sm font-semibold dark:text-white text-zinc-950">+91 9226042236</span>
+                    <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block font-mono">Phone No.</span>
+                    <span className="text-base font-bold font-display dark:text-white text-zinc-950">+91 9226042236</span>
                   </div>
                 </a>
 
-                {/* Email */}
+                {/* Email: Clickable so OUTLINED */}
                 <a
                   href="mailto:Contact@momentsofmarketing.in"
-                  className="flex items-center gap-4 p-4 rounded-xl hairline-border dark:hover:border-white hover:border-zinc-500 dark:bg-transparent bg-zinc-50/80 transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-zinc-50 transition-all duration-300 group active:scale-[0.98] shadow-sm"
                 >
-                  <div className="w-9 h-9 rounded-full border dark:border-white/10 border-zinc-200 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-200/70 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block">Email</span>
-                    <span className="text-sm font-semibold dark:text-white text-zinc-950 break-all">Contact@momentsofmarketing.in</span>
+                    <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block font-mono">Official Email</span>
+                    <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">Contact@momentsofmarketing.in</span>
                   </div>
                 </a>
 
-                {/* Instagram */}
+                {/* Instagram: Clickable so OUTLINED */}
                 <a
                   href="https://instagram.com/momentsofmarketingofficial"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl hairline-border dark:hover:border-white hover:border-zinc-500 dark:bg-transparent bg-zinc-50/80 transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-zinc-50 transition-all duration-300 group active:scale-[0.98] shadow-sm"
                 >
-                  <div className="w-9 h-9 rounded-full border dark:border-white/10 border-zinc-200 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-200/70 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
                     <InstagramIcon className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block">Instagram</span>
-                    <span className="text-sm font-semibold dark:text-white text-zinc-950">@momentsofmarketingofficial</span>
+                    <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block font-mono">Instagram Official</span>
+                    <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">@momentsofmarketingofficial</span>
                   </div>
                 </a>
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl hairline-border text-center dark:bg-white/[0.01] bg-white shadow-sm">
-              <span className="text-xs tracking-widest uppercase font-semibold dark:text-white text-zinc-950 block">
-                Moments of Marketing
+            <div className="p-6 rounded-2xl border border-zinc-200 dark:border-white/10 text-center dark:bg-white/[0.01] bg-white shadow-sm">
+              <span className="text-xs tracking-widest uppercase font-bold dark:text-white text-zinc-950 block font-display">
+                Moments of Marketing &bull; More of Music
               </span>
               <p className="text-xs dark:text-zinc-400 text-zinc-600 font-light mt-1">
                 Creating Moments. Building Brands. Driving Growth.
