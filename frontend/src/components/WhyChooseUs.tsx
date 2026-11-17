@@ -53,9 +53,9 @@ export default function WhyChooseUs({ onOpenLeadModal }: { onOpenLeadModal: () =
               05 &mdash; Strategic Edge (From PPT Slide 5)
             </span>
             
-            <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950 leading-[1.05]">
-              Why Choose <br />
-              <span className="italic font-serif font-normal gradient-editorial-text tracking-normal">MOM?</span>
+            <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display leading-[0.98]">
+              Why choose <br />
+              <span className="font-serif italic font-normal dark:text-white text-zinc-950">MOM?</span>
             </h2>
             
             <p className="text-lg sm:text-xl font-bold dark:text-white text-zinc-900 font-display">

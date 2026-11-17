@@ -147,8 +147,8 @@ export default function LeadCaptureModal({
                 <span className="text-[10px] tracking-widest uppercase font-mono dark:text-zinc-400 text-zinc-500 block mb-1">
                   Consultation Request
                 </span>
-                <h3 className="text-xl sm:text-2xl font-light dark:text-white text-zinc-950">
-                  Let&apos;s Talk About Your Growth
+                <h3 className="text-xl sm:text-2xl font-bold font-display dark:text-white text-zinc-950">
+                  Let&apos;s talk about <span className="font-serif italic font-normal">your growth.</span>
                 </h3>
               </div>
               <img

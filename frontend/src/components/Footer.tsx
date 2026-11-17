@@ -34,12 +34,13 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-xs font-semibold tracking-widest dark:text-slate-400 text-zinc-600">
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-[11px] font-semibold tracking-[0.2em] uppercase dark:text-zinc-400 text-zinc-600">
             <a href="#home" className="dark:hover:text-white hover:text-zinc-950 transition-colors">HOME</a>
+            <a href="#roster" className="dark:hover:text-white hover:text-zinc-950 transition-colors">THE ROSTER</a>
+            <a href="#company" className="dark:hover:text-white hover:text-zinc-950 transition-colors">THE COMPANY</a>
+            <a href="#services" className="dark:hover:text-white hover:text-zinc-950 transition-colors">THE 10 DESKS</a>
             <a href="#pillars" className="dark:hover:text-white hover:text-zinc-950 transition-colors">PILLARS</a>
-            <a href="#services" className="dark:hover:text-white hover:text-zinc-950 transition-colors">SERVICES</a>
             <a href="#approach" className="dark:hover:text-white hover:text-zinc-950 transition-colors">APPROACH</a>
-            <a href="#about" className="dark:hover:text-white hover:text-zinc-950 transition-colors">ABOUT</a>
             <a href="#contact" className="dark:hover:text-white hover:text-zinc-950 transition-colors">CONTACT</a>
           </div>
 

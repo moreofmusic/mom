@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface WorkItem {
   id: string;
@@ -83,29 +83,19 @@ export default function WorkAndRosterSection({ onSelectService }: WorkAndRosterS
   ];
 
   return (
-    <section id="roster" className="py-24 sm:py-32 relative overflow-hidden">
+    <section id="roster" className="py-20 sm:py-28 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
-        {/* Section Header: Represent Management Editorial Impact */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
-          <div className="space-y-3 max-w-2xl">
-            {/* Non-clickable Section Badge: Strictly NO OUTLINE */}
-            <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
-              02 &mdash; Visual Portfolio &amp; Roster
-            </span>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950">
-              The Roster &amp; <span className="italic font-serif font-normal gradient-editorial-text tracking-normal">Productions.</span>
-            </h2>
-            <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
-              Real campaigns, sonic studio sessions, and pop-culture moments crafted by Moments of Marketing &amp; More of Music.
-            </p>
-          </div>
+        {/* Exact Screenshot 2 Header: "The roster." with Right-Aligned Italic Subtitle */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
+          <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display">
+            The <span className="font-serif italic font-normal dark:text-white text-zinc-950">roster.</span>
+          </h2>
 
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-mono tracking-widest uppercase dark:text-zinc-400 text-zinc-500">
-              CLICK ANY WORK TO INQUIRE
+          <div className="pb-2">
+            <span className="font-serif italic text-base sm:text-lg md:text-xl dark:text-zinc-400 text-zinc-600 block">
+              sound, artists, creative productions
             </span>
-            <Sparkles className="w-4 h-4 dark:text-white text-zinc-900" />
           </div>
         </div>
 
@@ -141,8 +131,7 @@ export default function WorkAndRosterSection({ onSelectService }: WorkAndRosterS
               </div>
 
               {/* Bottom Metadata & Content */}
-              <div className="relative z-10 p-6 sm:p-8 space-y-4">
-                
+              <div className="relative z-10 p-6 sm:p-8 space-y-3">
                 {/* Stat Highlight (Non-clickable: NO OUTLINE) */}
                 <div className="inline-block px-3 py-1 rounded-md bg-white/10 backdrop-blur-md text-[11px] font-mono text-emerald-400 font-bold">
                   {work.stats}

@@ -47,15 +47,11 @@ export default function OurApproach({ onOpenLeadModal }: { onOpenLeadModal: () =
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 space-y-3">
-          {/* Non-clickable Badge: Strictly NO OUTLINE */}
-          <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
-            06 &mdash; Methodology (From PPT Slide 5)
-          </span>
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950">
-            Our <span className="italic font-serif font-normal gradient-editorial-text tracking-normal">Approach.</span>
+        <div className="max-w-3xl mb-16 space-y-4">
+          <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display">
+            Our 5-step <span className="font-serif italic font-normal dark:text-white text-zinc-950">approach.</span>
           </h2>
-          <p className="text-base sm:text-lg dark:text-white text-zinc-900 font-semibold font-display">
+          <p className="text-lg sm:text-xl dark:text-zinc-300 text-zinc-800 font-medium">
             From First Impression to Lasting Customer Relationships.
           </p>
           <p className="text-sm sm:text-base dark:text-zinc-400 text-zinc-600 font-light leading-relaxed">

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowUpRight, TrendingUp, Music, Sparkles, Volume2 } from 'lucide-react';
+import { ArrowUpRight, TrendingUp, Music } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal: () => void }) {
@@ -9,56 +9,58 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
   const { theme } = useTheme();
 
   return (
-    <section id="pillars" className="py-24 sm:py-32 relative overflow-hidden">
-      {/* Subtle ambient light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] dark:bg-white/[0.02] bg-black/[0.015] blur-[150px] pointer-events-none" />
-
+    <section id="company" className="py-20 sm:py-28 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
         
-        {/* Editorial Section Header: Represent Style Bold Display */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b dark:border-white/[0.08] border-zinc-200">
-          <div className="space-y-2">
-            {/* Non-clickable Category Label: Strictly NO OUTLINE */}
-            <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
-              01 &mdash; The Dual Powerhouse
-            </span>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase font-display dark:text-white text-zinc-950">
-              Two Studios. <span className="italic font-serif font-normal gradient-editorial-text tracking-normal">One Agency.</span>
-            </h2>
-            <p className="text-sm sm:text-base dark:text-zinc-400 text-zinc-600 font-light max-w-xl">
-              Moments of Marketing (Brand &amp; Growth) alongside More of Music (Sound &amp; Culture) &mdash; an integrated powerhouse built for the modern era.
-            </p>
-          </div>
+        {/* Exact Screenshot 3 Heading: "A full-stack growth company. Not an agency." */}
+        <div className="space-y-6 pb-12 border-b dark:border-white/[0.08] border-zinc-200">
+          <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-extrabold tracking-[-0.035em] leading-[0.96] dark:text-white text-zinc-950 font-display">
+            A <span className="font-serif italic font-normal dark:text-white text-zinc-950">full-stack</span> growth<br />
+            company. Not<br />
+            an agency.
+          </h2>
 
-          {/* Minimalist Switcher with Clickable Outlined Pill */}
-          <div className="flex items-center gap-2 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md w-fit shadow-sm">
-            <button
-              onClick={() => setActive('marketing')}
-              className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
-                active === 'marketing'
-                  ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
-                  : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
-              }`}
-            >
-              Moments of Marketing
-            </button>
-            <button
-              onClick={() => setActive('music')}
-              className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
-                active === 'music'
-                  ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
-                  : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
-              }`}
-            >
-              More of Music
-            </button>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-2">
+            <p className="text-base sm:text-xl dark:text-zinc-300 text-zinc-600 font-light max-w-2xl">
+              Moments of Marketing (Brand &amp; Growth) and More of Music (Sound &amp; Culture), under one roof.{' '}
+              <a
+                href="#services"
+                className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
+              >
+                The 10 desks &rarr;
+              </a>
+            </p>
+
+            {/* Minimalist Switcher with Clickable Outlined Pill */}
+            <div className="flex items-center gap-2 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md w-fit shadow-sm">
+              <button
+                onClick={() => setActive('marketing')}
+                className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
+                  active === 'marketing'
+                    ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
+                    : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
+                }`}
+              >
+                Moments of Marketing
+              </button>
+              <button
+                onClick={() => setActive('music')}
+                className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
+                  active === 'music'
+                    ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
+                    : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
+                }`}
+              >
+                More of Music
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Dynamic Dual Brand Showcase */}
         <div className="pt-12">
           {active === 'marketing' ? (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center pro-card p-8 sm:p-14 rounded-3xl animate-in fade-in duration-500">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pro-card p-8 sm:p-14 rounded-3xl animate-in fade-in duration-500">
               
               {/* Left Column: Brand Content from PPT */}
               <div className="lg:col-span-7 space-y-6">
@@ -112,7 +114,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
                 <div className="pt-4 flex items-center gap-4">
                   <button
                     onClick={onOpenLeadModal}
-                    className="px-8 py-4 rounded-xl btn-primary-glow text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2.5 cursor-pointer shadow-lg active:scale-95 transition-all duration-300 border border-transparent dark:hover:border-white/40 hover:border-black"
+                    className="px-8 py-4 rounded-full btn-primary-glow text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2.5 cursor-pointer shadow-lg active:scale-95 transition-all duration-300 border border-transparent dark:hover:border-white/40 hover:border-black"
                   >
                     <span>EXPLORE MARKETING PARTNERSHIP</span>
                     <ArrowUpRight className="w-4 h-4" />
@@ -158,7 +160,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
 
             </div>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center pro-card p-8 sm:p-14 rounded-3xl animate-in fade-in duration-500">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pro-card p-8 sm:p-14 rounded-3xl animate-in fade-in duration-500">
               
               {/* Left Column: Music Studio Content */}
               <div className="lg:col-span-7 space-y-6">
@@ -212,7 +214,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
                 <div className="pt-4 flex items-center gap-4">
                   <button
                     onClick={onOpenLeadModal}
-                    className="px-8 py-4 rounded-xl btn-primary-glow text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2.5 cursor-pointer shadow-lg active:scale-95 transition-all duration-300 border border-transparent dark:hover:border-white/40 hover:border-black"
+                    className="px-8 py-4 rounded-full btn-primary-glow text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2.5 cursor-pointer shadow-lg active:scale-95 transition-all duration-300 border border-transparent dark:hover:border-white/40 hover:border-black"
                   >
                     <span>DISCUSS AUDIO &amp; SONIC STUDIO</span>
                     <ArrowUpRight className="w-4 h-4" />

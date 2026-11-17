@@ -103,21 +103,32 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
-        {/* Section Header: Represent Management Scale */}
-        <div className="max-w-3xl mb-16 space-y-3">
-          {/* Non-clickable Badge: Strictly NO OUTLINE */}
-          <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
-            08 &mdash; Get In Touch (From PPT Slide 7)
-          </span>
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950 leading-[1.05]">
-            Let&apos;s Make Your <br />
-            <span className="italic font-serif font-normal gradient-editorial-text tracking-normal">Next Moment Count.</span>
+        {/* Section Header: Exact Screenshot 3 Callout */}
+        <div className="max-w-4xl mb-16 space-y-4">
+          <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-extrabold tracking-[-0.035em] dark:text-white text-zinc-950 font-display leading-[0.96]">
+            The future of your brand<br />
+            <span className="font-serif italic font-normal dark:text-white text-zinc-950">begins here.</span>
           </h2>
-          <p className="text-base sm:text-lg dark:text-white text-zinc-900 font-semibold font-display">
-            Ready to Build a Stronger Brand?
+
+          <p className="text-lg sm:text-2xl dark:text-zinc-300 text-zinc-700 font-light pt-2">
+            Let&apos;s build it together. For queries &middot;{' '}
+            <a
+              href="mailto:Contact@momentsofmarketing.in"
+              className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
+            >
+              Contact@momentsofmarketing.in
+            </a>{' '}
+            &middot;{' '}
+            <a
+              href="tel:+919226042236"
+              className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
+            >
+              +91 9226042236
+            </a>
           </p>
-          <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
-            Whether you want to increase visibility, generate quality enquiries, or create a more effective digital presence, MOM is ready to help you take the next step. Let&apos;s turn your marketing goals into a clear strategy and your ideas into meaningful opportunities.
+
+          <p className="text-sm sm:text-base dark:text-zinc-400 text-zinc-600 font-light leading-relaxed max-w-2xl pt-1">
+            Whether you want to increase visibility, generate quality enquiries, or create an effective digital presence, MOM is ready to help you take the next step.
           </p>
         </div>
 

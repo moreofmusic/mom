@@ -109,17 +109,13 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
     <section id="services" className="py-24 sm:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
-        {/* Header & Filter Tabs */}
+        {/* Header & Filter Tabs: Represent Mgmt Scale */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
-          <div className="space-y-3 max-w-2xl">
-            {/* Non-clickable Badge: Strictly NO OUTLINE */}
-            <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
-              04 &mdash; The 10 Desks (From PPT Slide 6)
-            </span>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950">
-              Our <span className="italic font-serif font-normal gradient-editorial-text tracking-normal">Services.</span>
+          <div className="space-y-4 max-w-2xl">
+            <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display">
+              The ten <span className="font-serif italic font-normal dark:text-white text-zinc-950">desks.</span>
             </h2>
-            <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
+            <p className="text-base sm:text-lg dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
               Everything your brand needs to grow. From building brand awareness to generating leads and strengthening customer relationships, we bring your marketing activities together under one strategic approach.
             </p>
           </div>

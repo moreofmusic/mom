@@ -51,15 +51,11 @@ export default function ThreePillars({ onSelectService }: { onSelectService: (se
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
         {/* Section Header: Represent Management Scale */}
-        <div className="max-w-3xl mb-16 space-y-3">
-          {/* Non-clickable Badge: Strictly NO OUTLINE */}
-          <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
-            03 &mdash; Core Foundations (From PPT Slide 5)
-          </span>
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950">
-            Our Three Pillars <span className="italic font-serif font-normal gradient-editorial-text tracking-normal">of Growth</span>
+        <div className="max-w-3xl mb-16 space-y-4">
+          <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display">
+            Our three <span className="font-serif italic font-normal dark:text-white text-zinc-950">pillars.</span>
           </h2>
-          <p className="text-sm sm:text-base dark:text-zinc-400 text-zinc-600 font-light leading-relaxed">
+          <p className="text-base sm:text-lg dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
             Every strategy, campaign, and digital touchpoint we build is anchored in the three core pillars of MOM.
           </p>
         </div>

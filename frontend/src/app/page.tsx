@@ -39,11 +39,11 @@ export default function Home() {
       {/* Hero Section */}
       <Hero onOpenLeadModal={() => handleOpenLeadModal()} />
 
-      {/* Dual Brand Identity (Moments of Marketing & More of Music) */}
-      <DualBrandSection onOpenLeadModal={() => handleOpenLeadModal()} />
-
       {/* Represent Management Style Roster & Productions Visual Showcase */}
       <WorkAndRosterSection onSelectService={(service) => handleOpenLeadModal(service)} />
+
+      {/* Dual Brand Identity (A full-stack growth company. Not an agency.) */}
+      <DualBrandSection onOpenLeadModal={() => handleOpenLeadModal()} />
 
       {/* Three Pillars of Growth (Slide 5 of PPT) */}
       <ThreePillars onSelectService={(service) => handleOpenLeadModal(service)} />
