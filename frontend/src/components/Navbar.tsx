@@ -8,12 +8,14 @@ interface NavbarProps {
   onOpenLeadModal: () => void;
   activeEntity?: 'marketing' | 'music';
   onSelectEntity?: (entity: 'marketing' | 'music') => void;
+  onBackToGateway?: () => void;
 }
 
 export default function Navbar({
   onOpenLeadModal,
   activeEntity = 'marketing',
   onSelectEntity,
+  onBackToGateway,
 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,7 +62,11 @@ export default function Navbar({
         <div className="flex items-center justify-between gap-4">
           
           {/* Brand Logo & Editorial Wordmark: Exact Represent Style */}
-          <a href="#home" className="flex items-center gap-3 group py-1 flex-shrink-0">
+          <button
+            onClick={() => onBackToGateway ? onBackToGateway() : undefined}
+            className="flex items-center gap-3 group py-1 flex-shrink-0 text-left cursor-pointer"
+            title="Return to Portals Selection"
+          >
             <img
               src="/mom-logo-transparent.png"
               alt="MOM Logo"
@@ -76,33 +82,45 @@ export default function Navbar({
                 {activeEntity === 'marketing' ? 'Moments of Marketing' : 'More of Music'}
               </span>
             </div>
-          </a>
+          </button>
 
-          {/* Dual Brand Switcher: Prominent Center Pill */}
-          {onSelectEntity && (
-            <div className="hidden md:flex items-center gap-1 p-1 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm">
+          {/* Dual Brand Switcher: Prominent Center Pill + Back to 2 Options Button */}
+          <div className="hidden md:flex items-center gap-2">
+            {onBackToGateway && (
               <button
-                onClick={() => onSelectEntity('marketing')}
-                className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
-                  activeEntity === 'marketing'
-                    ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
-                    : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
-                }`}
+                onClick={onBackToGateway}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-white text-[10px] font-mono uppercase tracking-wider dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950 transition-all active:scale-95 cursor-pointer shadow-sm"
+                title="Switch back to initial 2-option selection screen"
               >
-                MOM &bull; Marketing
+                &larr; 2 OPTIONS
               </button>
-              <button
-                onClick={() => onSelectEntity('music')}
-                className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
-                  activeEntity === 'music'
-                    ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
-                    : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
-                }`}
-              >
-                MOM &bull; Music
-              </button>
-            </div>
-          )}
+            )}
+
+            {onSelectEntity && (
+              <div className="flex items-center gap-1 p-1 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm">
+                <button
+                  onClick={() => onSelectEntity('marketing')}
+                  className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
+                    activeEntity === 'marketing'
+                      ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
+                      : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
+                  }`}
+                >
+                  MOM &bull; Marketing
+                </button>
+                <button
+                  onClick={() => onSelectEntity('music')}
+                  className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
+                    activeEntity === 'music'
+                      ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
+                      : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
+                  }`}
+                >
+                  MOM &bull; Music
+                </button>
+              </div>
+            )}
+          </div>
 
           {/* Clean Right Nav */}
           <nav className="hidden lg:flex items-center gap-7">
@@ -190,6 +208,18 @@ export default function Navbar({
         <div className="lg:hidden mt-3 mx-4 p-6 rounded-2xl border dark:border-white/10 dark:bg-black/95 border-zinc-200 bg-white/95 backdrop-blur-2xl shadow-2xl animate-in fade-in">
           <div className="flex flex-col gap-3">
             {/* Mobile Entity Switcher */}
+            {onBackToGateway && (
+              <button
+                onClick={() => {
+                  onBackToGateway();
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full py-2 px-3 rounded-lg border border-zinc-300 dark:border-white/15 text-xs font-mono uppercase tracking-wider text-center dark:text-zinc-300 text-zinc-700"
+              >
+                &larr; Switch to 2 Options Screen
+              </button>
+            )}
+
             {onSelectEntity && (
               <div className="grid grid-cols-2 gap-2 pb-3 border-b border-zinc-200 dark:border-white/10">
                 <button
