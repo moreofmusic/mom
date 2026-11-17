@@ -89,9 +89,8 @@ export default function MomVisualUniverse({ onOpenLeadModal }: MomVisualUniverse
       {/* Floating Interactive Sound / Universe Orb in Monochrome White */}
       <button
         onClick={handleToggleMode}
-        className={`absolute top-4 sm:top-6 right-4 sm:right-6 w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/15 bg-black/80 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 hover:border-white/40 transition-all z-20 shadow-xl cursor-pointer ${
-          isAudioActive ? 'ring-4 ring-white/20' : ''
-        }`}
+        className={`absolute top-4 sm:top-6 right-4 sm:right-6 w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/15 bg-black/80 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 hover:border-white/40 transition-all z-20 shadow-xl cursor-pointer ${isAudioActive ? 'ring-4 ring-white/20' : ''
+          }`}
         title="Toggle between Moments of Marketing & More of Music"
       >
         <div className="relative w-5 h-5 rounded-full bg-gradient-to-tr from-white to-zinc-300 flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.4)]">
