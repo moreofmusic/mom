@@ -1,27 +1,39 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import DualBrandSection from '../components/DualBrandSection';
-import WorkAndRosterSection from '../components/WorkAndRosterSection';
-import ThreePillars from '../components/ThreePillars';
-import ServicesGrid from '../components/ServicesGrid';
-import WhyChooseUs from '../components/WhyChooseUs';
-import OurApproach from '../components/OurApproach';
-import VisionMissionValues from '../components/VisionMissionValues';
-import ContactSection from '../components/ContactSection';
+import DualPortalGateway from '../components/DualPortalGateway';
+import MomentsOfMarketingLanding from '../components/MomentsOfMarketingLanding';
+import MoreOfMusicLanding from '../components/MoreOfMusicLanding';
 import Footer from '../components/Footer';
 import LeadCaptureModal from '../components/LeadCaptureModal';
 
 export default function Home() {
+  const [activeEntity, setActiveEntity] = useState<'marketing' | 'music'>('marketing');
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('Digital Marketing');
   const [mounted, setMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true);
+    // Check URL search params for deep linking (e.g. ?entity=music or ?entity=marketing)
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const entityParam = params.get('entity');
+      if (entityParam === 'music' || entityParam === 'marketing') {
+        setActiveEntity(entityParam);
+      }
+    }
   }, []);
+
+  const handleSelectEntity = (entity: 'marketing' | 'music') => {
+    setActiveEntity(entity);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.set('entity', entity);
+      window.history.replaceState({}, '', url.toString());
+    }
+  };
 
   const handleOpenLeadModal = (serviceName?: string) => {
     if (serviceName) setSelectedService(serviceName);
@@ -33,35 +45,33 @@ export default function Home() {
       className="relative min-h-screen dark:bg-black dark:text-white bg-[#F8FAFC] text-zinc-900 overflow-hidden transition-colors duration-300"
       suppressHydrationWarning
     >
-      {/* Navigation Header */}
-      <Navbar onOpenLeadModal={() => handleOpenLeadModal()} />
+      {/* Navigation Header with Dual Entity Switcher */}
+      <Navbar
+        onOpenLeadModal={() => handleOpenLeadModal()}
+        activeEntity={activeEntity}
+        onSelectEntity={handleSelectEntity}
+      />
 
-      {/* Hero Section */}
-      <Hero onOpenLeadModal={() => handleOpenLeadModal()} />
+      {/* Top Gateway: 2 Prominent Cards (MOM - Moments of Marketing / MOM - More of Music) */}
+      <DualPortalGateway
+        activeEntity={activeEntity}
+        onSelectEntity={handleSelectEntity}
+        onOpenLeadModal={handleOpenLeadModal}
+      />
 
-      {/* Represent Management Style Roster & Productions Visual Showcase */}
-      <WorkAndRosterSection onSelectService={(service) => handleOpenLeadModal(service)} />
-
-      {/* Dual Brand Identity (A full-stack growth company. Not an agency.) */}
-      <DualBrandSection onOpenLeadModal={() => handleOpenLeadModal()} />
-
-      {/* Three Pillars of Growth (Slide 5 of PPT) */}
-      <ThreePillars onSelectService={(service) => handleOpenLeadModal(service)} />
-
-      {/* 10 Comprehensive Services / Desks (Slide 6 of PPT) */}
-      <ServicesGrid onSelectService={(service) => handleOpenLeadModal(service)} />
-
-      {/* Why Choose MOM? (Slide 5 of PPT) */}
-      <WhyChooseUs onOpenLeadModal={() => handleOpenLeadModal()} />
-
-      {/* Our 5-Step Approach (Slide 5 of PPT) */}
-      <OurApproach onOpenLeadModal={() => handleOpenLeadModal()} />
-
-      {/* Vision, Mission & Core Values (Slide 4 of PPT) */}
-      <VisionMissionValues />
-
-      {/* Direct Contact & Inbound Lead Capture Section (Slide 7 of PPT) */}
-      <ContactSection preselectedService={selectedService} />
+      {/* Dynamic Landing Experience Based on Active Entity */}
+      <div className="relative z-10 transition-all duration-500">
+        {activeEntity === 'marketing' ? (
+          <MomentsOfMarketingLanding
+            onOpenLeadModal={handleOpenLeadModal}
+            selectedService={selectedService}
+          />
+        ) : (
+          <MoreOfMusicLanding
+            onOpenLeadModal={handleOpenLeadModal}
+          />
+        )}
+      </div>
 
       {/* Footer */}
       <Footer />

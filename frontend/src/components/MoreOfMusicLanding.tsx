@@ -1,0 +1,370 @@
+'use client';
+
+import React from 'react';
+import { ArrowUpRight, Music, Radio, Mic, Disc, Sliders, Volume2, Sparkles, Check, Phone, Mail } from 'lucide-react';
+import InstagramIcon from './InstagramIcon';
+
+interface MoreOfMusicLandingProps {
+  onOpenLeadModal: (serviceName?: string) => void;
+}
+
+export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandingProps) {
+  const musicDesks = [
+    {
+      num: '01',
+      title: 'Sonic Branding & Audio Mnemonics',
+      tagline: 'Bespoke 3-second sound logos and acoustic DNA.',
+      desc: 'Crafting distinctive audio signatures that trigger instant brand recall. Audio mnemonics, UI sound design, and brand sonic guidelines for TV, app UI, and digital campaigns.',
+      tags: ['Sonic Logos', 'Sound Guidelines', 'Audio Mnemonics', 'UI Sound Design'],
+      icon: Radio,
+    },
+    {
+      num: '02',
+      title: 'Original Composition & Commercial Scoring',
+      tagline: 'Cinematic musical scoring for advertising, OTT, and film.',
+      desc: 'Custom background scores, orchestral arrangements, hybrid electronic soundtracks, and bespoke commercial themes tailored to your campaign’s emotional narrative.',
+      tags: ['Commercial Scoring', 'Ad Jingles', 'Orchestral Themes', 'Trailer Music'],
+      icon: Music,
+    },
+    {
+      num: '03',
+      title: 'Music Licensing & Sync Publishing',
+      tagline: 'Global rights clearance and commercial sync placement.',
+      desc: 'Access our curated sync library with worldwide commercial clearance for television, digital streaming, games, OTT originals, and global marketing activations.',
+      tags: ['Sync Licensing', 'Rights Clearance', 'Global Publishing', 'OTT Placement'],
+      icon: Disc,
+    },
+    {
+      num: '04',
+      title: 'Artist Management & Development',
+      tagline: 'Career strategy, DSP releases, and brand ambassadorships.',
+      desc: 'Full-stack management for musicians and sound creators, handling digital service provider distribution (Spotify, Apple Music), tour routing, and culturally aligned brand partnerships.',
+      tags: ['Artist Roster', 'Tour Routing', 'DSP Strategy', 'Brand Endorsements'],
+      icon: Mic,
+    },
+    {
+      num: '05',
+      title: 'Studio Production & Audio Mastering',
+      tagline: 'Analog warmth meets Dolby Atmos spatial mastering.',
+      desc: 'State-of-the-art studio facilities with vintage analog consoles, multi-track recording, vocal tuning, and broadcast-ready mastering engineered for maximum acoustic impact.',
+      tags: ['Analog Mixing', 'Dolby Atmos', 'Vocal Tracking', 'Stereo Mastering'],
+      icon: Sliders,
+    },
+    {
+      num: '06',
+      title: 'Live Arena & Tour Sound Direction',
+      tagline: 'Immersive acoustic engineering for arenas and stadium crowds.',
+      desc: 'Comprehensive live tour sound design, festival audio architecture, and experiential brand sound staging that commands attention and leaves lasting memory.',
+      tags: ['Live Arena Sound', 'Festival Audio', 'Tour Direction', 'Stage Acoustics'],
+      icon: Volume2,
+    },
+  ];
+
+  const soundRoster = [
+    {
+      id: '01',
+      title: 'Acoustic Signatures & Sonic Identity',
+      category: 'Sonic Branding',
+      stats: '+86% Memory Recall',
+      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop',
+      desc: 'Analog console tracking & 528 Hz harmonic mastering.',
+    },
+    {
+      id: '02',
+      title: 'Vocal Sessions & Songwriting Camp',
+      category: 'Studio Production',
+      stats: '150+ Produced Masters',
+      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop',
+      desc: 'Multi-genre songwriting, vocal engineering & production.',
+    },
+    {
+      id: '03',
+      title: 'Live Stadium Show & Arena Sound',
+      category: 'Live & Touring',
+      stats: '50K+ Live Attendees',
+      image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop',
+      desc: 'Festival audio engineering and arena crowd resonance.',
+    },
+  ];
+
+  const studioSteps = [
+    {
+      step: '01',
+      title: 'Acoustic Discovery',
+      desc: 'Decoding your brand personality, sonic frequency, and audience emotional triggers.',
+    },
+    {
+      step: '02',
+      title: 'Harmonic Prototyping',
+      desc: 'Composing custom acoustic motifs, jingle themes, and multi-version scratch tracks.',
+    },
+    {
+      step: '03',
+      title: 'Studio Recording',
+      desc: 'Recording live instruments and vocalists on high-end analog consoles with vintage microphones.',
+    },
+    {
+      step: '04',
+      title: 'Mastering & Sync Rights',
+      desc: 'Final Dolby Atmos mastering, broadcast stem delivery, and global commercial sync clearance.',
+    },
+  ];
+
+  return (
+    <div className="space-y-24 sm:space-y-32">
+      
+      {/* ----------------- SECTION 1: THE SOUND DESKS ----------------- */}
+      <section id="services" className="pt-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
+            <div className="space-y-3 max-w-3xl">
+              <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
+                MORE OF MUSIC &bull; 6 SOUND DESKS
+              </span>
+              <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight font-display dark:text-white text-zinc-950">
+                The sound <span className="font-serif italic font-normal dark:text-white text-zinc-950">desks.</span>
+              </h2>
+              <p className="text-base sm:text-lg dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
+                From 3-second sonic logos to full commercial orchestral scoring and sync licensing &mdash; complete sonic architecture for brands and creators.
+              </p>
+            </div>
+
+            <div className="pb-2">
+              <span className="font-serif italic text-base sm:text-lg dark:text-zinc-400 text-zinc-600">
+                analog warmth &bull; modern pop culture
+              </span>
+            </div>
+          </div>
+
+          {/* 6 Desks Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {musicDesks.map((d) => {
+              const Icon = d.icon;
+              return (
+                <div
+                  key={d.num}
+                  className="pro-card p-8 sm:p-9 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      {/* Non-clickable Badge: NO OUTLINE */}
+                      <span className="text-sm font-mono font-bold dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3 py-1 rounded-md">
+                        DESK {d.num}
+                      </span>
+                      {/* Non-clickable Icon Box: NO OUTLINE */}
+                      <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-zinc-300 text-zinc-700 dark:group-hover:text-white group-hover:text-zinc-950 transition-colors">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 mb-2 transition-colors">
+                      {d.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm dark:text-zinc-300 text-zinc-700 font-semibold mb-3 font-mono">
+                      {d.tagline}
+                    </p>
+
+                    <p className="text-xs sm:text-sm dark:text-zinc-400 text-zinc-600 leading-relaxed font-light mb-6">
+                      {d.desc}
+                    </p>
+
+                    {/* Non-clickable Tags: NO OUTLINE */}
+                    <div className="flex flex-wrap gap-1.5 pt-4 border-t dark:border-white/[0.06] border-zinc-200">
+                      {d.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 rounded-md text-[11px] dark:bg-white/[0.05] bg-zinc-100 dark:text-zinc-300 text-zinc-700 font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Clickable CTA with Crisp Outline */}
+                  <div className="pt-6 mt-6 border-t dark:border-white/[0.06] border-zinc-200">
+                    <button
+                      onClick={() => onOpenLeadModal(d.title)}
+                      className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer shadow-sm active:scale-95 dark:text-white text-zinc-900"
+                    >
+                      <span>Inquire for {d.title}</span>
+                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ----------------- SECTION 2: THE SOUND ROSTER & PRODUCTIONS ----------------- */}
+      <section id="roster" className="py-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
+            <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display">
+              The <span className="font-serif italic font-normal dark:text-white text-zinc-950">sound roster.</span>
+            </h2>
+
+            <div className="pb-2">
+              <span className="font-serif italic text-base sm:text-lg dark:text-zinc-400 text-zinc-600">
+                analog consoles &bull; arena tours &bull; commercial scores
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {soundRoster.map((item) => (
+              <div
+                key={item.id}
+                onClick={() => onOpenLeadModal(item.title)}
+                className="group relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl flex flex-col justify-between aspect-[3/4] bg-zinc-950 active:scale-[0.98]"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 group-hover:via-black/30 transition-all duration-500" />
+
+                <div className="relative z-10 p-6 flex items-start justify-between">
+                  <span className="text-[10px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-full font-semibold">
+                    {item.category}
+                  </span>
+
+                  <div className="w-10 h-10 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300">
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
+                </div>
+
+                <div className="relative z-10 p-6 sm:p-8 space-y-3">
+                  <div className="inline-block px-3 py-1 rounded-md bg-white/10 backdrop-blur-md text-[11px] font-mono text-emerald-400 font-bold">
+                    {item.stats}
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-bold font-display text-white uppercase tracking-tight group-hover:text-zinc-100 transition-colors leading-snug">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-xs text-zinc-300 font-mono tracking-wide">
+                    {item.desc}
+                  </p>
+
+                  <div className="pt-2">
+                    <div className="w-full py-2.5 rounded-xl border border-white/20 group-hover:border-white group-hover:bg-white group-hover:text-black text-center text-xs font-bold tracking-wider uppercase text-white transition-all duration-300 flex items-center justify-center gap-2">
+                      <span>BOOK THIS SOUND DESK</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ----------------- SECTION 3: THE 4-STEP STUDIO PROCESS ----------------- */}
+      <section id="approach" className="py-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+          
+          <div className="max-w-3xl mb-16 space-y-3">
+            <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
+              METHODOLOGY
+            </span>
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight font-display dark:text-white text-zinc-950">
+              The studio <span className="font-serif italic font-normal dark:text-white text-zinc-950">process.</span>
+            </h2>
+            <p className="text-base sm:text-lg dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
+              How More of Music turns raw creative vision into an iconic commercial acoustic master.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {studioSteps.map((st) => (
+              <div
+                key={st.step}
+                className="pro-card p-8 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm"
+              >
+                <div>
+                  <span className="text-3xl font-mono font-bold dark:text-white text-zinc-950 block mb-4">
+                    {st.step}
+                  </span>
+                  <h3 className="text-lg sm:text-xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 mb-2">
+                    {st.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm dark:text-zinc-400 text-zinc-600 leading-relaxed font-light">
+                    {st.desc}
+                  </p>
+                </div>
+
+                <div className="pt-6 mt-6 border-t dark:border-white/[0.06] border-zinc-200 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+                  <span>Phase {st.step} of 4</span>
+                  <Sparkles className="w-3.5 h-3.5 dark:text-white text-zinc-950" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ----------------- SECTION 4: DIRECT STUDIO BOOKING & CONTACT ----------------- */}
+      <section id="contact" className="py-12 border-t dark:border-white/[0.08] border-zinc-200">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+          
+          <div className="max-w-4xl mb-12 space-y-4">
+            <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-[96px] font-extrabold tracking-[-0.035em] dark:text-white text-zinc-950 font-display leading-[0.96]">
+              The sound of your brand<br />
+              <span className="font-serif italic font-normal dark:text-white text-zinc-950">begins here.</span>
+            </h2>
+
+            <p className="text-lg sm:text-2xl dark:text-zinc-300 text-zinc-700 font-light pt-2">
+              Book a studio session, license music, or engineer custom sonic branding &middot;{' '}
+              <a
+                href="mailto:Contact@momentsofmarketing.in"
+                className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
+              >
+                Contact@momentsofmarketing.in
+              </a>{' '}
+              &middot;{' '}
+              <a
+                href="tel:+919226042236"
+                className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
+              >
+                +91 9226042236
+              </a>
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-4 pt-4">
+            <button
+              onClick={() => onOpenLeadModal('More of Music - Sonic Branding')}
+              className="px-8 py-4 rounded-full btn-primary-glow text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2.5 cursor-pointer shadow-lg active:scale-95 transition-all duration-300 border border-transparent dark:hover:border-white/40 hover:border-black"
+            >
+              <span>BOOK MORE OF MUSIC STUDIO</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </button>
+
+            <a
+              href="https://wa.me/919226042236?text=Hi%20More%20of%20Music%20Team%2C%20I%20want%20to%20discuss%20Sonic%20Branding%20%2F%20Studio%20Session."
+              target="_blank"
+              rel="noreferrer"
+              className="px-8 py-4 rounded-full border border-zinc-300 dark:border-white/20 hover:border-black dark:hover:border-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 active:scale-95 dark:text-white text-zinc-900 shadow-sm flex items-center gap-2"
+            >
+              <span>WHATSAPP STUDIO DIRECT</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  );
+}
