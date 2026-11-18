@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, MessageCircle } from 'lucide-react';
+import { Menu, X, Sun, Moon, MessageCircle, Phone, Mail } from 'lucide-react';
+import InstagramIcon from './InstagramIcon';
 import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
@@ -61,19 +62,27 @@ export default function Navbar({
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Brand Logo Only (Larger, Ultra-Clean Represent Aesthetic) */}
+          {/* Brand Logo & Dual Division Wordmarks */}
           <button
             onClick={() => onBackToGateway ? onBackToGateway() : undefined}
-            className="flex items-center group py-1 flex-shrink-0 cursor-pointer"
+            className="flex items-center gap-2.5 sm:gap-4 group py-1 flex-shrink-0 cursor-pointer text-left"
             title="Return to Portals Selection"
           >
             <img
               src="/mom-logo-transparent.png"
               alt="MOM Logo"
-              className={`h-11 sm:h-14 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
+              className={`h-12 sm:h-16 md:h-18 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                 theme === 'light' ? 'invert' : ''
               }`}
             />
+            <div className="flex flex-col justify-center leading-tight">
+              <span className="text-[11px] sm:text-sm md:text-[15px] font-black tracking-[0.14em] uppercase font-display dark:text-white text-zinc-950 group-hover:dark:text-zinc-200 transition-colors">
+                More of Music
+              </span>
+              <span className="text-[8px] sm:text-[10px] md:text-[11px] font-semibold tracking-[0.16em] uppercase font-mono dark:text-zinc-400 text-zinc-500 mt-0.5">
+                Moments of Marketing
+              </span>
+            </div>
           </button>
 
           {/* Dual Brand Switcher: Prominent Center Pill + Back to 2 Options Button */}
@@ -254,16 +263,46 @@ export default function Navbar({
               </a>
             ))}
 
-            <div className="pt-4 flex flex-col gap-2">
+            <div className="pt-4 flex flex-col gap-2.5">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenLeadModal();
                 }}
-                className="w-full py-3 rounded-xl dark:bg-white dark:text-black bg-zinc-950 text-white text-xs font-bold uppercase tracking-widest cursor-pointer active:scale-95"
+                className="w-full py-3 rounded-xl dark:bg-white dark:text-black bg-zinc-950 text-white text-xs font-bold uppercase tracking-widest cursor-pointer active:scale-95 shadow-md"
               >
                 LET&apos;S TALK ABOUT YOUR GROWTH
               </button>
+
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <a
+                  href="tel:+919226042236"
+                  className="py-2 px-2.5 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Call Us</span>
+                </a>
+                <a
+                  href="mailto:Contact@momentsofmarketing.in"
+                  className="py-2 px-2.5 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700"
+                >
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>Email Us</span>
+                </a>
+              </div>
+
+              <div className="flex items-center justify-between pt-2 border-t border-zinc-200 dark:border-white/10 text-[11px] font-mono dark:text-zinc-400 text-zinc-500">
+                <a
+                  href="https://instagram.com/momentsofmarketingofficial"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1.5 hover:underline"
+                >
+                  <InstagramIcon className="w-3.5 h-3.5 stroke-current" />
+                  <span>@momentsofmarketingofficial</span>
+                </a>
+                <span>+91 9226042236</span>
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowUpRight, TrendingUp, Music, Sun, Moon, MessageCircle } from 'lucide-react';
+import { ArrowUpRight, TrendingUp, Music, Sun, Moon, MessageCircle, Phone, Mail } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import InstagramIcon from './InstagramIcon';
 
@@ -17,25 +17,33 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
       
       {/* ----------------- TOP MINIMAL HEADER ----------------- */}
       <header className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-6 sm:py-8 flex items-center justify-between border-b dark:border-white/[0.08] border-zinc-200">
-        {/* Brand Logo Only (Larger, Ultra-Clean Represent Aesthetic) */}
-        <div className="flex items-center">
+        {/* Brand Logo & Dual Division Wordmarks */}
+        <div className="flex items-center gap-3 sm:gap-4">
           <img
             src="/mom-logo-transparent.png"
             alt="MOM Logo"
-            className={`h-12 sm:h-16 md:h-18 w-auto object-contain transition-all duration-300 hover:scale-105 ${
+            className={`h-13 sm:h-18 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-105 ${
               theme === 'light' ? 'invert' : ''
             }`}
           />
+          <div className="flex flex-col justify-center leading-tight">
+            <span className="text-xs sm:text-base md:text-lg font-black tracking-[0.14em] uppercase font-display dark:text-white text-zinc-950">
+              More of Music
+            </span>
+            <span className="text-[9px] sm:text-xs md:text-[13px] font-semibold tracking-[0.18em] uppercase font-mono dark:text-zinc-400 text-zinc-500 mt-0.5">
+              Moments of Marketing
+            </span>
+          </div>
         </div>
 
         {/* Top Controls */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3">
           {/* WhatsApp Direct */}
           <a
             href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
             target="_blank"
             rel="noreferrer"
-            className="p-2.5 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-emerald-400/60 dark:text-zinc-400 dark:hover:text-emerald-400 text-zinc-600 hover:border-emerald-500/60 hover:text-emerald-600 transition-all hover:scale-105 active:scale-95 shadow-sm"
+            className="p-2 sm:p-2.5 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-emerald-400/60 dark:text-zinc-400 dark:hover:text-emerald-400 text-zinc-600 hover:border-emerald-500/60 hover:text-emerald-600 transition-all hover:scale-105 active:scale-95 shadow-sm"
             title="Chat on WhatsApp (+91 9226042236)"
             aria-label="WhatsApp"
           >
@@ -45,7 +53,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="w-10 h-10 rounded-full border border-zinc-300 dark:border-white/15 dark:text-zinc-400 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-sm"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-zinc-300 dark:border-white/15 dark:text-zinc-400 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-sm"
             aria-label="Toggle theme"
             title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme`}
           >
@@ -58,33 +66,33 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
         </div>
       </header>
 
-      {/* ----------------- CENTER MAIN: 2 OPTIONS ONLY ----------------- */}
-      <main className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-10 sm:py-16 flex-1 flex flex-col justify-center">
+      {/* ----------------- CENTER MAIN: 2 OPTIONS ----------------- */}
+      <main className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-14 flex-1 flex flex-col justify-center">
         
         {/* Editorial Headline: Exact Represent Style */}
-        <div className="text-center max-w-4xl mx-auto space-y-4 mb-12 sm:mb-16">
-          <span className="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase font-mono dark:text-zinc-400 text-zinc-500 block">
+        <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-8 sm:mb-14">
+          <span className="text-[11px] sm:text-sm font-bold tracking-[0.25em] uppercase font-mono dark:text-zinc-400 text-zinc-500 block">
             TWO STUDIOS &bull; ONE POWERHOUSE
           </span>
           
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-extrabold tracking-[-0.035em] leading-[0.96] dark:text-white text-zinc-950 font-display">
+          <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-[84px] font-extrabold tracking-[-0.035em] leading-[1.02] sm:leading-[0.96] dark:text-white text-zinc-950 font-display">
             Building Indian<br />
             brands &amp; sound.<br />
             Exporting it <span className="font-serif italic font-normal dark:text-white text-zinc-950">to the world.</span>
           </h1>
 
-          <p className="text-base sm:text-xl dark:text-zinc-300 text-zinc-600 font-light max-w-2xl mx-auto pt-2">
+          <p className="text-sm sm:text-xl dark:text-zinc-300 text-zinc-600 font-light max-w-2xl mx-auto pt-1 sm:pt-2">
             Select an entity to explore our full portfolio, dedicated operational desks, and growth capabilities:
           </p>
         </div>
 
-        {/* THE 2 PROMINENT OPTIONS (CARDS) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-stretch">
+        {/* THE 2 PROMINENT OPTIONS (CARDS) - Mobile: Horizontal Snap Scroll; Desktop: 2-Column Grid */}
+        <div className="flex sm:grid sm:grid-cols-2 gap-5 sm:gap-10 items-stretch overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none -mx-6 px-6 sm:mx-0 sm:px-0 pb-6 sm:pb-0 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           
           {/* OPTION 1: MOM - More of Music */}
           <div
             onClick={() => onSelectEntity('music')}
-            className="group relative rounded-3xl overflow-hidden border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-2xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] bg-zinc-950 active:scale-[0.98]"
+            className="group relative rounded-3xl overflow-hidden border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-2xl flex flex-col justify-between min-h-[540px] sm:min-h-[620px] lg:min-h-[640px] w-[86vw] max-w-[440px] sm:w-auto sm:max-w-none flex-shrink-0 sm:flex-shrink snap-center bg-zinc-950 active:scale-[0.98]"
           >
             {/* Background Photography: High-End Acoustic Audio Studio Console */}
             <img
@@ -145,7 +153,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           {/* OPTION 2: MOM - Moments of Marketing */}
           <div
             onClick={() => onSelectEntity('marketing')}
-            className="group relative rounded-3xl overflow-hidden border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-2xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] bg-zinc-950 active:scale-[0.98]"
+            className="group relative rounded-3xl overflow-hidden border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-2xl flex flex-col justify-between min-h-[540px] sm:min-h-[620px] lg:min-h-[640px] w-[86vw] max-w-[440px] sm:w-auto sm:max-w-none flex-shrink-0 sm:flex-shrink snap-center bg-zinc-950 active:scale-[0.98]"
           >
             {/* Background Photography: Digital Marketing Strategy & Campaign Growth */}
             <img
@@ -205,11 +213,20 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
 
         </div>
 
+        {/* Mobile Swipe Pagination Guidance Indicator */}
+        <div className="flex sm:hidden items-center justify-center gap-2 pt-2 pb-2">
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-200/90 dark:bg-white/10 backdrop-blur-sm text-[10px] font-mono tracking-widest uppercase text-zinc-700 dark:text-zinc-300 shadow-sm">
+            <span>&larr;</span>
+            <span>SWIPE TO VIEW BOTH PORTALS</span>
+            <span>&rarr;</span>
+          </div>
+        </div>
+
         {/* 3-Column Metrics Bar: Exact Represent Style */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b dark:border-white/[0.08] border-zinc-200 mt-14 sm:mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b dark:border-white/[0.08] border-zinc-200 mt-12 sm:mt-20">
           
           {/* Column 1 */}
-          <div className="py-8 sm:py-10 md:pr-10 md:border-r dark:border-white/[0.08] border-zinc-200 space-y-2">
+          <div className="py-6 sm:py-10 md:pr-10 md:border-r dark:border-white/[0.08] border-zinc-200 space-y-2 text-center md:text-left">
             <span className="block text-4xl sm:text-6xl font-bold tracking-tight dark:text-white text-zinc-950 font-display">
               340%+
             </span>
@@ -219,7 +236,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           </div>
 
           {/* Column 2 */}
-          <div className="py-8 sm:py-10 md:px-10 md:border-r dark:border-white/[0.08] border-zinc-200 space-y-2 border-t md:border-t-0 dark:border-white/[0.08] border-zinc-200">
+          <div className="py-6 sm:py-10 md:px-10 md:border-r dark:border-white/[0.08] border-zinc-200 space-y-2 border-t md:border-t-0 dark:border-white/[0.08] border-zinc-200 text-center md:text-left">
             <span className="block text-4xl sm:text-6xl font-bold tracking-tight dark:text-white text-zinc-950 font-display">
               70M+
             </span>
@@ -229,7 +246,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           </div>
 
           {/* Column 3 */}
-          <div className="py-8 sm:py-10 md:pl-10 space-y-2 border-t md:border-t-0 dark:border-white/[0.08] border-zinc-200">
+          <div className="py-6 sm:py-10 md:pl-10 space-y-2 border-t md:border-t-0 dark:border-white/[0.08] border-zinc-200 text-center md:text-left">
             <span className="block text-4xl sm:text-6xl font-bold tracking-tight dark:text-white text-zinc-950 font-display">
               &lt; 2h
             </span>
@@ -245,7 +262,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.25em] uppercase dark:text-zinc-500 text-zinc-400 block mb-6 text-center md:text-left">
             IN THE PRESS &amp; CULTURE
           </span>
-          <div className="flex flex-wrap items-center justify-between gap-6 sm:gap-10 opacity-70 dark:opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="flex flex-wrap items-center justify-center md:justify-between gap-6 sm:gap-10 opacity-70 dark:opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
             <span className="text-xl sm:text-2xl font-black font-display tracking-tighter">billboard</span>
             <span className="text-lg sm:text-xl font-serif font-bold italic tracking-wide">Rolling Stone</span>
             <span className="text-lg sm:text-xl font-display font-light tracking-[0.2em] uppercase">GRAZIA</span>
@@ -259,24 +276,49 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
       </main>
 
       {/* ----------------- BOTTOM PRESS & FOOTER BAR ----------------- */}
-      <footer className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-8 border-t dark:border-white/[0.08] border-zinc-200">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs dark:text-zinc-400 text-zinc-600 font-mono">
-          <div>
-            &copy; 2026 MOM &mdash; More of Music &bull; Moments of Marketing
+      <footer className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-10 border-t dark:border-white/[0.08] border-zinc-200">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-xs dark:text-zinc-400 text-zinc-600 font-mono text-center lg:text-left">
+          <div className="flex items-center gap-3">
+            <img
+              src="/mom-logo-transparent.png"
+              alt="MOM Logo"
+              className={`h-9 sm:h-12 w-auto object-contain transition-all ${
+                theme === 'light' ? 'invert' : ''
+              }`}
+            />
+            <div className="flex flex-col items-center sm:items-start leading-tight">
+              <span className="font-bold text-xs uppercase tracking-wider dark:text-white text-zinc-950">
+                More of Music &bull; Moments of Marketing
+              </span>
+              <span className="text-[10px] text-zinc-500 dark:text-zinc-400">
+                &copy; 2026 MOM. All rights reserved.
+              </span>
+            </div>
           </div>
           
-          <div className="flex items-center gap-6">
-            <a href="tel:+919226042236" className="hover:underline dark:text-white text-zinc-950 font-bold">
-              +91 9226042236
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4">
+            <a
+              href="tel:+919226042236"
+              className="px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:text-white text-zinc-950 font-semibold hover:border-black dark:hover:border-white transition-all flex items-center gap-1.5 text-[11px] shadow-sm"
+              title="Call (+91 9226042236)"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>+91 9226042236</span>
             </a>
-            <a href="mailto:Contact@momentsofmarketing.in" className="hover:underline dark:text-white text-zinc-950 font-bold">
-              Contact@momentsofmarketing.in
+            <a
+              href="mailto:Contact@momentsofmarketing.in"
+              className="px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:text-white text-zinc-950 font-semibold hover:border-black dark:hover:border-white transition-all flex items-center gap-1.5 text-[11px] shadow-sm"
+              title="Email MOM"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              <span>Contact@momentsofmarketing.in</span>
             </a>
             <a
               href="https://instagram.com/momentsofmarketingofficial"
               target="_blank"
               rel="noreferrer"
-              className="hover:underline flex items-center gap-1 dark:text-white text-zinc-950 font-bold"
+              className="px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:text-white text-zinc-950 font-semibold hover:border-black dark:hover:border-white transition-all flex items-center gap-1.5 text-[11px] shadow-sm"
+              title="Instagram @momentsofmarketingofficial"
             >
               <InstagramIcon className="w-3.5 h-3.5 stroke-current" />
               <span>@momentsofmarketingofficial</span>
@@ -288,4 +330,3 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
     </div>
   );
 }
-

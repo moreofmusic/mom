@@ -46,12 +46,12 @@ export default function DualPortalGateway({
         </div>
 
         {/* ----------------- THE TWO PROMINENT GATEWAY CARDS ----------------- */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-10 sm:pt-14">
+        <div className="flex sm:grid sm:grid-cols-2 gap-5 sm:gap-8 pt-10 sm:pt-14 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none -mx-6 px-6 sm:mx-0 sm:px-0 pb-6 sm:pb-0 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           
           {/* CARD 1: MOM - Moments of Marketing */}
           <div
             onClick={() => onSelectEntity('marketing')}
-            className={`group relative rounded-3xl overflow-hidden border transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] bg-zinc-950 active:scale-[0.98] ${
+            className={`group relative rounded-3xl overflow-hidden border transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between min-h-[540px] sm:min-h-[620px] lg:min-h-[640px] w-[86vw] max-w-[440px] sm:w-auto sm:max-w-none flex-shrink-0 sm:flex-shrink snap-center bg-zinc-950 active:scale-[0.98] ${
               activeEntity === 'marketing'
                 ? 'border-white ring-2 ring-white/20 shadow-2xl'
                 : 'border-zinc-800 hover:border-zinc-500 dark:border-white/10 dark:hover:border-white/60'
@@ -123,7 +123,7 @@ export default function DualPortalGateway({
           {/* CARD 2: MOM - More of Music */}
           <div
             onClick={() => onSelectEntity('music')}
-            className={`group relative rounded-3xl overflow-hidden border transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] bg-zinc-950 active:scale-[0.98] ${
+            className={`group relative rounded-3xl overflow-hidden border transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between min-h-[540px] sm:min-h-[620px] lg:min-h-[640px] w-[86vw] max-w-[440px] sm:w-auto sm:max-w-none flex-shrink-0 sm:flex-shrink snap-center bg-zinc-950 active:scale-[0.98] ${
               activeEntity === 'music'
                 ? 'border-white ring-2 ring-white/20 shadow-2xl'
                 : 'border-zinc-800 hover:border-zinc-500 dark:border-white/10 dark:hover:border-white/60'
