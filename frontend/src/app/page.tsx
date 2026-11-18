@@ -10,6 +10,7 @@ import LeadCaptureModal from '../components/LeadCaptureModal';
 
 export default function Home() {
   const [activeEntity, setActiveEntity] = useState<'marketing' | 'music' | null>(null);
+  const [marketingTab, setMarketingTab] = useState<'home' | 'about' | 'services' | 'contact'>('home');
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('Digital Marketing');
   const [mounted, setMounted] = useState(false);
@@ -23,11 +24,18 @@ export default function Home() {
       if (entityParam === 'music' || entityParam === 'marketing') {
         setActiveEntity(entityParam);
       }
+      const tabParam = params.get('tab');
+      if (tabParam === 'home' || tabParam === 'about' || tabParam === 'services' || tabParam === 'contact') {
+        setMarketingTab(tabParam);
+      }
     }
   }, []);
 
   const handleSelectEntity = (entity: 'marketing' | 'music' | null) => {
     setActiveEntity(entity);
+    if (entity === 'marketing') {
+      setMarketingTab('home');
+    }
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
       if (entity) {
@@ -35,7 +43,18 @@ export default function Home() {
       } else {
         url.searchParams.delete('entity');
         url.searchParams.delete('portal');
+        url.searchParams.delete('tab');
       }
+      window.history.replaceState({}, '', url.toString());
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleSelectMarketingTab = (tab: 'home' | 'about' | 'services' | 'contact') => {
+    setMarketingTab(tab);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.set('tab', tab);
       window.history.replaceState({}, '', url.toString());
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -63,12 +82,16 @@ export default function Home() {
             activeEntity={activeEntity}
             onSelectEntity={handleSelectEntity}
             onBackToGateway={() => handleSelectEntity(null)}
+            marketingTab={marketingTab}
+            onSelectMarketingTab={handleSelectMarketingTab}
           />
 
           {/* Dynamic Landing Experience Based on Active Entity */}
-          <div className="relative z-10 transition-all duration-500 pt-20">
+          <div className="relative z-10 transition-all duration-500 pt-24 sm:pt-28">
             {activeEntity === 'marketing' ? (
               <MomentsOfMarketingLanding
+                activeTab={marketingTab}
+                onSelectTab={handleSelectMarketingTab}
                 onOpenLeadModal={handleOpenLeadModal}
                 selectedService={selectedService}
               />
