@@ -1,52 +1,144 @@
 'use client';
 
-import React from 'react';
-import { ArrowRight, Sparkles, MessageCircle, Layers, Target, Compass } from 'lucide-react';
-import ServicesGrid from './ServicesGrid';
-import ThreePillars from './ThreePillars';
-import WhyChooseUs from './WhyChooseUs';
-import OurApproach from './OurApproach';
-import VisionMissionValues from './VisionMissionValues';
-import ContactSection from './ContactSection';
+import React, { useState } from 'react';
+import {
+  ArrowRight,
+  Shield,
+  Lock,
+  Clock,
+  TrendingUp,
+  Sparkles,
+  Compass,
+  Eye,
+  Target,
+  CheckCircle2,
+  Phone,
+  Mail,
+  Layers,
+  Zap,
+  Award,
+  LineChart,
+  ShieldCheck,
+  Globe,
+  Share2,
+  Palette,
+  Video,
+  Code2,
+  MessageCircle,
+} from 'lucide-react';
+import InstagramIcon from './InstagramIcon';
 
 interface MomentsOfMarketingLandingProps {
+  activeTab: 'home' | 'about' | 'services' | 'contact';
+  onSelectTab: (tab: 'home' | 'about' | 'services' | 'contact') => void;
   onOpenLeadModal: (serviceName?: string) => void;
   selectedService: string;
 }
 
 export default function MomentsOfMarketingLanding({
+  activeTab,
+  onSelectTab,
   onOpenLeadModal,
   selectedService,
 }: MomentsOfMarketingLandingProps) {
-  return (
-    <div className="space-y-4">
-      {/* ================= HERO SECTION (SLIDE 3: EXACT CONTENT & PRO AGENCY DESIGN) ================= */}
-      <section id="home" className="pt-8 sm:pt-14 pb-20 sm:pb-28 relative overflow-hidden">
-        {/* Ambient Radial Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[450px] bg-gradient-to-b from-cyan-500/10 via-emerald-500/5 to-transparent blur-[140px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
-          
-          {/* Tagline Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-zinc-100 backdrop-blur-md shadow-sm mb-6 animate-in fade-in duration-700">
-            <Sparkles className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
-            <span className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-widest text-zinc-800 dark:text-zinc-200">
-              CREATING MOMENTS &bull; BUILDING BRANDS &bull; DRIVING GROWTH
+  const marketingTabs: { id: 'home' | 'about' | 'services' | 'contact'; label: string }[] = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Us' },
+    { id: 'services', label: 'Brands and services' },
+    { id: 'contact', label: 'Contact us' },
+  ];
+
+  // Contact form state for Tab 4
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    company: '',
+    serviceInterest: selectedService || 'Digital Marketing',
+    message: '',
+  });
+
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const waText = [
+      `*New Inquiry - Moments of Marketing* 🚀`,
+      ``,
+      `*Name:* ${formData.fullName}`,
+      `*Phone:* ${formData.phone}`,
+      `*Email:* ${formData.email}`,
+      formData.company ? `*Company:* ${formData.company}` : null,
+      `*Service:* ${formData.serviceInterest}`,
+      formData.message ? `*Message:* ${formData.message}` : null,
+      ``,
+      `_Sent via Moments of Marketing Website_`,
+    ]
+      .filter(Boolean)
+      .join('\n');
+
+    const whatsappUrl = `https://wa.me/919226042236?text=${encodeURIComponent(waText)}`;
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
+    setFormSubmitted(true);
+  };
+
+  // Reusable Mobile Tab Switcher
+  const renderMobileTabs = () => (
+    <div className="md:hidden flex items-center gap-2 overflow-x-auto pb-3 mb-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex-nowrap border-b border-zinc-200 dark:border-white/10">
+      {marketingTabs.map((tab) => {
+        const isActive = activeTab === tab.id;
+        return (
+          <button
+            key={tab.id}
+            onClick={() => onSelectTab(tab.id)}
+            className={`px-3.5 py-2 rounded-none text-xs font-semibold whitespace-nowrap border transition-all cursor-pointer ${
+              isActive
+                ? 'bg-[#185873] text-white border-[#185873] shadow-sm'
+                : 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border-zinc-800 dark:border-white/30'
+            }`}
+          >
+            {tab.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+
+  // =================================================================================
+  // PAGE 1: HOME (SLIDE 3)
+  // =================================================================================
+  if (activeTab === 'home') {
+    return (
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 animate-in fade-in duration-500">
+        {renderMobileTabs()}
+
+        {/* Ambient Glow */}
+        <div className="relative">
+          <div className="absolute -top-12 left-1/4 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/10 blur-[130px] pointer-events-none" />
+
+          {/* Tagline Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-zinc-100 shadow-sm mb-6">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
+            <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200">
+              MOM &bull; Moments of Marketing
             </span>
           </div>
 
-          {/* Main Display Headline */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display leading-[1.02] mb-8 sm:mb-10 max-w-5xl">
+          {/* Main Headline from Slide 3 */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold font-display text-zinc-950 dark:text-white tracking-tight leading-[1.08] mb-10 max-w-4xl">
             More Than Marketing.{' '}
-            <span className="font-serif italic font-normal dark:text-zinc-100 text-zinc-900 block sm:inline">
-              A Partner in Your Growth.
+            <span className="font-serif italic font-normal dark:text-zinc-200 text-zinc-900 block sm:inline">
+              A Partner in Your Growth
             </span>
           </h1>
 
-          {/* The 3 Core Paragraphs from Slide 3 as Styled Editorial Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-4 pb-10 border-y border-zinc-200 dark:border-white/10 my-8">
-            <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-3">
+          {/* Three Core Paragraphs from Slide 3 as 3 Styled Editorial Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-10">
+            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
+              <div className="space-y-4">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block">
                   01 &bull; CONNECTION
                 </span>
@@ -54,121 +146,763 @@ export default function MomentsOfMarketingLanding({
                   At MOM &mdash; Moments of Marketing, we believe great marketing creates more than visibility. It creates connections, builds trust, and drives business forward.
                 </p>
               </div>
-              <div className="pt-4 mt-4 border-t dark:border-white/[0.06] border-zinc-200 text-[10px] font-mono uppercase tracking-wider text-zinc-500">
-                Brand Visibility &bull; Trust
-              </div>
             </div>
 
-            <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-3">
+            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
+              <div className="space-y-4">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-600 dark:text-cyan-400 font-bold block">
-                  02 &bull; ENGAGEMENT
+                  02 &bull; IMPACT
                 </span>
                 <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-700 leading-relaxed font-light">
                   We partner with businesses to develop impactful brand identities, create engaging digital experiences, and execute marketing strategies that connect with the right customers.
                 </p>
               </div>
-              <div className="pt-4 mt-4 border-t dark:border-white/[0.06] border-zinc-200 text-[10px] font-mono uppercase tracking-wider text-zinc-500">
-                Identity &bull; Strategy &bull; Reach
-              </div>
             </div>
 
-            <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-3">
+            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
+              <div className="space-y-4">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-[#185873] dark:text-sky-400 font-bold block">
-                  03 &bull; EXECUTION
+                  03 &bull; CONFIDENCE
                 </span>
                 <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-700 leading-relaxed font-light">
                   Whether you&apos;re launching a new brand, expanding your market presence, or scaling your business, we bring the right mix of creativity, strategy, and execution to help you move forward with confidence.
                 </p>
               </div>
-              <div className="pt-4 mt-4 border-t dark:border-white/[0.06] border-zinc-200 text-[10px] font-mono uppercase tracking-wider text-zinc-500">
-                Launch &bull; Scale &bull; Growth
-              </div>
             </div>
           </div>
 
-          {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
-            <a
-              href="#services"
-              className="px-7 sm:px-8 py-3.5 sm:py-4 rounded-full dark:bg-white dark:text-black bg-zinc-950 text-white text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 hover:opacity-90 active:scale-95 shadow-lg transition-all cursor-pointer"
-            >
-              <span>Explore The 10 Desks</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-
+          {/* Clean Action Navigation to other tabs */}
+          <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-zinc-200 dark:border-white/10">
             <button
-              onClick={() => onOpenLeadModal()}
-              className="px-7 sm:px-8 py-3.5 sm:py-4 rounded-full border border-zinc-300 dark:border-white/20 dark:hover:border-white hover:border-black text-xs sm:text-sm font-bold uppercase tracking-wider dark:text-white text-zinc-950 hover:bg-zinc-100 dark:hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm"
+              onClick={() => onSelectTab('services')}
+              className="px-7 py-3.5 rounded-none dark:bg-white dark:text-black bg-zinc-950 text-white text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 hover:opacity-90 active:scale-95 shadow-md transition-all cursor-pointer"
             >
-              Let&apos;s Talk About Your Growth
+              <span>Explore Brands &amp; Services</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
 
+            <button
+              onClick={() => onSelectTab('about')}
+              className="px-7 py-3.5 rounded-none border border-zinc-300 dark:border-white/20 dark:hover:border-white hover:border-black text-xs sm:text-sm font-bold uppercase tracking-wider dark:text-white text-zinc-950 hover:bg-zinc-100 dark:hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm"
+            >
+              About MOM &rarr;
+            </button>
+
+            <button
+              onClick={() => onSelectTab('contact')}
+              className="px-6 py-3.5 rounded-none border border-[#185873] text-[#185873] dark:text-sky-400 hover:bg-[#185873]/10 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 active:scale-95 transition-all cursor-pointer shadow-sm"
+            >
+              <span>Contact Us</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+        </div>
+      </div>
+    );
+  }
+
+  // =================================================================================
+  // PAGE 2: ABOUT US (SLIDES 4 & 5)
+  // =================================================================================
+  if (activeTab === 'about') {
+    const values = [
+      {
+        name: 'Integrity',
+        icon: Shield,
+        desc: 'Ethical messaging, truthful offers, brand trust',
+      },
+      {
+        name: 'Transparency',
+        icon: Lock,
+        desc: 'Privacy compliance, honest metrics, data security',
+      },
+      {
+        name: 'Speed of Delivery',
+        icon: Clock,
+        desc: 'Rapid iteration, fast deployment, real-time responses',
+      },
+      {
+        name: 'Performance',
+        icon: TrendingUp,
+        desc: 'ROI emphasis, customer value, measurable impact',
+      },
+    ];
+
+    const pillars = [
+      {
+        number: '01',
+        title: 'Brand Visibility',
+        tagline: 'Get noticed. Stay remembered.',
+        icon: Eye,
+        description:
+          'Build a distinctive brand presence that captures attention and earns recognition. We help your business stand out through strategic branding, engaging content, and consistent digital communication.',
+      },
+      {
+        number: '02',
+        title: 'Lead Generation',
+        tagline: 'Reach the right people. Create real opportunities.',
+        icon: Target,
+        description:
+          'Attract relevant audiences and turn their interest into valuable enquiries. Our targeted campaigns and conversion-focused strategies help create opportunities for your sales team.',
+      },
+      {
+        number: '03',
+        title: 'Business Growth',
+        tagline: 'Turn opportunities into lasting progress.',
+        icon: TrendingUp,
+        description:
+          'Make your marketing work harder for your business. Through performance analysis, customer engagement, and continuous optimization, we help you make informed marketing decisions and build a foundation for sustainable growth.',
+      },
+    ];
+
+    const whyChooseUsPoints = [
+      {
+        num: '01',
+        title: 'One Connected Marketing Partner',
+        icon: Layers,
+        desc: 'Bring your branding, content, digital campaigns, and lead generation together through a coordinated marketing approach.',
+      },
+      {
+        num: '02',
+        title: 'Strategies Built Around Your Business',
+        icon: Zap,
+        desc: 'We align marketing activities with your goals, target audience, industry, and growth priorities.',
+      },
+      {
+        num: '03',
+        title: 'Creativity With Purpose',
+        icon: Award,
+        desc: 'Every creative idea starts with a clear objective: to communicate, engage, build trust, or encourage action.',
+      },
+      {
+        num: '04',
+        title: 'Decisions Guided by Performance',
+        icon: LineChart,
+        desc: 'We use campaign insights and reporting to identify opportunities and improve marketing effectiveness.',
+      },
+      {
+        num: '05',
+        title: 'A Partnership That Evolves With You',
+        icon: ShieldCheck,
+        desc: 'As your business grows, your marketing strategy can evolve to meet new audiences, challenges, and opportunities.',
+      },
+    ];
+
+    return (
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-16 sm:space-y-24 animate-in fade-in duration-500">
+        {renderMobileTabs()}
+
+        {/* ---------------- 1. VISION & MISSION (SLIDE 4) ---------------- */}
+        <section className="space-y-8">
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-6">
+            <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block mb-2">
+              SLIDE 4 &bull; STRATEGIC FOUNDATION
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold font-display dark:text-white text-zinc-950">
+              Vision &amp; Mission
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {/* Vision Card */}
+            <div className="pro-card p-8 sm:p-10 rounded-2xl border border-zinc-200 dark:border-white/10 space-y-4 shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 bg-zinc-100 dark:bg-white/[0.08] px-3 py-1 font-bold">
+                  Vision:
+                </span>
+                <Sparkles className="w-5 h-5 text-emerald-500" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-snug">
+                Creating Moments. Building Brands. Driving Growth.
+              </h3>
+            </div>
+
+            {/* Mission Card */}
+            <div className="pro-card p-8 sm:p-10 rounded-2xl border border-zinc-200 dark:border-white/10 space-y-4 shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 bg-zinc-100 dark:bg-white/[0.08] px-3 py-1 font-bold">
+                  Mission:
+                </span>
+                <Compass className="w-5 h-5 text-cyan-500" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-snug">
+                To turn meaningful marketing moments into lasting brand value and business growth.
+              </h3>
+            </div>
+          </div>
+        </section>
+
+        {/* ---------------- 2. OUR VALUES (SLIDE 4) ---------------- */}
+        <section className="space-y-6">
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-4">
+            <h3 className="text-2xl sm:text-3xl font-bold font-display dark:text-white text-zinc-950">
+              Our Values:
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {values.map((v) => {
+              const Icon = v.icon;
+              return (
+                <div
+                  key={v.name}
+                  className="pro-card p-6 rounded-2xl border border-zinc-200 dark:border-white/10 flex flex-col justify-between shadow-sm group hover:border-black dark:hover:border-white transition-all"
+                >
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white mb-4">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-lg font-bold font-display dark:text-white text-zinc-950 mb-2">
+                      {v.name}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                      {v.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ---------------- 3. OUR THREE PILLARS OF GROWTH (SLIDE 5) ---------------- */}
+        <section className="space-y-6">
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-4">
+            <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block mb-1">
+              SLIDE 5
+            </span>
+            <h3 className="text-2xl sm:text-4xl font-bold font-display uppercase dark:text-white text-zinc-950">
+              Our Three Pillars of Growth
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {pillars.map((p) => {
+              const Icon = p.icon;
+              return (
+                <div
+                  key={p.number}
+                  className="pro-card p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-500">
+                        {p.number}. {p.title}
+                      </span>
+                      <Icon className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                    </div>
+
+                    <h4 className="text-lg font-bold font-display dark:text-white text-zinc-950 leading-snug">
+                      {p.tagline}
+                    </h4>
+
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                      {p.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ---------------- 4. WHY CHOOSE MOM? (SLIDE 5) ---------------- */}
+        <section className="space-y-6">
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-4">
+            <h3 className="text-2xl sm:text-4xl font-bold font-display uppercase dark:text-white text-zinc-950">
+              Why Choose MOM?
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyChooseUsPoints.map((pt) => {
+              const Icon = pt.icon;
+              return (
+                <div
+                  key={pt.num}
+                  className="pro-card p-6 sm:p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                >
+                  <div className="space-y-3">
+                    <div className="w-9 h-9 rounded-lg bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white mb-2">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <span className="text-[11px] font-mono font-bold uppercase text-zinc-500 block">
+                      {pt.num}
+                    </span>
+                    <h4 className="text-base font-bold font-display dark:text-white text-zinc-950 leading-snug">
+                      {pt.title}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                      {pt.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Bottom Switcher */}
+        <div className="flex items-center justify-between pt-8 border-t border-zinc-200 dark:border-white/10">
+          <button
+            onClick={() => onSelectTab('home')}
+            className="text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white cursor-pointer"
+          >
+            &larr; Back to Home
+          </button>
+          <button
+            onClick={() => onSelectTab('services')}
+            className="px-6 py-3 rounded-none dark:bg-white dark:text-black bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-sm active:scale-95"
+          >
+            <span>Brands and services &rarr;</span>
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // =================================================================================
+  // PAGE 3: BRANDS AND SERVICES (SLIDE 6)
+  // =================================================================================
+  if (activeTab === 'services') {
+    const services = [
+      {
+        number: '01',
+        title: 'Digital Marketing',
+        tagline: 'Be visible where your customers are looking.',
+        description:
+          'Reach the right audience with strategic digital marketing solutions designed to increase online visibility, attract relevant traffic, and support your business objectives.',
+        tags: ['SEO', 'Google Ads', 'Meta Ads', 'Digital Campaigns', 'Performance Marketing'],
+        icon: Globe,
+      },
+      {
+        number: '02',
+        title: 'Social Media Management',
+        tagline: 'Turn followers into a community around your brand.',
+        description:
+          'Build a consistent, engaging social presence with creative content, strategic planning, and audience-focused communication that keeps your brand relevant and memorable.',
+        tags: ['Instagram', 'Facebook', 'Linkedin', 'Content Calendars', 'Reels', 'Creative Posts', 'Community Management'],
+        icon: Share2,
+      },
+      {
+        number: '03',
+        title: 'Lead Generation',
+        tagline: 'Turn attention into business opportunities.',
+        description:
+          'Connect with potential customers through targeted campaigns and conversion-focused strategies designed to generate relevant enquiries and support your sales pipeline.',
+        tags: ['B2B & B2C Campaigns', 'Lead Forms', 'Landing Pages', 'Lead Funnels', 'Campaign Optimization'],
+        icon: Target,
+      },
+      {
+        number: '04',
+        title: 'Branding & Creative Design',
+        tagline: 'Give your brand an identity people remember.',
+        description:
+          'Create a distinctive and consistent brand identity that communicates your value, builds recognition, and helps you stand apart from competitors.',
+        tags: ['Logo Design', 'Brand Identity', 'Brand Guidelines', 'Brochures', 'Company Profiles', 'Marketing Creatives'],
+        icon: Palette,
+      },
+      {
+        number: '05',
+        title: 'Content Creation & Video Production',
+        tagline: 'Tell your story. Capture attention. Inspire action.',
+        description:
+          'Bring your brand to life with compelling visuals and purposeful content that communicates your message, connects with your audience, and supports your marketing goals.',
+        tags: ['Social Media Reels', 'Promotional Videos', 'Product Photography', 'Video Editing', 'Copywriting', 'Advertising Creatives'],
+        icon: Video,
+      },
+      {
+        number: '06',
+        title: 'Website Design & Development',
+        tagline: 'Turn your digital presence into a growth opportunity.',
+        description:
+          'Create a professional, user-friendly website that showcases your brand, builds credibility, and guides visitors towards taking action.',
+        tags: ['Business Websites', 'Landing Pages', 'E-commerce Websites', 'UI/UX Design', 'Website Maintenance'],
+        icon: Code2,
+      },
+      {
+        number: '07',
+        title: 'Performance Marketing & Paid Advertising',
+        tagline: 'Make every campaign work towards a goal.',
+        description:
+          'Reach high-intent audiences with targeted advertising and data-driven optimization focused on improving campaign performance and generating measurable opportunities.',
+        tags: ['Google Ads', 'Meta Ads', 'Retargeting', 'Conversion Tracking', 'Campaign Analytics'],
+        icon: LineChart,
+      },
+      {
+        number: '08',
+        title: 'Email & WhatsApp Marketing',
+        tagline: 'Stay connected. Build relationships. Encourage action.',
+        description:
+          'Keep your brand connected with prospects and customers through relevant communication, personalized campaigns, and timely follow-ups across the channels they use.',
+        tags: ['Email Campaigns', 'WhatsApp Business Marketing', 'Newsletters', 'Customer Follow-ups', 'Marketing Automation'],
+        icon: MessageCircle,
+      },
+      {
+        number: '09',
+        title: 'Influencer Marketing & Brand Activations',
+        tagline: 'Create experiences that bring your brand closer to people.',
+        description:
+          'Connect with audiences through relevant creator partnerships and engaging brand experiences that encourage interaction and strengthen brand recall.',
+        tags: ['Influencer Collaborations', 'Creator Campaigns', 'Product Launches', 'Experiential Marketing', 'Promotional Activations'],
+        icon: Sparkles,
+      },
+      {
+        number: '10',
+        title: 'Marketing Strategy & Consulting',
+        tagline: 'A clear strategy for every stage of growth.',
+        description:
+          'Develop focused, actionable marketing strategies that connect your brand with the right audience, align with your goals, and support long-term business growth.',
+        tags: ['Growth Consulting', 'Go-to-Market Strategy', 'Brand Positioning', 'Market & Competitor Research', 'Full-Funnel Planning'],
+        icon: Compass,
+      },
+    ];
+
+    return (
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-12 animate-in fade-in duration-500">
+        {renderMobileTabs()}
+
+        {/* Section Header from Slide 6 */}
+        <div className="border-b border-zinc-200 dark:border-white/10 pb-8 space-y-3">
+          <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block">
+            SLIDE 6 &bull; COMPLETE CAPABILITIES
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-display uppercase tracking-tight dark:text-white text-zinc-950">
+            OUR SERVICES
+          </h2>
+          <p className="text-lg sm:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
+            Everything Your Brand Needs to Grow.
+          </p>
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+            From building brand awareness to generating leads and strengthening customer relationships, we bring your marketing activities together under one strategic approach.
+          </p>
+        </div>
+
+        {/* 10 Services Cards matching Slide 6 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {services.map((s) => {
+            const Icon = s.icon;
+            return (
+              <div
+                key={s.number}
+                className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-500">
+                      {s.number}. {s.title}
+                    </span>
+                    <Icon className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
+                  </div>
+
+                  <h3 className="text-lg font-bold font-display dark:text-white text-zinc-950 leading-snug">
+                    {s.tagline}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                    {s.description}
+                  </p>
+
+                  {/* Sub-services tags */}
+                  <div className="pt-3 flex flex-wrap gap-1.5">
+                    {s.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 rounded-sm bg-zinc-100 dark:bg-white/[0.06] text-[11px] font-mono text-zinc-700 dark:text-zinc-300 font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-zinc-200 dark:border-white/[0.08] flex items-center justify-between">
+                  <button
+                    onClick={() => onOpenLeadModal(s.title)}
+                    className="text-xs font-bold uppercase tracking-wider dark:text-white text-zinc-950 flex items-center gap-1.5 group-hover:translate-x-1 transition-transform cursor-pointer"
+                  >
+                    <span>Inquire This Service</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                  <a
+                    href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20interested%20in%20"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 flex items-center gap-1 hover:underline"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom Switcher */}
+        <div className="flex items-center justify-between pt-8 border-t border-zinc-200 dark:border-white/10">
+          <button
+            onClick={() => onSelectTab('about')}
+            className="text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white cursor-pointer"
+          >
+            &larr; About Us
+          </button>
+          <button
+            onClick={() => onSelectTab('contact')}
+            className="px-6 py-3 rounded-none dark:bg-white dark:text-black bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-sm active:scale-95"
+          >
+            <span>Contact us &rarr;</span>
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // =================================================================================
+  // PAGE 4: CONTACT US (SLIDE 7)
+  // =================================================================================
+  if (activeTab === 'contact') {
+    return (
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-12 animate-in fade-in duration-500">
+        {renderMobileTabs()}
+
+        {/* Section Header from Slide 7 */}
+        <div className="border-b border-zinc-200 dark:border-white/10 pb-8 space-y-3">
+          <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block">
+            SLIDE 7 &bull; DIRECT CONSULTATION
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-display uppercase tracking-tight dark:text-white text-zinc-950">
+            LET&apos;S MAKE YOUR NEXT MOMENT COUNT.
+          </h2>
+          <p className="text-lg sm:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
+            Ready to Build a Stronger Brand?
+          </p>
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+            Whether you want to increase visibility, generate quality enquiries, or create a more effective digital presence, MOM is ready to help you take the next step.
+          </p>
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+            Let&apos;s turn your marketing goals into a clear strategy and your ideas into meaningful opportunities.
+          </p>
+        </div>
+
+        {/* CTA & Brand Tagline from Slide 7 */}
+        <div className="p-6 rounded-none border border-zinc-900 dark:border-white/20 bg-zinc-100 dark:bg-zinc-900/60 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span className="text-xs font-mono uppercase tracking-widest text-[#185873] dark:text-sky-400 font-bold block mb-1">
+              CTA: Let&apos;s Talk About Your Growth
+            </span>
+            <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">
+              Moments of Marketing &mdash; Creating Moments. Building Brands. Driving Growth.
+            </span>
+          </div>
+          <a
+            href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20ready%20to%20talk%20about%20our%20marketing%20growth."
+            target="_blank"
+            rel="noreferrer"
+            className="px-6 py-2.5 rounded-none bg-[#185873] text-white text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-sm hover:opacity-90 active:scale-95 text-center"
+          >
+            WhatsApp Now &rarr;
+          </a>
+        </div>
+
+        {/* 2-Column Layout: Direct Details (Left) + Clean Form (Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Column: Direct Contact Info from Slide 7 */}
+          <div className="lg:col-span-5 space-y-4">
+            <span className="text-xs font-mono uppercase tracking-wider text-zinc-500 block mb-2 font-bold">
+              OFFICIAL CONTACT CHANNELS
+            </span>
+
+            {/* Phone */}
             <a
-              href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20discuss%20our%20marketing%20growth."
+              href="tel:+919226042236"
+              className="flex items-center gap-4 p-5 rounded-none border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
+            >
+              <div className="w-10 h-10 rounded-sm bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
+                <Phone className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Phone no.</span>
+                <span className="text-base font-bold font-display dark:text-white text-zinc-950">+91 9226042236</span>
+              </div>
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:Contact@momentsofmarketing.in"
+              className="flex items-center gap-4 p-5 rounded-none border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
+            >
+              <div className="w-10 h-10 rounded-sm bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
+                <Mail className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Email</span>
+                <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">Contact@momentsofmarketing.in</span>
+              </div>
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://instagram.com/momentsofmarketingofficial"
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-3.5 sm:py-4 rounded-full border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/10 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 active:scale-95 transition-all cursor-pointer shadow-sm"
+              className="flex items-center gap-4 p-5 rounded-none border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp Direct</span>
+              <div className="w-10 h-10 rounded-sm bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
+                <InstagramIcon className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Instagram</span>
+                <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">@momentsofmarketingofficial</span>
+              </div>
             </a>
           </div>
 
-          {/* 3 Strategic Key Metrics */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-10 mt-10 border-t border-zinc-200 dark:border-white/10">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center text-zinc-900 dark:text-white">
-                <Layers className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-lg font-bold font-display dark:text-white text-zinc-950 block leading-tight">10 Desks</span>
-                <span className="text-xs text-zinc-600 dark:text-zinc-400 font-light">Full-Funnel Capabilities</span>
-              </div>
-            </div>
+          {/* Right Column: Direct Consultation Message Form */}
+          <div className="lg:col-span-7">
+            <div className="pro-card p-7 sm:p-9 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm">
+              <h3 className="text-xl font-bold font-display dark:text-white text-zinc-950 mb-1">
+                Send a Direct Inquiry
+              </h3>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-6 font-light">
+                Fill this form to instantly connect with our team on WhatsApp &amp; Email.
+              </p>
 
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center text-zinc-900 dark:text-white">
-                <Target className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-lg font-bold font-display dark:text-white text-zinc-950 block leading-tight">3 Pillars</span>
-                <span className="text-xs text-zinc-600 dark:text-zinc-400 font-light">Visibility, Leads &amp; Growth</span>
-              </div>
-            </div>
+              {formSubmitted ? (
+                <div className="p-6 rounded-none bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-center space-y-2">
+                  <CheckCircle2 className="w-8 h-8 mx-auto" />
+                  <p className="font-bold text-sm">Thank You! Your inquiry is being directed to WhatsApp.</p>
+                  <p className="text-xs text-zinc-600 dark:text-zinc-300">Our representative will respond to you promptly.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-1">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.fullName}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                        placeholder="Amol Khodre"
+                        className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                      />
+                    </div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center text-zinc-900 dark:text-white">
-                <Compass className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-lg font-bold font-display dark:text-white text-zinc-950 block leading-tight">5-Step Process</span>
-                <span className="text-xs text-zinc-600 dark:text-zinc-400 font-light">From Discovery to Optimization</span>
-              </div>
+                    <div>
+                      <label className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-1">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+91 9876543210"
+                        className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-1">
+                        Official Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="name@company.com"
+                        className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-1">
+                        Company Name
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        placeholder="Company / Brand"
+                        className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-1">
+                      Service of Interest
+                    </label>
+                    <select
+                      value={formData.serviceInterest}
+                      onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                    >
+                      <option value="Digital Marketing">01. Digital Marketing</option>
+                      <option value="Social Media Management">02. Social Media Management</option>
+                      <option value="Lead Generation">03. Lead Generation</option>
+                      <option value="Branding & Creative Design">04. Branding & Creative Design</option>
+                      <option value="Content Creation & Video Production">05. Content Creation & Video Production</option>
+                      <option value="Website Design & Development">06. Website Design & Development</option>
+                      <option value="Performance Marketing & Paid Advertising">07. Performance Marketing & Paid Advertising</option>
+                      <option value="Email & WhatsApp Marketing">08. Email & WhatsApp Marketing</option>
+                      <option value="Influencer Marketing & Brand Activations">09. Influencer Marketing & Brand Activations</option>
+                      <option value="Marketing Strategy & Consulting">10. Marketing Strategy & Consulting</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-1">
+                      Brief Message
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Tell us about your brand goals and what you want to achieve..."
+                      className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full py-3.5 rounded-none bg-[#185873] text-white text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md hover:opacity-90 active:scale-95 transition-all cursor-pointer"
+                  >
+                    Send Inquiry to WhatsApp &rarr;
+                  </button>
+                </form>
+              )}
             </div>
           </div>
 
         </div>
-      </section>
 
-      {/* Slide 6 of PPT: The 10 Desks */}
-      <ServicesGrid onSelectService={(service) => onOpenLeadModal(service)} />
+        {/* Bottom Switcher */}
+        <div className="flex items-center justify-between pt-8 border-t border-zinc-200 dark:border-white/10">
+          <button
+            onClick={() => onSelectTab('services')}
+            className="text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white cursor-pointer"
+          >
+            &larr; Brands and services
+          </button>
+          <button
+            onClick={() => onSelectTab('home')}
+            className="text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white cursor-pointer"
+          >
+            Back to Home &rarr;
+          </button>
+        </div>
+      </div>
+    );
+  }
 
-      {/* Slide 5 of PPT: Three Pillars of Growth */}
-      <ThreePillars onSelectService={(service) => onOpenLeadModal(service)} />
-
-      {/* Slide 5 of PPT: Why Choose MOM? */}
-      <WhyChooseUs onOpenLeadModal={() => onOpenLeadModal()} />
-
-      {/* Slide 5 of PPT: Our 5-Step Approach */}
-      <OurApproach onOpenLeadModal={() => onOpenLeadModal()} />
-
-      {/* Slide 4 of PPT: Vision, Mission & Core Values */}
-      <VisionMissionValues />
-
-      {/* Slide 7 of PPT: Direct Contact & Inquiry Section */}
-      <ContactSection preselectedService={selectedService} />
-    </div>
-  );
+  return null;
 }
