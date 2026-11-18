@@ -130,7 +130,14 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               </p>
             </div>
 
-            <div className="pb-2">
+            <div className="flex items-center gap-3 pb-2">
+              <div className="flex items-end gap-1 h-6 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 shadow-sm" title="Live Sonic Frequency">
+                <span className="w-1 bg-cyan-400 rounded-full animate-pulse h-3" />
+                <span className="w-1 bg-cyan-400 rounded-full animate-bounce h-5" />
+                <span className="w-1 bg-cyan-400 rounded-full animate-pulse h-2" />
+                <span className="w-1 bg-cyan-400 rounded-full animate-bounce h-6" />
+                <span className="w-1 bg-cyan-400 rounded-full animate-pulse h-4" />
+              </div>
               <span className="font-serif italic text-base sm:text-lg dark:text-zinc-400 text-zinc-600">
                 analog warmth &bull; modern pop culture
               </span>

@@ -235,20 +235,32 @@ export default function DualPortalGateway({
 
         </div>
 
-        {/* IN THE PRESS & CULTURE */}
-        <div className="py-10 border-b dark:border-white/[0.08] border-zinc-200">
+        {/* IN THE PRESS & CULTURE: Infinite Animated Marquee */}
+        <div className="py-10 border-b dark:border-white/[0.08] border-zinc-200 overflow-hidden">
           <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.25em] uppercase dark:text-zinc-500 text-zinc-400 block mb-6">
             IN THE PRESS &amp; CULTURE
           </span>
-          <div className="flex flex-wrap items-center justify-between gap-6 sm:gap-10 opacity-70 dark:opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-            <span className="text-xl sm:text-2xl font-black font-display tracking-tighter">billboard</span>
-            <span className="text-lg sm:text-xl font-serif font-bold italic tracking-wide">Rolling Stone</span>
-            <span className="text-lg sm:text-xl font-display font-light tracking-[0.2em] uppercase">GRAZIA</span>
-            <span className="text-xl sm:text-2xl font-serif font-bold">Forbes</span>
-            <span className="text-lg sm:text-xl font-serif font-normal tracking-[0.25em]">ELLE</span>
-            <span className="text-lg sm:text-xl font-black font-display tracking-tight">GQ</span>
-            <span className="text-base sm:text-lg font-bold font-sans tracking-wide">Spotify</span>
-            <span className="text-base sm:text-lg font-bold font-sans tracking-tight">Google</span>
+          <div className="relative w-full overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r dark:from-black from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l dark:from-black from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex w-max animate-marquee whitespace-nowrap gap-12 sm:gap-20 items-center opacity-70 hover:opacity-100 transition-opacity duration-300">
+              <span className="text-xl sm:text-2xl font-black font-display tracking-tighter">billboard</span>
+              <span className="text-lg sm:text-xl font-serif font-bold italic tracking-wide">Rolling Stone</span>
+              <span className="text-lg sm:text-xl font-display font-light tracking-[0.2em] uppercase">GRAZIA</span>
+              <span className="text-xl sm:text-2xl font-serif font-bold">Forbes</span>
+              <span className="text-lg sm:text-xl font-serif font-normal tracking-[0.25em]">ELLE</span>
+              <span className="text-lg sm:text-xl font-black font-display tracking-tight">GQ</span>
+              <span className="text-base sm:text-lg font-bold font-sans tracking-wide">Spotify</span>
+              {/* Duplicate track for seamless infinite scroll */}
+              <span className="text-xl sm:text-2xl font-black font-display tracking-tighter">billboard</span>
+              <span className="text-lg sm:text-xl font-serif font-bold italic tracking-wide">Rolling Stone</span>
+              <span className="text-lg sm:text-xl font-display font-light tracking-[0.2em] uppercase">GRAZIA</span>
+              <span className="text-xl sm:text-2xl font-serif font-bold">Forbes</span>
+              <span className="text-lg sm:text-xl font-serif font-normal tracking-[0.25em]">ELLE</span>
+              <span className="text-lg sm:text-xl font-black font-display tracking-tight">GQ</span>
+              <span className="text-base sm:text-lg font-bold font-sans tracking-wide">Spotify</span>
+            </div>
           </div>
         </div>
 
