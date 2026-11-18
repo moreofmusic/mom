@@ -97,10 +97,10 @@ export default function Navbar({
             )}
 
             {onSelectEntity && (
-              <div className="flex items-center gap-1 p-1 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm">
+              <div className="flex items-center gap-1 p-1 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm flex-nowrap whitespace-nowrap">
                 <button
                   onClick={() => onSelectEntity('marketing')}
-                  className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
+                  className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap ${
                     activeEntity === 'marketing'
                       ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
                       : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
@@ -110,7 +110,7 @@ export default function Navbar({
                 </button>
                 <button
                   onClick={() => onSelectEntity('music')}
-                  className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
+                  className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap ${
                     activeEntity === 'music'
                       ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
                       : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'

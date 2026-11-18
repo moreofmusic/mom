@@ -110,7 +110,7 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
         {/* Header & Filter Tabs: Represent Mgmt Scale */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
+        <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-8 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
           <div className="space-y-4 max-w-2xl">
             <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display">
               The ten <span className="font-serif italic font-normal dark:text-white text-zinc-950">desks.</span>
@@ -120,26 +120,28 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
             </p>
           </div>
 
-          {/* Minimalist Filter Tabs: Clickable buttons with outlines */}
-          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm">
-            {[
-              { id: 'all', label: 'All 10 Desks' },
-              { id: 'growth', label: 'Growth & Ads' },
-              { id: 'creative', label: 'Creative & Video' },
-              { id: 'digital', label: 'Digital & Tech' },
-            ].map((t) => (
-              <button
-                key={t.id}
-                onClick={() => setFilter(t.id as any)}
-                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
-                  filter === t.id
-                    ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
-                    : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
-                }`}
-              >
-                {t.label}
-              </button>
-            ))}
+          {/* Minimalist Filter Tabs: Pristine Single-Row Pill that NEVER wraps or distorts */}
+          <div className="flex-shrink-0 w-full xl:w-auto overflow-hidden">
+            <div className="flex items-center gap-1.5 sm:gap-2 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex-nowrap w-fit max-w-full">
+              {[
+                { id: 'all', label: 'All 10 Desks' },
+                { id: 'growth', label: 'Growth & Ads' },
+                { id: 'creative', label: 'Creative & Video' },
+                { id: 'digital', label: 'Digital & Tech' },
+              ].map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setFilter(t.id as any)}
+                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap flex-shrink-0 ${
+                    filter === t.id
+                      ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
+                      : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
+                  }`}
+                >
+                  {t.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 

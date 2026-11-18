@@ -32,10 +32,10 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
             </p>
 
             {/* Minimalist Switcher with Clickable Outlined Pill */}
-            <div className="flex items-center gap-2 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md w-fit shadow-sm">
+            <div className="flex items-center gap-1.5 sm:gap-2 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md w-fit max-w-full overflow-x-auto whitespace-nowrap flex-nowrap shadow-sm [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <button
                 onClick={() => setActive('marketing')}
-                className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap flex-shrink-0 ${
                   active === 'marketing'
                     ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
                     : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
@@ -45,7 +45,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
               </button>
               <button
                 onClick={() => setActive('music')}
-                className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap flex-shrink-0 ${
                   active === 'music'
                     ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
                     : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
