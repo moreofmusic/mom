@@ -87,50 +87,50 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
         </div>
 
         {/* THE 2 PROMINENT OPTIONS (CARDS) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-stretch">
           
           {/* OPTION 1: MOM - More of Music */}
           <div
             onClick={() => onSelectEntity('music')}
-            className="group relative rounded-3xl overflow-hidden border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-2xl flex flex-col justify-between aspect-[16/12] sm:aspect-[16/11] bg-zinc-950 active:scale-[0.98]"
+            className="group relative rounded-3xl overflow-hidden border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-2xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] bg-zinc-950 active:scale-[0.98]"
           >
-            {/* Background Photography: Analog Audio Recording Studio Console */}
+            {/* Background Photography: High-End Acoustic Audio Studio Console */}
             <img
-              src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop"
-              alt="More of Music Recording Studio Console"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600&auto=format&fit=crop"
+              alt="More of Music Audio Recording Studio Console"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
-            {/* Dark Scrim */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30 group-hover:via-black/45 transition-all duration-500" />
+            {/* Dark Scrim - Smooth fade for 100% text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 via-black/40 to-black/25 group-hover:via-black/75 transition-all duration-500" />
 
             {/* Top Bar inside Card */}
-            <div className="relative z-10 p-6 sm:p-8 flex items-start justify-between">
+            <div className="relative z-10 p-6 sm:p-8 lg:p-9 flex items-start justify-between">
               <div className="flex items-center gap-2.5">
                 <img
                   src="/mom-logo-transparent.png"
                   alt="MOM Logo"
-                  className="h-9 w-auto object-contain"
+                  className="h-9 sm:h-10 w-auto object-contain"
                 />
                 {/* Non-clickable Chip: NO OUTLINE */}
-                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-1.5">
+                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-1.5 shadow-sm">
                   <Music className="w-3.5 h-3.5 text-white" />
                   <span>STUDIO &bull; SOUND</span>
                 </span>
               </div>
 
-              <div className="w-11 h-11 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300 shadow-lg">
+              <div className="w-11 sm:w-12 h-11 sm:h-12 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black group-hover:border-white group-hover:scale-105 transition-all duration-300 shadow-xl">
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </div>
 
             {/* Bottom Content */}
-            <div className="relative z-10 p-6 sm:p-8 space-y-3">
-              <span className="text-xs font-mono tracking-widest uppercase text-zinc-300 font-semibold block">
+            <div className="relative z-10 p-6 sm:p-8 lg:p-9 space-y-3.5">
+              <span className="text-[11px] sm:text-xs font-mono tracking-[0.2em] uppercase text-zinc-300 font-semibold block">
                 Sonic Branding &bull; Studio Production &bull; Sync Licensing
               </span>
 
-              <h2 className="text-3xl sm:text-5xl font-extrabold uppercase font-display text-white tracking-tight group-hover:text-zinc-100 transition-colors">
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold uppercase font-display text-white tracking-tight leading-[1.08] group-hover:text-zinc-100 transition-colors">
                 MOM &mdash; More of Music
               </h2>
 
@@ -138,15 +138,14 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                 Sound that defines modern culture. Bespoke sonic logos, commercial scoring, sync licensing, artist management, and high-fidelity studio recording.
               </p>
 
-              {/* Action Button: Clickable with Crisp Outline */}
-              <div className="pt-3">
-                <button
-                  type="button"
-                  className="w-full py-4 rounded-xl border border-white/30 text-white bg-black/70 group-hover:bg-white group-hover:text-black group-hover:border-white text-xs sm:text-sm font-bold tracking-[0.16em] uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-xl"
+              {/* Action Button: Clickable with Crisp Outline & Full Breathing Room */}
+              <div className="pt-2">
+                <div
+                  className="w-full py-4 px-6 rounded-2xl border border-white/30 text-white bg-black/70 backdrop-blur-md group-hover:bg-white group-hover:text-black group-hover:border-white text-xs sm:text-sm font-bold tracking-[0.16em] uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-xl"
                 >
                   <span>ENTER MORE OF MUSIC</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
               </div>
             </div>
           </div>
@@ -154,45 +153,45 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           {/* OPTION 2: MOM - Moments of Marketing */}
           <div
             onClick={() => onSelectEntity('marketing')}
-            className="group relative rounded-3xl overflow-hidden border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-2xl flex flex-col justify-between aspect-[16/12] sm:aspect-[16/11] bg-zinc-950 active:scale-[0.98]"
+            className="group relative rounded-3xl overflow-hidden border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-2xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] bg-zinc-950 active:scale-[0.98]"
           >
             {/* Background Photography: High-Fashion Brand Campaign */}
             <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1600&auto=format&fit=crop"
               alt="Moments of Marketing Brand Campaign"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
-            {/* Dark Scrim */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30 group-hover:via-black/45 transition-all duration-500" />
+            {/* Dark Scrim - Smooth fade for 100% text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 via-black/40 to-black/25 group-hover:via-black/75 transition-all duration-500" />
 
             {/* Top Bar inside Card */}
-            <div className="relative z-10 p-6 sm:p-8 flex items-start justify-between">
+            <div className="relative z-10 p-6 sm:p-8 lg:p-9 flex items-start justify-between">
               <div className="flex items-center gap-2.5">
                 <img
                   src="/mom-logo-transparent.png"
                   alt="MOM Logo"
-                  className="h-9 w-auto object-contain"
+                  className="h-9 sm:h-10 w-auto object-contain"
                 />
                 {/* Non-clickable Chip: NO OUTLINE */}
-                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-1.5">
+                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-1.5 shadow-sm">
                   <TrendingUp className="w-3.5 h-3.5 text-white" />
                   <span>AGENCY &bull; GROWTH</span>
                 </span>
               </div>
 
-              <div className="w-11 h-11 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300 shadow-lg">
+              <div className="w-11 sm:w-12 h-11 sm:h-12 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black group-hover:border-white group-hover:scale-105 transition-all duration-300 shadow-xl">
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </div>
 
             {/* Bottom Content */}
-            <div className="relative z-10 p-6 sm:p-8 space-y-3">
-              <span className="text-xs font-mono tracking-widest uppercase text-emerald-400 font-semibold block">
-                Creating Moments. Building Brands. Driving Growth.
+            <div className="relative z-10 p-6 sm:p-8 lg:p-9 space-y-3.5">
+              <span className="text-[11px] sm:text-xs font-mono tracking-[0.2em] uppercase text-emerald-400 font-semibold block">
+                Creating Moments &bull; Building Brands &bull; Driving Growth
               </span>
 
-              <h2 className="text-3xl sm:text-5xl font-extrabold uppercase font-display text-white tracking-tight group-hover:text-zinc-100 transition-colors">
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold uppercase font-display text-white tracking-tight leading-[1.08] group-hover:text-zinc-100 transition-colors">
                 MOM &mdash; Moments of Marketing
               </h2>
 
@@ -200,15 +199,14 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                 Full-funnel brand growth partner. 10 specialized desks, digital marketing, social media, branding, video production, and high-intent lead generation.
               </p>
 
-              {/* Action Button: Clickable with Crisp Outline */}
-              <div className="pt-3">
-                <button
-                  type="button"
-                  className="w-full py-4 rounded-xl border border-white/30 text-white bg-black/70 group-hover:bg-white group-hover:text-black group-hover:border-white text-xs sm:text-sm font-bold tracking-[0.16em] uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-xl"
+              {/* Action Button: Clickable with Crisp Outline & Full Breathing Room */}
+              <div className="pt-2">
+                <div
+                  className="w-full py-4 px-6 rounded-2xl border border-white/30 text-white bg-black/70 backdrop-blur-md group-hover:bg-white group-hover:text-black group-hover:border-white text-xs sm:text-sm font-bold tracking-[0.16em] uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-xl"
                 >
                   <span>ENTER MOMENTS OF MARKETING</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
               </div>
             </div>
           </div>
@@ -298,3 +296,4 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
     </div>
   );
 }
+

@@ -51,7 +51,7 @@ export default function DualPortalGateway({
           {/* CARD 1: MOM - Moments of Marketing */}
           <div
             onClick={() => onSelectEntity('marketing')}
-            className={`group relative rounded-3xl overflow-hidden border transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between aspect-[16/11] sm:aspect-[16/10] bg-zinc-950 active:scale-[0.98] ${
+            className={`group relative rounded-3xl overflow-hidden border transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] bg-zinc-950 active:scale-[0.98] ${
               activeEntity === 'marketing'
                 ? 'border-white ring-2 ring-white/20 shadow-2xl'
                 : 'border-zinc-800 hover:border-zinc-500 dark:border-white/10 dark:hover:border-white/60'
@@ -59,16 +59,16 @@ export default function DualPortalGateway({
           >
             {/* Background Photography: High-Fashion Brand Campaign */}
             <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1600&auto=format&fit=crop"
               alt="Moments of Marketing Brand Campaign"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
             {/* Gradient Scrim */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30 group-hover:via-black/45 transition-all duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 via-black/45 to-black/25 group-hover:via-black/75 transition-all duration-500" />
 
             {/* Top Bar inside Card */}
-            <div className="relative z-10 p-6 sm:p-8 flex items-start justify-between">
+            <div className="relative z-10 p-6 sm:p-8 lg:p-9 flex items-start justify-between">
               <div className="flex items-center gap-2.5">
                 <img
                   src="/mom-logo-transparent.png"
@@ -90,12 +90,12 @@ export default function DualPortalGateway({
             </div>
 
             {/* Bottom Content */}
-            <div className="relative z-10 p-6 sm:p-8 space-y-3">
+            <div className="relative z-10 p-6 sm:p-8 lg:p-9 space-y-3.5">
               <span className="text-xs font-mono tracking-widest uppercase text-emerald-400 font-semibold block">
                 Full-Funnel Marketing &amp; Brand Identity
               </span>
 
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase font-display text-white tracking-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold uppercase font-display text-white tracking-tight leading-[1.08]">
                 MOM &mdash; Moments of Marketing
               </h2>
 
@@ -104,10 +104,10 @@ export default function DualPortalGateway({
               </p>
 
               {/* Action Button: Clickable with Crisp Outline */}
-              <div className="pt-3">
+              <div className="pt-2">
                 <button
                   type="button"
-                  className={`w-full py-3.5 rounded-xl border text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
+                  className={`w-full py-4 px-6 rounded-2xl border text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
                     activeEntity === 'marketing'
                       ? 'bg-white text-black border-white'
                       : 'border-white/30 text-white bg-black/60 group-hover:bg-white group-hover:text-black group-hover:border-white'
@@ -123,24 +123,24 @@ export default function DualPortalGateway({
           {/* CARD 2: MOM - More of Music */}
           <div
             onClick={() => onSelectEntity('music')}
-            className={`group relative rounded-3xl overflow-hidden border transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between aspect-[16/11] sm:aspect-[16/10] bg-zinc-950 active:scale-[0.98] ${
+            className={`group relative rounded-3xl overflow-hidden border transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] bg-zinc-950 active:scale-[0.98] ${
               activeEntity === 'music'
                 ? 'border-white ring-2 ring-white/20 shadow-2xl'
                 : 'border-zinc-800 hover:border-zinc-500 dark:border-white/10 dark:hover:border-white/60'
             }`}
           >
-            {/* Background Photography: Analog Audio Recording Studio Console */}
+            {/* Background Photography: High-End Acoustic Audio Studio Console */}
             <img
-              src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop"
-              alt="More of Music Recording Studio Console"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600&auto=format&fit=crop"
+              alt="More of Music Audio Recording Studio Console"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
             {/* Gradient Scrim */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30 group-hover:via-black/45 transition-all duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 via-black/45 to-black/25 group-hover:via-black/75 transition-all duration-500" />
 
             {/* Top Bar inside Card */}
-            <div className="relative z-10 p-6 sm:p-8 flex items-start justify-between">
+            <div className="relative z-10 p-6 sm:p-8 lg:p-9 flex items-start justify-between">
               <div className="flex items-center gap-2.5">
                 <img
                   src="/mom-logo-transparent.png"
@@ -162,12 +162,12 @@ export default function DualPortalGateway({
             </div>
 
             {/* Bottom Content */}
-            <div className="relative z-10 p-6 sm:p-8 space-y-3">
+            <div className="relative z-10 p-6 sm:p-8 lg:p-9 space-y-3.5">
               <span className="text-xs font-mono tracking-widest uppercase text-zinc-300 font-semibold block">
                 Sound That Defines Modern Culture &amp; Iconic Brands
               </span>
 
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase font-display text-white tracking-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold uppercase font-display text-white tracking-tight leading-[1.08]">
                 MOM &mdash; More of Music
               </h2>
 
@@ -176,10 +176,10 @@ export default function DualPortalGateway({
               </p>
 
               {/* Action Button: Clickable with Crisp Outline */}
-              <div className="pt-3">
+              <div className="pt-2">
                 <button
                   type="button"
-                  className={`w-full py-3.5 rounded-xl border text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
+                  className={`w-full py-4 px-6 rounded-2xl border text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
                     activeEntity === 'music'
                       ? 'bg-white text-black border-white'
                       : 'border-white/30 text-white bg-black/60 group-hover:bg-white group-hover:text-black group-hover:border-white'
