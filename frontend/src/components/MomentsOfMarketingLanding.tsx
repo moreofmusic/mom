@@ -51,7 +51,7 @@ export default function MomentsOfMarketingLanding({
     { id: 'contact', label: 'Contact us' },
   ];
 
-  // Contact form state for Tab 4
+  // Contact form state
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -87,7 +87,7 @@ export default function MomentsOfMarketingLanding({
     setFormSubmitted(true);
   };
 
-  // Sleek Reusable Mobile Tab Switcher
+  // Reusable Mobile Sticky Tab Bar (Smooth, Touch-Friendly, Responsive)
   const renderMobileTabs = () => (
     <div className="lg:hidden flex items-center justify-center gap-1.5 p-1 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex-nowrap mb-8 w-fit mx-auto max-w-full">
       {marketingTabs.map((tab) => {
@@ -110,11 +110,11 @@ export default function MomentsOfMarketingLanding({
   );
 
   // =================================================================================
-  // PAGE 1: HOME (SLIDE 3)
+  // PAGE 1: HOME
   // =================================================================================
   if (activeTab === 'home') {
     return (
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 animate-in fade-in duration-500">
+      <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 py-8 sm:py-16 animate-in fade-in duration-500 select-none">
         {renderMobileTabs()}
 
         <div className="relative">
@@ -128,17 +128,17 @@ export default function MomentsOfMarketingLanding({
             </span>
           </div>
 
-          {/* Main Headline from Slide 3 */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold font-display text-zinc-950 dark:text-white tracking-tight leading-[1.08] mb-10 max-w-4xl">
+          {/* Main Headline */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-display text-zinc-950 dark:text-white tracking-tight leading-[1.08] mb-8 sm:mb-12 max-w-4xl">
             More Than Marketing.{' '}
             <span className="font-serif italic font-normal dark:text-zinc-200 text-zinc-900 block sm:inline">
               A Partner in Your Growth
             </span>
           </h1>
 
-          {/* Three Core Paragraphs from Slide 3 as 3 Styled Editorial Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-10">
-            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
+          {/* Three Core Paragraphs as 3 Ultra-Premium Editorial Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-8 sm:my-12">
+            <div className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
               <div className="space-y-4">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block">
                   01 &bull; CONNECTION
@@ -149,7 +149,7 @@ export default function MomentsOfMarketingLanding({
               </div>
             </div>
 
-            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
+            <div className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
               <div className="space-y-4">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-600 dark:text-cyan-400 font-bold block">
                   02 &bull; IMPACT
@@ -160,7 +160,7 @@ export default function MomentsOfMarketingLanding({
               </div>
             </div>
 
-            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
+            <div className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
               <div className="space-y-4">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-[#185873] dark:text-sky-400 font-bold block">
                   03 &bull; CONFIDENCE
@@ -173,7 +173,7 @@ export default function MomentsOfMarketingLanding({
           </div>
 
           {/* Clean Action Navigation to other tabs */}
-          <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-zinc-200 dark:border-white/10">
+          <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 pt-6 border-t border-zinc-200 dark:border-white/10">
             <button
               onClick={() => onSelectTab('services')}
               className="px-7 py-3.5 rounded-full dark:bg-white dark:text-black bg-zinc-950 text-white text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 hover:opacity-90 active:scale-95 shadow-md transition-all cursor-pointer"
@@ -204,7 +204,7 @@ export default function MomentsOfMarketingLanding({
   }
 
   // =================================================================================
-  // PAGE 2: ABOUT US (EXACT TEXT FROM USER'S PROMPT & SLIDES 4 & 5)
+  // PAGE 2: ABOUT US (EXACT CONTENT FROM USER'S PROMPT)
   // =================================================================================
   if (activeTab === 'about') {
     const values = [
@@ -319,10 +319,10 @@ export default function MomentsOfMarketingLanding({
     ];
 
     return (
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-16 sm:space-y-20 animate-in fade-in duration-500">
+      <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-16 sm:space-y-20 animate-in fade-in duration-500">
         {renderMobileTabs()}
 
-        {/* ---------------- 1. VISION & MISSION (SLIDE 4) ---------------- */}
+        {/* ---------------- 1. VISION & MISSION ---------------- */}
         <section className="space-y-6">
           <div className="border-b border-zinc-200 dark:border-white/10 pb-4">
             <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block mb-1">
@@ -335,7 +335,7 @@ export default function MomentsOfMarketingLanding({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Vision */}
-            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 space-y-3 shadow-sm">
+            <div className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 space-y-3 shadow-sm">
               <span className="text-xs font-mono tracking-widest uppercase text-emerald-500 font-bold block">
                 Vision:
               </span>
@@ -345,7 +345,7 @@ export default function MomentsOfMarketingLanding({
             </div>
 
             {/* Mission */}
-            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 space-y-3 shadow-sm">
+            <div className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 space-y-3 shadow-sm">
               <span className="text-xs font-mono tracking-widest uppercase text-cyan-500 font-bold block">
                 Mission:
               </span>
@@ -356,7 +356,7 @@ export default function MomentsOfMarketingLanding({
           </div>
         </section>
 
-        {/* ---------------- 2. OUR VALUES (SLIDE 4) ---------------- */}
+        {/* ---------------- 2. OUR VALUES ---------------- */}
         <section className="space-y-6">
           <div className="border-b border-zinc-200 dark:border-white/10 pb-4">
             <h3 className="text-2xl sm:text-3xl font-bold font-display dark:text-white text-zinc-950">
@@ -389,7 +389,7 @@ export default function MomentsOfMarketingLanding({
           </div>
         </section>
 
-        {/* ---------------- 3. OUR THREE PILLARS OF GROWTH (EXACT USER PROMPT) ---------------- */}
+        {/* ---------------- 3. OUR THREE PILLARS OF GROWTH ---------------- */}
         <section className="space-y-6">
           <div className="border-b border-zinc-200 dark:border-white/10 pb-4">
             <h3 className="text-2xl sm:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
@@ -403,7 +403,7 @@ export default function MomentsOfMarketingLanding({
               return (
                 <div
                   key={p.number}
-                  className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                  className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
@@ -427,7 +427,7 @@ export default function MomentsOfMarketingLanding({
           </div>
         </section>
 
-        {/* ---------------- 4. WHY CHOOSE MOM? (EXACT USER PROMPT) ---------------- */}
+        {/* ---------------- 4. WHY CHOOSE MOM? ---------------- */}
         <section className="space-y-6">
           <div className="border-b border-zinc-200 dark:border-white/10 pb-4 space-y-1">
             <h3 className="text-2xl sm:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
@@ -463,7 +463,7 @@ export default function MomentsOfMarketingLanding({
           </div>
         </section>
 
-        {/* ---------------- 5. OUR APPROACH (EXACT USER PROMPT & UPLOADED IMAGE) ---------------- */}
+        {/* ---------------- 5. OUR APPROACH ---------------- */}
         <section className="space-y-6">
           <div className="border-b border-zinc-200 dark:border-white/10 pb-4 space-y-1">
             <h3 className="text-2xl sm:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
@@ -522,7 +522,7 @@ export default function MomentsOfMarketingLanding({
   }
 
   // =================================================================================
-  // PAGE 3: BRANDS AND SERVICES (SLIDE 6)
+  // PAGE 3: BRANDS AND SERVICES (EXACT CONTENT FROM USER'S PROMPT)
   // =================================================================================
   if (activeTab === 'services') {
     const services = [
@@ -541,7 +541,7 @@ export default function MomentsOfMarketingLanding({
         tagline: 'Turn followers into a community around your brand.',
         description:
           'Build a consistent, engaging social presence with creative content, strategic planning, and audience-focused communication that keeps your brand relevant and memorable.',
-        tags: ['Instagram', 'Facebook', 'Linkedin', 'Content Calendars', 'Reels', 'Creative Posts', 'Community Management'],
+        tags: ['Instagram', 'Facebook', 'LinkedIn', 'Content Calendars', 'Reels', 'Creative Posts', 'Community Management'],
         icon: Share2,
       },
       {
@@ -612,20 +612,20 @@ export default function MomentsOfMarketingLanding({
         title: 'Marketing Strategy & Consulting',
         tagline: 'A clear strategy for every stage of growth.',
         description:
-          'Develop focused, actionable marketing strategies that connect your brand with the right audience, align with your goals, and support long-term business growth.',
-        tags: ['Growth Consulting', 'Go-to-Market Strategy', 'Brand Positioning', 'Market & Competitor Research', 'Full-Funnel Planning'],
+          'Make smarter marketing decisions with a focused roadmap aligned with your audience, business goals, budget, and competitive landscape.',
+        tags: ['Marketing Strategy', 'Competitor Analysis', 'Audience Research', 'Campaign Planning', 'Performance Reviews'],
         icon: Compass,
       },
     ];
 
     return (
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-12 animate-in fade-in duration-500">
+      <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-12 animate-in fade-in duration-500">
         {renderMobileTabs()}
 
-        {/* Section Header from Slide 6 */}
+        {/* Section Header */}
         <div className="border-b border-zinc-200 dark:border-white/10 pb-8 space-y-3">
           <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block">
-            SLIDE 6 &bull; COMPLETE CAPABILITIES
+            COMPLETE CAPABILITIES
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-display uppercase tracking-tight dark:text-white text-zinc-950">
             OUR SERVICES
@@ -638,14 +638,14 @@ export default function MomentsOfMarketingLanding({
           </p>
         </div>
 
-        {/* 10 Services Cards matching Slide 6 */}
+        {/* 10 Services Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {services.map((s) => {
             const Icon = s.icon;
             return (
               <div
                 key={s.number}
-                className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -685,7 +685,7 @@ export default function MomentsOfMarketingLanding({
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                   <a
-                    href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20interested%20in%20"
+                    href={`https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20interested%20in%20${encodeURIComponent(s.title)}`}
                     target="_blank"
                     rel="noreferrer"
                     className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 flex items-center gap-1 hover:underline"
@@ -719,17 +719,17 @@ export default function MomentsOfMarketingLanding({
   }
 
   // =================================================================================
-  // PAGE 4: CONTACT US (SLIDE 7)
+  // PAGE 4: CONTACT US (EXACT CONTENT FROM USER'S PROMPT)
   // =================================================================================
   if (activeTab === 'contact') {
     return (
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-12 animate-in fade-in duration-500">
+      <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-12 animate-in fade-in duration-500">
         {renderMobileTabs()}
 
-        {/* Section Header from Slide 7 */}
+        {/* Section Header */}
         <div className="border-b border-zinc-200 dark:border-white/10 pb-8 space-y-3">
           <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block">
-            SLIDE 7 &bull; DIRECT CONSULTATION
+            DIRECT CONSULTATION
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-display uppercase tracking-tight dark:text-white text-zinc-950">
             LET&apos;S MAKE YOUR NEXT MOMENT COUNT.
@@ -745,7 +745,7 @@ export default function MomentsOfMarketingLanding({
           </p>
         </div>
 
-        {/* CTA & Brand Tagline from Slide 7 */}
+        {/* CTA & Brand Tagline */}
         <div className="p-6 rounded-2xl border border-zinc-200 dark:border-white/15 bg-zinc-100/70 dark:bg-zinc-900/60 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block mb-1">
@@ -768,7 +768,7 @@ export default function MomentsOfMarketingLanding({
         {/* 2-Column Layout: Direct Details (Left) + Clean Form (Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Direct Contact Info from Slide 7 */}
+          {/* Left Column: Direct Contact Info */}
           <div className="lg:col-span-5 space-y-4">
             <span className="text-xs font-mono uppercase tracking-wider text-zinc-500 block mb-2 font-bold">
               OFFICIAL CONTACT CHANNELS
@@ -790,7 +790,7 @@ export default function MomentsOfMarketingLanding({
 
             {/* Email */}
             <a
-              href="mailto:Contact@momentsofmarketing.in"
+              href="mailto:contact@momentsofmarketing.in"
               className="flex items-center gap-4 p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
             >
               <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
@@ -798,7 +798,7 @@ export default function MomentsOfMarketingLanding({
               </div>
               <div>
                 <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Email</span>
-                <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">Contact@momentsofmarketing.in</span>
+                <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">contact@momentsofmarketing.in</span>
               </div>
             </a>
 
@@ -821,7 +821,7 @@ export default function MomentsOfMarketingLanding({
 
           {/* Right Column: Direct Consultation Message Form */}
           <div className="lg:col-span-7">
-            <div className="pro-card p-7 sm:p-9 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm">
+            <div className="pro-card p-7 sm:p-9 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm">
               <h3 className="text-xl font-bold font-display dark:text-white text-zinc-950 mb-1">
                 Send a Direct Inquiry
               </h3>
@@ -830,7 +830,7 @@ export default function MomentsOfMarketingLanding({
               </p>
 
               {formSubmitted ? (
-                <div className="p-6 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-center space-y-2">
+                <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-center space-y-2">
                   <CheckCircle2 className="w-8 h-8 mx-auto" />
                   <p className="font-bold text-sm">Thank You! Your inquiry is being directed to WhatsApp.</p>
                   <p className="text-xs text-zinc-600 dark:text-zinc-300">Our representative will respond to you promptly.</p>
@@ -847,7 +847,7 @@ export default function MomentsOfMarketingLanding({
                         required
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        placeholder="Amol Khodre"
+                        placeholder="Your Name"
                         className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-zinc-950 dark:focus:border-white"
                       />
                     </div>
