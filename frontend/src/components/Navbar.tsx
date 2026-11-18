@@ -59,27 +59,27 @@ export default function Navbar({
           : 'dark:bg-black/60 bg-white/60 backdrop-blur-sm dark:border-white/[0.06] border-zinc-200/60 py-4 sm:py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
-        <div className="flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14">
+        <div className="flex items-center justify-between gap-3">
           
           {/* Brand Logo & Dual Division Wordmarks */}
           <button
             onClick={() => onBackToGateway ? onBackToGateway() : undefined}
-            className="flex items-center gap-2.5 sm:gap-4 group py-1 flex-shrink-0 cursor-pointer text-left"
+            className="flex items-center gap-2 sm:gap-3.5 group py-1 flex-shrink min-w-0 cursor-pointer text-left"
             title="Return to Portals Selection"
           >
             <img
               src="/mom-logo-transparent.png"
               alt="MOM Logo"
-              className={`h-12 sm:h-16 md:h-18 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
+              className={`h-9 sm:h-13 md:h-16 w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
                 theme === 'light' ? 'invert' : ''
               }`}
             />
-            <div className="flex flex-col justify-center leading-tight">
-              <span className="text-[11px] sm:text-sm md:text-[15px] font-black tracking-[0.14em] uppercase font-display dark:text-white text-zinc-950 group-hover:dark:text-zinc-200 transition-colors">
+            <div className="flex flex-col justify-center leading-tight min-w-0">
+              <span className="text-[11px] sm:text-sm md:text-[15px] font-black tracking-[0.12em] sm:tracking-[0.14em] uppercase font-display dark:text-white text-zinc-950 group-hover:dark:text-zinc-200 transition-colors whitespace-nowrap truncate">
                 More of Music
               </span>
-              <span className="text-[8px] sm:text-[10px] md:text-[11px] font-semibold tracking-[0.16em] uppercase font-mono dark:text-zinc-400 text-zinc-500 mt-0.5">
+              <span className="text-[8px] sm:text-[10px] md:text-[11px] font-semibold tracking-[0.14em] sm:tracking-[0.16em] uppercase font-mono dark:text-zinc-400 text-zinc-500 mt-0.5 whitespace-nowrap truncate">
                 Moments of Marketing
               </span>
             </div>
@@ -184,7 +184,7 @@ export default function Navbar({
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2 flex-shrink-0">
             <button
               onClick={toggleTheme}
               className="p-2 dark:text-zinc-400 text-zinc-700 cursor-pointer"

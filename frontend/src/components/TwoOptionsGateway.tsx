@@ -16,51 +16,51 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
     <div className="min-h-screen flex flex-col justify-between dark:bg-black bg-[#F8FAFC] dark:text-white text-zinc-900 transition-colors duration-300">
       
       {/* ----------------- TOP MINIMAL HEADER ----------------- */}
-      <header className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-6 sm:py-8 flex items-center justify-between border-b dark:border-white/[0.08] border-zinc-200">
+      <header className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 py-3.5 sm:py-6 flex items-center justify-between border-b dark:border-white/[0.08] border-zinc-200 gap-3">
         {/* Brand Logo & Dual Division Wordmarks */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex items-center gap-2.5 sm:gap-4 min-w-0 flex-shrink">
           <img
             src="/mom-logo-transparent.png"
             alt="MOM Logo"
-            className={`h-13 sm:h-18 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-105 ${
+            className={`h-9 sm:h-14 md:h-16 w-auto object-contain flex-shrink-0 transition-all duration-300 hover:scale-105 ${
               theme === 'light' ? 'invert' : ''
             }`}
           />
-          <div className="flex flex-col justify-center leading-tight">
-            <span className="text-xs sm:text-base md:text-lg font-black tracking-[0.14em] uppercase font-display dark:text-white text-zinc-950">
+          <div className="flex flex-col justify-center leading-tight min-w-0">
+            <span className="text-[11px] sm:text-base md:text-lg font-black tracking-[0.12em] sm:tracking-[0.14em] uppercase font-display dark:text-white text-zinc-950 whitespace-nowrap truncate">
               More of Music
             </span>
-            <span className="text-[9px] sm:text-xs md:text-[13px] font-semibold tracking-[0.18em] uppercase font-mono dark:text-zinc-400 text-zinc-500 mt-0.5">
+            <span className="text-[8px] sm:text-xs md:text-[13px] font-semibold tracking-[0.14em] sm:tracking-[0.18em] uppercase font-mono dark:text-zinc-400 text-zinc-500 mt-0.5 whitespace-nowrap truncate">
               Moments of Marketing
             </span>
           </div>
         </div>
 
         {/* Top Controls */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
           {/* WhatsApp Direct */}
           <a
             href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
             target="_blank"
             rel="noreferrer"
-            className="p-2 sm:p-2.5 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-emerald-400/60 dark:text-zinc-400 dark:hover:text-emerald-400 text-zinc-600 hover:border-emerald-500/60 hover:text-emerald-600 transition-all hover:scale-105 active:scale-95 shadow-sm"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-emerald-400/60 dark:text-zinc-400 dark:hover:text-emerald-400 text-zinc-600 hover:border-emerald-500/60 hover:text-emerald-600 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm flex-shrink-0"
             title="Chat on WhatsApp (+91 9226042236)"
             aria-label="WhatsApp"
           >
-            <MessageCircle className="w-4 h-4" />
+            <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </a>
 
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-zinc-300 dark:border-white/15 dark:text-zinc-400 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-sm"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-zinc-300 dark:border-white/15 dark:text-zinc-400 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-sm flex-shrink-0"
             aria-label="Toggle theme"
             title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme`}
           >
             {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-amber-300" />
+              <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-300" />
             ) : (
-              <Moon className="w-4 h-4 text-zinc-900" />
+              <Moon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-900" />
             )}
           </button>
         </div>
