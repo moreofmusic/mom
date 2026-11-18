@@ -54,96 +54,67 @@ export default function Navbar({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b select-none ${
         isScrolled
-          ? 'dark:bg-black/95 bg-white/95 backdrop-blur-md dark:border-white/[0.08] border-zinc-200 py-2.5 sm:py-3 shadow-sm'
-          : 'dark:bg-black/85 bg-white/90 backdrop-blur-md dark:border-white/[0.06] border-zinc-200/80 py-3 sm:py-4'
+          ? 'dark:bg-black/95 bg-white/95 backdrop-blur-md dark:border-white/[0.08] border-zinc-200 py-3 sm:py-3.5 shadow-sm'
+          : 'dark:bg-black/85 bg-white/90 backdrop-blur-md dark:border-white/[0.06] border-zinc-200/80 py-3.5 sm:py-4'
       }`}
     >
+      {/* Animated Ambient Shimmer Line at Bottom of Navbar */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1.5px] overflow-hidden pointer-events-none">
+        <div className="w-[200%] h-full bg-gradient-to-r from-transparent via-cyan-400/60 via-emerald-400/60 to-transparent animate-marquee-slow" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between gap-3 sm:gap-6">
           
-          {/* ================= LEFT BRAND BLOCK ================= */}
-          {activeEntity === 'marketing' ? (
-            /* EXACT MOMENTS OF MARKETING BRAND BLOCK FROM USER'S SLIDES */
-            <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
-              {onBackToGateway && (
-                <button
-                  onClick={onBackToGateway}
-                  className="px-2.5 py-1.5 rounded-md border border-zinc-300 dark:border-white/20 text-[10px] font-mono uppercase tracking-wider dark:text-zinc-300 text-zinc-700 hover:bg-zinc-100 dark:hover:bg-white/10 transition-all cursor-pointer shadow-sm active:scale-95"
-                  title="Return to initial 2-option selection screen"
-                >
-                  &larr; 2 OPTIONS
-                </button>
-              )}
-
-              <div
-                onClick={() => onSelectMarketingTab ? onSelectMarketingTab('home') : undefined}
-                className="flex flex-col items-start leading-none cursor-pointer group"
-                title="Moments of Marketing — Home"
-              >
-                {/* Solid Black Rectangle from Slides */}
-                <div className="bg-black text-white px-3 sm:px-4 py-1.5 rounded-none shadow-sm border border-black group-hover:border-zinc-700 transition-colors">
-                  <span className="text-xs sm:text-sm font-bold font-sans tracking-tight block text-center leading-[1.1]">
-                    Moments of<br />Marketing
-                  </span>
-                </div>
-                
-                {/* Tagline from Slides in two lines */}
-                <div className="text-[7.5px] sm:text-[8.5px] dark:text-zinc-400 text-zinc-700 font-sans tracking-tight mt-1 leading-tight text-left">
-                  <span>Creating Moments. Building Brands.</span><br />
-                  <span>Driving Growth.</span>
-                </div>
-              </div>
-            </div>
-          ) : (
-            /* MORE OF MUSIC BRAND BLOCK */
-            <div className="flex items-center gap-3">
-              {onBackToGateway && (
-                <button
-                  onClick={onBackToGateway}
-                  className="px-2.5 py-1.5 rounded-md border border-zinc-300 dark:border-white/20 text-[10px] font-mono uppercase tracking-wider dark:text-zinc-300 text-zinc-700 hover:bg-zinc-100 dark:hover:bg-white/10 transition-all cursor-pointer shadow-sm active:scale-95"
-                  title="Return to initial 2-option selection screen"
-                >
-                  &larr; 2 OPTIONS
-                </button>
-              )}
-
+          {/* ================= LEFT BRAND BLOCK (PREVIOUS SIGNATURE DESIGN) ================= */}
+          <div className="flex items-center gap-3 sm:gap-4 flex-shrink min-w-0">
+            {onBackToGateway && (
               <button
-                onClick={() => onBackToGateway ? onBackToGateway() : undefined}
-                className="flex items-center gap-2 sm:gap-3 group py-1 flex-shrink min-w-0 cursor-pointer text-left"
-                title="Return to Portals Selection"
+                onClick={onBackToGateway}
+                className="px-2.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-white text-[10px] font-mono uppercase tracking-wider dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950 transition-all active:scale-95 cursor-pointer shadow-sm whitespace-nowrap"
+                title="Return to initial 2-option selection screen"
               >
-                <img
-                  src="/mom-logo-transparent.png"
-                  alt="MOM Logo"
-                  className={`h-9 sm:h-12 w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
-                    theme === 'light' ? 'invert' : ''
-                  }`}
-                />
-                <FlipBrandWordmark size="md" />
+                &larr; 2 OPTIONS
               </button>
-            </div>
-          )}
+            )}
 
-          {/* ================= CENTER NAVIGATION ================= */}
+            <button
+              onClick={() => onBackToGateway ? onBackToGateway() : undefined}
+              className="flex items-center gap-2 sm:gap-3 group py-1 flex-shrink min-w-0 cursor-pointer text-left"
+              title="Return to Portals Selection"
+            >
+              <img
+                src="/mom-logo-transparent.png"
+                alt="MOM Logo"
+                className={`h-9 sm:h-12 md:h-14 w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
+                  theme === 'light' ? 'invert' : ''
+                }`}
+              />
+              <FlipBrandWordmark size="md" />
+            </button>
+          </div>
+
+          {/* ================= CENTER NAVIGATION (USER'S BUTTONS IN OUR SIGNATURE SLEEK CAPSULE) ================= */}
           {activeEntity === 'marketing' ? (
-            /* THE 4 RECTANGULAR TABS EXACTLY MATCHING USER'S SLIDES */
-            <nav className="hidden md:flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex-nowrap">
-              {marketingTabs.map((tab) => {
-                const isActive = marketingTab === tab.id;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => onSelectMarketingTab ? onSelectMarketingTab(tab.id) : undefined}
-                    className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-none text-xs sm:text-sm font-semibold tracking-normal transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 shadow-sm ${
-                      isActive
-                        ? 'bg-[#185873] text-white border border-[#185873]'
-                        : 'bg-white dark:bg-zinc-900 text-zinc-950 dark:text-zinc-100 border border-zinc-900 dark:border-white/40 hover:bg-zinc-100 dark:hover:bg-white/10'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                );
-              })}
+            <nav className="hidden lg:flex items-center">
+              <div className="flex items-center gap-1 p-1 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm flex-nowrap whitespace-nowrap">
+                {marketingTabs.map((tab) => {
+                  const isActive = marketingTab === tab.id;
+                  return (
+                    <button
+                      key={tab.id}
+                      onClick={() => onSelectMarketingTab ? onSelectMarketingTab(tab.id) : undefined}
+                      className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${
+                        isActive
+                          ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
+                          : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  );
+                })}
+              </div>
             </nav>
           ) : (
             /* MUSIC NAVIGATION */
@@ -167,7 +138,7 @@ export default function Navbar({
             {onSelectEntity && (
               <button
                 onClick={() => onSelectEntity(activeEntity === 'marketing' ? 'music' : 'marketing')}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 text-[10px] font-mono uppercase tracking-wider dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950 transition-all cursor-pointer active:scale-95 shadow-sm"
+                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 text-[10px] font-mono uppercase tracking-wider dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950 transition-all cursor-pointer active:scale-95 shadow-sm"
                 title={`Switch to ${activeEntity === 'marketing' ? 'More of Music' : 'Moments of Marketing'}`}
               >
                 <span>{activeEntity === 'marketing' ? 'More of Music →' : 'Moments of Marketing →'}</span>
@@ -201,7 +172,7 @@ export default function Navbar({
             </button>
 
             {/* Mobile Menu Button */}
-            <div className="flex md:hidden items-center flex-shrink-0">
+            <div className="flex lg:hidden items-center flex-shrink-0">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2 dark:text-white dark:border-white/20 text-zinc-900 border border-zinc-300 rounded-md cursor-pointer"
@@ -218,7 +189,7 @@ export default function Navbar({
 
       {/* ================= MOBILE DRAWER ================= */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-3 mx-4 p-5 rounded-2xl border dark:border-white/10 dark:bg-black/95 border-zinc-200 bg-white/95 backdrop-blur-2xl shadow-2xl animate-in fade-in">
+        <div className="lg:hidden mt-3 mx-4 p-5 rounded-2xl border dark:border-white/10 dark:bg-black/95 border-zinc-200 bg-white/95 backdrop-blur-2xl shadow-2xl animate-in fade-in">
           <div className="flex flex-col gap-2.5">
             
             {onBackToGateway && (
@@ -245,9 +216,9 @@ export default function Navbar({
                         if (onSelectMarketingTab) onSelectMarketingTab(tab.id);
                         setMobileMenuOpen(false);
                       }}
-                      className={`w-full py-3 px-4 rounded-none text-xs font-bold uppercase tracking-wider text-center transition-all ${
+                      className={`w-full py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-center transition-all ${
                         isActive
-                          ? 'bg-[#185873] text-white border border-[#185873]'
+                          ? 'bg-zinc-950 text-white dark:bg-white dark:text-black shadow-md'
                           : 'border border-zinc-300 dark:border-white/15 dark:text-zinc-200 text-zinc-800'
                       }`}
                     >

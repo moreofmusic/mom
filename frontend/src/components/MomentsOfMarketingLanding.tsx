@@ -25,6 +25,8 @@ import {
   Video,
   Code2,
   MessageCircle,
+  Search,
+  Rocket,
 } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
 
@@ -85,19 +87,19 @@ export default function MomentsOfMarketingLanding({
     setFormSubmitted(true);
   };
 
-  // Reusable Mobile Tab Switcher
+  // Sleek Reusable Mobile Tab Switcher
   const renderMobileTabs = () => (
-    <div className="md:hidden flex items-center gap-2 overflow-x-auto pb-3 mb-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex-nowrap border-b border-zinc-200 dark:border-white/10">
+    <div className="lg:hidden flex items-center justify-center gap-1.5 p-1 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex-nowrap mb-8 w-fit mx-auto max-w-full">
       {marketingTabs.map((tab) => {
         const isActive = activeTab === tab.id;
         return (
           <button
             key={tab.id}
             onClick={() => onSelectTab(tab.id)}
-            className={`px-3.5 py-2 rounded-none text-xs font-semibold whitespace-nowrap border transition-all cursor-pointer ${
+            className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all cursor-pointer ${
               isActive
-                ? 'bg-[#185873] text-white border-[#185873] shadow-sm'
-                : 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border-zinc-800 dark:border-white/30'
+                ? 'bg-zinc-950 text-white dark:bg-white dark:text-black shadow-md'
+                : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white'
             }`}
           >
             {tab.label}
@@ -115,7 +117,6 @@ export default function MomentsOfMarketingLanding({
       <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 animate-in fade-in duration-500">
         {renderMobileTabs()}
 
-        {/* Ambient Glow */}
         <div className="relative">
           <div className="absolute -top-12 left-1/4 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/10 blur-[130px] pointer-events-none" />
 
@@ -175,7 +176,7 @@ export default function MomentsOfMarketingLanding({
           <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-zinc-200 dark:border-white/10">
             <button
               onClick={() => onSelectTab('services')}
-              className="px-7 py-3.5 rounded-none dark:bg-white dark:text-black bg-zinc-950 text-white text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 hover:opacity-90 active:scale-95 shadow-md transition-all cursor-pointer"
+              className="px-7 py-3.5 rounded-full dark:bg-white dark:text-black bg-zinc-950 text-white text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 hover:opacity-90 active:scale-95 shadow-md transition-all cursor-pointer"
             >
               <span>Explore Brands &amp; Services</span>
               <ArrowRight className="w-4 h-4" />
@@ -183,14 +184,14 @@ export default function MomentsOfMarketingLanding({
 
             <button
               onClick={() => onSelectTab('about')}
-              className="px-7 py-3.5 rounded-none border border-zinc-300 dark:border-white/20 dark:hover:border-white hover:border-black text-xs sm:text-sm font-bold uppercase tracking-wider dark:text-white text-zinc-950 hover:bg-zinc-100 dark:hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm"
+              className="px-7 py-3.5 rounded-full border border-zinc-300 dark:border-white/20 dark:hover:border-white hover:border-black text-xs sm:text-sm font-bold uppercase tracking-wider dark:text-white text-zinc-950 hover:bg-zinc-100 dark:hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm"
             >
               About MOM &rarr;
             </button>
 
             <button
               onClick={() => onSelectTab('contact')}
-              className="px-6 py-3.5 rounded-none border border-[#185873] text-[#185873] dark:text-sky-400 hover:bg-[#185873]/10 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 active:scale-95 transition-all cursor-pointer shadow-sm"
+              className="px-6 py-3.5 rounded-full border border-zinc-400 dark:border-white/30 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-white/10 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 active:scale-95 transition-all cursor-pointer shadow-sm"
             >
               <span>Contact Us</span>
               <ArrowRight className="w-4 h-4" />
@@ -203,7 +204,7 @@ export default function MomentsOfMarketingLanding({
   }
 
   // =================================================================================
-  // PAGE 2: ABOUT US (SLIDES 4 & 5)
+  // PAGE 2: ABOUT US (EXACT TEXT FROM USER'S PROMPT & SLIDES 4 & 5)
   // =================================================================================
   if (activeTab === 'about') {
     const values = [
@@ -258,74 +259,96 @@ export default function MomentsOfMarketingLanding({
 
     const whyChooseUsPoints = [
       {
-        num: '01',
         title: 'One Connected Marketing Partner',
         icon: Layers,
         desc: 'Bring your branding, content, digital campaigns, and lead generation together through a coordinated marketing approach.',
       },
       {
-        num: '02',
         title: 'Strategies Built Around Your Business',
         icon: Zap,
         desc: 'We align marketing activities with your goals, target audience, industry, and growth priorities.',
       },
       {
-        num: '03',
         title: 'Creativity With Purpose',
         icon: Award,
         desc: 'Every creative idea starts with a clear objective: to communicate, engage, build trust, or encourage action.',
       },
       {
-        num: '04',
         title: 'Decisions Guided by Performance',
         icon: LineChart,
         desc: 'We use campaign insights and reporting to identify opportunities and improve marketing effectiveness.',
       },
       {
-        num: '05',
         title: 'A Partnership That Evolves With You',
         icon: ShieldCheck,
         desc: 'As your business grows, your marketing strategy can evolve to meet new audiences, challenges, and opportunities.',
       },
     ];
 
+    const approachSteps = [
+      {
+        step: '01',
+        name: 'Discover',
+        desc: 'Understand your business, audience, challenges, and objectives.',
+        icon: Search,
+      },
+      {
+        step: '02',
+        name: 'Strategize',
+        desc: 'Build a focused marketing roadmap with the right channels and priorities.',
+        icon: Compass,
+      },
+      {
+        step: '03',
+        name: 'Create',
+        desc: 'Develop compelling brand identities, content, campaigns, and digital experiences.',
+        icon: Palette,
+      },
+      {
+        step: '04',
+        name: 'Execute',
+        desc: 'Launch coordinated marketing activities to reach and engage your audience.',
+        icon: Rocket,
+      },
+      {
+        step: '05',
+        name: 'Optimize',
+        desc: 'Review performance, identify opportunities, and refine the strategy.',
+        icon: TrendingUp,
+      },
+    ];
+
     return (
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-16 sm:space-y-24 animate-in fade-in duration-500">
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 py-8 sm:py-16 space-y-16 sm:space-y-20 animate-in fade-in duration-500">
         {renderMobileTabs()}
 
         {/* ---------------- 1. VISION & MISSION (SLIDE 4) ---------------- */}
-        <section className="space-y-8">
-          <div className="border-b border-zinc-200 dark:border-white/10 pb-6">
-            <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block mb-2">
-              SLIDE 4 &bull; STRATEGIC FOUNDATION
+        <section className="space-y-6">
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-4">
+            <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block mb-1">
+              FOUNDATIONAL DIRECTION
             </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-display dark:text-white text-zinc-950">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display dark:text-white text-zinc-950">
               Vision &amp; Mission
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {/* Vision Card */}
-            <div className="pro-card p-8 sm:p-10 rounded-2xl border border-zinc-200 dark:border-white/10 space-y-4 shadow-sm">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 bg-zinc-100 dark:bg-white/[0.08] px-3 py-1 font-bold">
-                  Vision:
-                </span>
-                <Sparkles className="w-5 h-5 text-emerald-500" />
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Vision */}
+            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 space-y-3 shadow-sm">
+              <span className="text-xs font-mono tracking-widest uppercase text-emerald-500 font-bold block">
+                Vision:
+              </span>
               <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-snug">
                 Creating Moments. Building Brands. Driving Growth.
               </h3>
             </div>
 
-            {/* Mission Card */}
-            <div className="pro-card p-8 sm:p-10 rounded-2xl border border-zinc-200 dark:border-white/10 space-y-4 shadow-sm">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 bg-zinc-100 dark:bg-white/[0.08] px-3 py-1 font-bold">
-                  Mission:
-                </span>
-                <Compass className="w-5 h-5 text-cyan-500" />
-              </div>
+            {/* Mission */}
+            <div className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 space-y-3 shadow-sm">
+              <span className="text-xs font-mono tracking-widest uppercase text-cyan-500 font-bold block">
+                Mission:
+              </span>
               <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-snug">
                 To turn meaningful marketing moments into lasting brand value and business growth.
               </h3>
@@ -366,14 +389,11 @@ export default function MomentsOfMarketingLanding({
           </div>
         </section>
 
-        {/* ---------------- 3. OUR THREE PILLARS OF GROWTH (SLIDE 5) ---------------- */}
+        {/* ---------------- 3. OUR THREE PILLARS OF GROWTH (EXACT USER PROMPT) ---------------- */}
         <section className="space-y-6">
           <div className="border-b border-zinc-200 dark:border-white/10 pb-4">
-            <span className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block mb-1">
-              SLIDE 5
-            </span>
-            <h3 className="text-2xl sm:text-4xl font-bold font-display uppercase dark:text-white text-zinc-950">
-              Our Three Pillars of Growth
+            <h3 className="text-2xl sm:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
+              OUR THREE PILLARS OF GROWTH
             </h3>
           </div>
 
@@ -383,7 +403,7 @@ export default function MomentsOfMarketingLanding({
               return (
                 <div
                   key={p.number}
-                  className="pro-card p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                  className="pro-card p-7 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
@@ -407,12 +427,15 @@ export default function MomentsOfMarketingLanding({
           </div>
         </section>
 
-        {/* ---------------- 4. WHY CHOOSE MOM? (SLIDE 5) ---------------- */}
+        {/* ---------------- 4. WHY CHOOSE MOM? (EXACT USER PROMPT) ---------------- */}
         <section className="space-y-6">
-          <div className="border-b border-zinc-200 dark:border-white/10 pb-4">
-            <h3 className="text-2xl sm:text-4xl font-bold font-display uppercase dark:text-white text-zinc-950">
-              Why Choose MOM?
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-4 space-y-1">
+            <h3 className="text-2xl sm:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
+              WHY CHOOSE MOM?
             </h3>
+            <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 font-sans">
+              Creative Thinking. Strategic Execution. Growth-Focused Marketing.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -420,21 +443,57 @@ export default function MomentsOfMarketingLanding({
               const Icon = pt.icon;
               return (
                 <div
-                  key={pt.num}
+                  key={pt.title}
                   className="pro-card p-6 sm:p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
                 >
                   <div className="space-y-3">
                     <div className="w-9 h-9 rounded-lg bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white mb-2">
                       <Icon className="w-4 h-4" />
                     </div>
-                    <span className="text-[11px] font-mono font-bold uppercase text-zinc-500 block">
-                      {pt.num}
-                    </span>
                     <h4 className="text-base font-bold font-display dark:text-white text-zinc-950 leading-snug">
                       {pt.title}
                     </h4>
                     <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
                       {pt.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ---------------- 5. OUR APPROACH (EXACT USER PROMPT & UPLOADED IMAGE) ---------------- */}
+        <section className="space-y-6">
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-4 space-y-1">
+            <h3 className="text-2xl sm:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
+              OUR APPROACH
+            </h3>
+            <p className="text-sm sm:text-base font-semibold text-cyan-600 dark:text-cyan-400 font-sans">
+              From First Impression to Lasting Customer Relationships.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {approachSteps.map((step) => {
+              const Icon = step.icon;
+              return (
+                <div
+                  key={step.step}
+                  className="pro-card p-6 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono font-bold uppercase text-zinc-400">
+                        {step.step}
+                      </span>
+                      <Icon className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
+                    </div>
+                    <h4 className="text-base font-bold font-display dark:text-white text-zinc-950">
+                      {step.name}
+                    </h4>
+                    <p className="text-xs text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                      {step.desc}
                     </p>
                   </div>
                 </div>
@@ -453,7 +512,7 @@ export default function MomentsOfMarketingLanding({
           </button>
           <button
             onClick={() => onSelectTab('services')}
-            className="px-6 py-3 rounded-none dark:bg-white dark:text-black bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-sm active:scale-95"
+            className="px-6 py-3 rounded-full dark:bg-white dark:text-black bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-sm active:scale-95"
           >
             <span>Brands and services &rarr;</span>
           </button>
@@ -609,7 +668,7 @@ export default function MomentsOfMarketingLanding({
                     {s.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded-sm bg-zinc-100 dark:bg-white/[0.06] text-[11px] font-mono text-zinc-700 dark:text-zinc-300 font-medium"
+                        className="px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-white/[0.06] text-[11px] font-mono text-zinc-700 dark:text-zinc-300 font-medium"
                       >
                         {tag}
                       </span>
@@ -650,7 +709,7 @@ export default function MomentsOfMarketingLanding({
           </button>
           <button
             onClick={() => onSelectTab('contact')}
-            className="px-6 py-3 rounded-none dark:bg-white dark:text-black bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-sm active:scale-95"
+            className="px-6 py-3 rounded-full dark:bg-white dark:text-black bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-sm active:scale-95"
           >
             <span>Contact us &rarr;</span>
           </button>
@@ -687,9 +746,9 @@ export default function MomentsOfMarketingLanding({
         </div>
 
         {/* CTA & Brand Tagline from Slide 7 */}
-        <div className="p-6 rounded-none border border-zinc-900 dark:border-white/20 bg-zinc-100 dark:bg-zinc-900/60 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="p-6 rounded-2xl border border-zinc-200 dark:border-white/15 bg-zinc-100/70 dark:bg-zinc-900/60 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#185873] dark:text-sky-400 font-bold block mb-1">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block mb-1">
               CTA: Let&apos;s Talk About Your Growth
             </span>
             <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">
@@ -700,7 +759,7 @@ export default function MomentsOfMarketingLanding({
             href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20ready%20to%20talk%20about%20our%20marketing%20growth."
             target="_blank"
             rel="noreferrer"
-            className="px-6 py-2.5 rounded-none bg-[#185873] text-white text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-sm hover:opacity-90 active:scale-95 text-center"
+            className="px-6 py-2.5 rounded-full bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-sm hover:opacity-90 active:scale-95 text-center"
           >
             WhatsApp Now &rarr;
           </a>
@@ -718,9 +777,9 @@ export default function MomentsOfMarketingLanding({
             {/* Phone */}
             <a
               href="tel:+919226042236"
-              className="flex items-center gap-4 p-5 rounded-none border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
+              className="flex items-center gap-4 p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
             >
-              <div className="w-10 h-10 rounded-sm bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
+              <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
                 <Phone className="w-4 h-4" />
               </div>
               <div>
@@ -732,9 +791,9 @@ export default function MomentsOfMarketingLanding({
             {/* Email */}
             <a
               href="mailto:Contact@momentsofmarketing.in"
-              className="flex items-center gap-4 p-5 rounded-none border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
+              className="flex items-center gap-4 p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
             >
-              <div className="w-10 h-10 rounded-sm bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
+              <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
                 <Mail className="w-4 h-4" />
               </div>
               <div>
@@ -748,9 +807,9 @@ export default function MomentsOfMarketingLanding({
               href="https://instagram.com/momentsofmarketingofficial"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-4 p-5 rounded-none border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
+              className="flex items-center gap-4 p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-sm group"
             >
-              <div className="w-10 h-10 rounded-sm bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
+              <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white">
                 <InstagramIcon className="w-4 h-4" />
               </div>
               <div>
@@ -771,7 +830,7 @@ export default function MomentsOfMarketingLanding({
               </p>
 
               {formSubmitted ? (
-                <div className="p-6 rounded-none bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-center space-y-2">
+                <div className="p-6 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-center space-y-2">
                   <CheckCircle2 className="w-8 h-8 mx-auto" />
                   <p className="font-bold text-sm">Thank You! Your inquiry is being directed to WhatsApp.</p>
                   <p className="text-xs text-zinc-600 dark:text-zinc-300">Our representative will respond to you promptly.</p>
@@ -789,7 +848,7 @@ export default function MomentsOfMarketingLanding({
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="Amol Khodre"
-                        className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-zinc-950 dark:focus:border-white"
                       />
                     </div>
 
@@ -803,7 +862,7 @@ export default function MomentsOfMarketingLanding({
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 9876543210"
-                        className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-zinc-950 dark:focus:border-white"
                       />
                     </div>
                   </div>
@@ -819,7 +878,7 @@ export default function MomentsOfMarketingLanding({
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="name@company.com"
-                        className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-zinc-950 dark:focus:border-white"
                       />
                     </div>
 
@@ -832,7 +891,7 @@ export default function MomentsOfMarketingLanding({
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="Company / Brand"
-                        className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-zinc-950 dark:focus:border-white"
                       />
                     </div>
                   </div>
@@ -844,7 +903,7 @@ export default function MomentsOfMarketingLanding({
                     <select
                       value={formData.serviceInterest}
                       onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                      className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-zinc-950 dark:focus:border-white"
                     >
                       <option value="Digital Marketing">01. Digital Marketing</option>
                       <option value="Social Media Management">02. Social Media Management</option>
@@ -868,13 +927,13 @@ export default function MomentsOfMarketingLanding({
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your brand goals and what you want to achieve..."
-                      className="w-full px-3.5 py-2.5 rounded-none border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-[#185873]"
+                      className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-zinc-950 dark:focus:border-white"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-none bg-[#185873] text-white text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md hover:opacity-90 active:scale-95 transition-all cursor-pointer"
+                    className="w-full py-3.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md hover:opacity-90 active:scale-95 transition-all cursor-pointer"
                   >
                     Send Inquiry to WhatsApp &rarr;
                   </button>
