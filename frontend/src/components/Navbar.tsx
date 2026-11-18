@@ -54,8 +54,8 @@ export default function Navbar({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b select-none ${
         isScrolled
-          ? 'dark:bg-black/95 bg-white/95 backdrop-blur-md dark:border-white/[0.08] border-zinc-200 py-3 sm:py-3.5 shadow-sm'
-          : 'dark:bg-black/85 bg-white/90 backdrop-blur-md dark:border-white/[0.06] border-zinc-200/80 py-3.5 sm:py-4'
+          ? 'dark:bg-black/95 bg-white/95 backdrop-blur-md dark:border-white/[0.08] border-zinc-200 py-2 sm:py-2.5 shadow-sm'
+          : 'dark:bg-black/90 bg-white/95 backdrop-blur-md dark:border-white/[0.08] border-zinc-200/90 py-2.5 sm:py-3'
       }`}
     >
       {/* Animated Ambient Shimmer Line at Bottom of Navbar */}
@@ -80,13 +80,13 @@ export default function Navbar({
 
             <button
               onClick={() => onBackToGateway ? onBackToGateway() : undefined}
-              className="flex items-center gap-2 sm:gap-3 group py-1 flex-shrink min-w-0 cursor-pointer text-left"
+              className="flex items-center gap-2 sm:gap-3 group py-0.5 flex-shrink min-w-0 cursor-pointer text-left"
               title="Return to Portals Selection"
             >
               <img
                 src="/mom-logo-transparent.png"
                 alt="MOM Logo"
-                className={`h-9 sm:h-12 md:h-14 w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
+                className={`h-8 sm:h-10 md:h-11 w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
                   theme === 'light' ? 'invert' : ''
                 }`}
               />
@@ -104,7 +104,7 @@ export default function Navbar({
                     <button
                       key={tab.id}
                       onClick={() => onSelectMarketingTab ? onSelectMarketingTab(tab.id) : undefined}
-                      className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${
+                      className={`px-4 sm:px-5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${
                         isActive
                           ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
                           : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'

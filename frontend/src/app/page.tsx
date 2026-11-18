@@ -91,8 +91,8 @@ export default function Home() {
             onSelectMarketingTab={handleSelectMarketingTab}
           />
 
-          {/* Dynamic Landing Experience Based on Active Entity */}
-          <div className="relative z-10 transition-all duration-500 pt-20 sm:pt-24">
+          {/* Dynamic Landing Experience Based on Active Entity - Consistent Gap Across All Pages */}
+          <div className="relative z-10 transition-all duration-300 pt-[56px] sm:pt-[66px] md:pt-[70px]">
             {activeEntity === 'marketing' ? (
               <MomentsOfMarketingLanding
                 activeTab={marketingTab}
