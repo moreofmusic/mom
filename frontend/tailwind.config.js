@@ -38,23 +38,39 @@ module.exports = {
       },
       boxShadow: {
         'glow-white': '0 0 35px -5px rgba(255, 255, 255, 0.25)',
+        'glow-cyan': '0 0 30px -5px rgba(6, 182, 212, 0.35)',
+        'glow-emerald': '0 0 30px -5px rgba(16, 185, 129, 0.35)',
         'card-dark': '0 20px 50px -15px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(255, 255, 255, 0.06)',
       },
       animation: {
         'spin-slow': 'spin 35s linear infinite',
+        'spin-disc': 'spin 12s linear infinite',
         'pulse-subtle': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         float: 'float 6s ease-in-out infinite',
+        'float-slow': 'float 9s ease-in-out infinite',
         marquee: 'marquee 28s linear infinite',
         'marquee-slow': 'marquee 45s linear infinite',
+        shimmer: 'shimmer 2.5s infinite',
+        'soundwave-fast': 'soundwave 0.7s ease-in-out infinite alternate',
+        'soundwave-mid': 'soundwave 1.1s ease-in-out infinite alternate 0.2s',
+        'soundwave-slow': 'soundwave 1.4s ease-in-out infinite alternate 0.4s',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(-12px)' },
         },
         marquee: {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        soundwave: {
+          '0%': { height: '4px' },
+          '100%': { height: '18px' },
         },
       },
     },

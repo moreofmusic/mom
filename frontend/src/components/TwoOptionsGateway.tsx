@@ -14,8 +14,14 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="min-h-screen flex flex-col justify-between dark:bg-black bg-[#F8FAFC] dark:text-white text-zinc-900 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col justify-between dark:bg-black bg-[#F8FAFC] dark:text-white text-zinc-900 transition-colors duration-300 relative overflow-hidden">
       
+      {/* Background Animated Ambient Neon Glow Orbs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-cyan-500/10 dark:bg-cyan-500/15 blur-[140px] animate-float" />
+        <div className="absolute -bottom-32 -right-32 w-[520px] h-[520px] rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 blur-[140px] animate-float [animation-delay:3.5s]" />
+      </div>
+
       {/* ----------------- TOP MINIMAL HEADER ----------------- */}
       <header className="w-full max-w-7xl mx-auto px-3.5 sm:px-8 lg:px-14 py-3.5 sm:py-6 flex items-center justify-between border-b dark:border-white/[0.08] border-zinc-200 gap-3">
         {/* Brand Logo & Animated Flipping Division Wordmark */}
@@ -107,18 +113,19 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                   className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
                 {/* Live Animated Pulse Dot + Badge */}
-                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-2 shadow-sm border border-white/10">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
-                  </span>
+                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/85 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-2 shadow-sm border border-cyan-400/30">
+                  <div className="flex items-end gap-[2px] h-3">
+                    <span className="w-[2px] bg-cyan-400 rounded-full animate-[soundwave_0.7s_ease-in-out_infinite_alternate] h-2" />
+                    <span className="w-[2px] bg-cyan-400 rounded-full animate-[soundwave_1.1s_ease-in-out_infinite_alternate_0.2s] h-3" />
+                    <span className="w-[2px] bg-cyan-400 rounded-full animate-[soundwave_0.8s_ease-in-out_infinite_alternate_0.4s] h-1.5" />
+                  </div>
                   <Music className="w-3.5 h-3.5 text-cyan-400" />
                   <span>STUDIO &bull; SOUND</span>
                 </span>
               </div>
 
               {/* Animated Top-Right Arrow Button */}
-              <div className="w-11 sm:w-12 h-11 sm:h-12 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black group-hover:border-white group-hover:rotate-45 group-hover:scale-110 transition-all duration-300 shadow-xl">
+              <div className="w-11 sm:w-12 h-11 sm:h-12 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-cyan-400 group-hover:text-black group-hover:border-cyan-400 group-hover:rotate-45 group-hover:scale-110 transition-all duration-300 shadow-xl group-hover:shadow-[0_0_25px_rgba(6,182,212,0.6)]">
                 <ArrowUpRight className="w-5 h-5 transition-transform" />
               </div>
             </div>
@@ -137,11 +144,12 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                 Sound that defines modern culture. Bespoke sonic logos, commercial scoring, sync licensing, artist management, and high-fidelity studio recording.
               </p>
 
-              {/* Action Button: Clickable with Crisp Outline & Full Breathing Room */}
+              {/* Action Button: Clickable with Crisp Outline & Shimmer Beam */}
               <div className="pt-2">
                 <div
-                  className="w-full py-4 px-6 rounded-2xl border border-white/30 text-white bg-black/70 backdrop-blur-md group-hover:bg-white group-hover:text-black group-hover:border-white text-xs sm:text-sm font-bold tracking-[0.16em] uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-xl group-hover:shadow-[0_0_30px_rgba(255,255,255,0.35)]"
+                  className="w-full py-4 px-6 rounded-2xl border border-white/30 text-white bg-black/70 backdrop-blur-md group-hover:bg-white group-hover:text-black group-hover:border-white text-xs sm:text-sm font-bold tracking-[0.16em] uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-xl group-hover:shadow-[0_0_35px_rgba(6,182,212,0.45)] relative overflow-hidden"
                 >
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
                   <span>ENTER MORE OF MUSIC</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                 </div>
@@ -173,7 +181,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                   className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
                 {/* Live Animated Pulse Dot + Badge */}
-                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-2 shadow-sm border border-white/10">
+                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/85 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-2 shadow-sm border border-emerald-400/30">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
@@ -184,7 +192,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
               </div>
 
               {/* Animated Top-Right Arrow Button */}
-              <div className="w-11 sm:w-12 h-11 sm:h-12 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black group-hover:border-white group-hover:rotate-45 group-hover:scale-110 transition-all duration-300 shadow-xl">
+              <div className="w-11 sm:w-12 h-11 sm:h-12 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-emerald-400 group-hover:text-black group-hover:border-emerald-400 group-hover:rotate-45 group-hover:scale-110 transition-all duration-300 shadow-xl group-hover:shadow-[0_0_25px_rgba(16,185,129,0.6)]">
                 <ArrowUpRight className="w-5 h-5 transition-transform" />
               </div>
             </div>
@@ -203,11 +211,12 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                 Full-funnel brand growth partner. 10 specialized desks, digital marketing, social media, branding, video production, and high-intent lead generation.
               </p>
 
-              {/* Action Button: Clickable with Crisp Outline & Full Breathing Room */}
+              {/* Action Button: Clickable with Crisp Outline & Shimmer Beam */}
               <div className="pt-2">
                 <div
-                  className="w-full py-4 px-6 rounded-2xl border border-white/30 text-white bg-black/70 backdrop-blur-md group-hover:bg-white group-hover:text-black group-hover:border-white text-xs sm:text-sm font-bold tracking-[0.16em] uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-xl group-hover:shadow-[0_0_30px_rgba(255,255,255,0.35)]"
+                  className="w-full py-4 px-6 rounded-2xl border border-white/30 text-white bg-black/70 backdrop-blur-md group-hover:bg-white group-hover:text-black group-hover:border-white text-xs sm:text-sm font-bold tracking-[0.16em] uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-xl group-hover:shadow-[0_0_35px_rgba(16,185,129,0.45)] relative overflow-hidden"
                 >
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
                   <span>ENTER MOMENTS OF MARKETING</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                 </div>
@@ -226,12 +235,12 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           </div>
         </div>
 
-        {/* 3-Column Metrics Bar: Exact Represent Style */}
+        {/* 3-Column Metrics Bar: Exact Represent Style with Interactive Hover Glow */}
         <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b dark:border-white/[0.08] border-zinc-200 mt-12 sm:mt-20">
           
           {/* Column 1 */}
-          <div className="py-6 sm:py-10 md:pr-10 md:border-r dark:border-white/[0.08] border-zinc-200 space-y-2 text-center md:text-left">
-            <span className="block text-4xl sm:text-6xl font-bold tracking-tight dark:text-white text-zinc-950 font-display">
+          <div className="py-6 sm:py-10 md:pr-10 md:border-r dark:border-white/[0.08] border-zinc-200 space-y-2 text-center md:text-left group/metric transition-all duration-300 hover:bg-cyan-500/[0.03] p-4 rounded-2xl">
+            <span className="block text-4xl sm:text-6xl font-bold tracking-tight dark:text-white text-zinc-950 font-display group-hover/metric:text-cyan-400 group-hover/metric:scale-105 transition-all duration-300">
               340%+
             </span>
             <span className="font-serif italic text-sm sm:text-base dark:text-zinc-400 text-zinc-500 block">
@@ -240,8 +249,8 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           </div>
 
           {/* Column 2 */}
-          <div className="py-6 sm:py-10 md:px-10 md:border-r dark:border-white/[0.08] border-zinc-200 space-y-2 border-t md:border-t-0 dark:border-white/[0.08] border-zinc-200 text-center md:text-left">
-            <span className="block text-4xl sm:text-6xl font-bold tracking-tight dark:text-white text-zinc-950 font-display">
+          <div className="py-6 sm:py-10 md:px-10 md:border-r dark:border-white/[0.08] border-zinc-200 space-y-2 border-t md:border-t-0 dark:border-white/[0.08] border-zinc-200 text-center md:text-left group/metric transition-all duration-300 hover:bg-emerald-500/[0.03] p-4 rounded-2xl">
+            <span className="block text-4xl sm:text-6xl font-bold tracking-tight dark:text-white text-zinc-950 font-display group-hover/metric:text-emerald-400 group-hover/metric:scale-105 transition-all duration-300">
               70M+
             </span>
             <span className="font-serif italic text-sm sm:text-base dark:text-zinc-400 text-zinc-500 block">
@@ -250,8 +259,8 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           </div>
 
           {/* Column 3 */}
-          <div className="py-6 sm:py-10 md:pl-10 space-y-2 border-t md:border-t-0 dark:border-white/[0.08] border-zinc-200 text-center md:text-left">
-            <span className="block text-4xl sm:text-6xl font-bold tracking-tight dark:text-white text-zinc-950 font-display">
+          <div className="py-6 sm:py-10 md:pl-10 space-y-2 border-t md:border-t-0 dark:border-white/[0.08] border-zinc-200 text-center md:text-left group/metric transition-all duration-300 hover:bg-zinc-500/[0.04] p-4 rounded-2xl">
+            <span className="block text-4xl sm:text-6xl font-bold tracking-tight dark:text-white text-zinc-950 font-display group-hover/metric:scale-105 transition-all duration-300">
               &lt; 2h
             </span>
             <span className="font-serif italic text-sm sm:text-base dark:text-zinc-400 text-zinc-500 block">

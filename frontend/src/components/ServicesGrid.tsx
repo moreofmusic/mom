@@ -150,21 +150,24 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
             return (
               <div
                 key={s.number}
-                className="pro-card p-8 sm:p-9 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm"
+                className="pro-card p-8 sm:p-9 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-emerald-400/50 hover:border-black hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-400 shadow-sm relative overflow-hidden"
               >
+                {/* Subtle Traveling Border Shimmer on Hover */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     {/* Non-clickable Number Badge: NO OUTLINE */}
-                    <span className="text-sm font-mono font-bold dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3 py-1 rounded-md">
+                    <span className="text-sm font-mono font-bold dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3 py-1 rounded-md group-hover:bg-emerald-500/15 group-hover:text-emerald-400 transition-colors duration-300">
                       DESK {s.number}
                     </span>
                     {/* Non-clickable Icon Box: NO OUTLINE */}
-                    <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-zinc-300 text-zinc-700 dark:group-hover:text-white group-hover:text-zinc-950 transition-colors">
+                    <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-zinc-300 text-zinc-700 dark:group-hover:text-emerald-400 group-hover:text-zinc-950 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-sm">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 mb-2 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 mb-2 group-hover:text-emerald-400 transition-colors">
                     {s.title}
                   </h3>
 
@@ -181,7 +184,7 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
                     {s.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded-md text-[11px] dark:bg-white/[0.05] bg-zinc-100 dark:text-zinc-300 text-zinc-700 font-medium"
+                        className="px-2.5 py-1 rounded-md text-[11px] dark:bg-white/[0.05] bg-zinc-100 dark:text-zinc-300 text-zinc-700 font-medium hover:border-zinc-400 dark:hover:bg-white/10 transition-colors"
                       >
                         {tag}
                       </span>
@@ -193,10 +196,11 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
                 <div className="pt-6 mt-6 border-t dark:border-white/[0.06] border-zinc-200">
                   <button
                     onClick={() => onSelectService(s.title)}
-                    className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer shadow-sm active:scale-95 dark:text-white text-zinc-900"
+                    className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer shadow-sm active:scale-95 dark:text-white text-zinc-900 relative overflow-hidden group/btn"
                   >
+                    <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
                     <span>Inquire for {s.title}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
                   </button>
                 </div>
               </div>

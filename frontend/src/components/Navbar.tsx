@@ -54,12 +54,17 @@ export default function Navbar({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b relative ${
         isScrolled
-          ? 'dark:bg-black/95 bg-white/95 backdrop-blur-md dark:border-white/[0.08] border-zinc-200 py-3.5 shadow-sm'
-          : 'dark:bg-black/60 bg-white/60 backdrop-blur-sm dark:border-white/[0.06] border-zinc-200/60 py-4 sm:py-5'
+          ? 'dark:bg-black/95 bg-white/95 backdrop-blur-md dark:border-white/[0.08] border-zinc-200 py-3 sm:py-3.5 shadow-sm'
+          : 'dark:bg-black/75 bg-white/75 backdrop-blur-md dark:border-white/[0.06] border-zinc-200/60 py-3.5 sm:py-5'
       }`}
     >
+      {/* Animated Ambient Shimmer Line at Bottom of Navbar */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1.5px] overflow-hidden pointer-events-none">
+        <div className="w-[200%] h-full bg-gradient-to-r from-transparent via-cyan-400/60 via-emerald-400/60 to-transparent animate-marquee-slow" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-3.5 sm:px-8 lg:px-14">
         <div className="flex items-center justify-between gap-2.5 sm:gap-4">
           

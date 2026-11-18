@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { TrendingUp, Music } from 'lucide-react';
 
 interface FlipBrandWordmarkProps {
   className?: string;
@@ -10,122 +11,107 @@ interface FlipBrandWordmarkProps {
 export default function FlipBrandWordmark({ className = '', size = 'md' }: FlipBrandWordmarkProps) {
   // 0 = More of Music, 1 = Moments of Marketing
   const [index, setIndex] = useState(0);
-  const [isFlipping, setIsFlipping] = useState(false);
+  const [isMorphing, setIsMorphing] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Step 1: Tilt / rotate out
-      setIsFlipping(true);
+    if (isPaused) return;
 
-      // Step 2: Swap content halfway through the 3D rotation
-      setTimeout(() => {
-        setIndex((prev) => (prev === 0 ? 1 : 0));
-        setIsFlipping(false);
-      }, 350);
-    }, 2800);
+    const interval = setInterval(() => {
+      triggerMorph();
+    }, 3200);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
-  const items = [
-    {
-      prefix: 'More of',
-      word: 'Music',
-      sub: 'STUDIO • SOUND',
-      wordColor: 'text-cyan-400 drop-shadow-[0_0_10px_rgba(6,182,212,0.45)]',
-      dotColor: 'bg-cyan-400',
-      badgeText: 'text-cyan-400/90',
-    },
-    {
-      prefix: 'Moments of',
-      word: 'Marketing',
-      sub: 'AGENCY • GROWTH',
-      wordColor: 'text-emerald-400 drop-shadow-[0_0_10px_rgba(16,185,129,0.45)]',
-      dotColor: 'bg-emerald-400',
-      badgeText: 'text-emerald-400/90',
-    },
-  ];
+  const triggerMorph = () => {
+    setIsMorphing(true);
+    setTimeout(() => {
+      setIndex((prev) => (prev === 0 ? 1 : 0));
+      setTimeout(() => {
+        setIsMorphing(false);
+      }, 50);
+    }, 300);
+  };
 
-  const current = items[index];
-
-  // Responsive font sizes for different contexts
-  const titleSizes = {
-    sm: 'text-[10px] xs:text-[11px] sm:text-xs md:text-sm',
-    md: 'text-[11px] xs:text-[12px] sm:text-sm md:text-[15px]',
-    lg: 'text-xs xs:text-sm sm:text-base md:text-lg',
-  }[size];
-
-  const subSizes = {
-    sm: 'text-[7px] xs:text-[7.5px] sm:text-[8.5px] md:text-[9.5px]',
-    md: 'text-[7.5px] xs:text-[8.5px] sm:text-[9.5px] md:text-[10.5px]',
-    lg: 'text-[8.5px] xs:text-[9.5px] sm:text-xs md:text-[12px]',
-  }[size];
+  const isMusic = index === 0;
 
   return (
     <div
-      className={`flex flex-col justify-center leading-none select-none min-w-0 [perspective:1000px] cursor-pointer group/flip ${className}`}
-      onClick={() => {
-        if (!isFlipping) {
-          setIsFlipping(true);
-          setTimeout(() => {
-            setIndex((prev) => (prev === 0 ? 1 : 0));
-            setIsFlipping(false);
-          }, 350);
-        }
-      }}
-      title="Click to switch division"
+      onClick={triggerMorph}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      className={`group/capsule relative flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border transition-all duration-500 cursor-pointer select-none min-w-0 backdrop-blur-md overflow-hidden ${
+        isMusic
+          ? 'border-cyan-500/35 bg-cyan-500/[0.06] hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] shadow-[0_0_15px_rgba(6,182,212,0.12)]'
+          : 'border-emerald-500/35 bg-emerald-500/[0.06] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] shadow-[0_0_15px_rgba(16,185,129,0.12)]'
+      } ${className}`}
+      title="Click to toggle between More of Music and Moments of Marketing"
     >
-      {/* Primary Brand Title with 3D Flip */}
-      <div className="h-4 sm:h-5 md:h-6 flex items-center overflow-visible">
+      {/* Ambient Moving Shimmer Light Sweep */}
+      <div className="absolute inset-0 -translate-x-full group-hover/capsule:translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-1000 ease-out pointer-events-none" />
+
+      {/* Dynamic Visual Indicator Icon (Equalizer vs Growth Spark) */}
+      <div className="flex items-center justify-center flex-shrink-0">
+        {isMusic ? (
+          /* Live Dancing Equalizer Audio Bars for Music */
+          <div className="flex items-end gap-[2px] h-3.5 sm:h-4 px-1 py-0.5 rounded-md bg-cyan-400/10">
+            <span className="w-[2px] bg-cyan-400 rounded-full animate-[soundwave_0.7s_ease-in-out_infinite_alternate] h-2" />
+            <span className="w-[2px] bg-cyan-400 rounded-full animate-[soundwave_1.1s_ease-in-out_infinite_alternate_0.2s] h-3.5" />
+            <span className="w-[2px] bg-cyan-400 rounded-full animate-[soundwave_0.8s_ease-in-out_infinite_alternate_0.4s] h-1.5" />
+            <span className="hidden xs:inline-block w-[2px] bg-cyan-400 rounded-full animate-[soundwave_1.3s_ease-in-out_infinite_alternate_0.1s] h-3" />
+          </div>
+        ) : (
+          /* Live Pulsing Growth Radar / Trending Arrow for Marketing */
+          <div className="flex items-center justify-center w-4 sm:w-5 h-4 sm:h-5 rounded-md bg-emerald-400/15 relative">
+            <span className="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400 opacity-60" />
+            <TrendingUp className="w-2.5 sm:w-3.5 h-2.5 sm:h-3.5 text-emerald-400 stroke-[2.5]" />
+          </div>
+        )}
+      </div>
+
+      {/* Primary Brand Text with 3D Cylinder Slot Morph */}
+      <div className="overflow-hidden flex items-center min-w-0 py-0.5 [perspective:600px]">
         <div
-          className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap transition-all duration-350 ease-[cubic-bezier(0.23,1,0.32,1)]"
-          style={{
-            transformStyle: 'preserve-3d',
-            transform: isFlipping
-              ? 'rotateX(-90deg) translateY(-6px) scale(0.92)'
-              : 'rotateX(0deg) translateY(0px) scale(1)',
-            opacity: isFlipping ? 0 : 1,
-            filter: isFlipping ? 'blur(1.5px)' : 'blur(0px)',
-          }}
+          className={`flex items-center gap-1 sm:gap-1.5 whitespace-nowrap transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+            isMorphing
+              ? '-translate-y-3 opacity-0 rotate-x-45 scale-95 filter blur-[1px]'
+              : 'translate-y-0 opacity-100 rotate-x-0 scale-100 filter blur-0'
+          }`}
         >
-          <span
-            className={`${titleSizes} font-black tracking-[0.08em] sm:tracking-[0.12em] uppercase font-display dark:text-white text-zinc-950 transition-colors`}
-          >
-            {current.prefix}
-          </span>
-          <span
-            className={`${titleSizes} font-black tracking-[0.08em] sm:tracking-[0.12em] uppercase font-display ${current.wordColor} transition-colors`}
-          >
-            {current.word}
-          </span>
+          {isMusic ? (
+            <>
+              <span className="text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-extrabold uppercase font-display dark:text-white text-zinc-950 tracking-[0.06em] sm:tracking-[0.1em]">
+                MORE OF
+              </span>
+              <span className="text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-black uppercase font-display text-cyan-400 drop-shadow-[0_0_12px_rgba(6,182,212,0.6)] tracking-[0.06em] sm:tracking-[0.1em]">
+                MUSIC
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-extrabold uppercase font-display dark:text-white text-zinc-950 tracking-[0.06em] sm:tracking-[0.1em]">
+                MOMENTS OF
+              </span>
+              <span className="text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-black uppercase font-display text-emerald-400 drop-shadow-[0_0_12px_rgba(16,185,129,0.6)] tracking-[0.06em] sm:tracking-[0.1em]">
+                MARKETING
+              </span>
+            </>
+          )}
         </div>
       </div>
 
-      {/* Division Subtitle Badge with Synced Micro Flip */}
-      <div className="h-3 sm:h-3.5 flex items-center mt-0.5 overflow-hidden">
-        <div
-          className="flex items-center gap-1.5 whitespace-nowrap transition-all duration-350 ease-out"
-          style={{
-            transform: isFlipping ? 'translateY(6px)' : 'translateY(0px)',
-            opacity: isFlipping ? 0 : 1,
-          }}
+      {/* Micro Division Pill Tag (Desktop / Tablet) */}
+      <div className="hidden sm:flex items-center pl-1 border-l dark:border-white/10 border-zinc-300/60">
+        <span
+          className={`text-[8px] sm:text-[9px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-full transition-all duration-300 ${
+            isMusic
+              ? 'bg-cyan-400/20 text-cyan-400 border border-cyan-400/30'
+              : 'bg-emerald-400/20 text-emerald-400 border border-emerald-400/30'
+          }`}
         >
-          {/* Animated Pulsing Dot */}
-          <span className="relative flex h-1.5 w-1.5 flex-shrink-0">
-            <span
-              className={`animate-ping absolute inline-flex h-full w-full rounded-full ${current.dotColor} opacity-75`}
-            />
-            <span
-              className={`relative inline-flex rounded-full h-1.5 w-1.5 ${current.dotColor}`}
-            />
-          </span>
-
-          <span
-            className={`${subSizes} font-bold tracking-[0.16em] sm:tracking-[0.22em] uppercase font-mono ${current.badgeText}`}
-          >
-            {current.sub}
-          </span>
-        </div>
+          {isMusic ? 'SOUND' : 'GROWTH'}
+        </span>
       </div>
     </div>
   );

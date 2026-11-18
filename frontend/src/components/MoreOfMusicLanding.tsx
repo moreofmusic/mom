@@ -151,21 +151,24 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               return (
                 <div
                   key={d.num}
-                  className="pro-card p-8 sm:p-9 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm"
+                  className="pro-card p-8 sm:p-9 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-cyan-400/50 hover:border-black hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(6,182,212,0.2)] transition-all duration-400 shadow-sm relative overflow-hidden"
                 >
+                  {/* Subtle Traveling Border Shimmer on Hover */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
                   <div>
                     <div className="flex items-center justify-between mb-6">
                       {/* Non-clickable Badge: NO OUTLINE */}
-                      <span className="text-sm font-mono font-bold dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3 py-1 rounded-md">
+                      <span className="text-sm font-mono font-bold dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3 py-1 rounded-md group-hover:bg-cyan-500/15 group-hover:text-cyan-400 transition-colors duration-300">
                         DESK {d.num}
                       </span>
                       {/* Non-clickable Icon Box: NO OUTLINE */}
-                      <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-zinc-300 text-zinc-700 dark:group-hover:text-white group-hover:text-zinc-950 transition-colors">
+                      <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-zinc-300 text-zinc-700 dark:group-hover:text-cyan-400 group-hover:text-zinc-950 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-sm">
                         <Icon className="w-5 h-5" />
                       </div>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 mb-2 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 mb-2 group-hover:text-cyan-400 transition-colors">
                       {d.title}
                     </h3>
 
@@ -182,7 +185,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
                       {d.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2.5 py-1 rounded-md text-[11px] dark:bg-white/[0.05] bg-zinc-100 dark:text-zinc-300 text-zinc-700 font-medium"
+                          className="px-2.5 py-1 rounded-md text-[11px] dark:bg-white/[0.05] bg-zinc-100 dark:text-zinc-300 text-zinc-700 font-medium hover:bg-white/10 transition-colors"
                         >
                           {tag}
                         </span>
@@ -190,14 +193,15 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
                     </div>
                   </div>
 
-                  {/* Clickable CTA with Crisp Outline */}
+                  {/* Clickable CTA with Crisp Outline & Shimmer Beam */}
                   <div className="pt-6 mt-6 border-t dark:border-white/[0.06] border-zinc-200">
                     <button
                       onClick={() => onOpenLeadModal(d.title)}
-                      className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer shadow-sm active:scale-95 dark:text-white text-zinc-900"
+                      className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer shadow-sm active:scale-95 dark:text-white text-zinc-900 relative overflow-hidden group/btn"
                     >
+                      <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
                       <span>Inquire for {d.title}</span>
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                     </button>
                   </div>
                 </div>
@@ -229,29 +233,30 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               <div
                 key={item.id}
                 onClick={() => onOpenLeadModal(item.title)}
-                className="group relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl flex flex-col justify-between aspect-[3/4] bg-zinc-950 active:scale-[0.98]"
+                className="group relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-cyan-400/50 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(6,182,212,0.25)] transition-all duration-500 cursor-pointer shadow-lg flex flex-col justify-between aspect-[3/4] bg-zinc-950 active:scale-[0.98]"
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 group-hover:via-black/30 transition-all duration-500" />
 
                 <div className="relative z-10 p-6 flex items-start justify-between">
-                  <span className="text-[10px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-full font-semibold">
+                  <span className="text-[10px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-full font-semibold border border-white/10">
                     {item.category}
                   </span>
 
-                  <div className="w-10 h-10 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300">
-                    <ArrowUpRight className="w-4 h-4" />
+                  <div className="w-10 h-10 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-cyan-400 group-hover:text-black group-hover:border-cyan-400 group-hover:rotate-45 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+                    <ArrowUpRight className="w-4 h-4 transition-transform" />
                   </div>
                 </div>
 
                 <div className="relative z-10 p-6 sm:p-8 space-y-3">
-                  <div className="inline-block px-3 py-1 rounded-md bg-white/10 backdrop-blur-md text-[11px] font-mono text-emerald-400 font-bold">
-                    {item.stats}
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-cyan-400/15 border border-cyan-400/25 text-[11px] font-mono text-cyan-400 font-bold shadow-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                    <span>{item.stats}</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold font-display text-white uppercase tracking-tight group-hover:text-zinc-100 transition-colors leading-snug">
@@ -263,9 +268,10 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
                   </p>
 
                   <div className="pt-2">
-                    <div className="w-full py-2.5 rounded-xl border border-white/20 group-hover:border-white group-hover:bg-white group-hover:text-black text-center text-xs font-bold tracking-wider uppercase text-white transition-all duration-300 flex items-center justify-center gap-2">
+                    <div className="w-full py-2.5 rounded-xl border border-white/25 group-hover:border-white group-hover:bg-white group-hover:text-black text-center text-xs font-bold tracking-wider uppercase text-white transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden group/btn shadow-md">
+                      <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
                       <span>BOOK THIS SOUND DESK</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
+                      <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>
                 </div>
