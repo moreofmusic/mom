@@ -28,16 +28,19 @@ export default function VisionMissionValues() {
   ];
 
   return (
-    <section id="values" className="py-24 sm:py-32 relative overflow-hidden">
+    <section id="about" className="py-24 sm:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16 space-y-4">
+          <span className="text-xs sm:text-sm font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
+            04 &mdash; Strategic Foundation
+          </span>
           <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display">
-            Mission &amp; <span className="font-serif italic font-normal dark:text-white text-zinc-950">our values.</span>
+            Vision, Mission &amp; <span className="font-serif italic font-normal dark:text-white text-zinc-950">our values.</span>
           </h2>
           <p className="text-base sm:text-lg dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
-            The core principles guiding every client relationship, brand strategy, and musical production at MOM.
+            The foundational principles guiding every client relationship, brand strategy, and commercial campaign at MOM.
           </p>
         </div>
 
@@ -49,7 +52,7 @@ export default function VisionMissionValues() {
             <div className="flex items-center justify-between">
               {/* Non-clickable Pill: NO OUTLINE */}
               <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3.5 py-1.5 rounded-full font-bold">
-                Our Vision
+                Vision
               </span>
               <Sparkles className="w-5 h-5 dark:text-white text-zinc-900" />
             </div>
@@ -57,7 +60,7 @@ export default function VisionMissionValues() {
               Creating Moments. Building Brands. Driving Growth.
             </h3>
             <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
-              To be the premier cultural and commercial marketing agency, pairing breakthrough sonic identity with compound full-funnel digital performance for ambitious founders and enterprise brands.
+              To be the premier cultural and commercial marketing agency, pairing breakthrough creative identity with compound full-funnel digital performance for ambitious founders and enterprise brands.
             </p>
           </div>
 
@@ -66,7 +69,7 @@ export default function VisionMissionValues() {
             <div className="flex items-center justify-between">
               {/* Non-clickable Pill: NO OUTLINE */}
               <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3.5 py-1.5 rounded-full font-bold">
-                Our Mission (From PPT)
+                Mission
               </span>
               <Compass className="w-5 h-5 dark:text-white text-zinc-900" />
             </div>
