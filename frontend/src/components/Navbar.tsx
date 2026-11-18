@@ -61,27 +61,19 @@ export default function Navbar({
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Brand Logo & Editorial Wordmark: Exact Represent Style */}
+          {/* Brand Logo Only (Larger, Ultra-Clean Represent Aesthetic) */}
           <button
             onClick={() => onBackToGateway ? onBackToGateway() : undefined}
-            className="flex items-center gap-3 group py-1 flex-shrink-0 text-left cursor-pointer"
+            className="flex items-center group py-1 flex-shrink-0 cursor-pointer"
             title="Return to Portals Selection"
           >
             <img
               src="/mom-logo-transparent.png"
               alt="MOM Logo"
-              className={`h-9 sm:h-11 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
+              className={`h-11 sm:h-14 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                 theme === 'light' ? 'invert' : ''
               }`}
             />
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-black tracking-tight uppercase font-display dark:text-white text-zinc-950">
-                MOM
-              </span>
-              <span className="text-[9px] tracking-[0.25em] uppercase font-mono dark:text-zinc-400 text-zinc-500 hidden sm:block">
-                {activeEntity === 'marketing' ? 'Moments of Marketing' : 'More of Music'}
-              </span>
-            </div>
           </button>
 
           {/* Dual Brand Switcher: Prominent Center Pill + Back to 2 Options Button */}

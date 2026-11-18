@@ -57,11 +57,11 @@ export default function DualPortalGateway({
                 : 'border-zinc-800 hover:border-zinc-500 dark:border-white/10 dark:hover:border-white/60'
             }`}
           >
-            {/* Background Photography: High-Fashion Brand Campaign */}
+            {/* Background Photography: Digital Marketing Strategy & Campaign Growth */}
             <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1600&auto=format&fit=crop"
-              alt="Moments of Marketing Brand Campaign"
-              className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop"
+              alt="Moments of Marketing Strategy & Growth Campaign"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
             {/* Gradient Scrim */}
@@ -73,7 +73,7 @@ export default function DualPortalGateway({
                 <img
                   src="/mom-logo-transparent.png"
                   alt="MOM Logo"
-                  className="h-8 w-auto object-contain"
+                  className="h-9 sm:h-11 w-auto object-contain"
                 />
                 {/* Non-clickable Chip: NO OUTLINE */}
                 <span className="text-[10px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-full font-bold">
@@ -145,7 +145,7 @@ export default function DualPortalGateway({
                 <img
                   src="/mom-logo-transparent.png"
                   alt="MOM More of Music Logo"
-                  className="h-8 w-auto object-contain"
+                  className="h-9 sm:h-11 w-auto object-contain"
                 />
                 {/* Non-clickable Chip: NO OUTLINE */}
                 <span className="text-[10px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-full font-bold">

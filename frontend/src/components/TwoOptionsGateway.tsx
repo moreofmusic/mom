@@ -17,23 +17,15 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
       
       {/* ----------------- TOP MINIMAL HEADER ----------------- */}
       <header className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-6 sm:py-8 flex items-center justify-between border-b dark:border-white/[0.08] border-zinc-200">
-        {/* Brand Wordmark & Logo */}
-        <div className="flex items-center gap-3">
+        {/* Brand Logo Only (Larger, Ultra-Clean Represent Aesthetic) */}
+        <div className="flex items-center">
           <img
             src="/mom-logo-transparent.png"
             alt="MOM Logo"
-            className={`h-10 sm:h-12 w-auto object-contain transition-all duration-300 ${
+            className={`h-12 sm:h-16 md:h-18 w-auto object-contain transition-all duration-300 hover:scale-105 ${
               theme === 'light' ? 'invert' : ''
             }`}
           />
-          <div className="flex flex-col">
-            <span className="text-xl sm:text-2xl font-black tracking-tight uppercase font-display dark:text-white text-zinc-950">
-              MOM
-            </span>
-            <span className="text-[9px] tracking-[0.25em] uppercase font-mono dark:text-zinc-400 text-zinc-500 hidden sm:block">
-              More of Music &bull; Moments of Marketing
-            </span>
-          </div>
         </div>
 
         {/* Top Controls */}
@@ -110,7 +102,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                 <img
                   src="/mom-logo-transparent.png"
                   alt="MOM Logo"
-                  className="h-9 sm:h-10 w-auto object-contain"
+                  className="h-10 sm:h-12 w-auto object-contain"
                 />
                 {/* Non-clickable Chip: NO OUTLINE */}
                 <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-1.5 shadow-sm">
@@ -155,15 +147,15 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
             onClick={() => onSelectEntity('marketing')}
             className="group relative rounded-3xl overflow-hidden border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white transition-all duration-500 cursor-pointer shadow-2xl flex flex-col justify-between min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] bg-zinc-950 active:scale-[0.98]"
           >
-            {/* Background Photography: High-Fashion Brand Campaign */}
+            {/* Background Photography: Digital Marketing Strategy & Campaign Growth */}
             <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1600&auto=format&fit=crop"
-              alt="Moments of Marketing Brand Campaign"
-              className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop"
+              alt="Moments of Marketing Strategy & Growth Campaign"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
             {/* Dark Scrim - Smooth fade for 100% text legibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 via-black/40 to-black/25 group-hover:via-black/75 transition-all duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 via-black/45 to-black/25 group-hover:via-black/75 transition-all duration-500" />
 
             {/* Top Bar inside Card */}
             <div className="relative z-10 p-6 sm:p-8 lg:p-9 flex items-start justify-between">
@@ -171,7 +163,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                 <img
                   src="/mom-logo-transparent.png"
                   alt="MOM Logo"
-                  className="h-9 sm:h-10 w-auto object-contain"
+                  className="h-10 sm:h-12 w-auto object-contain"
                 />
                 {/* Non-clickable Chip: NO OUTLINE */}
                 <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-white bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold flex items-center gap-1.5 shadow-sm">
