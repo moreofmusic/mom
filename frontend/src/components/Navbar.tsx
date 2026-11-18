@@ -68,16 +68,6 @@ export default function Navbar({
           
           {/* ================= LEFT BRAND BLOCK (PREVIOUS SIGNATURE DESIGN) ================= */}
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink min-w-0">
-            {onBackToGateway && (
-              <button
-                onClick={onBackToGateway}
-                className="px-2.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-white text-[10px] font-mono uppercase tracking-wider dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950 transition-all active:scale-95 cursor-pointer shadow-sm whitespace-nowrap"
-                title="Return to initial 2-option selection screen"
-              >
-                &larr; 2 OPTIONS
-              </button>
-            )}
-
             <button
               onClick={() => onBackToGateway ? onBackToGateway() : undefined}
               className="flex items-center gap-2 sm:gap-3 group py-0.5 flex-shrink min-w-0 cursor-pointer text-left"
@@ -191,19 +181,6 @@ export default function Navbar({
       {mobileMenuOpen && (
         <div className="lg:hidden mt-3 mx-4 p-5 rounded-2xl border dark:border-white/10 dark:bg-black/95 border-zinc-200 bg-white/95 backdrop-blur-2xl shadow-2xl animate-in fade-in">
           <div className="flex flex-col gap-2.5">
-            
-            {onBackToGateway && (
-              <button
-                onClick={() => {
-                  onBackToGateway();
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full py-2.5 px-3 rounded-lg border border-zinc-300 dark:border-white/15 text-xs font-mono uppercase tracking-wider text-center dark:text-zinc-300 text-zinc-700 font-bold"
-              >
-                &larr; Switch to 2 Options Screen
-              </button>
-            )}
-
             {activeEntity === 'marketing' ? (
               /* Mobile Tabs for Moments of Marketing */
               <div className="flex flex-col gap-2 py-2">

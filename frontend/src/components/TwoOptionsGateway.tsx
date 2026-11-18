@@ -96,7 +96,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           </div>
 
           {/* OPTION 2: MOMENTS OF MARKETING */}
-          <div className="w-full flex flex-col items-center group/momcard">
+          <div className="w-full flex flex-col items-center">
             <button
               onClick={() => onSelectEntity('marketing')}
               className="w-full h-52 sm:h-64 md:h-72 lg:h-80 bg-black text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl hover:shadow-[0_0_50px_rgba(239,68,68,0.35)] border border-zinc-800 dark:border-white/15 hover:border-red-500/60 transition-all duration-400 cursor-pointer active:scale-[0.98]"
@@ -120,18 +120,18 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                 <span>&rarr;</span>
               </span>
             </button>
-
-            {/* Tagline & Red Accent Line - Center Aligned & Attractive */}
-            <div className="w-full pt-4 sm:pt-5 flex flex-col items-center justify-center text-center">
-              <p className="text-sm sm:text-base md:text-[17px] font-bold dark:text-zinc-100 text-zinc-900 tracking-wide font-sans leading-relaxed group-hover/momcard:text-red-600 dark:group-hover/momcard:text-red-400 transition-colors">
-                Creating Moments. Building Brands. Driving Growth.
-              </p>
-              
-              {/* Sleek, Center-Aligned Glowing Red Accent Bar */}
-              <div className="w-full h-1 sm:h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 rounded-full mt-2.5 sm:mt-3 shadow-[0_0_15px_rgba(239,68,68,0.55)] group-hover/momcard:shadow-[0_0_24px_rgba(239,68,68,0.85)] transition-all duration-300" />
-            </div>
           </div>
 
+        </div>
+
+        {/* Tagline & Red Accent Line - Center Aligned on Page Below Both Option Cards */}
+        <div className="w-full max-w-xl mx-auto mt-10 sm:mt-14 md:mt-16 flex flex-col items-center justify-center text-center select-none">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold dark:text-zinc-100 text-zinc-900 tracking-wide font-sans leading-relaxed">
+            Creating Moments. Building Brands. Driving Growth.
+          </p>
+          
+          {/* Sleek, Center-Aligned Glowing Red Accent Bar */}
+          <div className="w-full max-w-sm sm:max-w-md md:max-w-lg h-1 sm:h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 rounded-full mt-3 sm:mt-3.5 shadow-[0_0_18px_rgba(239,68,68,0.65)]" />
         </div>
 
       </main>
