@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, MessageCircle, Phone, Mail, TrendingUp } from 'lucide-react';
+import { useRouter, usePathname } from 'next/navigation';
+import { Menu, X, Sun, Moon, MessageCircle, Phone, Mail } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
 import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
-  onOpenLeadModal: () => void;
+  onOpenLeadModal?: () => void;
   activeEntity?: 'marketing' | 'music';
   onSelectEntity?: (entity: 'marketing' | 'music') => void;
   onBackToGateway?: () => void;
@@ -22,9 +23,26 @@ export default function Navbar({
   marketingTab = 'home',
   onSelectMarketingTab,
 }: NavbarProps) {
+  const router = useRouter();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+
+  // Determine active tab from route or prop
+  let currentTab = marketingTab;
+  if (pathname === '/about') currentTab = 'about';
+  else if (pathname === '/services') currentTab = 'services';
+  else if (pathname === '/contact') currentTab = 'contact';
+  else if (pathname === '/home') currentTab = 'home';
+
+  const handleTabClick = (tabId: 'home' | 'about' | 'services' | 'contact') => {
+    if (onSelectMarketingTab) {
+      onSelectMarketingTab(tabId);
+    } else {
+      router.push(`/${tabId === 'home' ? 'home' : tabId}`);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,12 +83,15 @@ export default function Navbar({
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between gap-3 sm:gap-6">
           
-          {/* ================= LEFT BRAND BLOCK (PREVIOUS SIGNATURE DESIGN) ================= */}
+          {/* ================= LEFT BRAND BLOCK (NORMAL CLEAN TEXT, SLIGHTLY BIGGER FONT) ================= */}
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink min-w-0">
             <button
-              onClick={() => onBackToGateway ? onBackToGateway() : undefined}
-              className="flex items-center gap-2 sm:gap-3 group py-0.5 flex-shrink min-w-0 cursor-pointer text-left"
-              title="Return to Portals Selection"
+              onClick={() => {
+                if (onSelectMarketingTab) onSelectMarketingTab('home');
+                else if (onBackToGateway) onBackToGateway();
+              }}
+              className="flex items-center gap-2.5 sm:gap-3.5 group py-0.5 flex-shrink min-w-0 cursor-pointer text-left"
+              title="Moments of Marketing Home"
             >
               <img
                 src="/mom-logo-transparent.png"
@@ -79,32 +100,24 @@ export default function Navbar({
                   theme === 'light' ? 'invert' : ''
                 }`}
               />
-              {/* 100% STATIC BRAND BADGE: MOMENTS OF MARKETING */}
-              <div className="relative flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-emerald-500/35 bg-emerald-500/[0.06] hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.25)] shadow-[0_0_12px_rgba(16,185,129,0.1)] transition-all duration-300 select-none min-w-0 backdrop-blur-md">
-                <div className="flex items-center justify-center w-4 sm:w-4.5 h-4 sm:h-4.5 rounded-md bg-emerald-400/15 relative flex-shrink-0">
-                  <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-emerald-400 opacity-60" />
-                  <TrendingUp className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-emerald-500 dark:text-emerald-400 stroke-[2.5]" />
-                </div>
-                <div className="flex items-center gap-1 whitespace-nowrap">
-                  <span className="text-[10px] sm:text-xs font-black uppercase font-display text-emerald-600 dark:text-emerald-400 tracking-wider">
-                    MOMENTS OF MARKETING
-                  </span>
-                </div>
-              </div>
+              {/* NORMAL CLEAN TEXT, SLIGHTLY BIGGER FONT (NO GREEN PILL BADGE) */}
+              <span className="text-base sm:text-lg md:text-xl lg:text-[22px] font-black font-display tracking-tight text-zinc-950 dark:text-white whitespace-nowrap group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                Moments of Marketing
+              </span>
             </button>
           </div>
 
-          {/* ================= CENTER NAVIGATION (USER'S BUTTONS IN OUR SIGNATURE SLEEK CAPSULE) ================= */}
+          {/* ================= CENTER NAVIGATION ================= */}
           {activeEntity === 'marketing' ? (
             <nav className="hidden lg:flex items-center">
-              <div className="flex items-center gap-1 p-1 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm flex-nowrap whitespace-nowrap">
+              <div className="flex items-center gap-1.5 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm flex-nowrap whitespace-nowrap">
                 {marketingTabs.map((tab) => {
-                  const isActive = marketingTab === tab.id;
+                  const isActive = currentTab === tab.id;
                   return (
                     <button
                       key={tab.id}
-                      onClick={() => onSelectMarketingTab ? onSelectMarketingTab(tab.id) : undefined}
-                      className={`px-4 sm:px-5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${
+                      onClick={() => handleTabClick(tab.id)}
+                      className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-[13px] font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${
                         isActive
                           ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
                           : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
@@ -183,18 +196,18 @@ export default function Navbar({
               /* Mobile Tabs for Moments of Marketing */
               <div className="flex flex-col gap-2 py-2">
                 {marketingTabs.map((tab) => {
-                  const isActive = marketingTab === tab.id;
+                  const isActive = currentTab === tab.id;
                   return (
                     <button
                       key={tab.id}
                       onClick={() => {
-                        if (onSelectMarketingTab) onSelectMarketingTab(tab.id);
+                        handleTabClick(tab.id);
                         setMobileMenuOpen(false);
                       }}
-                      className={`w-full py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-center transition-all ${
+                      className={`w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-center transition-all cursor-pointer ${
                         isActive
                           ? 'bg-zinc-950 text-white dark:bg-white dark:text-black shadow-md'
-                          : 'border border-zinc-300 dark:border-white/15 dark:text-zinc-200 text-zinc-800'
+                          : 'border border-zinc-300 dark:border-white/15 dark:text-zinc-200 text-zinc-800 hover:bg-zinc-100 dark:hover:bg-white/10'
                       }`}
                     >
                       {tab.label}

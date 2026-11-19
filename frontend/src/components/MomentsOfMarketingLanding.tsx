@@ -87,27 +87,8 @@ export default function MomentsOfMarketingLanding({
     setFormSubmitted(true);
   };
 
-  // Sleek Reusable Mobile Sticky Tab Bar (Smooth, Compact, Consistent across all pages)
-  const renderMobileTabs = () => (
-    <div className="lg:hidden flex items-center justify-center gap-1.5 p-1 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex-nowrap mb-4 w-fit mx-auto max-w-full">
-      {marketingTabs.map((tab) => {
-        const isActive = activeTab === tab.id;
-        return (
-          <button
-            key={tab.id}
-            onClick={() => onSelectTab(tab.id)}
-            className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all cursor-pointer ${
-              isActive
-                ? 'bg-zinc-950 text-white dark:bg-white dark:text-black shadow-md'
-                : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white'
-            }`}
-          >
-            {tab.label}
-          </button>
-        );
-      })}
-    </div>
-  );
+  // Individual standalone pages - navigation is handled cleanly via the top Navbar and page action buttons
+  const renderMobileTabs = () => null;
 
   // Common Page Container Class to guarantee 100% IDENTICAL top gap across all pages
   const pageContainerClass = "max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 select-none animate-in fade-in duration-300";
@@ -454,42 +435,47 @@ export default function MomentsOfMarketingLanding({
               </p>
             </div>
 
-            {/* Desktop Connected Sequential Process Flow */}
-            <div className="hidden lg:block relative py-4">
-              {/* Process Track Line Behind Nodes */}
-              <div className="absolute top-10 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-emerald-500 via-cyan-500 to-teal-400 -z-0" />
+            {/* Desktop Connected Sequential Process Flow - 5 Perfectly Aligned Independent Cards */}
+            <div className="hidden lg:grid lg:grid-cols-5 gap-4 py-2">
+              {approachSteps.map((step, idx) => (
+                <div
+                  key={step.name}
+                  className="pro-card p-6 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-emerald-500/60 dark:hover:border-emerald-400/60 hover:shadow-lg transition-all duration-300 text-center relative overflow-hidden"
+                >
+                  {/* Subtle Top Accent Bar */}
+                  <div className="h-1 w-8 bg-emerald-500/30 dark:bg-emerald-400/30 rounded-full mx-auto mb-4 group-hover:w-16 group-hover:bg-emerald-500 transition-all duration-300" />
 
-              <div className="grid grid-cols-5 gap-4 relative z-10">
-                {approachSteps.map((step, idx) => (
-                  <div
-                    key={step.name}
-                    className="pro-card p-5 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 text-center"
-                  >
-                    {/* Step Node Indicator (No Number, No Icon) */}
-                    <div className="flex justify-center mb-3">
-                      <div className="w-8 h-8 rounded-full bg-white dark:bg-zinc-950 border-2 border-emerald-500 dark:border-emerald-400 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
-                        <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
-                      </div>
+                  {/* Step Node Indicator (No Number, No Icon, No Stray Protruding Lines) */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-9 h-9 rounded-full bg-emerald-500/10 dark:bg-emerald-400/10 border-2 border-emerald-500 dark:border-emerald-400 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
                     </div>
+                  </div>
 
-                    <div className="space-y-2">
-                      <h4 className="text-base sm:text-lg font-bold font-display dark:text-white text-zinc-950">
-                        {step.name}
-                      </h4>
-                      <p className="text-xs text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-                        {step.desc}
-                      </p>
-                    </div>
+                  <div className="space-y-2 flex-1">
+                    <h4 className="text-base sm:text-lg font-bold font-display dark:text-white text-zinc-950">
+                      {step.name}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
 
-                    {/* Step Connector Arrow */}
-                    {idx < approachSteps.length - 1 && (
-                      <div className="pt-3 flex justify-center text-zinc-400 dark:text-zinc-600 text-xs font-mono">
+                  {/* Clean Process Direction Indicator at Bottom */}
+                  <div className="pt-4 mt-2 flex justify-center text-xs font-mono font-bold">
+                    {idx < approachSteps.length - 1 ? (
+                      <span className="text-emerald-600 dark:text-emerald-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        <span>Next</span>
                         <span>&rarr;</span>
-                      </div>
+                      </span>
+                    ) : (
+                      <span className="text-cyan-600 dark:text-cyan-400 flex items-center gap-1">
+                        <span>Continuous &bull;</span>
+                      </span>
                     )}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
 
             {/* Mobile / Tablet Connected Vertical Process Timeline */}
