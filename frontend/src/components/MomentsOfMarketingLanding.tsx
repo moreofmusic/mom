@@ -133,46 +133,28 @@ export default function MomentsOfMarketingLanding({
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-display text-zinc-950 dark:text-white tracking-tight leading-[1.08] mb-8 max-w-4xl">
-            More Than Marketing.{' '}
-            <span className="font-serif italic font-normal dark:text-zinc-200 text-zinc-900 block sm:inline">
-              A Partner in Your Growth
-            </span>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display text-zinc-950 dark:text-white tracking-tight leading-[1.05] mb-8 max-w-4xl">
+            More Than Marketing.
           </h1>
 
           {/* Three Core Paragraphs as 3 Ultra-Premium Editorial Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 my-8">
-            <div className="pro-card p-7 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-3.5">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block">
-                  01 &bull; CONNECTION
-                </span>
-                <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-700 leading-relaxed font-light">
-                  At MOM &mdash; Moments of Marketing, we believe great marketing creates more than visibility. It creates connections, builds trust, and drives business forward.
-                </p>
-              </div>
+            <div className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-emerald-500/50 hover:border-zinc-950 transition-all duration-300 shadow-sm flex flex-col justify-between group">
+              <p className="text-sm sm:text-base md:text-[17px] dark:text-zinc-200 text-zinc-800 leading-relaxed font-normal">
+                At MOM &mdash; Moments of Marketing, we believe great marketing creates more than visibility. It creates connections, builds trust, and drives business forward.
+              </p>
             </div>
 
-            <div className="pro-card p-7 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-3.5">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-600 dark:text-cyan-400 font-bold block">
-                  02 &bull; IMPACT
-                </span>
-                <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-700 leading-relaxed font-light">
-                  We partner with businesses to develop impactful brand identities, create engaging digital experiences, and execute marketing strategies that connect with the right customers.
-                </p>
-              </div>
+            <div className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-cyan-500/50 hover:border-zinc-950 transition-all duration-300 shadow-sm flex flex-col justify-between group">
+              <p className="text-sm sm:text-base md:text-[17px] dark:text-zinc-200 text-zinc-800 leading-relaxed font-normal">
+                We partner with businesses to develop impactful brand identities, create engaging digital experiences, and execute marketing strategies that connect with the right customers.
+              </p>
             </div>
 
-            <div className="pro-card p-7 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-3.5">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-[#185873] dark:text-sky-400 font-bold block">
-                  03 &bull; CONFIDENCE
-                </span>
-                <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-700 leading-relaxed font-light">
-                  Whether you&apos;re launching a new brand, expanding your market presence, or scaling your business, we bring the right mix of creativity, strategy, and execution to help you move forward with confidence.
-                </p>
-              </div>
+            <div className="pro-card p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 dark:hover:border-white/50 hover:border-zinc-950 transition-all duration-300 shadow-sm flex flex-col justify-between group">
+              <p className="text-sm sm:text-base md:text-[17px] dark:text-zinc-200 text-zinc-800 leading-relaxed font-normal">
+                Whether you&apos;re launching a new brand, expanding your market presence, or scaling your business, we bring the right mix of creativity, strategy, and execution to help you move forward with confidence.
+              </p>
             </div>
           </div>
 

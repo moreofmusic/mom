@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, MessageCircle, Phone, Mail } from 'lucide-react';
+import { Menu, X, Sun, Moon, MessageCircle, Phone, Mail, TrendingUp } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
-import FlipBrandWordmark from './FlipBrandWordmark';
 import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
@@ -80,7 +79,18 @@ export default function Navbar({
                   theme === 'light' ? 'invert' : ''
                 }`}
               />
-              <FlipBrandWordmark size="md" fixedEntity={activeEntity === 'marketing' ? 'marketing' : undefined} />
+              {/* 100% STATIC BRAND BADGE: MOMENTS OF MARKETING */}
+              <div className="relative flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-emerald-500/35 bg-emerald-500/[0.06] hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.25)] shadow-[0_0_12px_rgba(16,185,129,0.1)] transition-all duration-300 select-none min-w-0 backdrop-blur-md">
+                <div className="flex items-center justify-center w-4 sm:w-4.5 h-4 sm:h-4.5 rounded-md bg-emerald-400/15 relative flex-shrink-0">
+                  <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-emerald-400 opacity-60" />
+                  <TrendingUp className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-emerald-500 dark:text-emerald-400 stroke-[2.5]" />
+                </div>
+                <div className="flex items-center gap-1 whitespace-nowrap">
+                  <span className="text-[10px] sm:text-xs font-black uppercase font-display text-emerald-600 dark:text-emerald-400 tracking-wider">
+                    MOMENTS OF MARKETING
+                  </span>
+                </div>
+              </div>
             </button>
           </div>
 
