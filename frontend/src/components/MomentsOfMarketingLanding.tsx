@@ -218,26 +218,20 @@ export default function MomentsOfMarketingLanding({
 
     const pillars = [
       {
-        number: '01',
-        title: 'Brand Visibility',
+        title: 'BRAND VISIBILITY',
         tagline: 'Get noticed. Stay remembered.',
-        icon: Eye,
         description:
           'Build a distinctive brand presence that captures attention and earns recognition. We help your business stand out through strategic branding, engaging content, and consistent digital communication.',
       },
       {
-        number: '02',
-        title: 'Lead Generation',
+        title: 'LEAD GENERATION',
         tagline: 'Reach the right people. Create real opportunities.',
-        icon: Target,
         description:
           'Attract relevant audiences and turn their interest into valuable enquiries. Our targeted campaigns and conversion-focused strategies help create opportunities for your sales team.',
       },
       {
-        number: '03',
-        title: 'Business Growth',
+        title: 'BUSINESS GROWTH',
         tagline: 'Turn opportunities into lasting progress.',
-        icon: TrendingUp,
         description:
           'Make your marketing work harder for your business. Through performance analysis, customer engagement, and continuous optimization, we help you make informed marketing decisions and build a foundation for sustainable growth.',
       },
@@ -273,34 +267,24 @@ export default function MomentsOfMarketingLanding({
 
     const approachSteps = [
       {
-        step: '01',
         name: 'Discover',
         desc: 'Understand your business, audience, challenges, and objectives.',
-        icon: Search,
       },
       {
-        step: '02',
         name: 'Strategize',
         desc: 'Build a focused marketing roadmap with the right channels and priorities.',
-        icon: Compass,
       },
       {
-        step: '03',
         name: 'Create',
         desc: 'Develop compelling brand identities, content, campaigns, and digital experiences.',
-        icon: Palette,
       },
       {
-        step: '04',
         name: 'Execute',
         desc: 'Launch coordinated marketing activities to reach and engage your audience.',
-        icon: Rocket,
       },
       {
-        step: '05',
         name: 'Optimize',
         desc: 'Review performance, identify opportunities, and refine the strategy.',
-        icon: TrendingUp,
       },
     ];
 
@@ -378,36 +362,44 @@ export default function MomentsOfMarketingLanding({
           </section>
 
           {/* ---------------- 3. OUR THREE PILLARS OF GROWTH ---------------- */}
-          <section className="space-y-5">
+          <section className="space-y-6">
             <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
                 OUR THREE PILLARS OF GROWTH
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+            {/* Subtle Architectural Pillar Design */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7">
               {pillars.map((p) => {
-                const Icon = p.icon;
                 return (
                   <div
-                    key={p.number}
-                    className="pro-card p-6 sm:p-7 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                    key={p.title}
+                    className="pro-card relative p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 overflow-hidden"
                   >
-                    <div className="space-y-3.5">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-500">
-                          {p.number}. {p.title}
-                        </span>
-                        <Icon className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
-                      </div>
+                    {/* Architectural Pillar Crown / Capital Beam */}
+                    <div className="h-1.5 w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 rounded-full mb-6 group-hover:scale-x-105 transition-transform origin-left" />
 
-                      <h4 className="text-base sm:text-lg font-bold font-display dark:text-white text-zinc-950 leading-snug">
-                        {p.tagline}
+                    <div className="space-y-4">
+                      {/* Pillar Title in Bold All-Caps (No Number, No Icon) */}
+                      <h4 className="text-lg sm:text-xl font-black font-display uppercase tracking-wider text-zinc-950 dark:text-white">
+                        {p.title}
                       </h4>
 
+                      {/* Tagline */}
+                      <p className="text-sm sm:text-base font-bold text-emerald-600 dark:text-emerald-400 font-sans leading-snug">
+                        {p.tagline}
+                      </p>
+
+                      {/* Description */}
                       <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
                         {p.description}
                       </p>
+                    </div>
+
+                    {/* Architectural Pillar Foundation / Base Pedestal */}
+                    <div className="pt-6 mt-6 border-t border-zinc-200/80 dark:border-white/10 flex items-center justify-between">
+                      <div className="h-[2px] w-12 bg-zinc-300 dark:bg-white/20 rounded-full group-hover:w-full group-hover:bg-emerald-500/60 transition-all duration-500" />
                     </div>
                   </div>
                 );
@@ -452,7 +444,7 @@ export default function MomentsOfMarketingLanding({
           </section>
 
           {/* ---------------- 5. OUR APPROACH ---------------- */}
-          <section className="space-y-5">
+          <section className="space-y-6">
             <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 space-y-1">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
                 OUR APPROACH
@@ -462,31 +454,63 @@ export default function MomentsOfMarketingLanding({
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {approachSteps.map((step) => {
-                const Icon = step.icon;
-                return (
+            {/* Desktop Connected Sequential Process Flow */}
+            <div className="hidden lg:block relative py-4">
+              {/* Process Track Line Behind Nodes */}
+              <div className="absolute top-10 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-emerald-500 via-cyan-500 to-teal-400 -z-0" />
+
+              <div className="grid grid-cols-5 gap-4 relative z-10">
+                {approachSteps.map((step, idx) => (
                   <div
-                    key={step.step}
-                    className="pro-card p-5 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                    key={step.name}
+                    className="pro-card p-5 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 text-center"
                   >
-                    <div className="space-y-2.5">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-mono font-bold uppercase text-zinc-500">
-                          {step.step}
-                        </span>
-                        <Icon className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
+                    {/* Step Node Indicator (No Number, No Icon) */}
+                    <div className="flex justify-center mb-3">
+                      <div className="w-8 h-8 rounded-full bg-white dark:bg-zinc-950 border-2 border-emerald-500 dark:border-emerald-400 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                        <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
                       </div>
-                      <h4 className="text-base font-bold font-display dark:text-white text-zinc-950">
+                    </div>
+
+                    <div className="space-y-2">
+                      <h4 className="text-base sm:text-lg font-bold font-display dark:text-white text-zinc-950">
                         {step.name}
                       </h4>
                       <p className="text-xs text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
                         {step.desc}
                       </p>
                     </div>
+
+                    {/* Step Connector Arrow */}
+                    {idx < approachSteps.length - 1 && (
+                      <div className="pt-3 flex justify-center text-zinc-400 dark:text-zinc-600 text-xs font-mono">
+                        <span>&rarr;</span>
+                      </div>
+                    )}
                   </div>
-                );
-              })}
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile / Tablet Connected Vertical Process Timeline */}
+            <div className="lg:hidden relative pl-6 border-l-2 border-emerald-500/50 dark:border-emerald-400/50 space-y-5 my-2">
+              {approachSteps.map((step) => (
+                <div key={step.name} className="relative group">
+                  {/* Step Node on Process Timeline */}
+                  <div className="absolute -left-[31px] top-4 w-4 h-4 rounded-full bg-white dark:bg-zinc-950 border-2 border-emerald-500 dark:border-emerald-400 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
+                  </div>
+
+                  <div className="pro-card p-5 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm space-y-1.5">
+                    <h4 className="text-base font-bold font-display dark:text-white text-zinc-950">
+                      {step.name}
+                    </h4>
+                    <p className="text-xs text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -616,9 +640,6 @@ export default function MomentsOfMarketingLanding({
           
           {/* Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-bold uppercase tracking-wider">
-              <span>COMPLETE CAPABILITIES</span>
-            </div>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950">
               OUR SERVICES
             </h2>
@@ -636,7 +657,7 @@ export default function MomentsOfMarketingLanding({
               const Icon = s.icon;
               return (
                 <div
-                  key={s.number}
+                  key={s.title}
                   className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 relative overflow-hidden"
                 >
                   <div className="space-y-4">
@@ -647,8 +668,8 @@ export default function MomentsOfMarketingLanding({
                       </div>
                     </div>
 
-                    {/* Standard, Big, Bold, Eye-Catching Service Heading */}
-                    <h3 className="text-2xl sm:text-3xl lg:text-[28px] font-black font-display tracking-tight text-zinc-950 dark:text-white leading-[1.15] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    {/* Standard, Big, Bold, Eye-Catching Service Heading (No Number) */}
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight text-zinc-950 dark:text-white leading-[1.15] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                       {s.title}
                     </h3>
 
@@ -662,37 +683,10 @@ export default function MomentsOfMarketingLanding({
                       {s.description}
                     </p>
 
-                    {/* Sub-services capability tags */}
-                    <div className="pt-2 flex flex-wrap gap-1.5 sm:gap-2">
-                      {s.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 rounded-full bg-zinc-100 dark:bg-white/[0.06] text-xs font-sans text-zinc-700 dark:text-zinc-300 font-medium border border-zinc-200/80 dark:border-white/10 hover:border-emerald-500/40 transition-all"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Card Bottom CTA Bar */}
-                  <div className="pt-5 mt-6 border-t border-zinc-200 dark:border-white/[0.08] flex items-center justify-between gap-3">
-                    <button
-                      onClick={() => onOpenLeadModal(s.title)}
-                      className="px-4 py-2.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:opacity-90 active:scale-95 shadow-xs transition-all cursor-pointer"
-                    >
-                      <span>Inquire This Service</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                    <a
-                      href={`https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20interested%20in%20${encodeURIComponent(s.title)}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 hover:border-emerald-500/60 text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 transition-all hover:bg-emerald-500/5 active:scale-95"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      <span>WhatsApp</span>
-                    </a>
+                    {/* Sub-services capability tags - Clean typographic text with bullet separators (No button feel) */}
+                    <p className="text-xs sm:text-sm font-medium text-zinc-500 dark:text-zinc-400 tracking-wide leading-relaxed pt-2">
+                      {s.tags.join(' · ')}
+                    </p>
                   </div>
                 </div>
               );
@@ -753,7 +747,7 @@ export default function MomentsOfMarketingLanding({
           <div className="p-5 sm:p-6 rounded-2xl border border-zinc-200 dark:border-white/15 bg-zinc-100/70 dark:bg-zinc-900/60 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block mb-0.5">
-                CTA: Let&apos;s Talk About Your Growth
+                Let&apos;s Talk About Your Growth
               </span>
               <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">
                 Moments of Marketing &mdash; Creating Moments. Building Brands. Driving Growth.
