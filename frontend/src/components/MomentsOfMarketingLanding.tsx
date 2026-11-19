@@ -633,52 +633,62 @@ export default function MomentsOfMarketingLanding({
         <div className="space-y-10 sm:space-y-12">
           
           {/* Section Header */}
-          <div className="border-b border-zinc-200 dark:border-white/10 pb-6 space-y-2">
-            <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block">
-              COMPLETE CAPABILITIES
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-display uppercase tracking-tight dark:text-white text-zinc-950">
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-bold uppercase tracking-wider">
+              <span>COMPLETE CAPABILITIES &bull; 10 SPECIALIZED SERVICES</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950">
               OUR SERVICES
             </h2>
-            <p className="text-base sm:text-lg font-bold dark:text-zinc-200 text-zinc-800 font-display">
+            <p className="text-lg sm:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
               Everything Your Brand Needs to Grow.
             </p>
-            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+            <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
               From building brand awareness to generating leads and strengthening customer relationships, we bring your marketing activities together under one strategic approach.
             </p>
           </div>
 
-          {/* 10 Services Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          {/* 10 Services Cards - Prominent, Bold, Standard Typography */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {services.map((s) => {
               const Icon = s.icon;
               return (
                 <div
                   key={s.number}
-                  className="pro-card p-6 sm:p-7 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                  className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 relative overflow-hidden"
                 >
-                  <div className="space-y-3">
+                  <div className="space-y-4">
+                    {/* Top Row: Service Number Badge + Icon Avatar */}
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-500">
-                        {s.number}. {s.title}
+                      <span className="px-3 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-400/10 border border-emerald-500/30 dark:border-emerald-400/30 text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold tracking-widest uppercase">
+                        SERVICE {s.number}
                       </span>
-                      <Icon className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
+                      <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-500 group-hover:border-emerald-500/40 transition-all shadow-xs">
+                        <Icon className="w-5 h-5" />
+                      </div>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold font-display dark:text-white text-zinc-950 leading-snug">
-                      {s.tagline}
+                    {/* Standard, Big, Bold, Eye-Catching Service Heading */}
+                    <h3 className="text-2xl sm:text-3xl lg:text-[28px] font-black font-display tracking-tight text-zinc-950 dark:text-white leading-[1.15] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      {s.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                    {/* Service Tagline */}
+                    <p className="text-sm sm:text-base font-semibold text-zinc-800 dark:text-zinc-200 font-sans tracking-wide leading-snug">
+                      {s.tagline}
+                    </p>
+
+                    {/* Service Detailed Description */}
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed">
                       {s.description}
                     </p>
 
-                    {/* Sub-services tags */}
-                    <div className="pt-2.5 flex flex-wrap gap-1.5">
+                    {/* Sub-services capability tags */}
+                    <div className="pt-2 flex flex-wrap gap-1.5 sm:gap-2">
                       {s.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-white/[0.06] text-[11px] font-mono text-zinc-700 dark:text-zinc-300 font-medium border border-zinc-200/60 dark:border-white/5"
+                          className="px-3 py-1 rounded-full bg-zinc-100 dark:bg-white/[0.06] text-xs font-sans text-zinc-700 dark:text-zinc-300 font-medium border border-zinc-200/80 dark:border-white/10 hover:border-emerald-500/40 transition-all"
                         >
                           {tag}
                         </span>
@@ -686,10 +696,11 @@ export default function MomentsOfMarketingLanding({
                     </div>
                   </div>
 
-                  <div className="pt-5 mt-5 border-t border-zinc-200 dark:border-white/[0.08] flex items-center justify-between">
+                  {/* Card Bottom CTA Bar */}
+                  <div className="pt-5 mt-6 border-t border-zinc-200 dark:border-white/[0.08] flex items-center justify-between gap-3">
                     <button
                       onClick={() => onOpenLeadModal(s.title)}
-                      className="text-xs font-bold uppercase tracking-wider dark:text-white text-zinc-950 flex items-center gap-1.5 group-hover:translate-x-1 transition-transform cursor-pointer"
+                      className="px-4 py-2.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:opacity-90 active:scale-95 shadow-xs transition-all cursor-pointer"
                     >
                       <span>Inquire This Service</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -698,9 +709,9 @@ export default function MomentsOfMarketingLanding({
                       href={`https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20interested%20in%20${encodeURIComponent(s.title)}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 flex items-center gap-1 hover:underline"
+                      className="px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 hover:border-emerald-500/60 text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 transition-all hover:bg-emerald-500/5 active:scale-95"
                     >
-                      <MessageCircle className="w-3.5 h-3.5" />
+                      <MessageCircle className="w-4 h-4" />
                       <span>WhatsApp</span>
                     </a>
                   </div>
