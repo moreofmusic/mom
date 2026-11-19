@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowUpRight, MessageCircle, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import FlipBrandWordmark from './FlipBrandWordmark';
+import ComingSoonModal from './ComingSoonModal';
 
 interface TwoOptionsGatewayProps {
   onSelectEntity: (entity: 'marketing' | 'music') => void;
@@ -11,6 +12,7 @@ interface TwoOptionsGatewayProps {
 
 export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayProps) {
   const { theme, toggleTheme } = useTheme();
+  const [comingSoonOpen, setComingSoonOpen] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col justify-between dark:bg-black bg-[#F8FAFC] dark:text-white text-zinc-900 transition-colors duration-300 relative overflow-hidden select-none">
@@ -68,12 +70,12 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
         
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start justify-center">
           
-          {/* OPTION 1: MORE OF MUSIC */}
+          {/* OPTION 1: MORE OF MUSIC (UNDER DEVELOPMENT - POPS UP COMING SOON MESSAGE) */}
           <div className="w-full flex flex-col items-center">
             <button
-              onClick={() => onSelectEntity('music')}
+              onClick={() => setComingSoonOpen(true)}
               className="w-full h-52 sm:h-64 md:h-72 lg:h-80 bg-black text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl hover:shadow-[0_0_50px_rgba(6,182,212,0.35)] border border-zinc-800 dark:border-white/15 hover:border-cyan-400/60 transition-all duration-400 cursor-pointer active:scale-[0.98]"
-              title="Click to enter More of Music"
+              title="More of Music (Coming Soon — Under Development)"
             >
               {/* Shimmer Light Beam on Hover */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
@@ -89,8 +91,9 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
               </h2>
 
               <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.2em] uppercase text-cyan-400 mt-3 sm:mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5">
-                <span>ENTER STUDIO</span>
-                <span>&rarr;</span>
+                <span>COMING SOON</span>
+                <span>&bull;</span>
+                <span>UNDER DEVELOPMENT</span>
               </span>
             </button>
           </div>
@@ -143,6 +146,13 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           <span>Click any entity to explore full capabilities &rarr;</span>
         </div>
       </footer>
+
+      {/* Coming Soon / Under Development Modal */}
+      <ComingSoonModal
+        isOpen={comingSoonOpen}
+        onClose={() => setComingSoonOpen(false)}
+        onExploreMarketing={() => onSelectEntity('marketing')}
+      />
 
     </div>
   );

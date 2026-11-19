@@ -131,7 +131,7 @@ export default function Navbar({
                 className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 text-[10px] font-mono uppercase tracking-wider dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950 transition-all cursor-pointer active:scale-95 shadow-sm"
                 title={`Switch to ${activeEntity === 'marketing' ? 'More of Music' : 'Moments of Marketing'}`}
               >
-                <span>{activeEntity === 'marketing' ? 'More of Music →' : 'Moments of Marketing →'}</span>
+                <span>{activeEntity === 'marketing' ? 'More of Music (Coming Soon) →' : 'Moments of Marketing →'}</span>
               </button>
             )}
 

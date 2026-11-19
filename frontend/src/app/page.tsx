@@ -7,11 +7,13 @@ import MomentsOfMarketingLanding from '../components/MomentsOfMarketingLanding';
 import MoreOfMusicLanding from '../components/MoreOfMusicLanding';
 import Footer from '../components/Footer';
 import LeadCaptureModal from '../components/LeadCaptureModal';
+import ComingSoonModal from '../components/ComingSoonModal';
 
 export default function Home() {
   const [activeEntity, setActiveEntity] = useState<'marketing' | 'music' | null>(null);
   const [marketingTab, setMarketingTab] = useState<'home' | 'about' | 'services' | 'contact'>('home');
   const [modalOpen, setModalOpen] = useState(false);
+  const [musicComingSoonOpen, setMusicComingSoonOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('Digital Marketing');
   const [mounted, setMounted] = useState(false);
 
@@ -21,8 +23,10 @@ export default function Home() {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const entityParam = params.get('entity') || params.get('portal');
-      if (entityParam === 'music' || entityParam === 'marketing') {
-        setActiveEntity(entityParam);
+      if (entityParam === 'marketing') {
+        setActiveEntity('marketing');
+      } else if (entityParam === 'music') {
+        setMusicComingSoonOpen(true);
       }
       const tabParam = params.get('tab');
       if (tabParam === 'home' || tabParam === 'about' || tabParam === 'services' || tabParam === 'contact') {
@@ -32,6 +36,10 @@ export default function Home() {
   }, []);
 
   const handleSelectEntity = (entity: 'marketing' | 'music' | null) => {
+    if (entity === 'music') {
+      setMusicComingSoonOpen(true);
+      return;
+    }
     setActiveEntity(entity);
     if (entity === 'marketing') {
       setMarketingTab('home');
@@ -114,11 +122,21 @@ export default function Home() {
 
       {/* Consultation Modal */}
       {mounted && (
-        <LeadCaptureModal
-          isOpen={modalOpen}
-          onClose={() => setModalOpen(false)}
-          defaultService={selectedService}
-        />
+        <>
+          <LeadCaptureModal
+            isOpen={modalOpen}
+            onClose={() => setModalOpen(false)}
+            defaultService={selectedService}
+          />
+          <ComingSoonModal
+            isOpen={musicComingSoonOpen}
+            onClose={() => setMusicComingSoonOpen(false)}
+            onExploreMarketing={() => {
+              setMusicComingSoonOpen(false);
+              handleSelectEntity('marketing');
+            }}
+          />
+        </>
       )}
     </main>
   );
