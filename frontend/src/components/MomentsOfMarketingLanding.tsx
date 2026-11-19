@@ -132,8 +132,8 @@ export default function MomentsOfMarketingLanding({
             </span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display text-zinc-950 dark:text-white tracking-tight leading-[1.05] mb-8 max-w-4xl">
+          {/* Main Headline - Single Line */}
+          <h1 className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-black font-display text-zinc-950 dark:text-white tracking-tight leading-tight mb-8 whitespace-nowrap max-w-full">
             More Than Marketing.
           </h1>
 
