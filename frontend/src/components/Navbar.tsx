@@ -80,7 +80,7 @@ export default function Navbar({
                   theme === 'light' ? 'invert' : ''
                 }`}
               />
-              <FlipBrandWordmark size="md" />
+              <FlipBrandWordmark size="md" fixedEntity={activeEntity === 'marketing' ? 'marketing' : undefined} />
             </button>
           </div>
 
@@ -123,18 +123,6 @@ export default function Navbar({
 
           {/* ================= RIGHT UTILITY CONTROLS ================= */}
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            
-            {/* Quick Switch to More of Music / Moments of Marketing */}
-            {onSelectEntity && (
-              <button
-                onClick={() => onSelectEntity(activeEntity === 'marketing' ? 'music' : 'marketing')}
-                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 text-[10px] font-mono uppercase tracking-wider dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950 transition-all cursor-pointer active:scale-95 shadow-sm"
-                title={`Switch to ${activeEntity === 'marketing' ? 'More of Music' : 'Moments of Marketing'}`}
-              >
-                <span>{activeEntity === 'marketing' ? 'More of Music (Coming Soon) →' : 'Moments of Marketing →'}</span>
-              </button>
-            )}
-
             {/* WhatsApp Direct */}
             <a
               href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."

@@ -6,15 +6,20 @@ import { TrendingUp, Music } from 'lucide-react';
 interface FlipBrandWordmarkProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
+  fixedEntity?: 'marketing' | 'music';
 }
 
-export default function FlipBrandWordmark({ className = '', size = 'md' }: FlipBrandWordmarkProps) {
+export default function FlipBrandWordmark({ className = '', size = 'md', fixedEntity }: FlipBrandWordmarkProps) {
   // 0 = More of Music, 1 = Moments of Marketing
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(fixedEntity === 'marketing' ? 1 : fixedEntity === 'music' ? 0 : 0);
   const [isMorphing, setIsMorphing] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (fixedEntity) {
+      setIndex(fixedEntity === 'marketing' ? 1 : 0);
+      return;
+    }
     if (isPaused) return;
 
     const interval = setInterval(() => {
@@ -22,9 +27,10 @@ export default function FlipBrandWordmark({ className = '', size = 'md' }: FlipB
     }, 3200);
 
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, fixedEntity]);
 
   const triggerMorph = () => {
+    if (fixedEntity) return;
     setIsMorphing(true);
     setTimeout(() => {
       setIndex((prev) => (prev === 0 ? 1 : 0));
@@ -34,7 +40,7 @@ export default function FlipBrandWordmark({ className = '', size = 'md' }: FlipB
     }, 300);
   };
 
-  const isMusic = index === 0;
+  const isMusic = fixedEntity ? fixedEntity === 'music' : index === 0;
 
   return (
     <div

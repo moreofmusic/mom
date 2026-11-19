@@ -635,7 +635,7 @@ export default function MomentsOfMarketingLanding({
           {/* Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-bold uppercase tracking-wider">
-              <span>COMPLETE CAPABILITIES &bull; 10 SPECIALIZED SERVICES</span>
+              <span>COMPLETE CAPABILITIES</span>
             </div>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950">
               OUR SERVICES
@@ -658,13 +658,10 @@ export default function MomentsOfMarketingLanding({
                   className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 relative overflow-hidden"
                 >
                   <div className="space-y-4">
-                    {/* Top Row: Service Number Badge + Icon Avatar */}
+                    {/* Top Row: Icon Avatar */}
                     <div className="flex items-center justify-between">
-                      <span className="px-3 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-400/10 border border-emerald-500/30 dark:border-emerald-400/30 text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold tracking-widest uppercase">
-                        SERVICE {s.number}
-                      </span>
-                      <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-500 group-hover:border-emerald-500/40 transition-all shadow-xs">
-                        <Icon className="w-5 h-5" />
+                      <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 group-hover:border-emerald-500/40 transition-all shadow-xs">
+                        <Icon className="w-6 h-6" />
                       </div>
                     </div>
 
