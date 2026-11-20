@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { X, Clock, Sparkles, MessageCircle, ArrowRight, Music } from 'lucide-react';
+import { X, Clock, MessageCircle, ArrowRight } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 interface ComingSoonModalProps {
   isOpen: boolean;
@@ -14,6 +15,8 @@ export default function ComingSoonModal({
   onClose,
   onExploreMarketing,
 }: ComingSoonModalProps) {
+  const { theme } = useTheme();
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -38,16 +41,16 @@ export default function ComingSoonModal({
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200 select-none"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200 select-none overflow-y-auto"
       onClick={onClose}
     >
       {/* Modal Container */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-lg rounded-3xl border border-zinc-200 dark:border-white/15 bg-white dark:bg-zinc-950 p-6 sm:p-9 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 text-center"
+        className="relative w-full max-w-xl rounded-3xl border border-zinc-200 dark:border-white/15 bg-white dark:bg-zinc-950 p-6 sm:p-9 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 text-center my-auto"
       >
         {/* Subtle Ambient Cyan Backlight */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-64 bg-cyan-500/15 dark:bg-cyan-500/20 blur-[90px] pointer-events-none" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-cyan-500/15 dark:bg-cyan-500/20 blur-[100px] pointer-events-none" />
 
         {/* Close Button (X) */}
         <button
@@ -64,20 +67,36 @@ export default function ComingSoonModal({
           <span>COMING SOON &bull; UNDER DEVELOPMENT</span>
         </div>
 
-        {/* Music Icon Avatar */}
-        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl mx-auto mb-4 bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 flex items-center justify-center text-cyan-500 dark:text-cyan-400 shadow-inner">
-          <Music className="w-7 h-7 sm:w-8 sm:h-8" />
+        {/* MOM Logo from Navbar (Replaces the music note symbol) */}
+        <div className="flex justify-center mb-4">
+          <img
+            src="/mom-logo-transparent.png"
+            alt="MOM Logo"
+            className={`h-11 sm:h-14 w-auto object-contain transition-all ${
+              theme === 'light' ? 'invert' : ''
+            }`}
+          />
         </div>
 
         {/* Title */}
-        <h3 className="text-2xl sm:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white mb-2.5">
-          More of Music
+        <h3 className="text-2xl sm:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white mb-2">
+          MOM &ndash; More of Music
         </h3>
 
-        {/* Subtitle / Description */}
-        <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-sm mx-auto mb-7 font-light">
-          This portal is currently under active development. Our sound studio, audio production desks, and sonic experiences are coming very soon!
+        {/* Tagline */}
+        <p className="text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 tracking-wide font-sans mb-5 leading-snug">
+          Creating Moments. Building Experiences. Bringing People Together.
         </p>
+
+        {/* Detailed Brand Copy (Paragraph 1 & 2) */}
+        <div className="space-y-3.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-lg mx-auto mb-7 font-normal text-left sm:text-center">
+          <p>
+            MOM (More of Music) is an artist management, music tour management and corporate event management company that brings talent, creativity and professional execution together to create memorable experiences.
+          </p>
+          <p>
+            We specialise in managing artists, planning and executing music tours, and delivering engaging corporate events. From discovering and nurturing talent to coordinating large-scale performances and managing end-to-end corporate events, we take care of every detail that turns an idea into an unforgettable experience.
+          </p>
+        </div>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -95,7 +114,7 @@ export default function ComingSoonModal({
           )}
 
           <a
-            href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20have%20an%20inquiry%20regarding%20More%20of%20Music%20sound%20services."
+            href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20have%20an%20inquiry%20regarding%20More%20of%20Music."
             target="_blank"
             rel="noreferrer"
             className="w-full sm:w-auto px-5 py-3 rounded-full border border-zinc-300 dark:border-white/20 hover:border-emerald-500/60 dark:hover:border-emerald-400/60 text-zinc-700 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95 shadow-xs"
@@ -104,11 +123,6 @@ export default function ComingSoonModal({
             <span>Inquire on WhatsApp</span>
           </a>
         </div>
-
-        {/* Subtle Footnote */}
-        <p className="text-[11px] font-mono text-zinc-400 dark:text-zinc-500 mt-6">
-          Moments of Marketing is live &bull; Click anywhere outside to close
-        </p>
       </div>
     </div>
   );
