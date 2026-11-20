@@ -29,6 +29,8 @@ export default function Navbar({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
+  const isMusic = activeEntity === 'music' || pathname === '/music';
+
   // Determine active tab from route or prop
   let currentTab = marketingTab;
   if (pathname === '/about') currentTab = 'about';
@@ -87,11 +89,16 @@ export default function Navbar({
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink min-w-0">
             <button
               onClick={() => {
-                if (onSelectMarketingTab) onSelectMarketingTab('home');
-                else if (onBackToGateway) onBackToGateway();
+                if (isMusic) {
+                  router.push('/music');
+                } else if (onSelectMarketingTab) {
+                  onSelectMarketingTab('home');
+                } else {
+                  router.push('/home');
+                }
               }}
               className="flex items-center gap-2.5 sm:gap-3.5 group py-0.5 flex-shrink min-w-0 cursor-pointer text-left"
-              title="Moments of Marketing Home"
+              title={isMusic ? "More of Music Home" : "Moments of Marketing Home"}
             >
               <img
                 src="/mom-logo-transparent.png"
@@ -101,14 +108,18 @@ export default function Navbar({
                 }`}
               />
               {/* NORMAL CLEAN TEXT, SLIGHTLY BIGGER FONT (NO GREEN PILL BADGE) */}
-              <span className="text-base sm:text-lg md:text-xl lg:text-[22px] font-black font-display tracking-tight text-zinc-950 dark:text-white whitespace-nowrap group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                Moments of Marketing
+              <span className={`text-base sm:text-lg md:text-xl lg:text-[22px] font-black font-display tracking-tight text-zinc-950 dark:text-white whitespace-nowrap transition-colors ${
+                isMusic
+                  ? 'group-hover:text-cyan-500 dark:group-hover:text-cyan-400'
+                  : 'group-hover:text-emerald-600 dark:group-hover:text-emerald-400'
+              }`}>
+                {isMusic ? 'More of Music' : 'Moments of Marketing'}
               </span>
             </button>
           </div>
 
           {/* ================= CENTER NAVIGATION ================= */}
-          {activeEntity === 'marketing' ? (
+          {!isMusic ? (
             <nav className="hidden lg:flex items-center">
               <div className="flex items-center gap-1.5 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm flex-nowrap whitespace-nowrap">
                 {marketingTabs.map((tab) => {
@@ -146,6 +157,25 @@ export default function Navbar({
 
           {/* ================= RIGHT UTILITY CONTROLS ================= */}
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            {/* Quick Switch Pill between Moments of Marketing and More of Music */}
+            {isMusic ? (
+              <button
+                onClick={() => router.push('/home')}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs active:scale-95"
+                title="Switch to Moments of Marketing"
+              >
+                <span>Moments of Marketing &rarr;</span>
+              </button>
+            ) : (
+              <button
+                onClick={() => router.push('/music')}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 text-[11px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs active:scale-95"
+                title="Explore More of Music Portal"
+              >
+                <span>More of Music &rarr;</span>
+              </button>
+            )}
+
             {/* WhatsApp Direct */}
             <a
               href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
@@ -192,7 +222,7 @@ export default function Navbar({
       {mobileMenuOpen && (
         <div className="lg:hidden mt-3 mx-4 p-5 rounded-2xl border dark:border-white/10 dark:bg-black/95 border-zinc-200 bg-white/95 backdrop-blur-2xl shadow-2xl animate-in fade-in">
           <div className="flex flex-col gap-2.5">
-            {activeEntity === 'marketing' ? (
+            {!isMusic ? (
               /* Mobile Tabs for Moments of Marketing */
               <div className="flex flex-col gap-2 py-2">
                 {marketingTabs.map((tab) => {
@@ -228,6 +258,31 @@ export default function Navbar({
                 </a>
               ))
             )}
+
+            {/* Mobile Portal Switcher */}
+            <div className="pt-2">
+              {isMusic ? (
+                <button
+                  onClick={() => {
+                    router.push('/home');
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full py-2.5 px-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                >
+                  <span>Switch to Moments of Marketing &rarr;</span>
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    router.push('/music');
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full py-2.5 px-3 rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                >
+                  <span>Explore More of Music Portal &rarr;</span>
+                </button>
+              )}
+            </div>
 
             <div className="pt-3 flex flex-col gap-2.5 border-t border-zinc-200 dark:border-white/10">
               <div className="grid grid-cols-2 gap-2">

@@ -105,18 +105,29 @@ export default function MomentsOfMarketingLanding({
           {/* Subtle Ambient Glow */}
           <div className="absolute -top-6 left-1/4 w-80 h-80 bg-cyan-500/10 dark:bg-cyan-500/10 blur-[120px] pointer-events-none" />
 
-          {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white shadow-xs mb-5">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
-            <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200">
-              MOM &bull; Moments of Marketing
-            </span>
-          </div>
+          {/* Standard Hero Section Header */}
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 mb-8 sm:mb-10 space-y-3">
+            {/* Tagline Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
+              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200">
+                MOM &bull; MOMENTS OF MARKETING
+              </span>
+            </div>
 
-          {/* Main Headline - Single Line */}
-          <h1 className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-black font-display text-zinc-950 dark:text-white tracking-tight leading-tight mb-8 whitespace-nowrap max-w-full">
-            More Than Marketing.
-          </h1>
+            {/* Main Headline - Single Line */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-black font-display text-zinc-950 dark:text-white tracking-tight leading-tight whitespace-nowrap max-w-full uppercase">
+              More Than Marketing.
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
+              A Connected Marketing Partner for Ambitious Brands.
+            </p>
+
+            <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+              We combine strategic branding, creative content, and performance-driven campaigns to build lasting brand value and drive sustainable business growth.
+            </p>
+          </div>
 
           {/* Three Core Paragraphs as 3 Ultra-Premium Editorial Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 my-8">
@@ -275,12 +286,34 @@ export default function MomentsOfMarketingLanding({
 
         <div className="space-y-12 sm:space-y-16">
           
+          {/* Standard Hero Section Header */}
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
+              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200">
+                ABOUT US &bull; MOMENTS OF MARKETING
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-[1.08]">
+              ABOUT MOM
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
+              Creative Thinking. Strategic Execution. Growth-Focused Marketing.
+            </p>
+
+            <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+              We partner with businesses to develop impactful brand identities, create engaging digital experiences, and execute marketing strategies that connect with the right customers.
+            </p>
+          </div>
+
           {/* ---------------- 1. VISION & MISSION ---------------- */}
           <section className="space-y-5">
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5">
-              <h3 className="text-2xl sm:text-3xl font-extrabold font-display dark:text-white text-zinc-950">
-                Vision &amp; Mission
-              </h3>
+            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950">
+                VISION &amp; MISSION
+              </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
@@ -300,10 +333,10 @@ export default function MomentsOfMarketingLanding({
 
           {/* ---------------- 2. OUR VALUES ---------------- */}
           <section className="space-y-5">
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5">
-              <h3 className="text-2xl sm:text-3xl font-bold font-display dark:text-white text-zinc-950">
-                Our Values:
-              </h3>
+            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950">
+                OUR VALUES
+              </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -333,10 +366,10 @@ export default function MomentsOfMarketingLanding({
 
           {/* ---------------- 3. OUR THREE PILLARS OF GROWTH ---------------- */}
           <section className="space-y-6">
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
+            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950">
                 OUR THREE PILLARS OF GROWTH
-              </h3>
+              </h2>
             </div>
 
             {/* Subtle Architectural Pillar Design */}
@@ -379,10 +412,10 @@ export default function MomentsOfMarketingLanding({
 
           {/* ---------------- 4. WHY CHOOSE MOM? ---------------- */}
           <section className="space-y-5">
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 space-y-1">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
+            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950">
                 WHY CHOOSE MOM?
-              </h3>
+              </h2>
               <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 font-sans">
                 Creative Thinking. Strategic Execution. Growth-Focused Marketing.
               </p>
@@ -415,10 +448,10 @@ export default function MomentsOfMarketingLanding({
 
           {/* ---------------- 5. OUR APPROACH ---------------- */}
           <section className="space-y-6">
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 space-y-1">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-display uppercase dark:text-white text-zinc-950">
+            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950">
                 OUR APPROACH
-              </h3>
+              </h2>
               <p className="text-sm sm:text-base font-semibold text-cyan-600 dark:text-cyan-400 font-sans">
                 From First Impression to Lasting Customer Relationships.
               </p>
@@ -615,12 +648,21 @@ export default function MomentsOfMarketingLanding({
           
           {/* Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
+              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200">
+                BRANDS &amp; SERVICES &bull; MOMENTS OF MARKETING
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-[1.08]">
               OUR SERVICES
-            </h2>
-            <p className="text-lg sm:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
               Everything Your Brand Needs to Grow.
             </p>
+
             <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
               From building brand awareness to generating leads and strengthening customer relationships, we bring your marketing activities together under one strategic approach.
             </p>
@@ -700,21 +742,24 @@ export default function MomentsOfMarketingLanding({
         <div className="space-y-10 sm:space-y-12">
           
           {/* Section Header */}
-          <div className="border-b border-zinc-200 dark:border-white/10 pb-6 space-y-2">
-            <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block">
-              DIRECT CONSULTATION
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-display uppercase tracking-tight dark:text-white text-zinc-950">
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
+              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200">
+                CONTACT US &bull; MOMENTS OF MARKETING
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-[1.08]">
               LET&apos;S MAKE YOUR NEXT MOMENT COUNT.
-            </h2>
-            <p className="text-base sm:text-lg font-bold dark:text-zinc-200 text-zinc-800 font-display">
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
               Ready to Build a Stronger Brand?
             </p>
-            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
-              Whether you want to increase visibility, generate quality enquiries, or create a more effective digital presence, MOM is ready to help you take the next step.
-            </p>
-            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
-              Let&apos;s turn your marketing goals into a clear strategy and your ideas into meaningful opportunities.
+
+            <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+              Whether you want to increase visibility, generate quality enquiries, or create a more effective digital presence, MOM is ready to help you take the next step. Let&apos;s turn your marketing goals into a clear strategy and your ideas into meaningful opportunities.
             </p>
           </div>
 

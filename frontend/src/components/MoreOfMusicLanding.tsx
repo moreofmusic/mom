@@ -111,21 +111,56 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
   ];
 
   return (
-    <div className="space-y-24 sm:space-y-32">
+    <div className="space-y-16 sm:space-y-24">
       
+      {/* ----------------- TOP HERO: MORE OF MUSIC ----------------- */}
+      <section className="pt-4 sm:pt-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+          <div className="border-b border-zinc-200 dark:border-white/10 pb-8 sm:pb-10 space-y-3">
+            {/* Tagline Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400" />
+              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200">
+                MOM &bull; MORE OF MUSIC
+              </span>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-[1.08]">
+              MORE OF MUSIC.
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg md:text-xl font-bold text-cyan-600 dark:text-cyan-400 font-display">
+              Creating Moments. Building Experiences. Bringing People Together.
+            </p>
+
+            {/* Detailed Brand Copy */}
+            <div className="space-y-3 max-w-4xl text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+              <p>
+                MOM (More of Music) is an artist management, music tour management and corporate event management company that brings talent, creativity and professional execution together to create memorable experiences.
+              </p>
+              <p>
+                We specialise in managing artists, planning and executing music tours, and delivering engaging corporate events. From discovering and nurturing talent to coordinating large-scale performances and managing end-to-end corporate events, we take care of every detail that turns an idea into an unforgettable experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ----------------- SECTION 1: THE SOUND DESKS ----------------- */}
-      <section id="services" className="pt-8">
+      <section id="services" className="pt-2">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
-            <div className="space-y-3 max-w-3xl">
-              <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b dark:border-white/[0.08] border-zinc-200">
+            <div className="space-y-2 max-w-3xl">
+              <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
                 MORE OF MUSIC &bull; 6 SOUND DESKS
               </span>
-              <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight font-display dark:text-white text-zinc-950">
-                The sound <span className="font-serif italic font-normal dark:text-white text-zinc-950">desks.</span>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950">
+                THE SOUND DESKS
               </h2>
-              <p className="text-base sm:text-lg dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
                 From 3-second sonic logos to full commercial orchestral scoring and sync licensing &mdash; complete sonic architecture for brands and creators.
               </p>
             </div>
@@ -138,8 +173,8 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
                 <span className="w-1 bg-cyan-400 rounded-full animate-bounce h-6" />
                 <span className="w-1 bg-cyan-400 rounded-full animate-pulse h-4" />
               </div>
-              <span className="font-serif italic text-base sm:text-lg dark:text-zinc-400 text-zinc-600">
-                analog warmth &bull; modern pop culture
+              <span className="font-mono text-xs sm:text-sm dark:text-zinc-400 text-zinc-600 uppercase font-semibold">
+                ANALOG WARMTH &bull; MODERN SOUND
               </span>
             </div>
           </div>
@@ -216,14 +251,19 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
       <section id="roster" className="py-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">
-            <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight dark:text-white text-zinc-950 font-display">
-              The <span className="font-serif italic font-normal dark:text-white text-zinc-950">sound roster.</span>
-            </h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 pb-6 border-b dark:border-white/[0.08] border-zinc-200">
+            <div className="space-y-2">
+              <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
+                EXPERIENCE &bull; PRODUCTION ROSTER
+              </span>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight dark:text-white text-zinc-950 font-display">
+                THE SOUND ROSTER
+              </h2>
+            </div>
 
             <div className="pb-2">
-              <span className="font-serif italic text-base sm:text-lg dark:text-zinc-400 text-zinc-600">
-                analog consoles &bull; arena tours &bull; commercial scores
+              <span className="font-mono text-xs sm:text-sm dark:text-zinc-400 text-zinc-600 uppercase font-semibold">
+                ANALOG CONSOLES &bull; ARENA TOURS &bull; COMMERCIAL SCORES
               </span>
             </div>
           </div>
@@ -286,14 +326,14 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
       <section id="approach" className="py-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
           
-          <div className="max-w-3xl mb-16 space-y-3">
-            <span className="text-xs sm:text-sm font-bold tracking-widest3 uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
+          <div className="max-w-3xl mb-12 pb-6 border-b dark:border-white/[0.08] border-zinc-200 space-y-2">
+            <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
               METHODOLOGY
             </span>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight font-display dark:text-white text-zinc-950">
-              The studio <span className="font-serif italic font-normal dark:text-white text-zinc-950">process.</span>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950">
+              STUDIO PROCESS
             </h2>
-            <p className="text-base sm:text-lg dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
               How More of Music turns raw creative vision into an iconic commercial acoustic master.
             </p>
           </div>
@@ -331,19 +371,21 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
       <section id="contact" className="py-12 border-t dark:border-white/[0.08] border-zinc-200">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
           
-          <div className="max-w-4xl mb-12 space-y-4">
-            <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-[96px] font-extrabold tracking-[-0.035em] dark:text-white text-zinc-950 font-display leading-[0.96]">
-              The sound of your brand<br />
-              <span className="font-serif italic font-normal dark:text-white text-zinc-950">begins here.</span>
+          <div className="max-w-4xl mb-10 space-y-3">
+            <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
+              DIRECT STUDIO CONSULTATION
+            </span>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight dark:text-white text-zinc-950 font-display leading-[1.08]">
+              THE SOUND OF YOUR BRAND BEGINS HERE.
             </h2>
 
-            <p className="text-lg sm:text-2xl dark:text-zinc-300 text-zinc-700 font-light pt-2">
+            <p className="text-sm sm:text-base md:text-lg dark:text-zinc-300 text-zinc-700 font-light pt-2">
               Book a studio session, license music, or engineer custom sonic branding &middot;{' '}
               <a
-                href="mailto:Contact@momentsofmarketing.in"
+                href="mailto:contact@momentsofmarketing.in"
                 className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
               >
-                Contact@momentsofmarketing.in
+                contact@momentsofmarketing.in
               </a>{' '}
               &middot;{' '}
               <a

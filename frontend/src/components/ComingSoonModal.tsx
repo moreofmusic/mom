@@ -100,6 +100,14 @@ export default function ComingSoonModal({
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a
+            href="/music"
+            onClick={onClose}
+            className="w-full sm:w-auto px-5 py-3 rounded-full border border-cyan-500/40 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 shadow-md transition-all cursor-pointer"
+          >
+            <span>Explore More of Music Portal &rarr;</span>
+          </a>
+
           {onExploreMarketing && (
             <button
               onClick={() => {
