@@ -275,8 +275,14 @@ export default function MomentsOfMarketingLanding({
 
         <div className="space-y-12 sm:space-y-16">
           
-          {/* ---------------- 1. CORE BRAND STATEMENTS ---------------- */}
-          <section className="pt-1">
+          {/* ---------------- 1. VISION & MISSION ---------------- */}
+          <section className="space-y-5">
+            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5">
+              <h3 className="text-2xl sm:text-3xl font-extrabold font-display dark:text-white text-zinc-950">
+                Vision &amp; Mission
+              </h3>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
               <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex items-center group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
                 <p className="text-base sm:text-lg md:text-xl font-bold font-display text-zinc-950 dark:text-white leading-relaxed">
