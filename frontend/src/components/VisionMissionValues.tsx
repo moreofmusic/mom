@@ -44,36 +44,22 @@ export default function VisionMissionValues() {
           </p>
         </div>
 
-        {/* Vision & Mission Cards */}
+        {/* Brand Statement Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           
-          {/* Vision Card */}
+          {/* Card 1 */}
           <div className="pro-card p-8 sm:p-12 rounded-3xl space-y-4 group border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm">
-            <div className="flex items-center justify-between">
-              {/* Non-clickable Pill: NO OUTLINE */}
-              <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3.5 py-1.5 rounded-full font-bold">
-                Vision
-              </span>
-              <Sparkles className="w-5 h-5 dark:text-white text-zinc-900" />
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-snug">
-              Creating Moments. Building Brands. Driving Growth.
+            <h3 className="text-2xl sm:text-3xl font-bold font-display tracking-tight dark:text-white text-zinc-950 leading-snug">
+              Creating moments. Building brands. Driving growth.
             </h3>
             <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
               To be the premier cultural and commercial marketing agency, pairing breakthrough creative identity with compound full-funnel digital performance for ambitious founders and enterprise brands.
             </p>
           </div>
 
-          {/* Mission Card: Exact PPT Slide 4 */}
+          {/* Card 2 */}
           <div className="pro-card p-8 sm:p-12 rounded-3xl space-y-4 group border border-zinc-200 dark:border-white/10 dark:hover:border-white hover:border-black transition-all duration-300 shadow-sm">
-            <div className="flex items-center justify-between">
-              {/* Non-clickable Pill: NO OUTLINE */}
-              <span className="text-xs font-mono tracking-widest uppercase dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3.5 py-1.5 rounded-full font-bold">
-                Mission
-              </span>
-              <Compass className="w-5 h-5 dark:text-white text-zinc-900" />
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-snug">
+            <h3 className="text-2xl sm:text-3xl font-bold font-display tracking-tight dark:text-white text-zinc-950 leading-snug">
               To turn meaningful marketing moments into lasting brand value and business growth.
             </h3>
             <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">

@@ -275,36 +275,19 @@ export default function MomentsOfMarketingLanding({
 
         <div className="space-y-12 sm:space-y-16">
           
-          {/* ---------------- 1. VISION & MISSION ---------------- */}
-          <section className="space-y-5">
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5">
-              <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 block mb-1">
-                FOUNDATIONAL DIRECTION
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold font-display dark:text-white text-zinc-950">
-                Vision &amp; Mission
-              </h2>
-            </div>
-
+          {/* ---------------- 1. CORE BRAND STATEMENTS ---------------- */}
+          <section className="pt-1">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-              {/* Vision */}
-              <div className="pro-card p-6 sm:p-7 rounded-3xl border border-zinc-200 dark:border-white/10 space-y-2.5 shadow-sm">
-                <span className="text-xs font-mono tracking-widest uppercase text-emerald-500 font-bold block">
-                  Vision:
-                </span>
-                <h3 className="text-lg sm:text-xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-snug">
-                  Creating Moments. Building Brands. Driving Growth.
-                </h3>
+              <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex items-center group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
+                <p className="text-base sm:text-lg md:text-xl font-bold font-display text-zinc-950 dark:text-white leading-relaxed">
+                  Creating moments. Building brands. Driving growth.
+                </p>
               </div>
 
-              {/* Mission */}
-              <div className="pro-card p-6 sm:p-7 rounded-3xl border border-zinc-200 dark:border-white/10 space-y-2.5 shadow-sm">
-                <span className="text-xs font-mono tracking-widest uppercase text-cyan-500 font-bold block">
-                  Mission:
-                </span>
-                <h3 className="text-lg sm:text-xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-snug">
+              <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex items-center group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
+                <p className="text-base sm:text-lg md:text-xl font-bold font-display text-zinc-950 dark:text-white leading-relaxed">
                   To turn meaningful marketing moments into lasting brand value and business growth.
-                </h3>
+                </p>
               </div>
             </div>
           </section>
