@@ -30,7 +30,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           <img
             src="/mom-logo-transparent.png"
             alt="MOM Logo"
-            className={`h-10 sm:h-14 md:h-16 w-auto object-contain flex-shrink-0 transition-all duration-300 hover:scale-105 ${
+            className={`h-12 sm:h-16 md:h-20 w-auto object-contain flex-shrink-0 transition-all duration-300 hover:scale-105 ${
               theme === 'light' ? 'invert' : ''
             }`}
           />

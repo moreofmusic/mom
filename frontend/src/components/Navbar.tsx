@@ -96,7 +96,7 @@ export default function Navbar({
               <img
                 src="/mom-logo-transparent.png"
                 alt="MOM Logo"
-                className={`h-8 sm:h-10 md:h-11 w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
+                className={`h-10 sm:h-12 md:h-14 lg:h-[60px] w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
                   theme === 'light' ? 'invert' : ''
                 }`}
               />

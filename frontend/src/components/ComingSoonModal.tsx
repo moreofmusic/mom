@@ -72,7 +72,7 @@ export default function ComingSoonModal({
           <img
             src="/mom-logo-transparent.png"
             alt="MOM Logo"
-            className={`h-11 sm:h-14 w-auto object-contain transition-all ${
+            className={`h-14 sm:h-18 md:h-20 w-auto object-contain transition-all ${
               theme === 'light' ? 'invert' : ''
             }`}
           />

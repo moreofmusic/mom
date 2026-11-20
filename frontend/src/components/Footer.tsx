@@ -26,7 +26,7 @@ export default function Footer() {
             <img
               src="/mom-logo-transparent.png"
               alt="MOM Logo"
-              className={`h-10 sm:h-12 w-auto object-contain transition-all ${
+              className={`h-12 sm:h-14 md:h-16 w-auto object-contain transition-all ${
                 theme === 'light' ? 'invert' : ''
               }`}
             />
