@@ -117,21 +117,13 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
       <section className="pt-4 sm:pt-6">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
           <div className="border-b border-zinc-200 dark:border-white/10 pb-8 sm:pb-10 space-y-3">
-            {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400" />
-              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200">
-                MOM &bull; MORE OF MUSIC
-              </span>
-            </div>
-
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-display uppercase tracking-tight dark:text-white text-zinc-950 leading-[1.08]">
+            <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white leading-tight">
               MORE OF MUSIC.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg md:text-xl font-bold text-cyan-600 dark:text-cyan-400 font-display">
+            <p className="text-base sm:text-lg md:text-xl font-bold text-red-600 dark:text-red-400 font-display">
               Creating Moments. Building Experiences. Bringing People Together.
             </p>
 
@@ -157,7 +149,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
                 MORE OF MUSIC &bull; 6 SOUND DESKS
               </span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950">
+              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight font-display text-zinc-950 dark:text-white">
                 THE SOUND DESKS
               </h2>
               <p className="text-xs sm:text-sm md:text-base dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
@@ -166,12 +158,12 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
             </div>
 
             <div className="flex items-center gap-3 pb-2">
-              <div className="flex items-end gap-1 h-6 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 shadow-sm" title="Live Sonic Frequency">
-                <span className="w-1 bg-cyan-400 rounded-full animate-pulse h-3" />
-                <span className="w-1 bg-cyan-400 rounded-full animate-bounce h-5" />
-                <span className="w-1 bg-cyan-400 rounded-full animate-pulse h-2" />
-                <span className="w-1 bg-cyan-400 rounded-full animate-bounce h-6" />
-                <span className="w-1 bg-cyan-400 rounded-full animate-pulse h-4" />
+              <div className="flex items-end gap-1 h-6 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 shadow-sm" title="Live Sonic Frequency">
+                <span className="w-1 bg-red-500 rounded-full animate-pulse h-3" />
+                <span className="w-1 bg-red-500 rounded-full animate-bounce h-5" />
+                <span className="w-1 bg-red-500 rounded-full animate-pulse h-2" />
+                <span className="w-1 bg-red-500 rounded-full animate-bounce h-6" />
+                <span className="w-1 bg-red-500 rounded-full animate-pulse h-4" />
               </div>
               <span className="font-mono text-xs sm:text-sm dark:text-zinc-400 text-zinc-600 uppercase font-semibold">
                 ANALOG WARMTH &bull; MODERN SOUND
@@ -186,24 +178,24 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               return (
                 <div
                   key={d.num}
-                  className="pro-card p-8 sm:p-9 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-cyan-400/50 hover:border-black hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(6,182,212,0.2)] transition-all duration-400 shadow-sm relative overflow-hidden"
+                  className="pro-card p-8 sm:p-9 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-red-500/50 hover:border-black hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(239,68,68,0.2)] transition-all duration-400 shadow-sm relative overflow-hidden"
                 >
                   {/* Subtle Traveling Border Shimmer on Hover */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500/70 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
 
                   <div>
                     <div className="flex items-center justify-between mb-6">
                       {/* Non-clickable Badge: NO OUTLINE */}
-                      <span className="text-sm font-mono font-bold dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3 py-1 rounded-md group-hover:bg-cyan-500/15 group-hover:text-cyan-400 transition-colors duration-300">
+                      <span className="text-sm font-mono font-bold dark:text-white text-zinc-900 dark:bg-white/[0.08] bg-zinc-200/80 px-3 py-1 rounded-md group-hover:bg-red-500/15 group-hover:text-red-500 transition-colors duration-300">
                         DESK {d.num}
                       </span>
                       {/* Non-clickable Icon Box: NO OUTLINE */}
-                      <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-zinc-300 text-zinc-700 dark:group-hover:text-cyan-400 group-hover:text-zinc-950 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-sm">
+                      <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-zinc-300 text-zinc-700 dark:group-hover:text-red-400 group-hover:text-zinc-950 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-sm">
                         <Icon className="w-5 h-5" />
                       </div>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 mb-2 group-hover:text-cyan-400 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight dark:text-white text-zinc-950 mb-2 group-hover:text-red-400 transition-colors">
                       {d.title}
                     </h3>
 
@@ -256,7 +248,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
                 EXPERIENCE &bull; PRODUCTION ROSTER
               </span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight dark:text-white text-zinc-950 font-display">
+              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight dark:text-white text-zinc-950 font-display">
                 THE SOUND ROSTER
               </h2>
             </div>
@@ -273,7 +265,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               <div
                 key={item.id}
                 onClick={() => onOpenLeadModal(item.title)}
-                className="group relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-cyan-400/50 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(6,182,212,0.25)] transition-all duration-500 cursor-pointer shadow-lg flex flex-col justify-between aspect-[3/4] bg-zinc-950 active:scale-[0.98]"
+                className="group relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-red-500/50 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(239,68,68,0.25)] transition-all duration-500 cursor-pointer shadow-lg flex flex-col justify-between aspect-[3/4] bg-zinc-950 active:scale-[0.98]"
               >
                 <img
                   src={item.image}
@@ -288,14 +280,14 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
                     {item.category}
                   </span>
 
-                  <div className="w-10 h-10 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-cyan-400 group-hover:text-black group-hover:border-cyan-400 group-hover:rotate-45 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+                  <div className="w-10 h-10 rounded-full border border-white/20 bg-black/70 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-red-500 group-hover:text-white group-hover:border-red-500 group-hover:rotate-45 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_20px_rgba(239,68,68,0.6)]">
                     <ArrowUpRight className="w-4 h-4 transition-transform" />
                   </div>
                 </div>
 
                 <div className="relative z-10 p-6 sm:p-8 space-y-3">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-cyan-400/15 border border-cyan-400/25 text-[11px] font-mono text-cyan-400 font-bold shadow-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-red-500/15 border border-red-500/25 text-[11px] font-mono text-red-400 font-bold shadow-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
                     <span>{item.stats}</span>
                   </div>
 
@@ -330,7 +322,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
             <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
               METHODOLOGY
             </span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950">
+            <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight font-display text-zinc-950 dark:text-white">
               STUDIO PROCESS
             </h2>
             <p className="text-xs sm:text-sm md:text-base dark:text-zinc-300 text-zinc-600 font-light leading-relaxed">
@@ -389,10 +381,10 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               </a>{' '}
               &middot;{' '}
               <a
-                href="tel:+919226042236"
+                href="tel:+917000083119"
                 className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
               >
-                +91 9226042236
+                +91 70000 83119
               </a>
             </p>
           </div>
@@ -407,7 +399,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
             </button>
 
             <a
-              href="https://wa.me/919226042236?text=Hi%20More%20of%20Music%20Team%2C%20I%20want%20to%20discuss%20Sonic%20Branding%20%2F%20Studio%20Session."
+              href="https://wa.me/917000083119?text=Hi%20More%20of%20Music%20Team%2C%20I%20want%20to%20discuss%20Sonic%20Branding%20%2F%20Studio%20Session."
               target="_blank"
               rel="noreferrer"
               className="px-8 py-4 rounded-full border border-zinc-300 dark:border-white/20 hover:border-black dark:hover:border-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 active:scale-95 dark:text-white text-zinc-900 shadow-sm flex items-center gap-2"

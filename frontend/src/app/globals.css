@@ -393,3 +393,137 @@ html.light ::-webkit-scrollbar-thumb {
 html.light ::-webkit-scrollbar-thumb:hover {
   background: #94A3B8;
 }
+
+/* =========================================================================
+   Luxury Hero Page Headings: Premium Metallic Shimmer & Standard Hover Animation
+   ========================================================================= */
+
+.page-hero-title {
+  display: inline-block;
+  position: relative;
+  font-weight: 900;
+  text-transform: none;
+  letter-spacing: -0.025em;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+  padding-right: 0.1em;
+  overflow: visible;
+  cursor: default;
+  user-select: none;
+  background-image: linear-gradient(
+    115deg,
+    #ffffff 0%,
+    #ffffff 35%,
+    #34d399 48%,
+    #06b6d4 52%,
+    #ffffff 65%,
+    #ffffff 100%
+  );
+  background-size: 250% 100%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.4s ease;
+}
+
+.page-hero-title:hover {
+  background-position: -120% 0%;
+  filter: drop-shadow(0 0 14px rgba(16, 185, 129, 0.4));
+}
+
+html.light .page-hero-title {
+  background-image: linear-gradient(
+    115deg,
+    #09090b 0%,
+    #09090b 35%,
+    #059669 48%,
+    #0891b2 52%,
+    #09090b 65%,
+    #09090b 100%
+  );
+  background-size: 250% 100%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .page-hero-title:hover {
+  background-position: -120% 0%;
+  filter: drop-shadow(0 0 10px rgba(5, 150, 105, 0.3));
+}
+
+/* More of Music Portal Emerald / Cyan Variant */
+.page-hero-title-cyan {
+  display: inline-block;
+  position: relative;
+  font-weight: 900;
+  text-transform: none;
+  letter-spacing: -0.025em;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+  padding-right: 0.1em;
+  overflow: visible;
+  cursor: default;
+  user-select: none;
+  background-image: linear-gradient(
+    115deg,
+    #ffffff 0%,
+    #ffffff 35%,
+    #34d399 48%,
+    #06b6d4 52%,
+    #ffffff 65%,
+    #ffffff 100%
+  );
+  background-size: 250% 100%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.4s ease;
+}
+
+.page-hero-title-cyan:hover {
+  background-position: -120% 0%;
+  filter: drop-shadow(0 0 14px rgba(16, 185, 129, 0.4));
+}
+
+html.light .page-hero-title-cyan {
+  background-image: linear-gradient(
+    115deg,
+    #09090b 0%,
+    #09090b 35%,
+    #059669 48%,
+    #0891b2 52%,
+    #09090b 65%,
+    #09090b 100%
+  );
+  background-size: 250% 100%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .page-hero-title-cyan:hover {
+  background-position: -120% 0%;
+  filter: drop-shadow(0 0 10px rgba(5, 150, 105, 0.3));
+}
+
+/* Section H2 Headings */
+.section-title {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease, filter 0.3s ease;
+  transform-origin: left center;
+}
+
+html.dark .section-title:hover {
+  color: #10b981;
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.3));
+}
+
+html.light .section-title:hover {
+  color: #059669;
+  filter: drop-shadow(0 0 6px rgba(5, 150, 105, 0.2));
+}

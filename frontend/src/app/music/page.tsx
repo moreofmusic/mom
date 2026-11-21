@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Navbar from '../../components/Navbar';
-import MoreOfMusicLanding from '../../components/MoreOfMusicLanding';
-import Footer from '../../components/Footer';
-import LeadCaptureModal from '../../components/LeadCaptureModal';
+import Navbar from '@/components/Navbar';
+import MoreOfMusicLanding from '@/components/MoreOfMusicLanding';
+import Footer from '@/components/Footer';
+import LeadCaptureModal from '@/components/LeadCaptureModal';
 
 export default function MusicPage() {
   const router = useRouter();
@@ -19,7 +19,7 @@ export default function MusicPage() {
 
   return (
     <main
-      className="relative min-h-screen dark:bg-black dark:text-white bg-[#F8FAFC] text-zinc-900 overflow-hidden transition-colors duration-300"
+      className="relative min-h-screen flex flex-col justify-between dark:bg-black dark:text-white bg-[#F8FAFC] text-zinc-900 overflow-hidden transition-colors duration-300"
       suppressHydrationWarning
     >
       <Navbar
@@ -28,7 +28,7 @@ export default function MusicPage() {
         onBackToGateway={() => router.push('/')}
       />
 
-      <div className="relative z-10 transition-all duration-300 pt-[56px] sm:pt-[66px] md:pt-[70px]">
+      <div className="relative z-10 flex-1 transition-all duration-300 pt-[56px] sm:pt-[66px] md:pt-[70px]">
         <MoreOfMusicLanding onOpenLeadModal={handleOpenLeadModal} />
       </div>
 

@@ -58,7 +58,7 @@ export default function LeadCaptureModal({
       .filter(Boolean)
       .join('\n');
 
-    const whatsappUrl = `https://wa.me/919226042236?text=${encodeURIComponent(waText)}`;
+    const whatsappUrl = `https://wa.me/917000083119?text=${encodeURIComponent(waText)}`;
     const mailtoSubject = encodeURIComponent(`Consultation Request: ${formData.fullName} - ${formData.serviceInterest}`);
     const mailtoBody = encodeURIComponent(
       `Name: ${formData.fullName}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\nService: ${formData.serviceInterest}\nBudget: ${formData.budgetRange}\n\nMessage:\n${formData.message || 'N/A'}`
@@ -114,7 +114,7 @@ export default function LeadCaptureModal({
                   href={links.whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-lg transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-950 dark:bg-white text-white dark:text-black text-xs font-semibold shadow-lg hover:opacity-90 transition-all"
                 >
                   <span>💬 Chat on WhatsApp</span>
                 </a>
@@ -183,7 +183,7 @@ export default function LeadCaptureModal({
                   <input
                     type="tel"
                     required
-                    placeholder="+91 9226042236"
+                    placeholder="+91 70000 83119"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-3.5 py-2 rounded-lg editorial-input text-xs"

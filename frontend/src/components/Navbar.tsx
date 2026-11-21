@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { Menu, X, Sun, Moon, MessageCircle, Phone, Mail } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
@@ -18,10 +19,7 @@ interface NavbarProps {
 export default function Navbar({
   onOpenLeadModal,
   activeEntity = 'marketing',
-  onSelectEntity,
   onBackToGateway,
-  marketingTab = 'home',
-  onSelectMarketingTab,
 }: NavbarProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -31,20 +29,12 @@ export default function Navbar({
 
   const isMusic = activeEntity === 'music' || pathname === '/music';
 
-  // Determine active tab from route or prop
-  let currentTab = marketingTab;
+  // Determine active tab directly from current route
+  let currentTab = 'home';
   if (pathname === '/about') currentTab = 'about';
   else if (pathname === '/services') currentTab = 'services';
   else if (pathname === '/contact') currentTab = 'contact';
   else if (pathname === '/home') currentTab = 'home';
-
-  const handleTabClick = (tabId: 'home' | 'about' | 'services' | 'contact') => {
-    if (onSelectMarketingTab) {
-      onSelectMarketingTab(tabId);
-    } else {
-      router.push(`/${tabId === 'home' ? 'home' : tabId}`);
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,11 +45,11 @@ export default function Navbar({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const marketingTabs: { id: 'home' | 'about' | 'services' | 'contact'; label: string }[] = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Us' },
-    { id: 'services', label: 'Brands and services' },
-    { id: 'contact', label: 'Contact us' },
+  const marketingTabs: { id: string; path: string; label: string }[] = [
+    { id: 'home', path: '/home', label: 'Home' },
+    { id: 'about', path: '/about', label: 'About Us' },
+    { id: 'services', path: '/services', label: 'Brands and services' },
+    { id: 'contact', path: '/contact', label: 'Contact us' },
   ];
 
   const musicNavLinks = [
@@ -79,26 +69,18 @@ export default function Navbar({
     >
       {/* Animated Ambient Shimmer Line at Bottom of Navbar */}
       <div className="absolute bottom-0 left-0 right-0 h-[1.5px] overflow-hidden pointer-events-none">
-        <div className="w-[200%] h-full bg-gradient-to-r from-transparent via-cyan-400/60 via-emerald-400/60 to-transparent animate-marquee-slow" />
+        <div className="w-[200%] h-full bg-gradient-to-r from-transparent via-emerald-500/40 via-cyan-500/40 to-transparent animate-marquee-slow" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between gap-3 sm:gap-6">
           
-          {/* ================= LEFT BRAND BLOCK (NORMAL CLEAN TEXT, SLIGHTLY BIGGER FONT) ================= */}
+          {/* ================= LEFT BRAND BLOCK ================= */}
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink min-w-0">
-            <button
-              onClick={() => {
-                if (isMusic) {
-                  router.push('/music');
-                } else if (onSelectMarketingTab) {
-                  onSelectMarketingTab('home');
-                } else {
-                  router.push('/home');
-                }
-              }}
-              className="flex items-center gap-2.5 sm:gap-3.5 group py-0.5 flex-shrink min-w-0 cursor-pointer text-left"
-              title={isMusic ? "More of Music Home" : "Moments of Marketing Home"}
+            <Link
+              href={isMusic ? '/music' : '/home'}
+              className="flex items-center group py-0.5 flex-shrink-0 cursor-pointer text-left"
+              title={isMusic ? 'More of Music Home' : 'Moments of Marketing Home'}
             >
               <img
                 src="/mom-logo-transparent.png"
@@ -107,15 +89,7 @@ export default function Navbar({
                   theme === 'light' ? 'invert' : ''
                 }`}
               />
-              {/* NORMAL CLEAN TEXT, SLIGHTLY BIGGER FONT (NO GREEN PILL BADGE) */}
-              <span className={`text-base sm:text-lg md:text-xl lg:text-[22px] font-black font-display tracking-tight text-zinc-950 dark:text-white whitespace-nowrap transition-colors ${
-                isMusic
-                  ? 'group-hover:text-cyan-500 dark:group-hover:text-cyan-400'
-                  : 'group-hover:text-emerald-600 dark:group-hover:text-emerald-400'
-              }`}>
-                {isMusic ? 'More of Music' : 'Moments of Marketing'}
-              </span>
-            </button>
+            </Link>
           </div>
 
           {/* ================= CENTER NAVIGATION ================= */}
@@ -125,9 +99,9 @@ export default function Navbar({
                 {marketingTabs.map((tab) => {
                   const isActive = currentTab === tab.id;
                   return (
-                    <button
+                    <Link
                       key={tab.id}
-                      onClick={() => handleTabClick(tab.id)}
+                      href={tab.path}
                       className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-[13px] font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${
                         isActive
                           ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
@@ -135,7 +109,7 @@ export default function Navbar({
                       }`}
                     >
                       {tab.label}
-                    </button>
+                    </Link>
                   );
                 })}
               </div>
@@ -157,32 +131,13 @@ export default function Navbar({
 
           {/* ================= RIGHT UTILITY CONTROLS ================= */}
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            {/* Quick Switch Pill between Moments of Marketing and More of Music */}
-            {isMusic ? (
-              <button
-                onClick={() => router.push('/home')}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs active:scale-95"
-                title="Switch to Moments of Marketing"
-              >
-                <span>Moments of Marketing &rarr;</span>
-              </button>
-            ) : (
-              <button
-                onClick={() => router.push('/music')}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 text-[11px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs active:scale-95"
-                title="Explore More of Music Portal"
-              >
-                <span>More of Music &rarr;</span>
-              </button>
-            )}
-
             {/* WhatsApp Direct */}
             <a
-              href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
+              href="https://wa.me/917000083119?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
               target="_blank"
               rel="noreferrer"
               className="p-2 sm:p-2.5 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-emerald-400/60 dark:text-zinc-400 dark:hover:text-emerald-400 text-zinc-600 hover:border-emerald-500/60 hover:text-emerald-600 transition-all hover:scale-105 active:scale-95 shadow-sm"
-              title="Chat on WhatsApp (+91 9226042236)"
+              title="Chat on WhatsApp (+91 70000 83119)"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -228,12 +183,10 @@ export default function Navbar({
                 {marketingTabs.map((tab) => {
                   const isActive = currentTab === tab.id;
                   return (
-                    <button
+                    <Link
                       key={tab.id}
-                      onClick={() => {
-                        handleTabClick(tab.id);
-                        setMobileMenuOpen(false);
-                      }}
+                      href={tab.path}
+                      onClick={() => setMobileMenuOpen(false)}
                       className={`w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-center transition-all cursor-pointer ${
                         isActive
                           ? 'bg-zinc-950 text-white dark:bg-white dark:text-black shadow-md'
@@ -241,7 +194,7 @@ export default function Navbar({
                       }`}
                     >
                       {tab.label}
-                    </button>
+                    </Link>
                   );
                 })}
               </div>
@@ -259,42 +212,17 @@ export default function Navbar({
               ))
             )}
 
-            {/* Mobile Portal Switcher */}
-            <div className="pt-2">
-              {isMusic ? (
-                <button
-                  onClick={() => {
-                    router.push('/home');
-                    setMobileMenuOpen(false);
-                  }}
-                  className="w-full py-2.5 px-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer active:scale-95"
-                >
-                  <span>Switch to Moments of Marketing &rarr;</span>
-                </button>
-              ) : (
-                <button
-                  onClick={() => {
-                    router.push('/music');
-                    setMobileMenuOpen(false);
-                  }}
-                  className="w-full py-2.5 px-3 rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer active:scale-95"
-                >
-                  <span>Explore More of Music Portal &rarr;</span>
-                </button>
-              )}
-            </div>
-
             <div className="pt-3 flex flex-col gap-2.5 border-t border-zinc-200 dark:border-white/10">
               <div className="grid grid-cols-2 gap-2">
                 <a
-                  href="tel:+919226042236"
+                  href="tel:+917000083119"
                   className="py-2 px-2.5 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>Call Us</span>
                 </a>
                 <a
-                  href="mailto:Contact@momentsofmarketing.in"
+                  href="mailto:contact@momentsofmarketing.in"
                   className="py-2 px-2.5 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700"
                 >
                   <Mail className="w-3.5 h-3.5" />
@@ -312,7 +240,7 @@ export default function Navbar({
                   <InstagramIcon className="w-3.5 h-3.5 stroke-current" />
                   <span>@momentsofmarketingofficial</span>
                 </a>
-                <span>+91 9226042236</span>
+                <span>+91 70000 83119</span>
               </div>
             </div>
 
