@@ -49,7 +49,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
       .filter(Boolean)
       .join('\n');
 
-    const whatsappUrl = `https://wa.me/917000083119?text=${encodeURIComponent(waText)}`;
+    const whatsappUrl = `https://wa.me/919226042236?text=${encodeURIComponent(waText)}`;
     const mailtoSubject = encodeURIComponent(`New Inquiry from ${formData.fullName} - ${formData.serviceInterest}`);
     const mailtoBody = encodeURIComponent(
       `Name: ${formData.fullName}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\nService: ${formData.serviceInterest}\nBudget: ${formData.budgetRange}\n\nMessage:\n${formData.message || 'N/A'}`
@@ -120,10 +120,10 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
             </a>{' '}
             &middot;{' '}
             <a
-              href="tel:+917000083119"
+              href="tel:+919226042236"
               className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
             >
-              +91 70000 83119
+              +91 9226042236
             </a>
           </p>
 
@@ -145,7 +145,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
               <div className="space-y-4 pt-2">
                 {/* Phone: Clickable so OUTLINED */}
                 <a
-                  href="tel:+917000083119"
+                  href="tel:+919226042236"
                   className="flex items-center gap-4 p-4 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-zinc-50 transition-all duration-300 group active:scale-[0.98] shadow-sm"
                 >
                   <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-200/70 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
@@ -153,7 +153,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   </div>
                   <div>
                     <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block font-mono">Phone No.</span>
-                    <span className="text-base font-bold font-display dark:text-white text-zinc-950">+91 70000 83119</span>
+                    <span className="text-base font-bold font-display dark:text-white text-zinc-950">+91 9226042236</span>
                   </div>
                 </a>
 
@@ -236,7 +236,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-lg transition-all"
                       >
-                        <span>💬 Open in WhatsApp (+91 70000 83119)</span>
+                        <span>💬 Open in WhatsApp (+91 9226042236)</span>
                       </a>
                       {status.mailtoUrl && (
                         <a

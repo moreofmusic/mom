@@ -133,11 +133,11 @@ export default function Navbar({
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             {/* WhatsApp Direct */}
             <a
-              href="https://wa.me/917000083119?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
+              href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
               target="_blank"
               rel="noreferrer"
               className="p-2 sm:p-2.5 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-emerald-400/60 dark:text-zinc-400 dark:hover:text-emerald-400 text-zinc-600 hover:border-emerald-500/60 hover:text-emerald-600 transition-all hover:scale-105 active:scale-95 shadow-sm"
-              title="Chat on WhatsApp (+91 70000 83119)"
+              title="Chat on WhatsApp (+91 9226042236)"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -215,7 +215,7 @@ export default function Navbar({
             <div className="pt-3 flex flex-col gap-2.5 border-t border-zinc-200 dark:border-white/10">
               <div className="grid grid-cols-2 gap-2">
                 <a
-                  href="tel:+917000083119"
+                  href="tel:+919226042236"
                   className="py-2 px-2.5 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700"
                 >
                   <Phone className="w-3.5 h-3.5" />
@@ -240,7 +240,7 @@ export default function Navbar({
                   <InstagramIcon className="w-3.5 h-3.5 stroke-current" />
                   <span>@momentsofmarketingofficial</span>
                 </a>
-                <span>+91 70000 83119</span>
+                <span>+91 9226042236</span>
               </div>
             </div>
 

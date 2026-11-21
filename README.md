@@ -11,7 +11,7 @@
 - **Styling**: Tailwind CSS + Pure AMOLED Black Theme (`#000000`)
 - **Accents**: Luminous Electric Ice-Blue (`#BAE6FD`), Electric Cyan (`#38BDF8`), Sapphire (`#818CF8`)
 - **Lead Capture Integration**:
-  - **WhatsApp Direct**: Form submissions automatically format client details and launch chat with **+91 70000 83119**.
+  - **WhatsApp Direct**: Form submissions automatically format client details and launch chat with **+91 9226042236**.
   - **Email Dispatch**: Direct email link + Serverless dispatch to **Contact@momentsofmarketing.in**.
   - **Zero Database Required**: 100% serverless, zero maintenance, deployable on Vercel/Netlify for free.
 
@@ -63,6 +63,6 @@ d:\Project\MOM\
 ---
 
 ## 📞 Official Contacts Configured
-- **Phone / WhatsApp**: `+91 70000 83119`
+- **Phone / WhatsApp**: `+91 9226042236`
 - **Email**: `Contact@momentsofmarketing.in`
 - **Instagram**: `@momentsofmarketingofficial`

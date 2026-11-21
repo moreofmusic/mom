@@ -381,10 +381,10 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               </a>{' '}
               &middot;{' '}
               <a
-                href="tel:+917000083119"
+                href="tel:+919226042236"
                 className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
               >
-                +91 70000 83119
+                +91 9226042236
               </a>
             </p>
           </div>
@@ -399,7 +399,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
             </button>
 
             <a
-              href="https://wa.me/917000083119?text=Hi%20More%20of%20Music%20Team%2C%20I%20want%20to%20discuss%20Sonic%20Branding%20%2F%20Studio%20Session."
+              href="https://wa.me/919226042236?text=Hi%20More%20of%20Music%20Team%2C%20I%20want%20to%20discuss%20Sonic%20Branding%20%2F%20Studio%20Session."
               target="_blank"
               rel="noreferrer"
               className="px-8 py-4 rounded-full border border-zinc-300 dark:border-white/20 hover:border-black dark:hover:border-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 active:scale-95 dark:text-white text-zinc-900 shadow-sm flex items-center gap-2"

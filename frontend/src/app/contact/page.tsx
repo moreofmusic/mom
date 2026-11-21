@@ -58,7 +58,7 @@ export default function ContactPage() {
       .filter(Boolean)
       .join('\n');
 
-    const whatsappUrl = `https://wa.me/917000083119?text=${encodeURIComponent(waText)}`;
+    const whatsappUrl = `https://wa.me/919226042236?text=${encodeURIComponent(waText)}`;
 
     try {
       const res = await fetch('/api/leads', {
@@ -132,7 +132,7 @@ export default function ContactPage() {
                 </span>
               </div>
               <a
-                href="https://wa.me/917000083119?text=Hi%20MOM%20Team%2C%20I%20am%20ready%20to%20talk%20about%20our%20marketing%20growth."
+                href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20ready%20to%20talk%20about%20our%20marketing%20growth."
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 rounded-full bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-sm hover:opacity-90 active:scale-95 text-center"
@@ -152,7 +152,7 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <a
-                  href="tel:+917000083119"
+                  href="tel:+919226042236"
                   className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-xs group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white border border-zinc-200/50 dark:border-white/5">
@@ -160,7 +160,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Phone no.</span>
-                    <span className="text-base font-bold font-display dark:text-white text-zinc-950">+91 70000 83119</span>
+                    <span className="text-base font-bold font-display dark:text-white text-zinc-950">+91 9226042236</span>
                   </div>
                 </a>
 

@@ -57,7 +57,7 @@ export async function POST(request: Request) {
       .filter(Boolean)
       .join('\n');
 
-    const whatsappUrl = `https://wa.me/917000083119?text=${encodeURIComponent(waText)}`;
+    const whatsappUrl = `https://wa.me/919226042236?text=${encodeURIComponent(waText)}`;
 
     // Format mailto fallback URL
     const mailtoSubject = encodeURIComponent(`New Inquiry from ${fullName} - ${serviceInterest || 'MOM'}`);
