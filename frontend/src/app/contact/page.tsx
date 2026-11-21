@@ -108,8 +108,8 @@ export default function ContactPage() {
             
             {/* Standard Hero Section Header */}
             <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-              <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white leading-[1.2] pb-1">
-                CONTACT US
+              <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white leading-[1.2] pb-1">
+                Contact Us
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
@@ -122,23 +122,13 @@ export default function ContactPage() {
             </div>
 
             {/* CTA & Brand Tagline */}
-            <div className="p-5 sm:p-6 rounded-2xl border border-zinc-200 dark:border-white/15 bg-zinc-100/70 dark:bg-zinc-900/60 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block mb-0.5">
-                  Let&apos;s Talk About Your Growth
-                </span>
-                <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">
-                  Moments of Marketing &mdash; Creating Moments. Building Brands. Driving Growth.
-                </span>
-              </div>
-              <a
-                href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20ready%20to%20talk%20about%20our%20marketing%20growth."
-                target="_blank"
-                rel="noreferrer"
-                className="px-6 py-2.5 rounded-full bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-sm hover:opacity-90 active:scale-95 text-center"
-              >
-                WhatsApp Now &rarr;
-              </a>
+            <div className="p-5 sm:p-6 rounded-2xl border border-zinc-200 dark:border-white/15 bg-zinc-100/70 dark:bg-zinc-900/60 shadow-xs">
+              <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block mb-0.5">
+                Let&apos;s Talk About Your Growth
+              </span>
+              <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">
+                Moments of Marketing &mdash; Creating Moments. Building Brands. Driving Growth.
+              </span>
             </div>
 
             {/* 2-Column Layout: Direct Details (Left) + Clean Form (Right) */}
@@ -213,6 +203,7 @@ export default function ContactPage() {
               <div className="lg:col-span-7">
                 <form
                   onSubmit={handleSubmit}
+                  suppressHydrationWarning
                   className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm space-y-4"
                 >
                   <div className="space-y-1 pb-2">
@@ -249,6 +240,7 @@ export default function ContactPage() {
                       <input
                         type="text"
                         required
+                        suppressHydrationWarning
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="e.g. John Doe"
@@ -263,6 +255,7 @@ export default function ContactPage() {
                       <input
                         type="tel"
                         required
+                        suppressHydrationWarning
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 98765 43210"
@@ -279,6 +272,7 @@ export default function ContactPage() {
                       <input
                         type="email"
                         required
+                        suppressHydrationWarning
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@company.com"
@@ -292,6 +286,7 @@ export default function ContactPage() {
                       </label>
                       <input
                         type="text"
+                        suppressHydrationWarning
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="Your Business Name"
@@ -307,6 +302,7 @@ export default function ContactPage() {
                       </label>
                       <select
                         value={formData.serviceInterest}
+                        suppressHydrationWarning
                         onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-zinc-50 dark:text-white text-zinc-900 text-sm focus:outline-none focus:border-zinc-950 dark:focus:border-white transition-colors cursor-pointer"
                       >
@@ -329,6 +325,7 @@ export default function ContactPage() {
                       </label>
                       <select
                         value={formData.budgetRange}
+                        suppressHydrationWarning
                         onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-zinc-50 dark:text-white text-zinc-900 text-sm focus:outline-none focus:border-zinc-950 dark:focus:border-white transition-colors cursor-pointer"
                       >
@@ -346,6 +343,7 @@ export default function ContactPage() {
                     </label>
                     <textarea
                       rows={3}
+                      suppressHydrationWarning
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Briefly describe what you'd like to achieve with MOM..."
@@ -356,6 +354,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
+                    suppressHydrationWarning
                     className="w-full py-3.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 shadow-md transition-all cursor-pointer disabled:opacity-50"
                   >
                     <span>{loading ? 'Submitting...' : 'Submit Inquiry & Chat on WhatsApp'}</span>

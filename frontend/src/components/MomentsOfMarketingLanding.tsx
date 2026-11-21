@@ -161,19 +161,19 @@ export default function MomentsOfMarketingLanding({
 
     const pillars = [
       {
-        title: 'BRAND VISIBILITY',
+        title: 'Brand Visibility',
         tagline: 'Get noticed. Stay remembered.',
         description:
           'Build a distinctive brand presence that captures attention and earns recognition. We help your business stand out through strategic branding, engaging content, and consistent digital communication.',
       },
       {
-        title: 'LEAD GENERATION',
+        title: 'Lead Generation',
         tagline: 'Reach the right people. Create real opportunities.',
         description:
           'Attract relevant audiences and turn their interest into valuable enquiries. Our targeted campaigns and conversion-focused strategies help create opportunities for your sales team.',
       },
       {
-        title: 'BUSINESS GROWTH',
+        title: 'Business Growth',
         tagline: 'Turn opportunities into lasting progress.',
         description:
           'Make your marketing work harder for your business. Through performance analysis, customer engagement, and continuous optimization, we help you make informed marketing decisions and build a foundation for sustainable growth.',
@@ -243,11 +243,11 @@ export default function MomentsOfMarketingLanding({
               {/* Vision Card */}
               <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white mb-3">
+                  <h3 className="text-xl sm:text-2xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white mb-3">
                     Vision
                   </h3>
-                  <p className="text-base sm:text-lg md:text-xl font-bold font-display text-zinc-950 dark:text-white leading-relaxed">
-                    Creating moments. Building brands. Driving growth.
+                  <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                    Creating Moments. Building Brands. Driving Growth.
                   </p>
                 </div>
               </div>
@@ -255,10 +255,10 @@ export default function MomentsOfMarketingLanding({
               {/* Mission Card */}
               <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white mb-3">
+                  <h3 className="text-xl sm:text-2xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white mb-3">
                     Mission
                   </h3>
-                  <p className="text-base sm:text-lg md:text-xl font-bold font-display text-zinc-950 dark:text-white leading-relaxed">
+                  <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
                     To turn meaningful marketing moments into lasting brand value and business growth.
                   </p>
                 </div>
@@ -311,24 +311,26 @@ export default function MomentsOfMarketingLanding({
                     key={p.title}
                     className="pro-card relative p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 overflow-hidden"
                   >
-                    {/* Architectural Pillar Crown / Capital Beam */}
-                    <div className="h-1.5 w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-full mb-6 group-hover:scale-x-105 transition-transform origin-left" />
+                    <div>
+                      {/* Architectural Pillar Crown / Capital Beam */}
+                      <div className="h-1.5 w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-full mb-6 group-hover:scale-x-105 transition-transform origin-left" />
 
-                    <div className="space-y-4">
-                      {/* Pillar Title in Bold All-Caps (No Number, No Icon) */}
-                      <h4 className="text-lg sm:text-xl font-black font-display uppercase tracking-wider text-zinc-950 dark:text-white">
-                        {p.title}
-                      </h4>
+                      <div className="space-y-4">
+                        {/* Pillar Title in Bold Title Case */}
+                        <h4 className="text-lg sm:text-xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white">
+                          {p.title}
+                        </h4>
 
-                      {/* Tagline */}
-                      <p className="text-sm sm:text-base font-bold text-emerald-500 dark:text-emerald-400 font-sans leading-snug">
-                        {p.tagline}
-                      </p>
+                        {/* Tagline */}
+                        <p className="text-sm sm:text-base font-bold text-emerald-500 dark:text-emerald-400 font-sans leading-snug">
+                          {p.tagline}
+                        </p>
 
-                      {/* Description */}
-                      <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-                        {p.description}
-                      </p>
+                        {/* Description */}
+                        <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                          {p.description}
+                        </p>
+                      </div>
                     </div>
 
                     {/* Architectural Pillar Foundation / Base Pedestal */}
@@ -352,12 +354,12 @@ export default function MomentsOfMarketingLanding({
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
               {whyChooseUsPoints.map((pt) => {
                 return (
                   <div
                     key={pt.title}
-                    className="pro-card p-6 sm:p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                    className="pro-card p-6 sm:p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
                   >
                     <div className="space-y-2.5">
                       <h4 className="text-base sm:text-lg font-bold font-display dark:text-white text-zinc-950 leading-snug">
@@ -370,15 +372,6 @@ export default function MomentsOfMarketingLanding({
                   </div>
                 );
               })}
-
-              {/* 6th Slot: Dedicated Image Placeholder Card */}
-              <div className="pro-card p-6 sm:p-7 rounded-2xl border border-dashed border-zinc-300 dark:border-white/20 bg-zinc-100/60 dark:bg-white/[0.03] shadow-sm flex flex-col items-center justify-center text-center min-h-[160px] sm:min-h-[180px] group hover:border-emerald-500/60 dark:hover:border-emerald-400/60 transition-all">
-                <div className="flex flex-col items-center gap-2 text-zinc-400 dark:text-zinc-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
-                  <span className="text-xs sm:text-sm font-mono font-bold tracking-widest uppercase">
-                    Image Placeholder
-                  </span>
-                </div>
-              </div>
             </div>
           </section>
 
@@ -555,8 +548,8 @@ export default function MomentsOfMarketingLanding({
           
           {/* Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-            <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white leading-tight">
-              OUR SERVICES
+            <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white leading-tight">
+              Our Services
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
@@ -641,8 +634,8 @@ export default function MomentsOfMarketingLanding({
           
           {/* Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-            <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white leading-tight">
-              CONTACT US
+            <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white leading-tight">
+              Contact Us
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
@@ -655,23 +648,13 @@ export default function MomentsOfMarketingLanding({
           </div>
 
           {/* CTA & Brand Tagline */}
-          <div className="p-5 sm:p-6 rounded-2xl border border-zinc-200 dark:border-white/15 bg-zinc-100/70 dark:bg-zinc-900/60 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block mb-0.5">
-                Let&apos;s Talk About Your Growth
-              </span>
-              <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">
-                Moments of Marketing &mdash; Creating Moments. Building Brands. Driving Growth.
-              </span>
-            </div>
-            <a
-              href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20am%20ready%20to%20talk%20about%20our%20marketing%20growth."
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-2.5 rounded-full bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-sm hover:opacity-90 active:scale-95 text-center"
-            >
-              WhatsApp Now &rarr;
-            </a>
+          <div className="p-5 sm:p-6 rounded-2xl border border-zinc-200 dark:border-white/15 bg-zinc-100/70 dark:bg-zinc-900/60 shadow-xs">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block mb-0.5">
+              Let&apos;s Talk About Your Growth
+            </span>
+            <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">
+              Moments of Marketing &mdash; Creating Moments. Building Brands. Driving Growth.
+            </span>
           </div>
 
           {/* 2-Column Layout: Direct Details (Left) + Clean Form (Right) */}

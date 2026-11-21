@@ -88,8 +88,8 @@ export default function LeadCaptureModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-in fade-in">
-      <div className="pro-card dark:bg-[#0A0A0C] bg-white w-full max-w-lg p-8 rounded-3xl relative shadow-2xl dark:border-white/10 border-zinc-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in overflow-y-auto select-none">
+      <div className="pro-card dark:bg-[#0A0A0C] bg-white w-full max-w-lg p-6 sm:p-8 rounded-3xl relative shadow-2xl dark:border-white/10 border-zinc-200 my-auto max-h-[92vh] overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -160,7 +160,7 @@ export default function LeadCaptureModal({
               />
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-3.5">
+            <form onSubmit={handleSubmit} suppressHydrationWarning className="space-y-3.5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider dark:text-zinc-400 text-zinc-700 mb-1 font-medium">
@@ -169,6 +169,7 @@ export default function LeadCaptureModal({
                   <input
                     type="text"
                     required
+                    suppressHydrationWarning
                     placeholder="John Doe"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -183,6 +184,7 @@ export default function LeadCaptureModal({
                   <input
                     type="tel"
                     required
+                    suppressHydrationWarning
                     placeholder="+91 9226042236"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -199,6 +201,7 @@ export default function LeadCaptureModal({
                   <input
                     type="email"
                     required
+                    suppressHydrationWarning
                     placeholder="you@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -212,6 +215,7 @@ export default function LeadCaptureModal({
                   </label>
                   <input
                     type="text"
+                    suppressHydrationWarning
                     placeholder="Brand name"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -226,6 +230,7 @@ export default function LeadCaptureModal({
                 </label>
                 <select
                   value={formData.serviceInterest}
+                  suppressHydrationWarning
                   onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
                   className="w-full px-3.5 py-2 rounded-lg editorial-input text-xs dark:bg-black bg-white"
                 >
@@ -250,6 +255,7 @@ export default function LeadCaptureModal({
                 <textarea
                   rows={2}
                   required
+                  suppressHydrationWarning
                   placeholder="Share a short summary of your primary objectives..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}

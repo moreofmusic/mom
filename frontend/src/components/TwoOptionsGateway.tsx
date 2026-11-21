@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { ArrowUpRight, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import ComingSoonModal from './ComingSoonModal';
@@ -10,7 +11,7 @@ interface TwoOptionsGatewayProps {
 }
 
 export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayProps) {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, mounted } = useTheme();
   const [comingSoonOpen, setComingSoonOpen] = useState(false);
 
   return (
@@ -22,38 +23,46 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
         <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] rounded-full bg-emerald-500/10 dark:bg-emerald-500/12 blur-[140px] animate-float [animation-delay:3s]" />
       </div>
 
-      {/* ----------------- TOP MINIMAL HEADER ----------------- */}
-      <header className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 py-4 sm:py-6 flex items-center justify-center border-b dark:border-white/[0.08] border-zinc-200/80 relative z-10">
-        {/* Brand Logo - Centered in Header */}
-        <div className="flex items-center justify-center">
-          <img
-            src="/mom-logo-transparent.png"
-            alt="MOM Logo"
-            className={`h-12 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-105 ${
-              theme === 'light' ? 'invert' : ''
-            }`}
-          />
+      {/* ----------------- TOP MINIMAL HEADER (NO BOTTOM BORDER) ----------------- */}
+      <header className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 pt-10 sm:pt-14 md:pt-16 pb-2 sm:pb-4 flex items-center justify-center relative z-10">
+        {/* Brand Logo - Centered in Header & Shifted Down */}
+        <div className="flex items-center justify-center pt-4 sm:pt-6 md:pt-8">
+          <Link href="/" className="cursor-pointer">
+            <img
+              src="/mom-logo-transparent.png"
+              alt="MOM Logo"
+              suppressHydrationWarning
+              className={`h-12 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-105 ${
+                mounted && theme === 'light' ? 'invert' : ''
+              }`}
+            />
+          </Link>
         </div>
 
         {/* Top Right Control: Theme Toggle Only */}
-        <div className="absolute right-4 sm:right-8 lg:right-14 top-1/2 -translate-y-1/2 flex items-center">
+        <div className="absolute right-4 sm:right-8 lg:right-14 top-6 sm:top-8 md:top-10 flex items-center">
           <button
             onClick={toggleTheme}
             className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-zinc-300 dark:border-white/15 dark:text-zinc-400 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 active:rotate-180 shadow-sm"
             aria-label="Toggle theme"
-            title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme`}
+            title={mounted ? `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme` : 'Toggle theme'}
+            suppressHydrationWarning
           >
-            {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-amber-300 transition-transform duration-500" />
+            {mounted ? (
+              theme === 'dark' ? (
+                <Sun className="w-4 h-4 text-amber-300 transition-transform duration-500" />
+              ) : (
+                <Moon className="w-4 h-4 text-zinc-900 transition-transform duration-500" />
+              )
             ) : (
-              <Moon className="w-4 h-4 text-zinc-900 transition-transform duration-500" />
+              <span className="w-4 h-4 inline-block" />
             )}
           </button>
         </div>
       </header>
 
       {/* ----------------- CENTER MAIN: STRICTLY THE 2 OPTIONS (AS PER USER SLIDE) ----------------- */}
-      <main className="w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-20 flex-1 flex flex-col justify-center items-center relative z-10">
+      <main className="w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-6 sm:py-10 md:py-12 flex-1 flex flex-col justify-center items-center relative z-10">
         
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start justify-center">
           
@@ -61,7 +70,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           <div className="w-full flex flex-col items-center">
             <button
               onClick={() => setComingSoonOpen(true)}
-              className="w-full h-52 sm:h-64 md:h-72 lg:h-80 bg-black text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl hover:shadow-[0_0_50px_rgba(255,255,255,0.18)] border border-zinc-800 dark:border-white/15 hover:border-white/40 transition-all duration-400 cursor-pointer active:scale-[0.98]"
+              className="w-full h-44 sm:h-52 md:h-60 lg:h-68 bg-black text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl hover:shadow-[0_0_50px_rgba(255,255,255,0.18)] border border-zinc-800 dark:border-white/15 hover:border-white/40 transition-all duration-400 cursor-pointer active:scale-[0.98]"
               title="More of Music (Coming Soon — Under Development)"
             >
               {/* Shimmer Light Beam on Hover */}
@@ -89,8 +98,8 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           <div className="w-full flex flex-col items-center">
             <button
               onClick={() => onSelectEntity('marketing')}
-              className="w-full h-52 sm:h-64 md:h-72 lg:h-80 bg-black text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl hover:shadow-[0_0_50px_rgba(16,185,129,0.35)] border border-zinc-800 dark:border-white/15 hover:border-emerald-500/60 transition-all duration-400 cursor-pointer active:scale-[0.98]"
-              title="Click to enter Moments of Marketing"
+              className="w-full h-44 sm:h-52 md:h-60 lg:h-68 bg-black text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl hover:shadow-[0_0_50px_rgba(16,185,129,0.35)] border border-zinc-800 dark:border-white/15 hover:border-emerald-500/60 transition-all duration-400 cursor-pointer active:scale-[0.98]"
+              title="Moments of Marketing – Creating Moments. Building Brands. Driving Growth."
             >
               {/* Shimmer Light Beam on Hover */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
@@ -105,9 +114,8 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                 Moments<br />of<br />Marketing
               </h2>
 
-              <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.2em] uppercase text-emerald-400 mt-3 sm:mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5">
-                <span>ENTER AGENCY</span>
-                <span>&rarr;</span>
+              <span className="text-xs sm:text-sm font-bold font-sans tracking-wide text-emerald-400 mt-3 sm:mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4 leading-snug">
+                Creating Moments. Building Brands. Driving Growth.
               </span>
             </button>
           </div>

@@ -25,16 +25,15 @@ export default function Navbar({
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, mounted } = useTheme();
 
   const isMusic = activeEntity === 'music' || pathname === '/music';
 
   // Determine active tab directly from current route
-  let currentTab = 'home';
-  if (pathname === '/about') currentTab = 'about';
+  let currentTab = 'about';
+  if (pathname === '/about' || pathname === '/home') currentTab = 'about';
   else if (pathname === '/services') currentTab = 'services';
   else if (pathname === '/contact') currentTab = 'contact';
-  else if (pathname === '/home') currentTab = 'home';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +45,6 @@ export default function Navbar({
   }, []);
 
   const marketingTabs: { id: string; path: string; label: string }[] = [
-    { id: 'home', path: '/home', label: 'Home' },
     { id: 'about', path: '/about', label: 'About Us' },
     { id: 'services', path: '/services', label: 'Brands and services' },
     { id: 'contact', path: '/contact', label: 'Contact us' },
@@ -61,16 +59,14 @@ export default function Navbar({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b select-none ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 select-none border-b border-black/[0.04] dark:border-white/[0.06] ${
         isScrolled
-          ? 'dark:bg-black/95 bg-white/95 backdrop-blur-md dark:border-white/[0.08] border-zinc-200 py-2 sm:py-2.5 shadow-sm'
-          : 'dark:bg-black/90 bg-white/95 backdrop-blur-md dark:border-white/[0.08] border-zinc-200/90 py-2.5 sm:py-3'
+          ? 'dark:bg-black/75 bg-white/80 backdrop-blur-2xl backdrop-saturate-150 py-2 sm:py-2.5 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]'
+          : 'dark:bg-black/55 bg-white/70 backdrop-blur-2xl backdrop-saturate-150 py-2.5 sm:py-3 shadow-[0_4px_24px_0_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_0_rgba(0,0,0,0.35)]'
       }`}
     >
-      {/* Animated Ambient Shimmer Line at Bottom of Navbar */}
-      <div className="absolute bottom-0 left-0 right-0 h-[1.5px] overflow-hidden pointer-events-none">
-        <div className="w-[200%] h-full bg-gradient-to-r from-transparent via-emerald-500/40 via-cyan-500/40 to-transparent animate-marquee-slow" />
-      </div>
+      {/* Liquid Glass Top Specular Sheen (Apple iOS Style) */}
+      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 dark:via-white/15 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between gap-3 sm:gap-6">
@@ -78,15 +74,16 @@ export default function Navbar({
           {/* ================= LEFT BRAND BLOCK ================= */}
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink min-w-0">
             <Link
-              href={isMusic ? '/music' : '/home'}
+              href="/"
               className="flex items-center group py-0.5 flex-shrink-0 cursor-pointer text-left"
-              title={isMusic ? 'More of Music Home' : 'Moments of Marketing Home'}
+              title="MOM - Moments of Marketing & More of Music"
             >
               <img
                 src="/mom-logo-transparent.png"
                 alt="MOM Logo"
+                suppressHydrationWarning
                 className={`h-10 sm:h-12 md:h-14 lg:h-[60px] w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
-                  theme === 'light' ? 'invert' : ''
+                  mounted && theme === 'light' ? 'invert' : ''
                 }`}
               />
             </Link>
@@ -95,7 +92,7 @@ export default function Navbar({
           {/* ================= CENTER NAVIGATION ================= */}
           {!isMusic ? (
             <nav className="hidden lg:flex items-center">
-              <div className="flex items-center gap-1.5 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md shadow-sm flex-nowrap whitespace-nowrap">
+              <div className="flex items-center gap-1.5 p-1.5 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.06] bg-black/[0.04] backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_4px_16px_rgba(0,0,0,0.06)] flex-nowrap whitespace-nowrap">
                 {marketingTabs.map((tab) => {
                   const isActive = currentTab === tab.id;
                   return (
@@ -136,7 +133,7 @@ export default function Navbar({
               href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
               target="_blank"
               rel="noreferrer"
-              className="p-2 sm:p-2.5 rounded-full border border-zinc-300 dark:border-white/15 dark:hover:border-emerald-400/60 dark:text-zinc-400 dark:hover:text-emerald-400 text-zinc-600 hover:border-emerald-500/60 hover:text-emerald-600 transition-all hover:scale-105 active:scale-95 shadow-sm"
+              className="p-2 sm:p-2.5 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl dark:hover:border-emerald-400/60 dark:text-zinc-300 dark:hover:text-emerald-400 text-zinc-700 hover:border-emerald-500/60 hover:text-emerald-600 transition-all hover:scale-105 active:scale-95 shadow-xs"
               title="Chat on WhatsApp (+91 9226042236)"
               aria-label="WhatsApp"
             >
@@ -146,25 +143,30 @@ export default function Navbar({
             {/* Dark / Light Mode Toggle */}
             <button
               onClick={toggleTheme}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-zinc-300 dark:border-white/15 dark:text-zinc-400 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 active:rotate-180 shadow-sm"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl dark:text-zinc-300 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 active:rotate-180 shadow-xs"
               aria-label="Toggle theme"
-              title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme`}
+              title={mounted ? `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme` : 'Toggle theme'}
+              suppressHydrationWarning
             >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-amber-300 transition-transform duration-500" />
+              {mounted ? (
+                theme === 'dark' ? (
+                  <Sun className="w-4 h-4 text-amber-300 transition-transform duration-500" />
+                ) : (
+                  <Moon className="w-4 h-4 text-zinc-900 transition-transform duration-500" />
+                )
               ) : (
-                <Moon className="w-4 h-4 text-zinc-900 transition-transform duration-500" />
+                <span className="w-4 h-4 inline-block" />
               )}
             </button>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - iPhone Liquid Glass Style */}
             <div className="flex lg:hidden items-center flex-shrink-0">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 dark:text-white dark:border-white/20 text-zinc-900 border border-zinc-300 rounded-md cursor-pointer"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl flex items-center justify-center dark:text-white text-zinc-900 cursor-pointer active:scale-95 shadow-xs transition-all"
                 aria-label="Menu"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
               </button>
             </div>
 
@@ -175,7 +177,7 @@ export default function Navbar({
 
       {/* ================= MOBILE DRAWER ================= */}
       {mobileMenuOpen && (
-        <div className="lg:hidden mt-3 mx-4 p-5 rounded-2xl border dark:border-white/10 dark:bg-black/95 border-zinc-200 bg-white/95 backdrop-blur-2xl shadow-2xl animate-in fade-in">
+        <div className="lg:hidden mt-3 mx-4 p-5 rounded-2xl border border-black/5 dark:border-white/10 dark:bg-black/80 bg-white/85 backdrop-blur-2xl shadow-[0_16px_40px_rgba(0,0,0,0.3)] animate-in fade-in">
           <div className="flex flex-col gap-2.5">
             {!isMusic ? (
               /* Mobile Tabs for Moments of Marketing */

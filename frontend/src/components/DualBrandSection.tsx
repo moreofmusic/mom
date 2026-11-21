@@ -11,7 +11,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
   return (
     <section id="company" className="py-20 sm:py-28 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
-        
+
         {/* Exact Screenshot 3 Heading: "A full-stack growth company. Not an agency." */}
         <div className="space-y-6 pb-12 border-b dark:border-white/[0.08] border-zinc-200">
           <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-extrabold tracking-[-0.035em] leading-[0.96] dark:text-white text-zinc-950 font-display">
@@ -35,21 +35,19 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
             <div className="flex items-center gap-1.5 sm:gap-2 p-1.5 rounded-full border border-zinc-300 dark:border-white/15 dark:bg-black/80 bg-zinc-100/90 backdrop-blur-md w-fit max-w-full overflow-x-auto whitespace-nowrap flex-nowrap shadow-sm [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <button
                 onClick={() => setActive('marketing')}
-                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap flex-shrink-0 ${
-                  active === 'marketing'
-                    ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
-                    : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
-                }`}
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap flex-shrink-0 ${active === 'marketing'
+                  ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
+                  : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
+                  }`}
               >
                 Moments of Marketing
               </button>
               <button
                 onClick={() => setActive('music')}
-                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap flex-shrink-0 ${
-                  active === 'music'
-                    ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
-                    : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
-                }`}
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap flex-shrink-0 ${active === 'music'
+                  ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
+                  : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
+                  }`}
               >
                 More of Music
               </button>
@@ -61,16 +59,15 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
         <div className="pt-12">
           {active === 'marketing' ? (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pro-card p-8 sm:p-14 rounded-3xl animate-in fade-in duration-500">
-              
+
               {/* Left Column: Brand Content from PPT */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex items-center gap-3">
                   <img
                     src="/mom-logo-transparent.png"
                     alt="MOM Logo"
-                    className={`h-11 sm:h-12 w-auto object-contain transition-all duration-300 ${
-                      theme === 'light' ? 'invert' : ''
-                    }`}
+                    suppressHydrationWarning
+                    className="h-11 sm:h-12 w-auto object-contain transition-all duration-300 brand-logo-adaptive"
                   />
                   {/* Non-clickable Badge: NO OUTLINE */}
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full dark:bg-white/[0.08] bg-zinc-200/80 dark:text-white text-zinc-900 text-[11px] tracking-widest uppercase font-mono font-semibold">
@@ -78,7 +75,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
                     <span>Brand Growth &amp; Strategy</span>
                   </div>
                 </div>
-                
+
                 <h3 className="text-3xl sm:text-5xl font-black uppercase tracking-tight font-display dark:text-white text-zinc-950 leading-tight">
                   Moments of Marketing
                 </h3>
@@ -86,7 +83,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
                 <p className="text-base sm:text-lg dark:text-white text-zinc-900 font-semibold font-display">
                   Creating Moments. Building Brands. Driving Growth.
                 </p>
-                
+
                 <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
                   We partner with businesses to develop impactful brand identities, create engaging digital experiences, and execute marketing strategies that connect with the right customers. Whether launching a new brand, expanding market presence, or scaling enterprise revenue, we engineer full-funnel momentum.
                 </p>
@@ -129,7 +126,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
                   alt="Moments of Marketing Creative Campaign"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                
+
                 {/* Dark Editorial Gradient Scrim */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
 
@@ -161,16 +158,15 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pro-card p-8 sm:p-14 rounded-3xl animate-in fade-in duration-500">
-              
+
               {/* Left Column: Music Studio Content */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex items-center gap-3">
                   <img
                     src="/mom-logo-transparent.png"
                     alt="MOM More of Music Logo"
-                    className={`h-11 sm:h-12 w-auto object-contain transition-all duration-300 ${
-                      theme === 'light' ? 'invert' : ''
-                    }`}
+                    suppressHydrationWarning
+                    className="h-11 sm:h-12 w-auto object-contain transition-all duration-300 brand-logo-adaptive"
                   />
                   {/* Non-clickable Badge: NO OUTLINE */}
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full dark:bg-white/[0.08] bg-zinc-200/80 dark:text-white text-zinc-900 text-[11px] tracking-widest uppercase font-mono font-semibold">
@@ -186,7 +182,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
                 <p className="text-base sm:text-lg dark:text-white text-zinc-900 font-semibold font-display">
                   Sound That Defines Modern Pop Culture &amp; Iconic Brands.
                 </p>
-                
+
                 <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">
                   Elevating brands and creators through the emotional resonance of sound. Custom sonic logos, acoustic signatures, commercial jingles, original film scores, and spatial audio that forge an immediate neurological connection with your audience.
                 </p>
@@ -229,7 +225,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
                   alt="More of Music Recording Studio Console"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                
+
                 {/* Dark Editorial Gradient Scrim */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
 

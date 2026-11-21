@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import {
   Sparkles,
   Globe,
@@ -136,8 +135,8 @@ export default function ServicesPage() {
             
             {/* Standard Hero Section Header */}
             <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-              <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white leading-[1.2] pb-1">
-                OUR SERVICES
+              <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white leading-[1.2] pb-1">
+                Our Services
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
@@ -164,7 +163,7 @@ export default function ServicesPage() {
                         <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 group-hover:border-emerald-500/40 transition-all shadow-xs flex-shrink-0">
                           <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight text-zinc-950 dark:text-white leading-[1.15] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black font-display tracking-tight text-zinc-950 dark:text-white leading-[1.15] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                           {s.title}
                         </h2>
                       </div>
@@ -196,45 +195,15 @@ export default function ServicesPage() {
                     <div className="pt-6 mt-6 border-t border-zinc-200/80 dark:border-white/10">
                       <button
                         onClick={() => handleOpenLeadModal(s.title)}
-                        className="w-full py-3 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs active:scale-95 text-zinc-900 dark:text-white group/btn"
+                        className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs active:scale-95 text-zinc-900 dark:text-white group/btn"
                       >
-                        <span>Inquire for {s.title}</span>
+                        <span>Inquire</span>
                         <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                       </button>
                     </div>
                   </div>
                 );
               })}
-            </div>
-
-            {/* Direct Consultation Banner */}
-            <div className="p-8 sm:p-10 rounded-3xl border border-zinc-200 dark:border-white/15 bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-900/80 dark:to-zinc-950 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div className="space-y-2">
-                <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold">
-                  HAVE A UNIQUE REQUIREMENT?
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
-                  Let&apos;s Build a Customized Strategy for You.
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light max-w-xl">
-                  Talk to our strategists to discuss bespoke campaign plans, multi-channel growth retainers, or full-scale brand development.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3">
-                <button
-                  onClick={() => handleOpenLeadModal('General Consultation')}
-                  className="px-6 py-3 rounded-full bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider shadow-sm hover:opacity-90 active:scale-95 cursor-pointer"
-                >
-                  <span>Book Consultation &rarr;</span>
-                </button>
-                <Link
-                  href="/contact"
-                  className="px-6 py-3 rounded-full border border-zinc-300 dark:border-white/20 text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white hover:bg-zinc-100 dark:hover:bg-white/10 active:scale-95 shadow-xs"
-                >
-                  <span>Contact Page</span>
-                </Link>
-              </div>
             </div>
 
           </div>

@@ -11,7 +11,7 @@ export default function GatewayPage() {
 
   const handleSelectEntity = (entity: 'marketing' | 'music') => {
     if (entity === 'marketing') {
-      router.push('/home');
+      router.push('/about');
     } else if (entity === 'music') {
       setComingSoonOpen(true);
     }
@@ -27,7 +27,7 @@ export default function GatewayPage() {
       <ComingSoonModal
         isOpen={comingSoonOpen}
         onClose={() => setComingSoonOpen(false)}
-        onExploreMarketing={() => router.push('/home')}
+        onExploreMarketing={() => router.push('/about')}
       />
     </main>
   );

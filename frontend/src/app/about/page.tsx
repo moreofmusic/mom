@@ -53,19 +53,19 @@ export default function AboutPage() {
 
   const pillars = [
     {
-      title: 'BRAND VISIBILITY',
+      title: 'Brand Visibility',
       tagline: 'Get noticed. Stay remembered.',
       description:
         'Build a distinctive brand presence that captures attention and earns recognition. We help your business stand out through strategic branding, engaging content, and consistent digital communication.',
     },
     {
-      title: 'LEAD GENERATION',
+      title: 'Lead Generation',
       tagline: 'Reach the right people. Create real opportunities.',
       description:
         'Attract relevant audiences and turn their interest into valuable enquiries. Our targeted campaigns and conversion-focused strategies help create opportunities for your sales team.',
     },
     {
-      title: 'BUSINESS GROWTH',
+      title: 'Business Growth',
       tagline: 'Turn opportunities into lasting progress.',
       description:
         'Make your marketing work harder for your business. Through performance analysis, customer engagement, and continuous optimization, we help you make informed marketing decisions and build a foundation for sustainable growth.',
@@ -135,17 +135,44 @@ export default function AboutPage() {
           
           <div className="space-y-12 sm:space-y-16">
 
+            {/* ---------------- HERO / MORE THAN MARKETING SECTION ---------------- */}
+            <section className="relative">
+              {/* Subtle Ambient Glow */}
+              <div className="absolute -top-6 left-1/4 w-80 h-80 bg-emerald-500/10 dark:bg-emerald-500/10 blur-[120px] pointer-events-none" />
+
+              {/* Standard Hero Section Header */}
+              <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 mb-8 sm:mb-10">
+                {/* Main Headline - Sentence Case with exact capital M in Marketing */}
+                <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display text-zinc-950 dark:text-white normal-case tracking-tight leading-[1.2] pb-1">
+                  More than Marketing.
+                </h1>
+              </div>
+
+              {/* Three Core Paragraphs in Clean Editorial Paragraph Mode (One Below Another) */}
+              <div className="space-y-6 max-w-4xl text-sm sm:text-base md:text-lg dark:text-zinc-300 text-zinc-700 font-normal leading-relaxed">
+                <p>
+                  At MOM &mdash; Moments of Marketing, we believe great marketing creates more than visibility. It creates connections, builds trust, and drives business forward.
+                </p>
+                <p>
+                  We partner with businesses to develop impactful brand identities, create engaging digital experiences, and execute marketing strategies that connect with the right customers.
+                </p>
+                <p>
+                  Whether you&apos;re launching a new brand, expanding your market presence, or scaling your business, we bring the right mix of creativity, strategy, and execution to help you move forward with confidence.
+                </p>
+              </div>
+            </section>
+
             {/* ---------------- 1. VISION & MISSION CARDS ---------------- */}
             <section>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                 {/* Vision Card */}
                 <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white mb-3">
+                    <h3 className="text-xl sm:text-2xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white mb-3">
                       Vision
                     </h3>
-                    <p className="text-base sm:text-lg md:text-xl font-bold font-display text-zinc-950 dark:text-white leading-relaxed">
-                      Creating moments. Building brands. Driving growth.
+                    <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                      Creating Moments. Building Brands. Driving Growth.
                     </p>
                   </div>
                 </div>
@@ -153,10 +180,10 @@ export default function AboutPage() {
                 {/* Mission Card */}
                 <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white mb-3">
+                    <h3 className="text-xl sm:text-2xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white mb-3">
                       Mission
                     </h3>
-                    <p className="text-base sm:text-lg md:text-xl font-bold font-display text-zinc-950 dark:text-white leading-relaxed">
+                    <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
                       To turn meaningful marketing moments into lasting brand value and business growth.
                     </p>
                   </div>
@@ -209,24 +236,26 @@ export default function AboutPage() {
                       key={p.title}
                       className="pro-card relative p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 overflow-hidden"
                     >
-                      {/* Architectural Pillar Crown / Capital Beam */}
-                      <div className="h-1.5 w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-full mb-6 group-hover:scale-x-105 transition-transform origin-left" />
+                      <div>
+                        {/* Architectural Pillar Crown / Capital Beam */}
+                        <div className="h-1.5 w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-full mb-6 group-hover:scale-x-105 transition-transform origin-left" />
 
-                      <div className="space-y-4">
-                        {/* Pillar Title in Bold All-Caps */}
-                        <h3 className="text-lg sm:text-xl font-black font-display uppercase tracking-wider text-zinc-950 dark:text-white">
-                          {p.title}
-                        </h3>
+                        <div className="space-y-4">
+                          {/* Pillar Title in Bold Title Case */}
+                          <h3 className="text-lg sm:text-xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white">
+                            {p.title}
+                          </h3>
 
-                        {/* Tagline */}
-                        <p className="text-sm sm:text-base font-bold text-emerald-500 dark:text-emerald-400 font-sans leading-snug">
-                          {p.tagline}
-                        </p>
+                          {/* Tagline */}
+                          <p className="text-sm sm:text-base font-bold text-emerald-500 dark:text-emerald-400 font-sans leading-snug">
+                            {p.tagline}
+                          </p>
 
-                        {/* Description */}
-                        <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-                          {p.description}
-                        </p>
+                          {/* Description */}
+                          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                            {p.description}
+                          </p>
+                        </div>
                       </div>
 
                       {/* Architectural Pillar Foundation / Base Pedestal */}
@@ -250,12 +279,12 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
                 {whyChooseUsPoints.map((pt) => {
                   return (
                     <div
                       key={pt.title}
-                      className="pro-card p-6 sm:p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all"
+                      className="pro-card p-6 sm:p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
                     >
                       <div className="space-y-2.5">
                         <h3 className="text-base sm:text-lg font-bold font-display dark:text-white text-zinc-950 leading-snug">
@@ -268,15 +297,6 @@ export default function AboutPage() {
                     </div>
                   );
                 })}
-
-                {/* 6th Slot: Dedicated Image Placeholder Card */}
-                <div className="pro-card p-6 sm:p-7 rounded-2xl border border-dashed border-zinc-300 dark:border-white/20 bg-zinc-100/60 dark:bg-white/[0.03] shadow-sm flex flex-col items-center justify-center text-center min-h-[160px] sm:min-h-[180px] group hover:border-emerald-500/60 dark:hover:border-emerald-400/60 transition-all">
-                  <div className="flex flex-col items-center gap-2 text-zinc-400 dark:text-zinc-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
-                    <span className="text-xs sm:text-sm font-mono font-bold tracking-widest uppercase">
-                      Image Placeholder
-                    </span>
-                  </div>
-                </div>
               </div>
             </section>
 

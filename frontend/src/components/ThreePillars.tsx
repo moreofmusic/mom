@@ -84,7 +84,7 @@ export default function ThreePillars({ onSelectService }: { onSelectService: (se
                     </div>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-extrabold uppercase font-display dark:text-white text-zinc-950 mb-2 group-hover:text-emerald-400 transition-colors">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold capitalize font-display dark:text-white text-zinc-950 mb-2 group-hover:text-emerald-400 transition-colors">
                     {pillar.title}
                   </h3>
 
@@ -113,7 +113,7 @@ export default function ThreePillars({ onSelectService }: { onSelectService: (se
                     className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm tracking-wider uppercase font-bold dark:text-white text-zinc-900 flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer shadow-sm active:scale-95 relative overflow-hidden group/btn"
                   >
                     <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
-                    <span>Inquire for {pillar.title}</span>
+                    <span>Inquire</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
                   </button>
                 </div>

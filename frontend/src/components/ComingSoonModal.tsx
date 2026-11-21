@@ -67,8 +67,8 @@ export default function ComingSoonModal({
           <span>COMING SOON &bull; UNDER DEVELOPMENT</span>
         </div>
 
-        {/* MOM Logo from Navbar (Replaces the music note symbol) */}
-        <div className="flex justify-center mb-4">
+        {/* MOM Logo */}
+        <div className="flex justify-center mb-3 sm:mb-4">
           <img
             src="/mom-logo-transparent.png"
             alt="MOM Logo"
@@ -78,13 +78,8 @@ export default function ComingSoonModal({
           />
         </div>
 
-        {/* Title */}
-        <h3 className="text-2xl sm:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white mb-2">
-          MOM &ndash; More of Music
-        </h3>
-
         {/* Tagline */}
-        <p className="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 tracking-wide font-sans mb-5 leading-snug">
+        <p className="text-sm sm:text-base font-bold text-emerald-600 dark:text-emerald-400 tracking-wide font-sans mb-5 leading-snug">
           Creating Moments. Building Experiences. Bringing People Together.
         </p>
 
