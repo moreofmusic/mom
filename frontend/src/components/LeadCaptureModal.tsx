@@ -88,7 +88,7 @@ export default function LeadCaptureModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in overflow-y-auto select-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in overflow-y-auto">
       <div className="pro-card dark:bg-[#0A0A0C] bg-white w-full max-w-lg p-6 sm:p-8 rounded-3xl relative shadow-2xl dark:border-white/10 border-zinc-200 my-auto max-h-[92vh] overflow-y-auto">
         {/* Close Button */}
         <button

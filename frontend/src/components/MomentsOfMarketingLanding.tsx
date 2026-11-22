@@ -92,7 +92,7 @@ export default function MomentsOfMarketingLanding({
   const renderMobileTabs = () => null;
 
   // Common Page Container Class to guarantee 100% IDENTICAL top gap across all pages
-  const pageContainerClass = "max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 select-none animate-in fade-in duration-300";
+  const pageContainerClass = "max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300";
 
   // =================================================================================
   // PAGE 1: HOME

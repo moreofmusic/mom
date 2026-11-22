@@ -47,7 +47,7 @@ export default function FlipBrandWordmark({ className = '', size = 'md', fixedEn
       onClick={triggerMorph}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className={`group/capsule relative flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border transition-all duration-500 cursor-pointer select-none min-w-0 backdrop-blur-md overflow-hidden ${
+      className={`group/capsule relative flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border transition-all duration-500 cursor-pointer min-w-0 backdrop-blur-md overflow-hidden ${
         isMusic
           ? 'border-rose-500/35 bg-rose-500/[0.06] hover:border-rose-400 hover:shadow-[0_0_25px_rgba(244,63,94,0.3)] shadow-[0_0_15px_rgba(244,63,94,0.12)]'
           : 'border-emerald-500/35 bg-emerald-500/[0.06] hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] shadow-[0_0_15px_rgba(16,185,129,0.12)]'

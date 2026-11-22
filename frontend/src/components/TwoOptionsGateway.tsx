@@ -15,7 +15,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
   const [comingSoonOpen, setComingSoonOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between dark:bg-black bg-[#F8FAFC] dark:text-white text-zinc-900 transition-colors duration-300 relative overflow-hidden select-none">
+    <div className="min-h-screen flex flex-col justify-between dark:bg-black bg-[#F8FAFC] dark:text-white text-zinc-900 transition-colors duration-300 relative overflow-hidden">
       
       {/* Subtle Background Glow */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -123,7 +123,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
         </div>
 
         {/* Tagline & Emerald Accent Line - Center Aligned on Page Below Both Option Cards */}
-        <div className="w-full max-w-xl mx-auto mt-10 sm:mt-14 md:mt-16 flex flex-col items-center justify-center text-center select-none">
+        <div className="w-full max-w-xl mx-auto mt-10 sm:mt-14 md:mt-16 flex flex-col items-center justify-center text-center">
           <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold dark:text-zinc-100 text-zinc-900 tracking-wide font-sans leading-relaxed">
             Creating Moments. Building Brands. Driving Growth.
           </p>

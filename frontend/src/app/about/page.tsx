@@ -131,7 +131,7 @@ export default function AboutPage() {
       <Navbar onOpenLeadModal={() => handleOpenLeadModal()} />
 
       <div className="relative z-10 flex-1 transition-all duration-300 pt-[88px] sm:pt-[104px] md:pt-[124px]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 select-none animate-in fade-in duration-300">
+        <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
           
           <div className="space-y-12 sm:space-y-16">
 

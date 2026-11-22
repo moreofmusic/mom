@@ -59,7 +59,7 @@ export default function Navbar({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 select-none border-b border-black/[0.04] dark:border-white/[0.06] ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-black/[0.04] dark:border-white/[0.06] ${
         isScrolled
           ? 'dark:bg-black/75 bg-white/80 backdrop-blur-2xl backdrop-saturate-150 py-2 sm:py-2.5 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]'
           : 'dark:bg-black/55 bg-white/70 backdrop-blur-2xl backdrop-saturate-150 py-2.5 sm:py-3 shadow-[0_4px_24px_0_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_0_rgba(0,0,0,0.35)]'

@@ -64,7 +64,7 @@ export default function MomVisualUniverse({ onOpenLeadModal }: MomVisualUniverse
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[295px] sm:max-w-[350px] lg:max-w-[390px] aspect-[4/5] rounded-[24px] sm:rounded-[32px] p-4 sm:p-6 border dark:border-white/10 border-zinc-800/80 bg-[#070709] overflow-hidden select-none transition-transform duration-300 ease-out dark:shadow-[0_25px_60px_rgba(0,0,0,0.95)] shadow-[0_25px_60px_rgba(0,0,0,0.35)] group"
+      className="relative w-full max-w-[295px] sm:max-w-[350px] lg:max-w-[390px] aspect-[4/5] rounded-[24px] sm:rounded-[32px] p-4 sm:p-6 border dark:border-white/10 border-zinc-800/80 bg-[#070709] overflow-hidden transition-transform duration-300 ease-out dark:shadow-[0_25px_60px_rgba(0,0,0,0.95)] shadow-[0_25px_60px_rgba(0,0,0,0.35)] group"
       style={{
         transform: `perspective(1000px) rotateY(${mousePos.x * 0.65}deg) rotateX(${-mousePos.y * 0.65}deg)`,
       }}
@@ -203,7 +203,7 @@ export default function MomVisualUniverse({ onOpenLeadModal }: MomVisualUniverse
               {/* Brand Typography: Jet Black, High-Contrast & Crisp */}
               <span
                 style={{ color: '#09090B' }}
-                className="text-xs sm:text-[13px] font-black tracking-[0.2em] uppercase block font-sans select-none leading-tight"
+                className="text-xs sm:text-[13px] font-black tracking-[0.2em] uppercase block font-sans leading-tight"
               >
                 {mode === 'marketing' ? 'MOM CREATIVE' : 'MORE OF MUSIC'}
               </span>
@@ -211,7 +211,7 @@ export default function MomVisualUniverse({ onOpenLeadModal }: MomVisualUniverse
               {/* Subtitle: High-Contrast Charcoal with Safe Width */}
               <span
                 style={{ color: '#27272A' }}
-                className="text-[8px] sm:text-[8.5px] font-mono tracking-[0.14em] uppercase font-bold block select-none leading-tight pt-0.5"
+                className="text-[8px] sm:text-[8.5px] font-mono tracking-[0.14em] uppercase font-bold block leading-tight pt-0.5"
               >
                 Moments &bull; Brands &bull; Growth
               </span>
@@ -229,7 +229,7 @@ export default function MomVisualUniverse({ onOpenLeadModal }: MomVisualUniverse
       </div>
 
       {/* Bottom Quote Mark in Soft White */}
-      <div className="absolute bottom-12 sm:bottom-14 left-4 sm:left-6 text-2xl font-serif text-white/20 pointer-events-none select-none">
+      <div className="absolute bottom-12 sm:bottom-14 left-4 sm:left-6 text-2xl font-serif text-white/20 pointer-events-none">
         &ldquo;
       </div>
 
