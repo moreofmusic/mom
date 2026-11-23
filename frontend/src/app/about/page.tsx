@@ -128,36 +128,40 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              {/* Massive Display Headline matching Represent (A full-stack artist company. Not an agency.) */}
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-black tracking-[-0.03em] text-zinc-950 dark:text-white leading-[1.04] max-w-5xl mb-8 sm:mb-12">
-                At{' '}
-                <span className="font-serif italic font-normal">Moments of Marketing</span>
-                <br />
-                we create Moments.
+              {/* Massive Display Headline: Moments of Marketing Large & Prominent, At and Tagline in Smaller Font Size */}
+              <h1 className="max-w-6xl mb-8 sm:mb-12">
+                <div className="flex flex-wrap items-baseline gap-2 sm:gap-3.5">
+                  <span className="text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] font-bold font-sans tracking-tight text-zinc-950 dark:text-white">
+                    At
+                  </span>
+                  <span className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-serif italic font-normal tracking-tight text-zinc-950 dark:text-white leading-[1.04]">
+                    Moments of Marketing
+                  </span>
+                </div>
+                <span className="text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] font-bold font-sans tracking-tight text-zinc-950 dark:text-white mt-3 sm:mt-5 md:mt-6 block leading-snug whitespace-nowrap">
+                  we create Moments, Build Brands and Drive Growth.
+                </span>
               </h1>
 
               {/* Editorial Lead Paragraph matching Represent */}
               <div className="max-w-4xl text-base sm:text-lg md:text-xl lg:text-[21px] dark:text-zinc-300 text-zinc-700 font-light leading-relaxed">
                 <p>
                   <span className="font-semibold uppercase tracking-wide text-zinc-950 dark:text-white">
-                    WE PARTNER
+                    WE BELIEVE
                   </span>{' '}
-                  with businesses at every stage of their journey whether launching a new brand, strengthening market presence, or driving growth by building distinctive brand identities, creating engaging digital experiences, and executing result-driven marketing strategies that combine creativity, strategic thinking, and seamless execution to connect with the right audience and turn business visions into lasting success.
+                  great marketing goes beyond visibility. It&apos;s about creating meaningful connections, earning trust, and turning opportunities into lasting business success.
                 </p>
               </div>
-
-              {/* Sleek horizontal divider line matching Represent */}
-              <div className="border-b border-zinc-200 dark:border-white/10 my-12 sm:my-16" />
             </section>
 
             {/* ---------------- OUR VALUES ---------------- */}
             <section className="space-y-5">
-              <div className="pb-3.5 mb-6 space-y-2 apple-reveal">
+              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-2 apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
                   Our Values
                 </h2>
                 <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
-                  Our Values shape how we think and build, delivering unwavering integrity to every client, every time. Our Values drive our daily choices and culture, turning quiet integrity into consistent results for every customer.
+                  Our Values shape how we think and build, delivering unwavering integrity to every client, every time.
                 </p>
               </div>
 
@@ -233,8 +237,8 @@ export default function AboutPage() {
             </section>
 
             {/* ---------------- 5. OUR APPROACH ---------------- */}
-            <section className="space-y-6 text-center">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-4 mb-6 space-y-1 text-center apple-reveal">
+            <section className="space-y-6">
+              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1 apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
                   Our Approach
                 </h2>

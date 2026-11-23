@@ -30,6 +30,7 @@ import {
   Rocket,
 } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
+import WhatsAppIcon from './WhatsAppIcon';
 
 interface MomentsOfMarketingLandingProps {
   activeTab: 'home' | 'about' | 'services' | 'contact';
@@ -775,9 +776,10 @@ export default function MomentsOfMarketingLanding({
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md hover:opacity-90 active:scale-95 transition-all cursor-pointer"
+                      className="w-full py-3.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md hover:opacity-90 active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2"
                     >
-                      Send Inquiry to WhatsApp &rarr;
+                      <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
+                      <span>Send Inquiry to WhatsApp &rarr;</span>
                     </button>
                   </form>
                 )}

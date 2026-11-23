@@ -3,6 +3,7 @@
 import React from 'react';
 import { ArrowUpRight, Music, Radio, Mic, Disc, Sliders, Volume2, Sparkles, Check, Phone, Mail } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
+import WhatsAppIcon from './WhatsAppIcon';
 
 interface MoreOfMusicLandingProps {
   onOpenLeadModal: (serviceName?: string) => void;
@@ -404,6 +405,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               rel="noreferrer"
               className="px-8 py-4 rounded-full border border-zinc-300 dark:border-white/20 hover:border-black dark:hover:border-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 active:scale-95 dark:text-white text-zinc-900 shadow-sm flex items-center gap-2"
             >
+              <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
               <span>WHATSAPP STUDIO DIRECT</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>

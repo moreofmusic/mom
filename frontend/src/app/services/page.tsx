@@ -139,22 +139,43 @@ export default function ServicesPage() {
           
           <div className="space-y-10 sm:space-y-12">
             
-            {/* Standard Hero Section Header */}
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3 apple-reveal">
-              <div>
+            {/* ---------------- HERO / SERVICES SECTION (The Company Editorial Style with Original Content) ---------------- */}
+            <section className="relative apple-reveal pt-4 sm:pt-6">
+              {/* Subtle Ambient Glow */}
+              <div className="absolute -top-6 left-1/4 w-80 h-80 bg-white/[0.04] dark:bg-white/[0.05] blur-[120px] pointer-events-none animate-apple-ambient" />
+
+              {/* Eyebrow Page Name matching Navbar font & grey color */}
+              <div className="mb-6 sm:mb-8">
                 <span className="text-xs sm:text-[13px] font-sans font-extrabold tracking-[0.22em] uppercase text-zinc-400 dark:text-zinc-400 block">
                   SERVICES
                 </span>
               </div>
 
-              <h1 className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display apple-reveal apple-delay-100">
-                Everything Your Brand Needs to Grow.
+              {/* Massive Display Headline matching The Company Style */}
+              <h1 className="max-w-6xl mb-8 sm:mb-12">
+                <div className="flex flex-wrap items-baseline gap-2 sm:gap-3.5">
+                  <span className="text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] font-bold font-sans tracking-tight text-zinc-950 dark:text-white">
+                    Everything Your Brand
+                  </span>
+                  <span className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-serif italic font-normal tracking-tight text-zinc-950 dark:text-white leading-[1.04]">
+                    Needs to Grow.
+                  </span>
+                </div>
               </h1>
 
-              <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl apple-reveal apple-delay-200">
-                From building brand awareness to generating leads and strengthening customer relationships, we bring your marketing activities together under one strategic approach.
-              </p>
-            </div>
+              {/* Editorial Lead Paragraph matching The Company Style with Original Content */}
+              <div className="max-w-4xl text-base sm:text-lg md:text-xl lg:text-[21px] dark:text-zinc-300 text-zinc-700 font-light leading-relaxed">
+                <p>
+                  <span className="font-semibold uppercase tracking-wide text-zinc-950 dark:text-white">
+                    FROM BUILDING BRAND AWARENESS
+                  </span>{' '}
+                  to generating leads and strengthening customer relationships, we bring your marketing activities together under one strategic approach.
+                </p>
+              </div>
+
+              {/* Bottom Divider Line */}
+              <div className="border-b border-zinc-200 dark:border-white/10 mt-10 sm:mt-14" />
+            </section>
 
             {/* 10 Services Cards - Prominent, Bold, Standard Typography */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">

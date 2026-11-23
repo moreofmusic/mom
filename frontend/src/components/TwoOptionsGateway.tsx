@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, Sun, Moon } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { useTheme } from '../context/ThemeContext';
 import ComingSoonModal from './ComingSoonModal';
 
@@ -23,8 +24,21 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
         <div className="absolute top-1/4 -right-32 w-[550px] h-[550px] rounded-full bg-zinc-500/[0.05] dark:bg-zinc-400/[0.05] blur-[140px] animate-apple-ambient [animation-delay:4s]" />
       </div>
 
-      {/* ----------------- TOP MINIMAL HEADER (THEME TOGGLE ONLY) ----------------- */}
-      <header className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 pt-3 sm:pt-6 pb-1 sm:pb-2 flex items-center justify-end relative z-20">
+      {/* ----------------- TOP MINIMAL HEADER (WHATSAPP + THEME TOGGLE) ----------------- */}
+      <header className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 pt-3 sm:pt-6 pb-1 sm:pb-2 flex items-center justify-end gap-2 sm:gap-3 relative z-20">
+        {/* WhatsApp Direct */}
+        <a
+          href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
+          target="_blank"
+          rel="noreferrer"
+          className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-black/10 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:shadow-[0_0_12px_rgba(37,211,102,0.25)] flex items-center justify-center transition-all cursor-pointer active:scale-90 shadow-xs"
+          title="Chat on WhatsApp (+91 9226042236)"
+          aria-label="WhatsApp"
+        >
+          <WhatsAppIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5 flex-shrink-0" />
+        </a>
+
+        {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
           className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl dark:text-zinc-300 dark:hover:text-white text-zinc-700 hover:text-zinc-950 flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-90 active:rotate-180 shadow-xs"
@@ -68,27 +82,27 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           <div className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 [animation-delay:150ms]">
             <button
               onClick={() => setComingSoonOpen(true)}
-              className="w-full h-44 sm:h-60 md:h-72 lg:h-80 bg-black text-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 flex flex-col items-center justify-center relative overflow-hidden group border border-zinc-800/80 hover:border-rose-500 hover:shadow-[0_0_25px_rgba(225,29,72,0.35),0_0_50px_rgba(225,29,72,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] active:scale-[0.98] apple-shimmer-beam"
+              className="w-full h-44 sm:h-60 md:h-72 lg:h-80 bg-gradient-to-b from-[#130307] via-black to-black text-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 flex flex-col items-center justify-center relative overflow-hidden group border-2 border-rose-500/60 dark:border-rose-500/70 hover:border-rose-400 dark:hover:border-rose-400 shadow-[0_10px_30px_rgba(225,29,72,0.18)] dark:shadow-[0_0_35px_rgba(225,29,72,0.25)] hover:shadow-[0_16px_50px_rgba(225,29,72,0.4)] dark:hover:shadow-[0_0_60px_rgba(225,29,72,0.6)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] active:scale-[0.98] apple-shimmer-beam"
               title="More of Music (Coming Soon — Under Development)"
             >
-              {/* Subtle Red Ambient Glow behind card - Only visible on hover */}
-              <div className="absolute inset-0 bg-rose-500/[0.08] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Subtle Red Ambient Glow behind card */}
+              <div className="absolute inset-0 bg-rose-500/[0.06] group-hover:bg-rose-500/[0.16] transition-colors duration-500 pointer-events-none" />
 
               {/* Shimmer Light Beam on Hover with Red Glow */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-rose-500/20 to-transparent transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none" />
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-rose-500/25 to-transparent transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none" />
 
-              {/* Top Corner Action Indicator in Stylized Red on Hover */}
-              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-7 h-7 sm:w-10 sm:h-10 rounded-full border border-zinc-800 bg-white/[0.03] text-zinc-500 group-hover:border-rose-500/80 group-hover:bg-rose-500/15 group-hover:text-rose-400 group-hover:rotate-45 group-hover:scale-105 group-hover:shadow-[0_0_12px_rgba(225,29,72,0.35)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
+              {/* Top Corner Action Indicator in Stylized Red */}
+              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-7 h-7 sm:w-10 sm:h-10 rounded-full border border-rose-500/60 bg-rose-500/20 text-rose-300 group-hover:border-rose-300 group-hover:bg-rose-500 group-hover:text-white group-hover:rotate-45 group-hover:scale-110 group-hover:shadow-[0_0_18px_rgba(225,29,72,0.85)] shadow-[0_0_10px_rgba(225,29,72,0.35)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
                 <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform" />
               </div>
 
               {/* Center Aligned Content: Title + Tagline Always Shown */}
               <div className="flex flex-col items-center justify-center text-center w-full px-2 sm:px-6 relative z-10">
-                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black font-display tracking-tight text-white group-hover:text-white transition-colors text-center leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
+                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black font-display tracking-tight text-white group-hover:text-white transition-colors text-center leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
                   More of Music
                 </h2>
 
-                <span className="text-[9px] sm:text-[11px] md:text-xs font-mono font-bold tracking-wider sm:tracking-[0.18em] uppercase text-rose-500/90 dark:text-rose-400 mt-2 sm:mt-3 md:mt-4 inline-flex items-center justify-center gap-1 sm:gap-1.5 drop-shadow-[0_0_8px_rgba(225,29,72,0.5)] text-center whitespace-nowrap">
+                <span className="text-[9px] sm:text-[11px] md:text-xs font-mono font-bold tracking-wider sm:tracking-[0.18em] uppercase text-rose-500 dark:text-rose-400 mt-2 sm:mt-3 md:mt-4 inline-flex items-center justify-center gap-1 sm:gap-1.5 drop-shadow-[0_0_10px_rgba(225,29,72,0.7)] text-center whitespace-nowrap">
                   <span>COMING SOON</span>
                   <span>&bull;</span>
                   <span>UNDER DEVELOPMENT</span>
@@ -101,28 +115,28 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           <div className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 [animation-delay:300ms]">
             <button
               onClick={() => onSelectEntity('marketing')}
-              className="w-full h-44 sm:h-60 md:h-72 lg:h-80 bg-black text-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 flex flex-col items-center justify-center relative overflow-hidden group border border-zinc-800/80 hover:border-zinc-500 hover:shadow-[0_0_25px_rgba(161,161,170,0.3),0_0_50px_rgba(113,113,122,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] active:scale-[0.98] apple-shimmer-beam"
+              className="w-full h-44 sm:h-60 md:h-72 lg:h-80 bg-gradient-to-b from-[#111113] via-black to-black text-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 flex flex-col items-center justify-center relative overflow-hidden group border-2 border-zinc-500/70 dark:border-zinc-500/70 hover:border-zinc-300 dark:hover:border-zinc-200 shadow-[0_10px_30px_rgba(0,0,0,0.18)] dark:shadow-[0_0_35px_rgba(255,255,255,0.08)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_60px_rgba(255,255,255,0.22)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] active:scale-[0.98] apple-shimmer-beam"
               title="Moments of Marketing – Creating Moments. Building Brands. Driving Growth."
             >
-              {/* Subtle Grey Ambient Glow behind card - Only visible on hover */}
-              <div className="absolute inset-0 bg-zinc-500/[0.08] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Subtle Grey Ambient Glow behind card */}
+              <div className="absolute inset-0 bg-zinc-500/[0.06] group-hover:bg-zinc-400/[0.14] transition-colors duration-500 pointer-events-none" />
 
               {/* Shimmer Light Beam on Hover with Silver/Grey Glow */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-zinc-400/20 to-transparent transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none" />
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-zinc-400/25 to-transparent transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none" />
 
-              {/* Top Corner Action Indicator in Stylized Grey on Hover */}
-              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-7 h-7 sm:w-10 sm:h-10 rounded-full border border-zinc-800 bg-white/[0.03] text-zinc-500 group-hover:border-zinc-500/80 group-hover:bg-zinc-500/15 group-hover:text-zinc-300 group-hover:rotate-45 group-hover:scale-105 group-hover:shadow-[0_0_12px_rgba(161,161,170,0.3)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
+              {/* Top Corner Action Indicator in Stylized Grey */}
+              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-7 h-7 sm:w-10 sm:h-10 rounded-full border border-zinc-400/60 bg-zinc-700/30 text-zinc-300 group-hover:border-white group-hover:bg-white group-hover:text-black group-hover:rotate-45 group-hover:scale-110 group-hover:shadow-[0_0_18px_rgba(255,255,255,0.85)] shadow-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
                 <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform" />
               </div>
 
               {/* Center Aligned Content: Title + Tagline Always Shown */}
               <div className="flex flex-col items-center justify-center text-center w-full px-2 sm:px-6 relative z-10">
-                <h2 className="text-[17px] xs:text-lg sm:text-2xl md:text-4xl lg:text-5xl font-black font-display tracking-tight text-white group-hover:text-white transition-colors text-center leading-tight sm:leading-[1.12] drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
+                <h2 className="text-[17px] xs:text-lg sm:text-2xl md:text-4xl lg:text-5xl font-black font-display tracking-tight text-white group-hover:text-white transition-colors text-center leading-tight sm:leading-[1.12] drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
                   <span className="sm:hidden whitespace-nowrap">Moments of Marketing</span>
                   <span className="hidden sm:inline">Moments<br />of<br />Marketing</span>
                 </h2>
 
-                <span className="text-[10px] sm:text-xs md:text-sm font-sans font-medium sm:font-bold tracking-normal sm:tracking-wide text-zinc-400 group-hover:text-zinc-300 mt-2 sm:mt-3 md:mt-4 text-center px-1 sm:px-4 leading-tight sm:leading-snug transition-colors duration-300 max-w-[240px] sm:max-w-none">
+                <span className="text-[10px] sm:text-xs md:text-sm font-sans font-medium sm:font-bold tracking-normal sm:tracking-wide text-zinc-400 group-hover:text-zinc-200 mt-2 sm:mt-3 md:mt-4 text-center px-1 sm:px-4 leading-tight sm:leading-snug transition-colors duration-300 max-w-[240px] sm:max-w-none">
                   Creating Moments. Building Brands. Driving Growth.
                 </span>
               </div>

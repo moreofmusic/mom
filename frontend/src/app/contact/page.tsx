@@ -14,6 +14,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
 import AppleScrollReveal from '@/components/AppleScrollReveal';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function ContactPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -109,22 +110,43 @@ export default function ContactPage() {
           
           <div className="space-y-10 sm:space-y-12">
             
-            {/* Standard Hero Section Header */}
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3 apple-reveal">
-              <div>
+            {/* ---------------- HERO / CONTACT SECTION (The Company Editorial Style with Original Content) ---------------- */}
+            <section className="relative apple-reveal pt-4 sm:pt-6">
+              {/* Subtle Ambient Glow */}
+              <div className="absolute -top-6 left-1/4 w-80 h-80 bg-white/[0.04] dark:bg-white/[0.05] blur-[120px] pointer-events-none animate-apple-ambient" />
+
+              {/* Eyebrow Page Name matching Navbar font & grey color */}
+              <div className="mb-6 sm:mb-8">
                 <span className="text-xs sm:text-[13px] font-sans font-extrabold tracking-[0.22em] uppercase text-zinc-400 dark:text-zinc-400 block">
                   CONTACT
                 </span>
               </div>
 
-              <h1 className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display apple-reveal apple-delay-100 uppercase tracking-tight">
-                LET&apos;S MAKE YOUR NEXT MOMENT COUNT.
+              {/* Massive Display Headline matching The Company Style */}
+              <h1 className="max-w-6xl mb-8 sm:mb-12">
+                <div className="flex flex-wrap items-baseline gap-2 sm:gap-3.5">
+                  <span className="text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] font-bold font-sans tracking-tight text-zinc-950 dark:text-white">
+                    Let&apos;s make your
+                  </span>
+                  <span className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-serif italic font-normal tracking-tight text-zinc-950 dark:text-white leading-[1.04]">
+                    next moment count.
+                  </span>
+                </div>
               </h1>
 
-              <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl apple-reveal apple-delay-200">
-                Ready to boost visibility, drive qualified enquiries, or sharpen your digital presence? MOM is here to help you move forward with clarity.
-              </p>
-            </div>
+              {/* Editorial Lead Paragraph matching The Company Style with Original Content */}
+              <div className="max-w-4xl text-base sm:text-lg md:text-xl lg:text-[21px] dark:text-zinc-300 text-zinc-700 font-light leading-relaxed">
+                <p>
+                  <span className="font-semibold uppercase tracking-wide text-zinc-950 dark:text-white">
+                    READY TO BOOST VISIBILITY,
+                  </span>{' '}
+                  drive qualified enquiries, or sharpen your digital presence? MOM is here to help you move forward with clarity.
+                </p>
+              </div>
+
+              {/* Bottom Divider Line */}
+              <div className="border-b border-zinc-200 dark:border-white/10 mt-10 sm:mt-14" />
+            </section>
 
             {/* 2-Column Layout: Direct Details (Left) + Clean Form (Right) */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-8 items-start">
@@ -145,6 +167,22 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Phone no.</span>
+                    <span className="text-base font-bold font-display dark:text-white text-zinc-950">+91 9226042236</span>
+                  </div>
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20have%20an%20inquiry%20regarding%20Moments%20of%20Marketing."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 dark:bg-white/[0.01] bg-white shadow-xs group apple-card-hover apple-shimmer-beam hover:border-emerald-500/50"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 flex items-center justify-center border border-emerald-500/20">
+                    <WhatsAppIcon className="w-5 h-5 flex-shrink-0" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">WhatsApp</span>
                     <span className="text-base font-bold font-display dark:text-white text-zinc-950">+91 9226042236</span>
                   </div>
                 </a>
@@ -332,8 +370,9 @@ export default function ContactPage() {
                     suppressHydrationWarning
                     className="w-full py-3.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 apple-btn-tactile shadow-md transition-all cursor-pointer disabled:opacity-50"
                   >
+                    <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
                     <span>{loading ? 'Submitting...' : 'Submit Inquiry & Chat on WhatsApp'}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
                   </button>
 
                   <p className="text-[11px] text-center text-zinc-500 pt-1">

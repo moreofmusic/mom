@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import WhatsAppIcon from './WhatsAppIcon';
 
 interface LeadCaptureModalProps {
   isOpen: boolean;
@@ -114,9 +115,12 @@ export default function LeadCaptureModal({
                   href={links.whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-950 dark:bg-white text-white dark:text-black text-xs font-semibold shadow-lg hover:opacity-90 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-semibold shadow-lg transition-all"
                 >
-                  <span>💬 Chat on WhatsApp</span>
+                  <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                    <WhatsAppIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                  </div>
+                  <span>Chat on WhatsApp</span>
                 </a>
                 {links.mailtoUrl && (
                   <a

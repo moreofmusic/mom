@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
+import WhatsAppIcon from './WhatsAppIcon';
 
 interface ContactSectionProps {
   preselectedService?: string;
@@ -234,9 +235,12 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                         href={status.whatsappUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-950 text-xs font-semibold shadow-lg transition-all"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-semibold shadow-lg transition-all"
                       >
-                        <span>💬 Open in WhatsApp (+91 9226042236)</span>
+                        <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                          <WhatsAppIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                        </div>
+                        <span>Open in WhatsApp (+91 9226042236)</span>
                       </a>
                       {status.mailtoUrl && (
                         <a

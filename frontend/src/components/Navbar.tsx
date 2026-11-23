@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { Menu, X, Sun, Moon, MessageCircle, Phone, Mail } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
+import WhatsAppIcon from './WhatsAppIcon';
 import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
@@ -14,21 +15,6 @@ interface NavbarProps {
   onBackToGateway?: () => void;
   marketingTab?: 'home' | 'about' | 'services' | 'contact';
   onSelectMarketingTab?: (tab: 'home' | 'about' | 'services' | 'contact') => void;
-}
-
-function WhatsAppIcon({ className = 'w-4 h-4' }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width="24"
-      height="24"
-      className={className}
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.301-.776.978-.952 1.179-.175.2-.351.226-.652.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.675-2.087-.175-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.175.2-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.676-1.63-.927-2.232-.244-.587-.493-.507-.677-.516-.175-.008-.376-.01-.576-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.479 1.078 2.909 1.228 3.109.15.2 2.122 3.24 5.141 4.544.718.31 1.279.495 1.716.634.721.229 1.377.197 1.895.12.578-.087 1.78-.727 2.03-1.43.251-.702.251-1.304.176-1.43-.075-.125-.276-.2-.577-.35zM12.04 2C6.502 2 2.008 6.493 2.008 12.03c0 1.77.462 3.498 1.34 5.02L2 22l5.099-1.338c1.474.804 3.136 1.228 4.94 1.228 5.537 0 10.03-4.493 10.03-10.03S17.577 2 12.04 2zm0 18.358c-1.536 0-3.043-.414-4.359-1.195l-.313-.186-3.238.85.864-3.158-.204-.325a8.293 8.293 0 01-1.272-4.384c0-4.597 3.74-8.337 8.338-8.337 4.597 0 8.337 3.74 8.337 8.337 0 4.598-3.74 8.338-8.338 8.338z" />
-    </svg>
-  );
 }
 
 export default function Navbar({
@@ -152,11 +138,11 @@ export default function Navbar({
                 href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 sm:p-2.5 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl dark:hover:border-white/30 dark:text-zinc-300 dark:hover:text-white text-zinc-700 hover:border-zinc-500 hover:text-zinc-950 transition-all hover:scale-105 active:scale-95 shadow-xs"
+                className="p-2 sm:p-2.5 rounded-full border border-black/10 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:shadow-[0_0_12px_rgba(37,211,102,0.25)] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs"
                 title="Chat on WhatsApp (+91 9226042236)"
                 aria-label="WhatsApp"
               >
-                <WhatsAppIcon className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
               </a>
 
               {/* Dark / Light Mode Toggle */}
@@ -236,20 +222,29 @@ export default function Navbar({
             )}
 
             <div className="pt-3 flex flex-col gap-2.5 border-t border-zinc-200 dark:border-white/10">
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-3 gap-2">
+                <a
+                  href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="py-2 px-1 rounded-lg border border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center gap-1.5 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-bold hover:bg-emerald-500/20 transition-colors"
+                >
+                  <WhatsAppIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>WhatsApp</span>
+                </a>
                 <a
                   href="tel:+919226042236"
-                  className="py-2 px-2.5 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700"
+                  className="py-2 px-1 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700 hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>Call Us</span>
                 </a>
                 <a
                   href="mailto:contact@momagency.com"
-                  className="py-2 px-2.5 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700"
+                  className="py-2 px-1 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700 hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 >
                   <Mail className="w-3.5 h-3.5" />
-                  <span>Email Us</span>
+                  <span>Email</span>
                 </a>
               </div>
 
