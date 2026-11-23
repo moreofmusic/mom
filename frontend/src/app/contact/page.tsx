@@ -24,8 +24,8 @@ export default function ContactPage() {
     email: '',
     phone: '',
     company: '',
-    serviceInterest: 'Digital Marketing',
-    budgetRange: '₹50,000 - ₹1,50,000',
+    serviceInterest: '',
+    budgetRange: '',
     message: '',
   });
 
@@ -48,8 +48,8 @@ export default function ContactPage() {
       `*Phone:* ${formData.phone}`,
       `*Email:* ${formData.email}`,
       formData.company ? `*Company:* ${formData.company}` : null,
-      `*Service:* ${formData.serviceInterest}`,
-      `*Budget:* ${formData.budgetRange}`,
+      formData.serviceInterest ? `*Service:* ${formData.serviceInterest}` : null,
+      formData.budgetRange ? `*Budget:* ${formData.budgetRange}` : null,
       formData.message ? `*Message:* ${formData.message}` : null,
       ``,
       `_Sent via Moments of Marketing Official Website_`,
@@ -209,7 +209,7 @@ export default function ContactPage() {
                         suppressHydrationWarning
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        placeholder="e.g. John Doe"
+                        placeholder="Your Name"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-zinc-50 dark:text-white text-zinc-900 text-sm focus:outline-none focus:border-zinc-950 dark:focus:border-white transition-colors"
                       />
                     </div>
@@ -224,7 +224,7 @@ export default function ContactPage() {
                         suppressHydrationWarning
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 12121 12121"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-zinc-50 dark:text-white text-zinc-900 text-sm focus:outline-none focus:border-zinc-950 dark:focus:border-white transition-colors"
                       />
                     </div>
@@ -270,18 +270,23 @@ export default function ContactPage() {
                         value={formData.serviceInterest}
                         suppressHydrationWarning
                         onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-zinc-50 dark:text-white text-zinc-900 text-sm focus:outline-none focus:border-zinc-950 dark:focus:border-white transition-colors cursor-pointer"
+                        className={`w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-zinc-50 text-sm focus:outline-none focus:border-zinc-950 dark:focus:border-white transition-colors cursor-pointer ${
+                          !formData.serviceInterest ? 'text-zinc-400 dark:text-zinc-500' : 'dark:text-white text-zinc-900'
+                        }`}
                       >
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="Social Media Management">Social Media Management</option>
-                        <option value="Lead Generation">Lead Generation</option>
-                        <option value="Branding & Creative Design">Branding &amp; Creative Design</option>
-                        <option value="Content Creation & Video Production">Content Creation &amp; Video</option>
-                        <option value="Website Design & Development">Website Design &amp; Development</option>
-                        <option value="Performance Marketing & Paid Advertising">Performance Marketing</option>
-                        <option value="Email & WhatsApp Marketing">Email &amp; WhatsApp Marketing</option>
-                        <option value="Influencer Marketing & Brand Activations">Influencer Marketing</option>
-                        <option value="Marketing Strategy & Consulting">Marketing Strategy</option>
+                        <option value="" disabled className="text-zinc-400 dark:text-zinc-500">
+                          Select
+                        </option>
+                        <option value="Digital Marketing" className="text-zinc-900 dark:text-white">Digital Marketing</option>
+                        <option value="Social Media Management" className="text-zinc-900 dark:text-white">Social Media Management</option>
+                        <option value="Lead Generation" className="text-zinc-900 dark:text-white">Lead Generation</option>
+                        <option value="Branding & Creative Design" className="text-zinc-900 dark:text-white">Branding &amp; Creative Design</option>
+                        <option value="Content Creation & Video Production" className="text-zinc-900 dark:text-white">Content Creation &amp; Video</option>
+                        <option value="Website Design & Development" className="text-zinc-900 dark:text-white">Website Design &amp; Development</option>
+                        <option value="Performance Marketing & Paid Advertising" className="text-zinc-900 dark:text-white">Performance Marketing</option>
+                        <option value="Email & WhatsApp Marketing" className="text-zinc-900 dark:text-white">Email &amp; WhatsApp Marketing</option>
+                        <option value="Influencer Marketing & Brand Activations" className="text-zinc-900 dark:text-white">Influencer Marketing</option>
+                        <option value="Marketing Strategy & Consulting" className="text-zinc-900 dark:text-white">Marketing Strategy</option>
                       </select>
                     </div>
 
@@ -293,12 +298,17 @@ export default function ContactPage() {
                         value={formData.budgetRange}
                         suppressHydrationWarning
                         onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-zinc-50 dark:text-white text-zinc-900 text-sm focus:outline-none focus:border-zinc-950 dark:focus:border-white transition-colors cursor-pointer"
+                        className={`w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-zinc-50 text-sm focus:outline-none focus:border-zinc-950 dark:focus:border-white transition-colors cursor-pointer ${
+                          !formData.budgetRange ? 'text-zinc-400 dark:text-zinc-500' : 'dark:text-white text-zinc-900'
+                        }`}
                       >
-                        <option value="Below ₹50,000">Below ₹50,000</option>
-                        <option value="₹50,000 - ₹1,50,000">₹50,000 &ndash; ₹1,50,000</option>
-                        <option value="₹1,50,000 - ₹3,00,000">₹1,50,000 &ndash; ₹3,00,000</option>
-                        <option value="₹3,00,000+">₹3,00,000+</option>
+                        <option value="" disabled className="text-zinc-400 dark:text-zinc-500">
+                          Select
+                        </option>
+                        <option value="Below ₹50,000" className="text-zinc-900 dark:text-white">Below ₹50,000</option>
+                        <option value="₹50,000 - ₹1,50,000" className="text-zinc-900 dark:text-white">₹50,000 &ndash; ₹1,50,000</option>
+                        <option value="₹1,50,000 - ₹3,00,000" className="text-zinc-900 dark:text-white">₹1,50,000 &ndash; ₹3,00,000</option>
+                        <option value="₹3,00,000+" className="text-zinc-900 dark:text-white">₹3,00,000+</option>
                       </select>
                     </div>
                   </div>

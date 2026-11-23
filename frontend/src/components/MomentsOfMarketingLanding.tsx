@@ -58,7 +58,7 @@ export default function MomentsOfMarketingLanding({
     email: '',
     phone: '',
     company: '',
-    serviceInterest: selectedService || 'Digital Marketing',
+    serviceInterest: selectedService || '',
     message: '',
   });
 
@@ -704,7 +704,7 @@ export default function MomentsOfMarketingLanding({
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="+91 9876543210"
+                          placeholder="+91 12121 12121"
                           className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-white/[0.04] bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-zinc-950 dark:focus:border-white shadow-xs"
                         />
                       </div>
@@ -748,6 +748,7 @@ export default function MomentsOfMarketingLanding({
                         onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 dark:border-white/15 dark:bg-zinc-900 bg-white text-xs sm:text-sm dark:text-white text-zinc-900 focus:outline-none focus:border-zinc-950 dark:focus:border-white shadow-xs"
                       >
+                        <option value="" disabled>Select</option>
                         <option value="Digital Marketing">01. Digital Marketing</option>
                         <option value="Social Media Management">02. Social Media Management</option>
                         <option value="Lead Generation">03. Lead Generation</option>

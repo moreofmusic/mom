@@ -14,8 +14,8 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
     email: '',
     phone: '',
     company: '',
-    serviceInterest: preselectedService || 'Digital Marketing',
-    budgetRange: '₹50,000 - ₹1,50,000',
+    serviceInterest: preselectedService || '',
+    budgetRange: '',
     message: '',
   });
 
@@ -260,7 +260,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Rahul Sharma"
+                      placeholder="Your Name"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg editorial-input text-xs"
@@ -303,7 +303,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                     <input
                       type="tel"
                       required
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 12121 12121"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg editorial-input text-xs"
@@ -321,6 +321,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                       onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg editorial-input text-xs dark:bg-black bg-white"
                     >
+                      <option value="" disabled>Select</option>
                       <option value="Digital Marketing">Digital Marketing</option>
                       <option value="Social Media Management">Social Media Management</option>
                       <option value="Lead Generation">Lead Generation</option>
@@ -344,6 +345,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                       onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg editorial-input text-xs dark:bg-black bg-white"
                     >
+                      <option value="" disabled>Select</option>
                       <option value="< ₹50,000">&lt; ₹50,000</option>
                       <option value="₹50,000 - ₹1,50,000">₹50,000 - ₹1,50,000</option>
                       <option value="₹1,50,000 - ₹3,50,000">₹1,50,000 - ₹3,50,000</option>

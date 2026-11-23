@@ -21,8 +21,8 @@ export default function LeadCaptureModal({
     email: '',
     phone: '',
     company: '',
-    serviceInterest: defaultService || 'Digital Marketing',
-    budgetRange: '₹50,000 - ₹1,50,000',
+    serviceInterest: defaultService || '',
+    budgetRange: '',
     message: '',
   });
 
@@ -170,7 +170,7 @@ export default function LeadCaptureModal({
                     type="text"
                     required
                     suppressHydrationWarning
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     className="w-full px-3.5 py-2 rounded-lg editorial-input text-xs"
@@ -185,7 +185,7 @@ export default function LeadCaptureModal({
                     type="tel"
                     required
                     suppressHydrationWarning
-                    placeholder="+91 9226042236"
+                    placeholder="+91 12121 12121"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-3.5 py-2 rounded-lg editorial-input text-xs"
@@ -234,6 +234,7 @@ export default function LeadCaptureModal({
                   onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
                   className="w-full px-3.5 py-2 rounded-lg editorial-input text-xs dark:bg-black bg-white"
                 >
+                  <option value="" disabled>Select</option>
                   <option value="Digital Marketing">01. Digital Marketing</option>
                   <option value="Social Media Management">02. Social Media Management</option>
                   <option value="Lead Generation">03. Lead Generation</option>
