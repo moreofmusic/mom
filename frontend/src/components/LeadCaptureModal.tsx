@@ -63,7 +63,7 @@ export default function LeadCaptureModal({
     const mailtoBody = encodeURIComponent(
       `Name: ${formData.fullName}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\nService: ${formData.serviceInterest}\nBudget: ${formData.budgetRange}\n\nMessage:\n${formData.message || 'N/A'}`
     );
-    const mailtoUrl = `mailto:Contact@momentsofmarketing.in?subject=${mailtoSubject}&body=${mailtoBody}`;
+    const mailtoUrl = `mailto:contact@momagency.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
     setLinks({ whatsappUrl, mailtoUrl });
 

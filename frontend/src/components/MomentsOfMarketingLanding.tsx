@@ -47,9 +47,9 @@ export default function MomentsOfMarketingLanding({
 
   const marketingTabs: { id: 'home' | 'about' | 'services' | 'contact'; label: string }[] = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Us' },
-    { id: 'services', label: 'Brands and services' },
-    { id: 'contact', label: 'Contact us' },
+    { id: 'about', label: 'The Company' },
+    { id: 'services', label: 'Services' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   // Contact form state
@@ -104,7 +104,7 @@ export default function MomentsOfMarketingLanding({
 
         <div className="relative">
           {/* Subtle Ambient Glow */}
-          <div className="absolute -top-6 left-1/4 w-80 h-80 bg-emerald-500/10 dark:bg-emerald-500/10 blur-[120px] pointer-events-none" />
+          <div className="absolute -top-6 left-1/4 w-80 h-80 bg-white/[0.04] dark:bg-white/[0.04] blur-[120px] pointer-events-none" />
 
           {/* Standard Hero Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 mb-8 sm:mb-10">
@@ -138,9 +138,9 @@ export default function MomentsOfMarketingLanding({
   if (activeTab === 'about') {
     const values = [
       {
-        name: 'Integrity',
-        icon: Shield,
-        desc: 'Ethical messaging, truthful offers, brand trust',
+        name: 'Speed of Delivery',
+        icon: Clock,
+        desc: 'Rapid iteration, fast deployment, real-time responses',
       },
       {
         name: 'Transparency',
@@ -148,9 +148,9 @@ export default function MomentsOfMarketingLanding({
         desc: 'Privacy compliance, honest metrics, data security',
       },
       {
-        name: 'Speed of Delivery',
-        icon: Clock,
-        desc: 'Rapid iteration, fast deployment, real-time responses',
+        name: 'Integrity',
+        icon: Shield,
+        desc: 'Ethical messaging, truthful offers, brand trust',
       },
       {
         name: 'Performance',
@@ -237,36 +237,7 @@ export default function MomentsOfMarketingLanding({
 
         <div className="space-y-12 sm:space-y-16">
           
-          {/* ---------------- 1. VISION & MISSION ---------------- */}
-          <section>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-              {/* Vision Card */}
-              <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white mb-3">
-                    Vision
-                  </h3>
-                  <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-                    Creating Moments. Building Brands. Driving Growth.
-                  </p>
-                </div>
-              </div>
-
-              {/* Mission Card */}
-              <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white mb-3">
-                    Mission
-                  </h3>
-                  <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-                    To turn meaningful marketing moments into lasting brand value and business growth.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* ---------------- 2. OUR VALUES ---------------- */}
+          {/* ---------------- OUR VALUES ---------------- */}
           <section className="space-y-5">
             <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6">
               <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
@@ -313,7 +284,7 @@ export default function MomentsOfMarketingLanding({
                   >
                     <div>
                       {/* Architectural Pillar Crown / Capital Beam */}
-                      <div className="h-1.5 w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-full mb-6 group-hover:scale-x-105 transition-transform origin-left" />
+                      <div className="h-1.5 w-full bg-zinc-300 dark:bg-zinc-700 rounded-full mb-6 group-hover:scale-x-105 transition-transform origin-left" />
 
                       <div className="space-y-4">
                         {/* Pillar Title in Bold Title Case */}
@@ -322,7 +293,7 @@ export default function MomentsOfMarketingLanding({
                         </h4>
 
                         {/* Tagline */}
-                        <p className="text-sm sm:text-base font-bold text-emerald-500 dark:text-emerald-400 font-sans leading-snug">
+                        <p className="text-sm sm:text-base font-bold text-zinc-500 dark:text-zinc-400 font-sans leading-snug">
                           {p.tagline}
                         </p>
 
@@ -335,7 +306,7 @@ export default function MomentsOfMarketingLanding({
 
                     {/* Architectural Pillar Foundation / Base Pedestal */}
                     <div className="pt-6 mt-6 border-t border-zinc-200/80 dark:border-white/10 flex items-center justify-between">
-                      <div className="h-[2px] w-12 bg-zinc-300 dark:bg-white/20 rounded-full group-hover:w-full group-hover:bg-emerald-400/60 transition-all duration-500" />
+                      <div className="h-[2px] w-12 bg-zinc-300 dark:bg-white/20 rounded-full group-hover:w-full group-hover:bg-zinc-400 dark:group-hover:bg-zinc-500 transition-all duration-500" />
                     </div>
                   </div>
                 );
@@ -349,7 +320,7 @@ export default function MomentsOfMarketingLanding({
               <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
                 WHY CHOOSE MOM?
               </h2>
-              <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 font-sans">
+              <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans">
                 Creative Thinking. Strategic Execution. Growth-Focused Marketing.
               </p>
             </div>
@@ -381,7 +352,7 @@ export default function MomentsOfMarketingLanding({
               <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
                 OUR APPROACH
               </h2>
-              <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 font-sans">
+              <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans">
                 From First Impression to Lasting Customer Relationships.
               </p>
             </div>
@@ -390,10 +361,10 @@ export default function MomentsOfMarketingLanding({
             <div className="hidden lg:flex items-center justify-center gap-2.5 xl:gap-4 py-4 mx-auto">
               {approachSteps.map((step, idx) => (
                 <React.Fragment key={step.name}>
-                  <div className="w-[160px] h-[160px] xl:w-[190px] xl:h-[190px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_35px_rgba(16,185,129,0.25)] hover:border-emerald-500/80 dark:hover:border-emerald-400/80 hover:scale-105 transition-all duration-300 flex flex-col items-center justify-center p-3.5 xl:p-5 text-center group cursor-default relative flex-shrink-0">
-                    <div className="absolute inset-0 rounded-full bg-emerald-500/0 group-hover:bg-emerald-500/[0.04] transition-colors pointer-events-none" />
+                  <div className="w-[160px] h-[160px] xl:w-[190px] xl:h-[190px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_35px_rgba(255,255,255,0.12)] hover:border-zinc-400 dark:hover:border-white/30 hover:scale-105 transition-all duration-300 flex flex-col items-center justify-center p-3.5 xl:p-5 text-center group cursor-default relative flex-shrink-0">
+                    <div className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/[0.04] transition-colors pointer-events-none" />
 
-                    <h4 className="text-sm xl:text-base font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors mb-1.5">
+                    <h4 className="text-sm xl:text-base font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors mb-1.5">
                       {step.name}
                     </h4>
                     <p className="text-[10.5px] xl:text-[11.5px] text-zinc-600 dark:text-zinc-300 font-normal leading-[1.35] max-w-[130px] xl:max-w-[155px]">
@@ -403,8 +374,8 @@ export default function MomentsOfMarketingLanding({
 
                   {/* Animated Arrow Connector between steps */}
                   {idx < approachSteps.length - 1 && (
-                    <div className="flex items-center justify-center text-emerald-500 dark:text-emerald-400 flex-shrink-0 px-0.5">
-                      <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-full border border-emerald-500/30 dark:border-emerald-400/30 bg-emerald-500/10 dark:bg-emerald-500/15 flex items-center justify-center shadow-xs">
+                    <div className="flex items-center justify-center text-zinc-500 dark:text-zinc-400 flex-shrink-0 px-0.5">
+                      <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-full border border-zinc-300 dark:border-white/20 bg-zinc-200/50 dark:bg-white/[0.08] flex items-center justify-center shadow-xs">
                         <ArrowRight className="w-3.5 h-3.5 xl:w-4 xl:h-4 stroke-[2.5] animate-pulse" />
                       </div>
                     </div>
@@ -417,8 +388,8 @@ export default function MomentsOfMarketingLanding({
             <div className="flex flex-col items-center gap-2.5 lg:hidden py-4 mx-auto">
               {approachSteps.map((step, idx) => (
                 <React.Fragment key={step.name}>
-                  <div className="w-[190px] h-[190px] sm:w-[210px] sm:h-[210px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_25px_rgba(16,185,129,0.2)] hover:border-emerald-500/80 dark:hover:border-emerald-400/80 transition-all duration-300 flex flex-col items-center justify-center p-4 sm:p-5 text-center group cursor-default">
-                    <h4 className="text-base sm:text-lg font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors mb-1.5">
+                  <div className="w-[190px] h-[190px] sm:w-[210px] sm:h-[210px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_25px_rgba(255,255,255,0.1)] hover:border-zinc-400 dark:hover:border-white/30 transition-all duration-300 flex flex-col items-center justify-center p-4 sm:p-5 text-center group cursor-default">
+                    <h4 className="text-base sm:text-lg font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors mb-1.5">
                       {step.name}
                     </h4>
                     <p className="text-xs text-zinc-600 dark:text-zinc-300 font-normal leading-snug max-w-[150px] sm:max-w-[170px]">
@@ -427,8 +398,8 @@ export default function MomentsOfMarketingLanding({
                   </div>
 
                   {idx < approachSteps.length - 1 && (
-                    <div className="flex justify-center text-emerald-500 dark:text-emerald-400 my-0.5">
-                      <div className="w-7 h-7 rounded-full border border-emerald-500/30 dark:border-emerald-400/30 bg-emerald-500/10 dark:bg-emerald-500/15 flex items-center justify-center shadow-xs">
+                    <div className="flex justify-center text-zinc-500 dark:text-zinc-400 my-0.5">
+                      <div className="w-7 h-7 rounded-full border border-zinc-300 dark:border-white/20 bg-zinc-200/50 dark:bg-white/[0.08] flex items-center justify-center shadow-xs">
                         <ArrowDown className="w-3.5 h-3.5 stroke-[2.5] animate-bounce" />
                       </div>
                     </div>
@@ -548,9 +519,12 @@ export default function MomentsOfMarketingLanding({
           
           {/* Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-            <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white leading-tight">
-              Our Services
-            </h1>
+            <div>
+              <h1 className="relative inline-block py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase text-zinc-950 dark:text-white">
+                SERVICES
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full" />
+              </h1>
+            </div>
 
             <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
               Everything Your Brand Needs to Grow.
@@ -573,10 +547,10 @@ export default function MomentsOfMarketingLanding({
                   <div className="space-y-4">
                     {/* Title Row with Icon on the left */}
                     <div className="flex items-center gap-3.5 sm:gap-4">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 group-hover:border-emerald-500/40 transition-all shadow-xs flex-shrink-0">
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-900 dark:text-white group-hover:text-zinc-950 dark:group-hover:text-white group-hover:border-zinc-400 dark:group-hover:border-white/30 transition-all shadow-xs flex-shrink-0">
                         <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight text-zinc-950 dark:text-white leading-[1.15] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      <h3 className="text-base sm:text-lg md:text-xl font-bold font-display tracking-tight text-zinc-950 dark:text-white leading-snug group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors">
                         {s.title}
                       </h3>
                     </div>
@@ -607,13 +581,13 @@ export default function MomentsOfMarketingLanding({
               onClick={() => onSelectTab('about')}
               className="text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white cursor-pointer"
             >
-              &larr; About Us
+              &larr; The Company
             </button>
             <button
               onClick={() => onSelectTab('contact')}
               className="px-6 py-2.5 rounded-full dark:bg-white dark:text-black bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-sm active:scale-95"
             >
-              <span>Contact us &rarr;</span>
+              <span>Contact &rarr;</span>
             </button>
           </div>
 
@@ -634,9 +608,12 @@ export default function MomentsOfMarketingLanding({
           
           {/* Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-            <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white leading-tight">
-              Contact Us
-            </h1>
+            <div>
+              <h1 className="relative inline-block py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase text-zinc-950 dark:text-white">
+                CONTACT
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full" />
+              </h1>
+            </div>
 
             <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
               Let&apos;s Make Your Next Moment Count.
@@ -645,16 +622,6 @@ export default function MomentsOfMarketingLanding({
             <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
               Whether you want to increase visibility, generate quality enquiries, or create a more effective digital presence, MOM is ready to help you take the next step.
             </p>
-          </div>
-
-          {/* CTA & Brand Tagline */}
-          <div className="p-5 sm:p-6 rounded-2xl border border-zinc-200 dark:border-white/15 bg-zinc-100/70 dark:bg-zinc-900/60 shadow-xs">
-            <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block mb-0.5">
-              Let&apos;s Talk About Your Growth
-            </span>
-            <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">
-              Moments of Marketing &mdash; Creating Moments. Building Brands. Driving Growth.
-            </span>
           </div>
 
           {/* 2-Column Layout: Direct Details (Left) + Clean Form (Right) */}
@@ -682,7 +649,7 @@ export default function MomentsOfMarketingLanding({
 
               {/* Email */}
               <a
-                href="mailto:contact@momentsofmarketing.in"
+                href="mailto:contact@momagency.com"
                 className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-xs group"
               >
                 <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white border border-zinc-200/50 dark:border-white/5">
@@ -690,23 +657,7 @@ export default function MomentsOfMarketingLanding({
                 </div>
                 <div>
                   <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Email</span>
-                  <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">contact@momentsofmarketing.in</span>
-                </div>
-              </a>
-
-              {/* Instagram */}
-              <a
-                href="https://instagram.com/momentsofmarketingofficial"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-xs group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white border border-zinc-200/50 dark:border-white/5">
-                  <InstagramIcon className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Instagram</span>
-                  <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">@momentsofmarketingofficial</span>
+                  <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">contact@momagency.com</span>
                 </div>
               </a>
             </div>
@@ -842,7 +793,7 @@ export default function MomentsOfMarketingLanding({
               onClick={() => onSelectTab('services')}
               className="text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white cursor-pointer"
             >
-              &larr; Brands and services
+              &larr; Services
             </button>
             <button
               onClick={() => onSelectTab('home')}

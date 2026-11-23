@@ -17,76 +17,77 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
   return (
     <div className="min-h-screen flex flex-col justify-between dark:bg-black bg-[#F8FAFC] dark:text-white text-zinc-900 transition-colors duration-300 relative overflow-hidden">
       
-      {/* Subtle Background Glow */}
+      {/* Subtle Background Glow - Apple Ambient Atmosphere */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-rose-500/10 dark:bg-rose-500/10 blur-[140px] animate-float" />
-        <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] rounded-full bg-emerald-500/10 dark:bg-emerald-500/12 blur-[140px] animate-float [animation-delay:3s]" />
+        <div className="absolute top-1/4 -left-32 w-[550px] h-[550px] rounded-full bg-[#E11D48]/[0.15] blur-[150px] animate-apple-ambient" />
+        <div className="absolute top-1/4 -right-32 w-[550px] h-[550px] rounded-full bg-zinc-500/[0.05] dark:bg-zinc-400/[0.05] blur-[140px] animate-apple-ambient [animation-delay:4s]" />
       </div>
 
-      {/* ----------------- TOP MINIMAL HEADER (NO BOTTOM BORDER) ----------------- */}
-      <header className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 pt-10 sm:pt-14 md:pt-16 pb-2 sm:pb-4 flex items-center justify-center relative z-10">
-        {/* Brand Logo - Centered in Header & Shifted Down */}
-        <div className="flex items-center justify-center pt-4 sm:pt-6 md:pt-8">
-          <Link href="/" className="cursor-pointer">
+      {/* ----------------- TOP MINIMAL HEADER (THEME TOGGLE ONLY) ----------------- */}
+      <header className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 pt-4 sm:pt-6 pb-2 flex items-center justify-end relative z-20">
+        <button
+          onClick={toggleTheme}
+          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl dark:text-zinc-300 dark:hover:text-white text-zinc-700 hover:text-zinc-950 flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-90 active:rotate-180 shadow-xs"
+          aria-label="Toggle theme"
+          title={mounted ? `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme` : 'Toggle theme'}
+          suppressHydrationWarning
+        >
+          {mounted ? (
+            theme === 'dark' ? (
+              <Sun className="w-4 h-4 text-white transition-transform duration-500" />
+            ) : (
+              <Moon className="w-4 h-4 text-zinc-900 transition-transform duration-500" />
+            )
+          ) : (
+            <span className="w-4 h-4 inline-block" />
+          )}
+        </button>
+      </header>
+
+      {/* ----------------- CENTER MAIN: PURE MOM LOGO + 2 OPTIONS PERFECTLY VERTICALLY CENTERED ----------------- */}
+      <main className="w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 flex-1 flex flex-col justify-center items-center relative z-10 py-4 sm:py-6 my-auto">
+        
+        {/* Clean MOM Logo - Centered Directly Above Cards (Shifted Slightly Up for Optical Perfection) */}
+        <div className="flex items-center justify-center -mt-6 sm:-mt-8 md:-mt-12 mb-10 sm:mb-14 md:mb-16 lg:mb-20 animate-in fade-in slide-in-from-top-4 duration-1000">
+          <Link href="/" className="cursor-pointer block group">
             <img
               src="/mom-logo-transparent.png"
               alt="MOM Logo"
               suppressHydrationWarning
-              className={`h-12 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-105 ${
+              className={`h-14 sm:h-18 md:h-22 lg:h-24 w-auto object-contain transition-all duration-500 group-hover:scale-105 active:scale-95 drop-shadow-[0_4px_24px_rgba(255,255,255,0.08)] ${
                 mounted && theme === 'light' ? 'invert' : ''
               }`}
             />
           </Link>
         </div>
 
-        {/* Top Right Control: Theme Toggle Only */}
-        <div className="absolute right-4 sm:right-8 lg:right-14 top-6 sm:top-8 md:top-10 flex items-center">
-          <button
-            onClick={toggleTheme}
-            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-zinc-300 dark:border-white/15 dark:text-zinc-400 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 active:rotate-180 shadow-sm"
-            aria-label="Toggle theme"
-            title={mounted ? `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme` : 'Toggle theme'}
-            suppressHydrationWarning
-          >
-            {mounted ? (
-              theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-amber-300 transition-transform duration-500" />
-              ) : (
-                <Moon className="w-4 h-4 text-zinc-900 transition-transform duration-500" />
-              )
-            ) : (
-              <span className="w-4 h-4 inline-block" />
-            )}
-          </button>
-        </div>
-      </header>
-
-      {/* ----------------- CENTER MAIN: STRICTLY THE 2 OPTIONS (AS PER USER SLIDE) ----------------- */}
-      <main className="w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-6 sm:py-10 md:py-12 flex-1 flex flex-col justify-center items-center relative z-10">
-        
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start justify-center">
+        {/* The 2 Option Cards Grid */}
+        <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 lg:gap-12 items-center justify-center">
           
           {/* OPTION 1: MORE OF MUSIC (UNDER DEVELOPMENT - POPS UP COMING SOON MESSAGE) */}
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 [animation-delay:150ms]">
             <button
               onClick={() => setComingSoonOpen(true)}
-              className="w-full h-44 sm:h-52 md:h-60 lg:h-68 bg-black text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl hover:shadow-[0_0_50px_rgba(255,255,255,0.18)] border border-zinc-800 dark:border-white/15 hover:border-white/40 transition-all duration-400 cursor-pointer active:scale-[0.98]"
+              className="w-full h-48 sm:h-56 md:h-64 lg:h-72 bg-black text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden group shadow-[0_0_35px_rgba(225,29,72,0.6),0_0_70px_rgba(225,29,72,0.35)] hover:shadow-[0_0_55px_rgba(225,29,72,0.9),0_0_100px_rgba(225,29,72,0.6)] border-2 border-[#E11D48] hover:border-[#FF2E56] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-2 hover:scale-[1.015] active:scale-[0.97] apple-shimmer-beam"
               title="More of Music (Coming Soon — Under Development)"
             >
-              {/* Shimmer Light Beam on Hover */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
+              {/* Subtle Red Ambient Glow behind card */}
+              <div className="absolute inset-0 bg-[#E11D48]/[0.08] group-hover:bg-[#E11D48]/[0.18] transition-colors duration-700 pointer-events-none" />
 
-              {/* Top Corner Action Indicator */}
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-9 sm:w-11 h-9 sm:h-11 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-zinc-300 group-hover:bg-white group-hover:text-black group-hover:border-white group-hover:rotate-45 group-hover:scale-110 transition-all duration-300 shadow-md">
+              {/* Shimmer Light Beam on Hover with Red Glow */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-[#E11D48]/40 to-transparent transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none" />
+
+              {/* Top Corner Action Indicator in Stylized Red */}
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-9 sm:w-11 h-9 sm:h-11 rounded-full border border-[#E11D48] bg-[#E11D48]/30 flex items-center justify-center text-white group-hover:bg-[#E11D48] group-hover:text-white group-hover:border-[#FF2E56] group-hover:rotate-45 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(225,29,72,1)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[0_0_15px_rgba(225,29,72,0.5)]">
                 <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5 transition-transform" />
               </div>
 
-              {/* Bold Title from Slide - 1 Single Line as requested */}
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display tracking-tight text-white group-hover:text-zinc-100 transition-colors text-center whitespace-nowrap">
+              {/* Bold Title from Slide - 1 Single Line in Crisp Pure White */}
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display tracking-tight text-white group-hover:text-white transition-colors text-center whitespace-nowrap drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
                 More of Music
               </h2>
 
-              <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.2em] uppercase text-zinc-400 group-hover:text-zinc-200 mt-3 sm:mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5">
+              <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.2em] uppercase text-[#E11D48] dark:text-rose-400 mt-3 sm:mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-1.5 drop-shadow-[0_0_10px_rgba(225,29,72,0.8)]">
                 <span>COMING SOON</span>
                 <span>&bull;</span>
                 <span>UNDER DEVELOPMENT</span>
@@ -95,49 +96,41 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           </div>
 
           {/* OPTION 2: MOMENTS OF MARKETING */}
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 [animation-delay:300ms]">
             <button
               onClick={() => onSelectEntity('marketing')}
-              className="w-full h-44 sm:h-52 md:h-60 lg:h-68 bg-black text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl hover:shadow-[0_0_50px_rgba(16,185,129,0.35)] border border-zinc-800 dark:border-white/15 hover:border-emerald-500/60 transition-all duration-400 cursor-pointer active:scale-[0.98]"
+              className="w-full h-48 sm:h-56 md:h-64 lg:h-72 bg-black text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden group shadow-[0_0_35px_rgba(161,161,170,0.35)] hover:shadow-[0_0_75px_rgba(212,212,216,0.65)] border-2 border-zinc-500/75 dark:border-zinc-400/80 hover:border-zinc-300 dark:hover:border-zinc-200 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-2 hover:scale-[1.015] active:scale-[0.97] apple-shimmer-beam"
               title="Moments of Marketing – Creating Moments. Building Brands. Driving Growth."
             >
-              {/* Shimmer Light Beam on Hover */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out pointer-events-none" />
+              {/* Subtle Grey Ambient Glow behind card */}
+              <div className="absolute inset-0 bg-zinc-500/[0.06] group-hover:bg-zinc-400/[0.14] transition-colors duration-700 pointer-events-none" />
 
-              {/* Top Corner Action Indicator */}
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-9 sm:w-11 h-9 sm:h-11 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-zinc-300 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 group-hover:rotate-45 group-hover:scale-110 transition-all duration-300 shadow-md">
+              {/* Shimmer Light Beam on Hover with Silver/Grey Glow */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-zinc-400/30 to-transparent transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none" />
+
+              {/* Top Corner Action Indicator in Stylized Grey */}
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-9 sm:w-11 h-9 sm:h-11 rounded-full border border-zinc-400/50 bg-zinc-500/15 flex items-center justify-center text-zinc-300 group-hover:bg-zinc-200 group-hover:text-black group-hover:border-white group-hover:rotate-45 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,212,216,0.7)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-md">
                 <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5 transition-transform" />
               </div>
 
               {/* Bold Title - 3 Lines Center Aligned as requested */}
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display tracking-tight text-white group-hover:text-emerald-400 transition-colors text-center leading-[1.12]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display tracking-tight text-white group-hover:text-zinc-100 transition-colors text-center leading-[1.12] drop-shadow-[0_2px_12px_rgba(161,161,170,0.35)]">
                 Moments<br />of<br />Marketing
               </h2>
 
-              <span className="text-xs sm:text-sm font-bold font-sans tracking-wide text-emerald-400 mt-3 sm:mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4 leading-snug">
+              <span className="text-xs sm:text-sm font-bold font-sans tracking-wide text-zinc-300 mt-3 sm:mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4 leading-snug">
                 Creating Moments. Building Brands. Driving Growth.
               </span>
             </button>
           </div>
 
         </div>
-
-        {/* Tagline & Emerald Accent Line - Center Aligned on Page Below Both Option Cards */}
-        <div className="w-full max-w-xl mx-auto mt-10 sm:mt-14 md:mt-16 flex flex-col items-center justify-center text-center">
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold dark:text-zinc-100 text-zinc-900 tracking-wide font-sans leading-relaxed">
-            Creating Moments. Building Brands. Driving Growth.
-          </p>
-          
-          {/* Sleek, Center-Aligned Glowing Emerald/Cyan Accent Bar */}
-          <div className="w-full max-w-sm sm:max-w-md md:max-w-lg h-1 sm:h-1.5 bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 rounded-full mt-3 sm:mt-3.5 shadow-[0_0_18px_rgba(16,185,129,0.65)]" />
-        </div>
-
       </main>
 
       {/* ----------------- BOTTOM CLEAN COPYRIGHT: CENTER ALIGNED ----------------- */}
-      <footer className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 py-4 sm:py-6 border-t dark:border-white/[0.08] border-zinc-200/80 relative z-10">
-        <div className="flex items-center justify-center text-xs dark:text-zinc-400 text-zinc-600 font-mono text-center">
-          <span>&copy; 2026 More of Music &bull; All Rights Reserved.</span>
+      <footer className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 py-4 sm:py-5 relative z-10">
+        <div className="flex items-center justify-center text-xs dark:text-zinc-500 text-zinc-500 font-mono text-center">
+          <span>&copy; 2026 MOM &bull; All Rights Reserved.</span>
         </div>
       </footer>
 

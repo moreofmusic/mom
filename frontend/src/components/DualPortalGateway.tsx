@@ -91,7 +91,7 @@ export default function DualPortalGateway({
 
             {/* Bottom Content */}
             <div className="relative z-10 p-6 sm:p-8 lg:p-9 space-y-3.5">
-              <span className="text-xs font-mono tracking-widest uppercase text-emerald-400 font-semibold block">
+              <span className="text-xs font-mono tracking-widest uppercase text-zinc-400 font-semibold block">
                 Full-Funnel Marketing &amp; Brand Identity
               </span>
 

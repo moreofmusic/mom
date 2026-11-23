@@ -67,24 +67,24 @@ export default function ThreePillars({ onSelectService }: { onSelectService: (se
             return (
               <div
                 key={pillar.number}
-                className="pro-card p-8 sm:p-10 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-emerald-400/50 hover:border-black hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,0.6)] transition-all duration-400 shadow-md relative overflow-hidden"
+                className="pro-card p-8 sm:p-10 rounded-3xl flex flex-col justify-between group border border-zinc-200 dark:border-white/10 dark:hover:border-white/30 hover:border-black hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,0.6)] transition-all duration-400 shadow-md relative overflow-hidden"
               >
                 {/* Subtle Traveling Border Shimmer on Hover */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
 
                 <div>
                   <div className="flex items-center justify-between mb-8">
                     {/* Non-clickable number: NO OUTLINE */}
-                    <span className="text-5xl sm:text-6xl font-black font-display dark:text-zinc-600 text-zinc-300 dark:group-hover:text-emerald-400 group-hover:text-emerald-600 transition-colors duration-300">
+                    <span className="text-5xl sm:text-6xl font-black font-display dark:text-zinc-600 text-zinc-300 dark:group-hover:text-white group-hover:text-zinc-900 transition-colors duration-300">
                       {pillar.number}
                     </span>
                     {/* Non-clickable icon container: NO OUTLINE */}
-                    <div className="w-12 h-12 rounded-2xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-110 group-hover:bg-emerald-500/15 group-hover:text-emerald-400 transition-all duration-300 shadow-sm">
+                    <div className="w-12 h-12 rounded-2xl dark:bg-white/[0.06] bg-zinc-100 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-110 group-hover:bg-zinc-200 dark:group-hover:bg-white/20 transition-all duration-300 shadow-sm">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-extrabold capitalize font-display dark:text-white text-zinc-950 mb-2 group-hover:text-emerald-400 transition-colors">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold capitalize font-display dark:text-white text-zinc-950 mb-2 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors">
                     {pillar.title}
                   </h3>
 
@@ -99,7 +99,7 @@ export default function ThreePillars({ onSelectService }: { onSelectService: (se
                   <div className="space-y-3 pt-4 border-t dark:border-white/[0.06] border-zinc-200">
                     {pillar.deliverables.map((d) => (
                       <div key={d} className="flex items-center gap-2.5 text-xs sm:text-sm dark:text-zinc-300 text-zinc-700">
-                        <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-zinc-700 dark:text-zinc-300 flex-shrink-0" />
                         <span>{d}</span>
                       </div>
                     ))}

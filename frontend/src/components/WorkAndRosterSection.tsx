@@ -133,8 +133,8 @@ export default function WorkAndRosterSection({ onSelectService }: WorkAndRosterS
               {/* Bottom Metadata & Content */}
               <div className="relative z-10 p-6 sm:p-8 space-y-3">
                 {/* Stat Highlight with subtle glow */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-red-400/15 border border-red-400/25 text-[11px] font-mono text-red-400 font-bold shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/10 border border-white/20 text-[11px] font-mono text-zinc-300 font-bold shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 animate-pulse" />
                   <span>{work.stats}</span>
                 </div>
 

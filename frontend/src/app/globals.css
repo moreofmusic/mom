@@ -86,7 +86,12 @@ body {
 
 /* Fluid, velvety transitions for all interactive elements */
 button, a, input, select, textarea {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 button:active, a:active {
@@ -179,7 +184,7 @@ html.dark .pro-card {
   -webkit-backdrop-filter: blur(24px);
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 html.dark .pro-card::before {
   content: '';
@@ -189,7 +194,7 @@ html.dark .pro-card::before {
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
-  transition: left 0.7s ease;
+  transition: left 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 html.dark .pro-card:hover::before {
   left: 100%;
@@ -208,7 +213,7 @@ html.light .pro-card {
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 html.light .pro-card::before {
   content: '';
@@ -218,7 +223,7 @@ html.light .pro-card::before {
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4), transparent);
-  transition: left 0.7s ease;
+  transition: left 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 html.light .pro-card:hover::before {
   left: 100%;
@@ -413,8 +418,8 @@ html.light ::-webkit-scrollbar-thumb:hover {
     115deg,
     #ffffff 0%,
     #ffffff 35%,
-    #34d399 48%,
-    #06b6d4 52%,
+    #a1a1aa 48%,
+    #d4d4d8 52%,
     #ffffff 65%,
     #ffffff 100%
   );
@@ -428,7 +433,7 @@ html.light ::-webkit-scrollbar-thumb:hover {
 
 .page-hero-title:hover {
   background-position: -120% 0%;
-  filter: drop-shadow(0 0 14px rgba(16, 185, 129, 0.4));
+  filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.25));
 }
 
 html.light .page-hero-title {
@@ -436,8 +441,8 @@ html.light .page-hero-title {
     115deg,
     #09090b 0%,
     #09090b 35%,
-    #059669 48%,
-    #0891b2 52%,
+    #52525b 48%,
+    #71717a 52%,
     #09090b 65%,
     #09090b 100%
   );
@@ -449,11 +454,11 @@ html.light .page-hero-title {
 
 html.light .page-hero-title:hover {
   background-position: -120% 0%;
-  filter: drop-shadow(0 0 10px rgba(5, 150, 105, 0.3));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
 }
 
-/* More of Music Portal Emerald / Cyan Variant */
-.page-hero-title-cyan {
+/* More of Music Portal Monochrome Variant */
+.page-hero-title-mono {
   display: inline-block;
   position: relative;
   font-weight: 900;
@@ -468,8 +473,8 @@ html.light .page-hero-title:hover {
     115deg,
     #ffffff 0%,
     #ffffff 35%,
-    #34d399 48%,
-    #06b6d4 52%,
+    #a1a1aa 48%,
+    #d4d4d8 52%,
     #ffffff 65%,
     #ffffff 100%
   );
@@ -481,18 +486,18 @@ html.light .page-hero-title:hover {
               filter 0.4s ease;
 }
 
-.page-hero-title-cyan:hover {
+.page-hero-title-mono:hover {
   background-position: -120% 0%;
-  filter: drop-shadow(0 0 14px rgba(16, 185, 129, 0.4));
+  filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.25));
 }
 
-html.light .page-hero-title-cyan {
+html.light .page-hero-title-mono {
   background-image: linear-gradient(
     115deg,
     #09090b 0%,
     #09090b 35%,
-    #059669 48%,
-    #0891b2 52%,
+    #52525b 48%,
+    #71717a 52%,
     #09090b 65%,
     #09090b 100%
   );
@@ -502,9 +507,9 @@ html.light .page-hero-title-cyan {
   -webkit-text-fill-color: transparent;
 }
 
-html.light .page-hero-title-cyan:hover {
+html.light .page-hero-title-mono:hover {
   background-position: -120% 0%;
-  filter: drop-shadow(0 0 10px rgba(5, 150, 105, 0.3));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
 }
 
 /* Section H2 Headings */
@@ -516,11 +521,155 @@ html.light .page-hero-title-cyan:hover {
 }
 
 html.dark .section-title:hover {
-  color: #10b981;
-  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.3));
+  color: #e4e4e7;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.25));
 }
 
 html.light .section-title:hover {
-  color: #059669;
-  filter: drop-shadow(0 0 6px rgba(5, 150, 105, 0.2));
+  color: #52525b;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.15));
 }
+
+/* =========================================================================
+   Apple-Style Animation System & Fluid Physics (as on apple.com)
+   ========================================================================= */
+
+/* Apple Fluid Easing Curve */
+:root {
+  --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --apple-ease-slow: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --apple-ease-cinematic: cubic-bezier(0.15, 0.9, 0.2, 1);
+}
+
+/* Apple Cinematic Scroll Reveal - Ultra Smooth & Slow Optical Focus */
+.apple-reveal {
+  opacity: 0;
+  transform: translateY(36px) scale(0.975);
+  filter: blur(6px);
+  transition: opacity 1.3s var(--apple-ease),
+              transform 1.3s var(--apple-ease),
+              filter 1.2s var(--apple-ease);
+  will-change: opacity, transform, filter;
+}
+
+.apple-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+}
+
+/* Stagger Delays (Apple Sequence Timing - Graceful Waterfall) */
+.apple-delay-100 { transition-delay: 120ms; }
+.apple-delay-200 { transition-delay: 240ms; }
+.apple-delay-300 { transition-delay: 380ms; }
+.apple-delay-400 { transition-delay: 520ms; }
+.apple-delay-500 { transition-delay: 660ms; }
+.apple-delay-600 { transition-delay: 800ms; }
+
+/* Apple Bento Card Hover & Elevation - Luxurious and Deep (0.75s) */
+.apple-card-hover {
+  transition: transform 0.75s var(--apple-ease),
+              box-shadow 0.75s var(--apple-ease),
+              border-color 0.5s var(--apple-ease);
+  will-change: transform, box-shadow;
+}
+
+html.dark .apple-card-hover:hover {
+  transform: translateY(-8px) scale(1.012);
+  border-color: rgba(255, 255, 255, 0.32);
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.98), 0 0 45px -10px rgba(255, 255, 255, 0.12);
+}
+
+html.light .apple-card-hover:hover {
+  transform: translateY(-8px) scale(1.012);
+  border-color: rgba(0, 0, 0, 0.22);
+  box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.12), 0 0 30px -8px rgba(0, 0, 0, 0.08);
+}
+
+/* Apple Shimmer Sweep Beam on Card Hover - Slower, Softer Specular Glide (1.35s) */
+.apple-shimmer-beam {
+  position: relative;
+  overflow: hidden;
+}
+
+.apple-shimmer-beam::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 65%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 1.35s var(--apple-ease);
+  pointer-events: none;
+}
+
+.apple-shimmer-beam:hover::after {
+  left: 160%;
+}
+
+/* Apple Tactile Button Press - Silky Spring Motion */
+.apple-btn-tactile {
+  transition: transform 0.4s var(--apple-ease),
+              opacity 0.3s ease,
+              box-shadow 0.4s var(--apple-ease),
+              filter 0.3s ease;
+  will-change: transform;
+}
+
+.apple-btn-tactile:hover {
+  transform: translateY(-2px);
+}
+
+.apple-btn-tactile:active {
+  transform: scale(0.96) translateY(0);
+}
+
+/* Apple Ambient Floating Light Drift - Ultra Slow & Hypnotic (26s cycle) */
+@keyframes apple-ambient-float {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+    opacity: 0.14;
+  }
+  33% {
+    transform: translate(32px, -22px) scale(1.1) rotate(2deg);
+    opacity: 0.24;
+  }
+  66% {
+    transform: translate(-24px, 16px) scale(0.95) rotate(-1deg);
+    opacity: 0.18;
+  }
+  100% {
+    transform: translate(14px, -10px) scale(1.05) rotate(1deg);
+    opacity: 0.22;
+  }
+}
+
+.animate-apple-ambient {
+  animation: apple-ambient-float 26s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+/* Reduced Motion Override for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .apple-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  .apple-card-hover {
+    transform: none !important;
+  }
+  .animate-apple-ambient {
+    animation: none !important;
+  }
+}
+

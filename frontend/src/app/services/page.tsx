@@ -18,6 +18,8 @@ import {
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
+import AppleScrollReveal from '@/components/AppleScrollReveal';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function ServicesPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -127,6 +129,10 @@ export default function ServicesPage() {
       suppressHydrationWarning
     >
       <Navbar onOpenLeadModal={() => handleOpenLeadModal()} />
+      <AppleScrollReveal />
+
+      {/* Subtle Background Glow - Apple Ambient Atmosphere */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-gradient-to-b from-white/[0.05] via-zinc-500/[0.03] to-transparent blur-3xl rounded-full animate-apple-ambient -z-0" />
 
       <div className="relative z-10 flex-1 transition-all duration-300 pt-[88px] sm:pt-[104px] md:pt-[124px]">
         <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
@@ -134,42 +140,46 @@ export default function ServicesPage() {
           <div className="space-y-10 sm:space-y-12">
             
             {/* Standard Hero Section Header */}
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-              <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white leading-[1.2] pb-1">
-                Our Services
-              </h1>
+            <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3 apple-reveal">
+              <div>
+                <h1 className="relative inline-block py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase text-zinc-950 dark:text-white">
+                  SERVICES
+                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full" />
+                </h1>
+              </div>
 
-              <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
+              <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display apple-reveal apple-delay-100">
                 Everything Your Brand Needs to Grow.
               </p>
 
-              <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+              <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl apple-reveal apple-delay-200">
                 From building brand awareness to generating leads and strengthening customer relationships, we bring your marketing activities together under one strategic approach.
               </p>
             </div>
 
             {/* 10 Services Cards - Prominent, Bold, Standard Typography */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {services.map((s) => {
+              {services.map((s, idx) => {
                 const Icon = s.icon;
+                const delayClass = `apple-delay-${((idx % 4) + 1) * 100}`;
                 return (
                   <div
                     key={s.title}
-                    className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 relative overflow-hidden"
+                    className={`pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group relative overflow-hidden apple-reveal ${delayClass} apple-card-hover apple-shimmer-beam`}
                   >
                     <div className="space-y-4">
                       {/* Title Row with Icon on the left */}
                       <div className="flex items-center gap-3.5 sm:gap-4">
-                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 group-hover:border-emerald-500/40 transition-all shadow-xs flex-shrink-0">
-                          <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-900 dark:text-white group-hover:text-zinc-950 dark:group-hover:text-white group-hover:border-zinc-400 dark:group-hover:border-white/30 transition-all shadow-xs flex-shrink-0">
+                          <Icon className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
                         </div>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black font-display tracking-tight text-zinc-950 dark:text-white leading-[1.15] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        <h2 className="text-base sm:text-lg md:text-xl font-bold font-display tracking-tight text-zinc-950 dark:text-white leading-snug group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors">
                           {s.title}
                         </h2>
                       </div>
 
                       {/* Tagline */}
-                      <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 font-sans leading-snug">
+                      <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans leading-snug">
                         {s.tagline}
                       </p>
 
@@ -191,15 +201,18 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    {/* Clean Action Button */}
+                    {/* WhatsApp Action Button */}
                     <div className="pt-6 mt-6 border-t border-zinc-200/80 dark:border-white/10">
-                      <button
-                        onClick={() => handleOpenLeadModal(s.title)}
-                        className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs active:scale-95 text-zinc-900 dark:text-white group/btn"
+                      <a
+                        href={`https://wa.me/919226042236?text=${encodeURIComponent(`Hi MOM Team, I want to inquire about ${s.title} services.`)}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-xs apple-btn-tactile text-zinc-900 dark:text-white group/btn"
+                        title={`Inquire about ${s.title} on WhatsApp`}
                       >
-                        <span>Inquire</span>
-                        <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                      </button>
+                        <WhatsAppIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5 flex-shrink-0 transition-transform group-hover/btn:scale-110" />
+                        <span>WhatsApp</span>
+                      </a>
                     </div>
                   </div>
                 );

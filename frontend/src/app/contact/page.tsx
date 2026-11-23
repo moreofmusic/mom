@@ -6,15 +6,14 @@ import {
   Phone,
   Mail,
   MessageCircle,
-  Clock,
   ArrowRight,
   CheckCircle2,
   AlertCircle,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import InstagramIcon from '@/components/InstagramIcon';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
+import AppleScrollReveal from '@/components/AppleScrollReveal';
 
 export default function ContactPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -100,6 +99,10 @@ export default function ContactPage() {
       suppressHydrationWarning
     >
       <Navbar onOpenLeadModal={() => setModalOpen(true)} />
+      <AppleScrollReveal />
+
+      {/* Subtle Background Glow - Apple Ambient Atmosphere */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-gradient-to-b from-white/[0.05] via-zinc-500/[0.03] to-transparent blur-3xl rounded-full animate-apple-ambient -z-0" />
 
       <div className="relative z-10 flex-1 transition-all duration-300 pt-[88px] sm:pt-[104px] md:pt-[124px]">
         <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
@@ -107,35 +110,28 @@ export default function ContactPage() {
           <div className="space-y-10 sm:space-y-12">
             
             {/* Standard Hero Section Header */}
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
-              <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white leading-[1.2] pb-1">
-                Contact Us
-              </h1>
+            <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3 apple-reveal">
+              <div>
+                <h1 className="relative inline-block py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase text-zinc-950 dark:text-white">
+                  CONTACT
+                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full" />
+                </h1>
+              </div>
 
-              <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
+              <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display apple-reveal apple-delay-100">
                 Let&apos;s Make Your Next Moment Count.
               </p>
 
-              <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+              <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl apple-reveal apple-delay-200">
                 Whether you want to increase visibility, generate quality enquiries, or create a more effective digital presence, MOM is ready to help you take the next step.
               </p>
-            </div>
-
-            {/* CTA & Brand Tagline */}
-            <div className="p-5 sm:p-6 rounded-2xl border border-zinc-200 dark:border-white/15 bg-zinc-100/70 dark:bg-zinc-900/60 shadow-xs">
-              <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold block mb-0.5">
-                Let&apos;s Talk About Your Growth
-              </span>
-              <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">
-                Moments of Marketing &mdash; Creating Moments. Building Brands. Driving Growth.
-              </span>
             </div>
 
             {/* 2-Column Layout: Direct Details (Left) + Clean Form (Right) */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-8 items-start">
               
               {/* Left Column: Direct Contact Info */}
-              <div className="lg:col-span-5 space-y-3.5">
+              <div className="lg:col-span-5 space-y-3.5 apple-reveal apple-delay-200">
                 <span className="text-xs font-mono uppercase tracking-wider text-zinc-500 block mb-1 font-bold">
                   OFFICIAL CONTACT CHANNELS
                 </span>
@@ -143,7 +139,7 @@ export default function ContactPage() {
                 {/* Phone */}
                 <a
                   href="tel:+919226042236"
-                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-xs group"
+                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 dark:bg-white/[0.01] bg-white shadow-xs group apple-card-hover apple-shimmer-beam"
                 >
                   <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white border border-zinc-200/50 dark:border-white/5">
                     <Phone className="w-4 h-4" />
@@ -156,55 +152,25 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <a
-                  href="mailto:contact@momentsofmarketing.in"
-                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-xs group"
+                  href="mailto:contact@momagency.com"
+                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 dark:bg-white/[0.01] bg-white shadow-xs group apple-card-hover apple-shimmer-beam"
                 >
                   <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white border border-zinc-200/50 dark:border-white/5">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Email</span>
-                    <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">contact@momentsofmarketing.in</span>
+                    <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">contact@momagency.com</span>
                   </div>
                 </a>
-
-                {/* Instagram */}
-                <a
-                  href="https://instagram.com/momentsofmarketingofficial"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-white transition-all shadow-xs group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white border border-zinc-200/50 dark:border-white/5">
-                    <InstagramIcon className="w-4 h-4 stroke-current" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">Instagram</span>
-                    <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950">@momentsofmarketingofficial</span>
-                  </div>
-                </a>
-
-                {/* Working Hours Card */}
-                <div className="p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 dark:bg-white/[0.01] bg-white shadow-xs space-y-1">
-                  <div className="flex items-center gap-2 text-zinc-500 text-xs font-mono">
-                    <Clock className="w-3.5 h-3.5" />
-                    <span>CONSULTATION HOURS</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 font-medium">
-                    Monday &ndash; Saturday: 9:30 AM &ndash; 7:30 PM IST
-                  </p>
-                  <p className="text-[11px] text-zinc-500">
-                    Direct responses within 2 to 4 business hours.
-                  </p>
-                </div>
               </div>
 
               {/* Right Column: Clean Interactive Form */}
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-7 apple-reveal apple-delay-300">
                 <form
                   onSubmit={handleSubmit}
                   suppressHydrationWarning
-                  className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm space-y-4"
+                  className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm space-y-4 apple-card-hover"
                 >
                   <div className="space-y-1 pb-2">
                     <h3 className="text-xl sm:text-2xl font-bold font-display dark:text-white text-zinc-950">
@@ -220,7 +186,7 @@ export default function ContactPage() {
                       className={`p-3.5 rounded-xl text-xs flex items-center gap-2.5 font-medium ${
                         status.type === 'success'
                           ? 'bg-zinc-100 dark:bg-white/10 border border-zinc-300 dark:border-white/20 text-zinc-900 dark:text-white'
-                          : 'bg-red-500/10 border border-red-500/25 text-red-600 dark:text-red-400'
+                          : 'bg-zinc-100 dark:bg-white/10 border border-zinc-300 dark:border-white/20 text-zinc-900 dark:text-zinc-200'
                       }`}
                     >
                       {status.type === 'success' ? (
@@ -355,7 +321,7 @@ export default function ContactPage() {
                     type="submit"
                     disabled={loading}
                     suppressHydrationWarning
-                    className="w-full py-3.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 shadow-md transition-all cursor-pointer disabled:opacity-50"
+                    className="w-full py-3.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 apple-btn-tactile shadow-md transition-all cursor-pointer disabled:opacity-50"
                   >
                     <span>{loading ? 'Submitting...' : 'Submit Inquiry & Chat on WhatsApp'}</span>
                     <ArrowRight className="w-4 h-4" />

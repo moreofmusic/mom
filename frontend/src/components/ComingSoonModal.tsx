@@ -1,8 +1,23 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { X, Clock, MessageCircle, ArrowRight } from 'lucide-react';
+import { X, Clock, ArrowRight } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+
+function WhatsAppIcon({ className = 'w-4 h-4' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      className={className}
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.301-.776.978-.952 1.179-.175.2-.351.226-.652.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.675-2.087-.175-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.175.2-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.676-1.63-.927-2.232-.244-.587-.493-.507-.677-.516-.175-.008-.376-.01-.576-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.479 1.078 2.909 1.228 3.109.15.2 2.122 3.24 5.141 4.544.718.31 1.279.495 1.716.634.721.229 1.377.197 1.895.12.578-.087 1.78-.727 2.03-1.43.251-.702.251-1.304.176-1.43-.075-.125-.276-.2-.577-.35zM12.04 2C6.502 2 2.008 6.493 2.008 12.03c0 1.77.462 3.498 1.34 5.02L2 22l5.099-1.338c1.474.804 3.136 1.228 4.94 1.228 5.537 0 10.03-4.493 10.03-10.03S17.577 2 12.04 2zm0 18.358c-1.536 0-3.043-.414-4.359-1.195l-.313-.186-3.238.85.864-3.158-.204-.325a8.293 8.293 0 01-1.272-4.384c0-4.597 3.74-8.337 8.338-8.337 4.597 0 8.337 3.74 8.337 8.337 0 4.598-3.74 8.338-8.338 8.338z" />
+    </svg>
+  );
+}
 
 interface ComingSoonModalProps {
   isOpen: boolean;
@@ -47,10 +62,10 @@ export default function ComingSoonModal({
       {/* Modal Container */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-xl rounded-3xl border border-zinc-200 dark:border-white/15 bg-white dark:bg-zinc-950 p-6 sm:p-9 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 text-center my-auto"
+        className="relative w-full max-w-xl rounded-3xl border-2 border-[#E11D48]/75 dark:border-[#E11D48]/80 bg-white dark:bg-zinc-950 p-6 sm:p-9 shadow-[0_0_60px_rgba(225,29,72,0.35)] overflow-hidden animate-in zoom-in-95 duration-200 text-center my-auto"
       >
-        {/* Subtle Ambient Emerald Backlight */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-emerald-500/15 dark:bg-emerald-500/20 blur-[100px] pointer-events-none" />
+        {/* Subtle Ambient Red Backlight */}
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-[#E11D48]/20 blur-[100px] pointer-events-none" />
 
         {/* Close Button (X) */}
         <button
@@ -62,26 +77,21 @@ export default function ComingSoonModal({
         </button>
 
         {/* Animated Status Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E11D48]/40 bg-[#E11D48]/10 text-[#E11D48] dark:text-rose-400 text-[11px] font-mono font-bold uppercase tracking-wider mb-5 shadow-[0_0_15px_rgba(225,29,72,0.2)]">
           <Clock className="w-3.5 h-3.5 animate-spin [animation-duration:6s]" />
           <span>COMING SOON &bull; UNDER DEVELOPMENT</span>
         </div>
 
-        {/* MOM Logo */}
-        <div className="flex justify-center mb-3 sm:mb-4">
+        {/* Complete MOM Logo with MORE OF MUSIC (Scaled Slightly Smaller as Requested) */}
+        <div className="flex justify-center mb-5 sm:mb-6">
           <img
-            src="/mom-logo-transparent.png"
-            alt="MOM Logo"
-            className={`h-14 sm:h-18 md:h-20 w-auto object-contain transition-all ${
+            src="/mom-logo-more-of-music.png"
+            alt="MOM More of Music Logo"
+            className={`h-11 sm:h-14 md:h-16 w-auto object-contain transition-all ${
               theme === 'light' ? 'invert' : ''
             }`}
           />
         </div>
-
-        {/* Tagline */}
-        <p className="text-sm sm:text-base font-bold text-emerald-600 dark:text-emerald-400 tracking-wide font-sans mb-5 leading-snug">
-          Creating Moments. Building Experiences. Bringing People Together.
-        </p>
 
         {/* Detailed Brand Copy (Paragraph 1 & 2) */}
         <div className="space-y-3.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-lg mx-auto mb-7 font-normal text-left sm:text-center">
@@ -93,39 +103,33 @@ export default function ComingSoonModal({
           </p>
         </div>
 
-        {/* Center-Aligned Inquire on WhatsApp Button (Inside Card) */}
-        <div className="flex items-center justify-center">
+        {/* Action Buttons Inside Modal: WhatsApp + Explore Marketing Side-by-Side / Below */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 pt-1">
           <a
             href="https://wa.me/917000083119?text=Hi%20MOM%20Team%2C%20I%20have%20an%20inquiry%20regarding%20More%20of%20Music."
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto px-7 py-3.5 rounded-full border border-zinc-300 dark:border-white/20 hover:border-emerald-500/60 dark:hover:border-emerald-400/60 text-zinc-700 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-95 shadow-sm hover:shadow-md"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-full border-2 border-[#E11D48] bg-[#E11D48]/15 hover:bg-[#E11D48] text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer active:scale-95 shadow-[0_0_15px_rgba(225,29,72,0.3)] hover:shadow-[0_0_25px_rgba(225,29,72,0.65)]"
           >
-            <MessageCircle className="w-4 h-4 text-emerald-500" />
+            <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
             <span>Inquire on WhatsApp</span>
           </a>
+
+          {onExploreMarketing && (
+            <button
+              onClick={() => {
+                onClose();
+                onExploreMarketing();
+              }}
+              className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-white text-black dark:bg-white dark:text-black hover:bg-zinc-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer active:scale-95 shadow-md hover:shadow-lg border border-white/40 group"
+              title="Explore Moments of Marketing"
+            >
+              <span>Explore Moments of Marketing</span>
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
+            </button>
+          )}
         </div>
       </div>
-
-      {/* Floating Bottom-Right Action Button (Outside Card, Shown with Popup) */}
-      {onExploreMarketing && (
-        <div
-          onClick={(e) => e.stopPropagation()}
-          className="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-50 animate-in fade-in slide-in-from-bottom-4 duration-300"
-        >
-          <button
-            onClick={() => {
-              onClose();
-              onExploreMarketing();
-            }}
-            className="px-5 py-3 sm:px-6 sm:py-3.5 rounded-full bg-white text-black dark:bg-white dark:text-black hover:bg-zinc-100 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-[0_10px_35px_rgba(0,0,0,0.5)] border border-white/20 hover:scale-105 active:scale-95 transition-all cursor-pointer group"
-            title="Explore Moments of Marketing"
-          >
-            <span>Explore Moments of Marketing</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
-      )}
     </div>
   );
 }

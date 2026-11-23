@@ -135,7 +135,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
                   <span className="text-[10px] font-mono tracking-widest uppercase text-white bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full font-semibold">
                     CAMPAIGN PRODUCTION
                   </span>
-                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 backdrop-blur-md px-3 py-1.5 rounded-full font-bold">
+                  <span className="text-[10px] font-mono text-zinc-300 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-full font-bold">
                     +340% ROAS SCALE
                   </span>
                 </div>

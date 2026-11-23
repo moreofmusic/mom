@@ -16,6 +16,21 @@ interface NavbarProps {
   onSelectMarketingTab?: (tab: 'home' | 'about' | 'services' | 'contact') => void;
 }
 
+function WhatsAppIcon({ className = 'w-4 h-4' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      className={className}
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.301-.776.978-.952 1.179-.175.2-.351.226-.652.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.675-2.087-.175-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.175.2-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.676-1.63-.927-2.232-.244-.587-.493-.507-.677-.516-.175-.008-.376-.01-.576-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.479 1.078 2.909 1.228 3.109.15.2 2.122 3.24 5.141 4.544.718.31 1.279.495 1.716.634.721.229 1.377.197 1.895.12.578-.087 1.78-.727 2.03-1.43.251-.702.251-1.304.176-1.43-.075-.125-.276-.2-.577-.35zM12.04 2C6.502 2 2.008 6.493 2.008 12.03c0 1.77.462 3.498 1.34 5.02L2 22l5.099-1.338c1.474.804 3.136 1.228 4.94 1.228 5.537 0 10.03-4.493 10.03-10.03S17.577 2 12.04 2zm0 18.358c-1.536 0-3.043-.414-4.359-1.195l-.313-.186-3.238.85.864-3.158-.204-.325a8.293 8.293 0 01-1.272-4.384c0-4.597 3.74-8.337 8.338-8.337 4.597 0 8.337 3.74 8.337 8.337 0 4.598-3.74 8.338-8.338 8.338z" />
+    </svg>
+  );
+}
+
 export default function Navbar({
   onOpenLeadModal,
   activeEntity = 'marketing',
@@ -45,9 +60,9 @@ export default function Navbar({
   }, []);
 
   const marketingTabs: { id: string; path: string; label: string }[] = [
-    { id: 'about', path: '/about', label: 'About Us' },
-    { id: 'services', path: '/services', label: 'Brands and services' },
-    { id: 'contact', path: '/contact', label: 'Contact us' },
+    { id: 'about', path: '/about', label: 'THE COMPANY' },
+    { id: 'services', path: '/services', label: 'SERVICES' },
+    { id: 'contact', path: '/contact', label: 'CONTACT' },
   ];
 
   const musicNavLinks = [
@@ -79,95 +94,101 @@ export default function Navbar({
               title="MOM - Moments of Marketing & More of Music"
             >
               <img
-                src="/mom-logo-transparent.png"
-                alt="MOM Logo"
+                src={isMusic ? '/mom-logo-more-of-music.png' : '/mom-logo-moments-of-marketing.png'}
+                alt="MOM Moments of Marketing Logo"
                 suppressHydrationWarning
-                className={`h-10 sm:h-12 md:h-14 lg:h-[60px] w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
+                className={`h-10 sm:h-12 md:h-14 lg:h-[56px] w-auto object-contain flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
                   mounted && theme === 'light' ? 'invert' : ''
                 }`}
               />
             </Link>
           </div>
 
-          {/* ================= CENTER NAVIGATION ================= */}
-          {!isMusic ? (
-            <nav className="hidden lg:flex items-center">
-              <div className="flex items-center gap-1.5 p-1.5 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.06] bg-black/[0.04] backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_4px_16px_rgba(0,0,0,0.06)] flex-nowrap whitespace-nowrap">
-                {marketingTabs.map((tab) => {
-                  const isActive = currentTab === tab.id;
-                  return (
-                    <Link
-                      key={tab.id}
-                      href={tab.path}
-                      className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-[13px] font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${
-                        isActive
-                          ? 'dark:bg-white dark:text-black bg-zinc-950 text-white shadow-md'
-                          : 'dark:text-zinc-400 dark:hover:text-white text-zinc-600 hover:text-zinc-950'
-                      }`}
-                    >
-                      {tab.label}
-                    </Link>
-                  );
-                })}
-              </div>
-            </nav>
-          ) : (
-            /* MUSIC NAVIGATION */
-            <nav className="hidden lg:flex items-center gap-7">
-              {musicNavLinks.map((link) => (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  className="text-[11px] font-semibold tracking-[0.22em] uppercase transition-colors duration-200 py-1 dark:text-zinc-400 dark:hover:text-white text-zinc-500 hover:text-zinc-950"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-          )}
+          {/* ================= RIGHT-ALIGNED NAVIGATION & UTILITY CONTROLS ================= */}
+          <div className="flex items-center gap-5 sm:gap-7 lg:gap-9 ml-auto flex-shrink-0">
+            {!isMusic ? (
+              <nav className="hidden lg:flex items-center">
+                <div className="flex items-center gap-7 xl:gap-9 flex-nowrap whitespace-nowrap">
+                  {marketingTabs.map((tab) => {
+                    const isActive = currentTab === tab.id;
+                    return (
+                      <Link
+                        key={tab.id}
+                        href={tab.path}
+                        className={`relative py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase transition-colors duration-300 cursor-pointer whitespace-nowrap ${
+                          isActive
+                            ? 'dark:text-white text-zinc-950 font-black'
+                            : 'dark:text-zinc-400 text-zinc-500 dark:hover:text-white hover:text-zinc-950'
+                        }`}
+                      >
+                        <span>{tab.label}</span>
+                        {isActive && (
+                          <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full animate-in fade-in duration-300" />
+                        )}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </nav>
+            ) : (
+              /* MUSIC NAVIGATION */
+              <nav className="hidden lg:flex items-center gap-7">
+                {musicNavLinks.map((link) => (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    className="text-[12px] sm:text-[13px] font-extrabold tracking-[0.22em] uppercase transition-colors duration-300 py-1 dark:text-zinc-400 dark:hover:text-white text-zinc-500 hover:text-zinc-950"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
+            )}
 
-          {/* ================= RIGHT UTILITY CONTROLS ================= */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            {/* WhatsApp Direct */}
-            <a
-              href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 sm:p-2.5 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl dark:hover:border-emerald-400/60 dark:text-zinc-300 dark:hover:text-emerald-400 text-zinc-700 hover:border-emerald-500/60 hover:text-emerald-600 transition-all hover:scale-105 active:scale-95 shadow-xs"
-              title="Chat on WhatsApp (+91 9226042236)"
-              aria-label="WhatsApp"
-            >
-              <MessageCircle className="w-4 h-4" />
-            </a>
-
-            {/* Dark / Light Mode Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl dark:text-zinc-300 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 active:rotate-180 shadow-xs"
-              aria-label="Toggle theme"
-              title={mounted ? `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme` : 'Toggle theme'}
-              suppressHydrationWarning
-            >
-              {mounted ? (
-                theme === 'dark' ? (
-                  <Sun className="w-4 h-4 text-amber-300 transition-transform duration-500" />
-                ) : (
-                  <Moon className="w-4 h-4 text-zinc-900 transition-transform duration-500" />
-                )
-              ) : (
-                <span className="w-4 h-4 inline-block" />
-              )}
-            </button>
-
-            {/* Mobile Menu Button - iPhone Liquid Glass Style */}
-            <div className="flex lg:hidden items-center flex-shrink-0">
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl flex items-center justify-center dark:text-white text-zinc-900 cursor-pointer active:scale-95 shadow-xs transition-all"
-                aria-label="Menu"
+            {/* ================= RIGHT UTILITY CONTROLS ================= */}
+            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+              {/* WhatsApp Direct */}
+              <a
+                href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 sm:p-2.5 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl dark:hover:border-white/30 dark:text-zinc-300 dark:hover:text-white text-zinc-700 hover:border-zinc-500 hover:text-zinc-950 transition-all hover:scale-105 active:scale-95 shadow-xs"
+                title="Chat on WhatsApp (+91 9226042236)"
+                aria-label="WhatsApp"
               >
-                {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                <WhatsAppIcon className="w-4 h-4" />
+              </a>
+
+              {/* Dark / Light Mode Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl dark:text-zinc-300 dark:hover:text-white dark:hover:border-white/30 text-zinc-700 hover:text-zinc-950 hover:border-zinc-500 flex items-center justify-center transition-all cursor-pointer active:scale-95 active:rotate-180 shadow-xs"
+                aria-label="Toggle theme"
+                title={mounted ? `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} theme` : 'Toggle theme'}
+                suppressHydrationWarning
+              >
+                {mounted ? (
+                  theme === 'dark' ? (
+                    <Sun className="w-4 h-4 text-white transition-transform duration-500" />
+                  ) : (
+                    <Moon className="w-4 h-4 text-zinc-900 transition-transform duration-500" />
+                  )
+                ) : (
+                  <span className="w-4 h-4 inline-block" />
+                )}
               </button>
+
+              {/* Mobile Menu Button - iPhone Liquid Glass Style */}
+              <div className="flex lg:hidden items-center flex-shrink-0">
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/5 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl flex items-center justify-center dark:text-white text-zinc-900 cursor-pointer active:scale-95 shadow-xs transition-all"
+                  aria-label="Menu"
+                >
+                  {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                </button>
+              </div>
+
             </div>
 
           </div>
@@ -189,7 +210,7 @@ export default function Navbar({
                       key={tab.id}
                       href={tab.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-center transition-all cursor-pointer ${
+                      className={`w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-center transition-all cursor-pointer ${
                         isActive
                           ? 'bg-zinc-950 text-white dark:bg-white dark:text-black shadow-md'
                           : 'border border-zinc-300 dark:border-white/15 dark:text-zinc-200 text-zinc-800 hover:bg-zinc-100 dark:hover:bg-white/10'
@@ -207,7 +228,7 @@ export default function Navbar({
                   key={link.id}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs font-semibold tracking-[0.2em] dark:text-zinc-300 dark:hover:text-white dark:border-white/[0.05] text-zinc-700 hover:text-zinc-950 py-2.5 border-b border-zinc-200"
+                  className="text-xs font-extrabold tracking-[0.22em] uppercase dark:text-zinc-300 dark:hover:text-white dark:border-white/[0.05] text-zinc-700 hover:text-zinc-950 py-2.5 border-b border-zinc-200"
                 >
                   {link.label}
                 </a>
@@ -224,7 +245,7 @@ export default function Navbar({
                   <span>Call Us</span>
                 </a>
                 <a
-                  href="mailto:contact@momentsofmarketing.in"
+                  href="mailto:contact@momagency.com"
                   className="py-2 px-2.5 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-zinc-300 text-zinc-700"
                 >
                   <Mail className="w-3.5 h-3.5" />

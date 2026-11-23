@@ -18,6 +18,7 @@ import {
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
+import AppleScrollReveal from '@/components/AppleScrollReveal';
 
 export default function AboutPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -30,9 +31,9 @@ export default function AboutPage() {
 
   const values = [
     {
-      name: 'Integrity',
-      icon: Shield,
-      desc: 'Ethical messaging, truthful offers, and unwavering brand trust across every campaign touchpoint.',
+      name: 'Speed of Delivery',
+      icon: Clock,
+      desc: 'Rapid iteration, prompt deployment, and agile responsiveness to dynamic market opportunities.',
     },
     {
       name: 'Transparency',
@@ -40,9 +41,9 @@ export default function AboutPage() {
       desc: 'Privacy compliance, honest reporting metrics, and total accountability in all communications.',
     },
     {
-      name: 'Speed of Delivery',
-      icon: Clock,
-      desc: 'Rapid iteration, prompt deployment, and agile responsiveness to dynamic market opportunities.',
+      name: 'Integrity',
+      icon: Shield,
+      desc: 'Ethical messaging, truthful offers, and unwavering brand trust across every campaign touchpoint.',
     },
     {
       name: 'Performance',
@@ -129,6 +130,7 @@ export default function AboutPage() {
       suppressHydrationWarning
     >
       <Navbar onOpenLeadModal={() => handleOpenLeadModal()} />
+      <AppleScrollReveal />
 
       <div className="relative z-10 flex-1 transition-all duration-300 pt-[88px] sm:pt-[104px] md:pt-[124px]">
         <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
@@ -136,9 +138,9 @@ export default function AboutPage() {
           <div className="space-y-12 sm:space-y-16">
 
             {/* ---------------- HERO / MORE THAN MARKETING SECTION ---------------- */}
-            <section className="relative">
-              {/* Subtle Ambient Glow */}
-              <div className="absolute -top-6 left-1/4 w-80 h-80 bg-emerald-500/10 dark:bg-emerald-500/10 blur-[120px] pointer-events-none" />
+            <section className="relative apple-reveal">
+              {/* Subtle Ambient Glow - Apple Ambient Atmosphere */}
+              <div className="absolute -top-6 left-1/4 w-80 h-80 bg-white/[0.04] dark:bg-white/[0.05] blur-[120px] pointer-events-none animate-apple-ambient" />
 
               {/* Standard Hero Section Header */}
               <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 mb-8 sm:mb-10">
@@ -162,52 +164,31 @@ export default function AboutPage() {
               </div>
             </section>
 
-            {/* ---------------- 1. VISION & MISSION CARDS ---------------- */}
-            <section>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                {/* Vision Card */}
-                <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white mb-3">
-                      Vision
-                    </h3>
-                    <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-                      Creating Moments. Building Brands. Driving Growth.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Mission Card */}
-                <div className="pro-card p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white mb-3">
-                      Mission
-                    </h3>
-                    <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-                      To turn meaningful marketing moments into lasting brand value and business growth.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* ---------------- 2. OUR VALUES ---------------- */}
+            {/* ---------------- OUR VALUES ---------------- */}
             <section className="space-y-5">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6">
+              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
                   OUR VALUES
                 </h2>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-                {values.map((v) => {
+                {values.map((v, i) => {
+                  const delayClass =
+                    i === 0
+                      ? 'apple-delay-100'
+                      : i === 1
+                      ? 'apple-delay-200'
+                      : i === 2
+                      ? 'apple-delay-300'
+                      : 'apple-delay-400';
                   return (
                     <div
                       key={v.name}
-                      className="pro-card p-6 rounded-2xl border border-zinc-200 dark:border-white/10 flex flex-col justify-between shadow-sm group hover:border-black dark:hover:border-white transition-all"
+                      className={`pro-card apple-card-hover apple-shimmer-beam apple-reveal ${delayClass} p-6 rounded-2xl border border-zinc-200 dark:border-white/10 flex flex-col justify-between shadow-sm group`}
                     >
                       <div>
-                        <h3 className="text-lg font-bold font-display dark:text-white text-zinc-950 mb-2">
+                        <h3 className="text-lg font-bold font-display dark:text-white text-zinc-950 mb-2 group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors">
                           {v.name}
                         </h3>
                         <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
@@ -222,7 +203,7 @@ export default function AboutPage() {
 
             {/* ---------------- 3. OUR THREE PILLARS OF GROWTH ---------------- */}
             <section className="space-y-6">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6">
+              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
                   OUR THREE PILLARS OF GROWTH
                 </h2>
@@ -230,24 +211,25 @@ export default function AboutPage() {
 
               {/* Subtle Architectural Pillar Design */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7">
-                {pillars.map((p) => {
+                {pillars.map((p, i) => {
+                  const delayClass = i === 0 ? 'apple-delay-100' : i === 1 ? 'apple-delay-200' : 'apple-delay-300';
                   return (
                     <div
                       key={p.title}
-                      className="pro-card relative p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-zinc-950 dark:hover:border-white transition-all duration-300 overflow-hidden"
+                      className={`pro-card apple-card-hover apple-shimmer-beam apple-reveal ${delayClass} relative p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group overflow-hidden`}
                     >
                       <div>
                         {/* Architectural Pillar Crown / Capital Beam */}
-                        <div className="h-1.5 w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-full mb-6 group-hover:scale-x-105 transition-transform origin-left" />
+                        <div className="h-1.5 w-full bg-zinc-300 dark:bg-zinc-700 rounded-full mb-6 group-hover:scale-x-105 transition-transform duration-500 origin-left" />
 
                         <div className="space-y-4">
                           {/* Pillar Title in Bold Title Case */}
-                          <h3 className="text-lg sm:text-xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white">
+                          <h3 className="text-lg sm:text-xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors">
                             {p.title}
                           </h3>
 
                           {/* Tagline */}
-                          <p className="text-sm sm:text-base font-bold text-emerald-500 dark:text-emerald-400 font-sans leading-snug">
+                          <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans leading-snug">
                             {p.tagline}
                           </p>
 
@@ -260,7 +242,7 @@ export default function AboutPage() {
 
                       {/* Architectural Pillar Foundation / Base Pedestal */}
                       <div className="pt-6 mt-6 border-t border-zinc-200/80 dark:border-white/10 flex items-center justify-between">
-                        <div className="h-[2px] w-12 bg-zinc-300 dark:bg-white/20 rounded-full group-hover:w-full group-hover:bg-emerald-400/60 transition-all duration-500" />
+                        <div className="h-[2px] w-12 bg-zinc-300 dark:bg-white/20 rounded-full group-hover:w-full group-hover:bg-zinc-400 dark:group-hover:bg-zinc-500 transition-all duration-500" />
                       </div>
                     </div>
                   );
@@ -270,24 +252,34 @@ export default function AboutPage() {
 
             {/* ---------------- 4. WHY CHOOSE MOM? ---------------- */}
             <section className="space-y-5">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1">
+              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1 apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
                   WHY CHOOSE MOM?
                 </h2>
-                <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 font-sans">
+                <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans">
                   Creative Thinking. Strategic Execution. Growth-Focused Marketing.
                 </p>
               </div>
 
               <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
-                {whyChooseUsPoints.map((pt) => {
+                {whyChooseUsPoints.map((pt, i) => {
+                  const delayClass =
+                    i === 0
+                      ? 'apple-delay-100'
+                      : i === 1
+                      ? 'apple-delay-200'
+                      : i === 2
+                      ? 'apple-delay-300'
+                      : i === 3
+                      ? 'apple-delay-400'
+                      : 'apple-delay-500';
                   return (
                     <div
                       key={pt.title}
-                      className="pro-card p-6 sm:p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group hover:border-black dark:hover:border-white transition-all w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
+                      className={`pro-card apple-card-hover apple-shimmer-beam apple-reveal ${delayClass} p-6 sm:p-7 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]`}
                     >
                       <div className="space-y-2.5">
-                        <h3 className="text-base sm:text-lg font-bold font-display dark:text-white text-zinc-950 leading-snug">
+                        <h3 className="text-base sm:text-lg font-bold font-display dark:text-white text-zinc-950 leading-snug group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors">
                           {pt.title}
                         </h3>
                         <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
@@ -302,11 +294,11 @@ export default function AboutPage() {
 
             {/* ---------------- 5. OUR APPROACH ---------------- */}
             <section className="space-y-6 text-center">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-4 mb-6 space-y-1 text-center">
+              <div className="border-b border-zinc-200 dark:border-white/10 pb-4 mb-6 space-y-1 text-center apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
                   OUR APPROACH
                 </h2>
-                <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 font-sans">
+                <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans">
                   From First Impression to Lasting Customer Relationships.
                 </p>
               </div>
@@ -315,10 +307,10 @@ export default function AboutPage() {
               <div className="hidden lg:flex items-center justify-center gap-2.5 xl:gap-4 py-4 mx-auto">
                 {approachSteps.map((step, idx) => (
                   <React.Fragment key={step.name}>
-                    <div className="w-[160px] h-[160px] xl:w-[190px] xl:h-[190px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_35px_rgba(16,185,129,0.25)] hover:border-emerald-500/80 dark:hover:border-emerald-400/80 hover:scale-105 transition-all duration-300 flex flex-col items-center justify-center p-3.5 xl:p-5 text-center group cursor-default relative flex-shrink-0">
-                      <div className="absolute inset-0 rounded-full bg-emerald-500/0 group-hover:bg-emerald-500/[0.04] transition-colors pointer-events-none" />
+                    <div className="w-[160px] h-[160px] xl:w-[190px] xl:h-[190px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_35px_rgba(255,255,255,0.12)] hover:border-zinc-400 dark:hover:border-white/50 hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col items-center justify-center p-3.5 xl:p-5 text-center group cursor-default relative flex-shrink-0 apple-reveal">
+                      <div className="absolute inset-0 rounded-full bg-zinc-500/0 group-hover:bg-zinc-500/[0.06] transition-colors duration-500 pointer-events-none" />
 
-                      <h3 className="text-sm xl:text-base font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors mb-1.5">
+                      <h3 className="text-sm xl:text-base font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors mb-1.5">
                         {step.name}
                       </h3>
                       <p className="text-[10.5px] xl:text-[11.5px] text-zinc-600 dark:text-zinc-300 font-normal leading-[1.35] max-w-[130px] xl:max-w-[155px]">
@@ -328,9 +320,9 @@ export default function AboutPage() {
 
                     {/* Animated Arrow Connector between steps */}
                     {idx < approachSteps.length - 1 && (
-                      <div className="flex items-center justify-center text-emerald-500 dark:text-emerald-400 flex-shrink-0 px-0.5">
-                        <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-full border border-emerald-500/30 dark:border-emerald-400/30 bg-emerald-500/10 dark:bg-emerald-500/15 flex items-center justify-center shadow-xs">
-                          <ArrowRight className="w-3.5 h-3.5 xl:w-4 xl:h-4 stroke-[2.5] animate-pulse" />
+                      <div className="flex items-center justify-center text-zinc-500 dark:text-zinc-400 flex-shrink-0 px-0.5">
+                        <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-full border border-zinc-300 dark:border-white/20 bg-zinc-100 dark:bg-white/[0.06] flex items-center justify-center shadow-xs">
+                          <ArrowRight className="w-3.5 h-3.5 xl:w-4 xl:h-4 stroke-[2.5]" />
                         </div>
                       </div>
                     )}
@@ -342,8 +334,8 @@ export default function AboutPage() {
               <div className="flex flex-col items-center gap-2.5 lg:hidden py-4 mx-auto">
                 {approachSteps.map((step, idx) => (
                   <React.Fragment key={step.name}>
-                    <div className="w-[190px] h-[190px] sm:w-[210px] sm:h-[210px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_25px_rgba(16,185,129,0.2)] hover:border-emerald-500/80 dark:hover:border-emerald-400/80 transition-all duration-300 flex flex-col items-center justify-center p-4 sm:p-5 text-center group cursor-default">
-                      <h3 className="text-base sm:text-lg font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors mb-1.5">
+                    <div className="w-[190px] h-[190px] sm:w-[210px] sm:h-[210px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:border-zinc-400 dark:hover:border-white/50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col items-center justify-center p-4 sm:p-5 text-center group cursor-default apple-reveal">
+                      <h3 className="text-base sm:text-lg font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors mb-1.5">
                         {step.name}
                       </h3>
                       <p className="text-xs text-zinc-600 dark:text-zinc-300 font-normal leading-snug max-w-[150px] sm:max-w-[170px]">
@@ -352,9 +344,9 @@ export default function AboutPage() {
                     </div>
 
                     {idx < approachSteps.length - 1 && (
-                      <div className="flex justify-center text-emerald-500 dark:text-emerald-400 my-0.5">
-                        <div className="w-7 h-7 rounded-full border border-emerald-500/30 dark:border-emerald-400/30 bg-emerald-500/10 dark:bg-emerald-500/15 flex items-center justify-center shadow-xs">
-                          <ArrowDown className="w-3.5 h-3.5 stroke-[2.5] animate-bounce" />
+                      <div className="flex justify-center text-zinc-500 dark:text-zinc-400 my-0.5">
+                        <div className="w-7 h-7 rounded-full border border-zinc-300 dark:border-white/20 bg-zinc-100 dark:bg-white/[0.06] flex items-center justify-center shadow-xs">
+                          <ArrowDown className="w-3.5 h-3.5 stroke-[2.5]" />
                         </div>
                       </div>
                     )}

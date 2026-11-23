@@ -54,7 +54,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
     const mailtoBody = encodeURIComponent(
       `Name: ${formData.fullName}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\nService: ${formData.serviceInterest}\nBudget: ${formData.budgetRange}\n\nMessage:\n${formData.message || 'N/A'}`
     );
-    const mailtoUrl = `mailto:Contact@momentsofmarketing.in?subject=${mailtoSubject}&body=${mailtoBody}`;
+    const mailtoUrl = `mailto:contact@momagency.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
     try {
       await fetch('/api/leads', {
@@ -113,10 +113,10 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
           <p className="text-lg sm:text-2xl dark:text-zinc-300 text-zinc-700 font-light pt-2">
             Let&apos;s build it together. For queries &middot;{' '}
             <a
-              href="mailto:Contact@momentsofmarketing.in"
+              href="mailto:contact@momagency.com"
               className="font-bold underline underline-offset-4 dark:text-white text-zinc-950 hover:opacity-80 transition-opacity"
             >
-              Contact@momentsofmarketing.in
+              contact@momagency.com
             </a>{' '}
             &middot;{' '}
             <a
@@ -159,7 +159,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
 
                 {/* Email: Clickable so OUTLINED */}
                 <a
-                  href="mailto:Contact@momentsofmarketing.in"
+                  href="mailto:contact@momagency.com"
                   className="flex items-center gap-4 p-4 rounded-2xl border border-zinc-200 dark:border-white/10 hover:border-black dark:hover:border-white dark:bg-white/[0.01] bg-zinc-50 transition-all duration-300 group active:scale-[0.98] shadow-sm"
                 >
                   <div className="w-10 h-10 rounded-xl dark:bg-white/[0.06] bg-zinc-200/70 flex items-center justify-center dark:text-white text-zinc-900 group-hover:scale-105 transition-transform">
@@ -167,7 +167,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   </div>
                   <div>
                     <span className="text-[10px] tracking-wider uppercase dark:text-zinc-400 text-zinc-500 block font-mono">Official Email</span>
-                    <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">Contact@momentsofmarketing.in</span>
+                    <span className="text-sm sm:text-base font-bold font-display dark:text-white text-zinc-950 break-all">contact@momagency.com</span>
                   </div>
                 </a>
 
@@ -217,7 +217,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                     className={`p-4 rounded-xl flex items-start gap-3 ${
                       status.type === 'success'
                         ? 'dark:bg-white/[0.08] dark:border-white/20 dark:text-white bg-zinc-100 border-zinc-300 text-zinc-900'
-                        : 'bg-rose-500/10 border border-rose-500/20 text-rose-600 dark:text-rose-400'
+                        : 'bg-zinc-100 border border-zinc-300 text-zinc-900 dark:bg-white/10 dark:border-white/20 dark:text-zinc-200'
                     }`}
                   >
                     {status.type === 'success' ? (
@@ -234,7 +234,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                         href={status.whatsappUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-lg transition-all"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-950 text-xs font-semibold shadow-lg transition-all"
                       >
                         <span>💬 Open in WhatsApp (+91 9226042236)</span>
                       </a>
