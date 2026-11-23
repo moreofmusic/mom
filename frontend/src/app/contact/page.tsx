@@ -118,12 +118,12 @@ export default function ContactPage() {
                 </h1>
               </div>
 
-              <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display apple-reveal apple-delay-100">
-                Let&apos;s Make Your Next Moment Count.
+              <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display apple-reveal apple-delay-100 uppercase tracking-tight">
+                LET&apos;S MAKE YOUR NEXT MOMENT COUNT.
               </p>
 
               <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl apple-reveal apple-delay-200">
-                Whether you want to increase visibility, generate quality enquiries, or create a more effective digital presence, MOM is ready to help you take the next step.
+                Ready to boost visibility, drive qualified enquiries, or sharpen your digital presence? MOM is here to help you move forward with clarity.
               </p>
             </div>
 

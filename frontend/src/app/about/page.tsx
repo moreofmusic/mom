@@ -31,45 +31,24 @@ export default function AboutPage() {
 
   const values = [
     {
-      name: 'Speed of Delivery',
+      name: 'Speed',
       icon: Clock,
-      desc: 'Rapid iteration, prompt deployment, and agile responsiveness to dynamic market opportunities.',
+      desc: 'Rapid iteration, fast deployment, real-time responses',
     },
     {
       name: 'Transparency',
       icon: Lock,
-      desc: 'Privacy compliance, honest reporting metrics, and total accountability in all communications.',
+      desc: 'Privacy compliance, honest metrics, data security',
     },
     {
       name: 'Integrity',
       icon: Shield,
-      desc: 'Ethical messaging, truthful offers, and unwavering brand trust across every campaign touchpoint.',
+      desc: 'Ethical messaging, truthful offers, brand trust',
     },
     {
       name: 'Performance',
       icon: TrendingUp,
-      desc: 'ROI-driven strategies, measurable conversion outcomes, and sustained customer lifetime value.',
-    },
-  ];
-
-  const pillars = [
-    {
-      title: 'Brand Visibility',
-      tagline: 'Get noticed. Stay remembered.',
-      description:
-        'Build a distinctive brand presence that captures attention and earns recognition. We help your business stand out through strategic branding, engaging content, and consistent digital communication.',
-    },
-    {
-      title: 'Lead Generation',
-      tagline: 'Reach the right people. Create real opportunities.',
-      description:
-        'Attract relevant audiences and turn their interest into valuable enquiries. Our targeted campaigns and conversion-focused strategies help create opportunities for your sales team.',
-    },
-    {
-      title: 'Business Growth',
-      tagline: 'Turn opportunities into lasting progress.',
-      description:
-        'Make your marketing work harder for your business. Through performance analysis, customer engagement, and continuous optimization, we help you make informed marketing decisions and build a foundation for sustainable growth.',
+      desc: 'ROI emphasis, customer value, measurable impact',
     },
   ];
 
@@ -137,39 +116,45 @@ export default function AboutPage() {
           
           <div className="space-y-12 sm:space-y-16">
 
-            {/* ---------------- HERO / MORE THAN MARKETING SECTION ---------------- */}
+            {/* ---------------- HERO / THE COMPANY SECTION ---------------- */}
             <section className="relative apple-reveal">
               {/* Subtle Ambient Glow - Apple Ambient Atmosphere */}
               <div className="absolute -top-6 left-1/4 w-80 h-80 bg-white/[0.04] dark:bg-white/[0.05] blur-[120px] pointer-events-none animate-apple-ambient" />
 
               {/* Standard Hero Section Header */}
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 mb-8 sm:mb-10">
-                {/* Main Headline - Sentence Case with exact capital M in Marketing */}
-                <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display text-zinc-950 dark:text-white normal-case tracking-tight leading-[1.2] pb-1">
-                  More than Marketing.
-                </h1>
+              <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 mb-8 sm:mb-10 space-y-3">
+                <div>
+                  <h1 className="relative inline-block py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase text-zinc-950 dark:text-white">
+                    THE COMPANY
+                    <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full" />
+                  </h1>
+                </div>
+
+                <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
+                  At <span className="font-extrabold text-zinc-950 dark:text-white">Moments of Marketing</span> we create Moments, Build Brands and Drive Growth.
+                </p>
               </div>
 
-              {/* Three Core Paragraphs in Clean Editorial Paragraph Mode (One Below Another) */}
+              {/* Exact Core Paragraphs from Image 1 */}
               <div className="space-y-6 max-w-4xl text-sm sm:text-base md:text-lg dark:text-zinc-300 text-zinc-700 font-normal leading-relaxed">
                 <p>
-                  At MOM &mdash; Moments of Marketing, we believe great marketing creates more than visibility. It creates connections, builds trust, and drives business forward.
+                  We believe great marketing goes beyond visibility. It’s about creating meaningful connections, earning trust, and turning opportunities into lasting business success.
                 </p>
                 <p>
-                  We partner with businesses to develop impactful brand identities, create engaging digital experiences, and execute marketing strategies that connect with the right customers.
-                </p>
-                <p>
-                  Whether you&apos;re launching a new brand, expanding your market presence, or scaling your business, we bring the right mix of creativity, strategy, and execution to help you move forward with confidence.
+                  We partner with businesses at every stage of their journey whether launching a new brand, strengthening market presence, or driving growth by building distinctive brand identities, creating engaging digital experiences, and executing result-driven marketing strategies that combine creativity, strategic thinking, and seamless execution to connect with the right audience and turn business visions into lasting success.
                 </p>
               </div>
             </section>
 
             {/* ---------------- OUR VALUES ---------------- */}
             <section className="space-y-5">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 apple-reveal">
+              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-2 apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
                   OUR VALUES
                 </h2>
+                <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+                  Our Values shape how we think and build, delivering unwavering integrity to every client, every time. Our Values drive our daily choices and culture, turning quiet integrity into consistent results for every customer.
+                </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -194,55 +179,6 @@ export default function AboutPage() {
                         <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
                           {v.desc}
                         </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </section>
-
-            {/* ---------------- 3. OUR THREE PILLARS OF GROWTH ---------------- */}
-            <section className="space-y-6">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 apple-reveal">
-                <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
-                  OUR THREE PILLARS OF GROWTH
-                </h2>
-              </div>
-
-              {/* Subtle Architectural Pillar Design */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7">
-                {pillars.map((p, i) => {
-                  const delayClass = i === 0 ? 'apple-delay-100' : i === 1 ? 'apple-delay-200' : 'apple-delay-300';
-                  return (
-                    <div
-                      key={p.title}
-                      className={`pro-card apple-card-hover apple-shimmer-beam apple-reveal ${delayClass} relative p-7 sm:p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-sm flex flex-col justify-between group overflow-hidden`}
-                    >
-                      <div>
-                        {/* Architectural Pillar Crown / Capital Beam */}
-                        <div className="h-1.5 w-full bg-zinc-300 dark:bg-zinc-700 rounded-full mb-6 group-hover:scale-x-105 transition-transform duration-500 origin-left" />
-
-                        <div className="space-y-4">
-                          {/* Pillar Title in Bold Title Case */}
-                          <h3 className="text-lg sm:text-xl font-black font-display capitalize tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors">
-                            {p.title}
-                          </h3>
-
-                          {/* Tagline */}
-                          <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans leading-snug">
-                            {p.tagline}
-                          </p>
-
-                          {/* Description */}
-                          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-                            {p.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Architectural Pillar Foundation / Base Pedestal */}
-                      <div className="pt-6 mt-6 border-t border-zinc-200/80 dark:border-white/10 flex items-center justify-between">
-                        <div className="h-[2px] w-12 bg-zinc-300 dark:bg-white/20 rounded-full group-hover:w-full group-hover:bg-zinc-400 dark:group-hover:bg-zinc-500 transition-all duration-500" />
                       </div>
                     </div>
                   );
@@ -354,6 +290,13 @@ export default function AboutPage() {
                 ))}
               </div>
             </section>
+
+            {/* ---------------- 5. CLOSING BRAND TAGLINE ---------------- */}
+            <div className="pt-6 sm:pt-10 pb-4 text-center apple-reveal">
+              <p className="text-base sm:text-lg md:text-xl font-bold font-display dark:text-zinc-200 text-zinc-800 tracking-tight">
+                Creating Moments. Building Brands. Driving Growth.
+              </p>
+            </div>
 
           </div>
 

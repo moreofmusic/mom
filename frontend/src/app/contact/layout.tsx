@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Contact | Moments of Marketing (MOM) — Let's Make Your Next Moment Count",
   description:
-    'Contact Moments of Marketing for B2B inquiries or direct consumer brand growth. Reach us on WhatsApp at +91 9226042236 or contact@momagency.com.',
+    'Ready to boost visibility, drive qualified enquiries, or sharpen your digital presence? MOM is here to help you move forward with clarity. Reach us on WhatsApp at +91 9226042236 or contact@momagency.com.',
   alternates: {
     canonical: 'https://momagency.com/contact',
   },
   openGraph: {
     title: "Contact | Moments of Marketing (MOM) — Let's Make Your Next Moment Count",
     description:
-      'Contact Moments of Marketing for B2B inquiries or direct consumer brand growth. Reach us on WhatsApp at +91 9226042236 or contact@momagency.com.',
+      'Ready to boost visibility, drive qualified enquiries, or sharpen your digital presence? MOM is here to help you move forward with clarity. Reach us on WhatsApp at +91 9226042236 or contact@momagency.com.',
     url: 'https://momagency.com/contact',
     siteName: 'Moments of Marketing (MOM)',
     images: [

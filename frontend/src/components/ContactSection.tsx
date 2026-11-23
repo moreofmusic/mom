@@ -128,7 +128,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
           </p>
 
           <p className="text-sm sm:text-base dark:text-zinc-400 text-zinc-600 font-light leading-relaxed max-w-2xl pt-1">
-            Whether you want to increase visibility, generate quality enquiries, or create an effective digital presence, MOM is ready to help you take the next step.
+            Ready to boost visibility, drive qualified enquiries, or sharpen your digital presence? MOM is here to help you move forward with clarity.
           </p>
         </div>
 
