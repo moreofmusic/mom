@@ -77,8 +77,8 @@ export default function ComingSoonModal({
         </button>
 
         {/* Animated Status Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E11D48]/40 bg-[#E11D48]/10 text-[#E11D48] dark:text-rose-400 text-[11px] font-mono font-bold uppercase tracking-wider mb-5 shadow-[0_0_15px_rgba(225,29,72,0.2)]">
-          <Clock className="w-3.5 h-3.5 animate-spin [animation-duration:6s]" />
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#E11D48]/40 bg-[#E11D48]/10 text-[#E11D48] dark:text-rose-400 text-[9.5px] sm:text-[11px] font-mono font-bold uppercase tracking-wider mb-5 shadow-[0_0_15px_rgba(225,29,72,0.2)] whitespace-nowrap">
+          <Clock className="w-3.5 h-3.5 animate-spin [animation-duration:6s] shrink-0" />
           <span>COMING SOON &bull; UNDER DEVELOPMENT</span>
         </div>
 

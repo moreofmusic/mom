@@ -240,8 +240,8 @@ export default function MomentsOfMarketingLanding({
           {/* ---------------- OUR VALUES ---------------- */}
           <section className="space-y-5">
             <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6">
-              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
-                OUR VALUES
+              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
+                Our Values
               </h2>
             </div>
 
@@ -269,8 +269,8 @@ export default function MomentsOfMarketingLanding({
           {/* ---------------- 3. OUR THREE PILLARS OF GROWTH ---------------- */}
           <section className="space-y-6">
             <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6">
-              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
-                OUR THREE PILLARS OF GROWTH
+              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
+                Our Three Pillars of Growth
               </h2>
             </div>
 
@@ -317,8 +317,8 @@ export default function MomentsOfMarketingLanding({
           {/* ---------------- 4. WHY CHOOSE MOM? ---------------- */}
           <section className="space-y-5">
             <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1">
-              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
-                WHY CHOOSE MOM?
+              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
+                Why Choose MOM?
               </h2>
               <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans">
                 Creative Thinking. Strategic Execution. Growth-Focused Marketing.
@@ -349,8 +349,8 @@ export default function MomentsOfMarketingLanding({
           {/* ---------------- 5. OUR APPROACH ---------------- */}
           <section className="space-y-6 text-center">
             <div className="border-b border-zinc-200 dark:border-white/10 pb-4 mb-6 space-y-1 text-center">
-              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
-                OUR APPROACH
+              <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
+                Our Approach
               </h2>
               <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans">
                 From First Impression to Lasting Customer Relationships.
@@ -520,10 +520,9 @@ export default function MomentsOfMarketingLanding({
           {/* Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
             <div>
-              <h1 className="relative inline-block py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase text-zinc-950 dark:text-white">
+              <span className="text-xs sm:text-[13px] font-sans font-extrabold tracking-[0.22em] uppercase text-zinc-400 dark:text-zinc-400 block">
                 SERVICES
-                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full" />
-              </h1>
+              </span>
             </div>
 
             <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
@@ -609,10 +608,9 @@ export default function MomentsOfMarketingLanding({
           {/* Section Header */}
           <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3">
             <div>
-              <h1 className="relative inline-block py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase text-zinc-950 dark:text-white">
+              <span className="text-xs sm:text-[13px] font-sans font-extrabold tracking-[0.22em] uppercase text-zinc-400 dark:text-zinc-400 block">
                 CONTACT
-                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full" />
-              </h1>
+              </span>
             </div>
 
             <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display uppercase tracking-tight">

@@ -116,43 +116,47 @@ export default function AboutPage() {
           
           <div className="space-y-12 sm:space-y-16">
 
-            {/* ---------------- HERO / THE COMPANY SECTION ---------------- */}
-            <section className="relative apple-reveal">
-              {/* Subtle Ambient Glow - Apple Ambient Atmosphere */}
+            {/* ---------------- HERO / THE COMPANY SECTION (Represent Editorial Typography) ---------------- */}
+            <section className="relative apple-reveal pt-4 sm:pt-6">
+              {/* Subtle Ambient Glow */}
               <div className="absolute -top-6 left-1/4 w-80 h-80 bg-white/[0.04] dark:bg-white/[0.05] blur-[120px] pointer-events-none animate-apple-ambient" />
 
-              {/* Standard Hero Section Header */}
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 mb-8 sm:mb-10 space-y-3">
-                <div>
-                  <h1 className="relative inline-block py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase text-zinc-950 dark:text-white">
-                    THE COMPANY
-                    <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full" />
-                  </h1>
-                </div>
+              {/* Eyebrow Page Name matching Navbar font & grey color */}
+              <div className="mb-6 sm:mb-8">
+                <span className="text-xs sm:text-[13px] font-sans font-extrabold tracking-[0.22em] uppercase text-zinc-400 dark:text-zinc-400 block">
+                  THE COMPANY
+                </span>
+              </div>
 
-                <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
-                  At <span className="font-extrabold text-zinc-950 dark:text-white">Moments of Marketing</span> we create Moments, Build Brands and Drive Growth.
+              {/* Massive Display Headline matching Represent (A full-stack artist company. Not an agency.) */}
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-black tracking-[-0.03em] text-zinc-950 dark:text-white leading-[1.04] max-w-5xl mb-8 sm:mb-12">
+                At{' '}
+                <span className="font-serif italic font-normal">Moments of Marketing</span>
+                <br />
+                we create Moments.
+              </h1>
+
+              {/* Editorial Lead Paragraph matching Represent */}
+              <div className="max-w-4xl text-base sm:text-lg md:text-xl lg:text-[21px] dark:text-zinc-300 text-zinc-700 font-light leading-relaxed">
+                <p>
+                  <span className="font-semibold uppercase tracking-wide text-zinc-950 dark:text-white">
+                    WE PARTNER
+                  </span>{' '}
+                  with businesses at every stage of their journey whether launching a new brand, strengthening market presence, or driving growth by building distinctive brand identities, creating engaging digital experiences, and executing result-driven marketing strategies that combine creativity, strategic thinking, and seamless execution to connect with the right audience and turn business visions into lasting success.
                 </p>
               </div>
 
-              {/* Exact Core Paragraphs from Image 1 */}
-              <div className="space-y-6 max-w-4xl text-sm sm:text-base md:text-lg dark:text-zinc-300 text-zinc-700 font-normal leading-relaxed">
-                <p>
-                  We believe great marketing goes beyond visibility. It’s about creating meaningful connections, earning trust, and turning opportunities into lasting business success.
-                </p>
-                <p>
-                  We partner with businesses at every stage of their journey whether launching a new brand, strengthening market presence, or driving growth by building distinctive brand identities, creating engaging digital experiences, and executing result-driven marketing strategies that combine creativity, strategic thinking, and seamless execution to connect with the right audience and turn business visions into lasting success.
-                </p>
-              </div>
+              {/* Sleek horizontal divider line matching Represent */}
+              <div className="border-b border-zinc-200 dark:border-white/10 my-12 sm:my-16" />
             </section>
 
             {/* ---------------- OUR VALUES ---------------- */}
             <section className="space-y-5">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-2 apple-reveal">
-                <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
-                  OUR VALUES
+              <div className="pb-3.5 mb-6 space-y-2 apple-reveal">
+                <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
+                  Our Values
                 </h2>
-                <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
+                <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
                   Our Values shape how we think and build, delivering unwavering integrity to every client, every time. Our Values drive our daily choices and culture, turning quiet integrity into consistent results for every customer.
                 </p>
               </div>
@@ -189,8 +193,8 @@ export default function AboutPage() {
             {/* ---------------- 4. WHY CHOOSE MOM? ---------------- */}
             <section className="space-y-5">
               <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1 apple-reveal">
-                <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
-                  WHY CHOOSE MOM?
+                <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
+                  Why Choose MOM?
                 </h2>
                 <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans">
                   Creative Thinking. Strategic Execution. Growth-Focused Marketing.
@@ -231,8 +235,8 @@ export default function AboutPage() {
             {/* ---------------- 5. OUR APPROACH ---------------- */}
             <section className="space-y-6 text-center">
               <div className="border-b border-zinc-200 dark:border-white/10 pb-4 mb-6 space-y-1 text-center apple-reveal">
-                <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white">
-                  OUR APPROACH
+                <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
+                  Our Approach
                 </h2>
                 <p className="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400 font-sans">
                   From First Impression to Lasting Customer Relationships.
@@ -246,7 +250,7 @@ export default function AboutPage() {
                     <div className="w-[160px] h-[160px] xl:w-[190px] xl:h-[190px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_35px_rgba(255,255,255,0.12)] hover:border-zinc-400 dark:hover:border-white/50 hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col items-center justify-center p-3.5 xl:p-5 text-center group cursor-default relative flex-shrink-0 apple-reveal">
                       <div className="absolute inset-0 rounded-full bg-zinc-500/0 group-hover:bg-zinc-500/[0.06] transition-colors duration-500 pointer-events-none" />
 
-                      <h3 className="text-sm xl:text-base font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors mb-1.5">
+                      <h3 className="text-sm xl:text-base font-bold font-display tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors mb-1.5">
                         {step.name}
                       </h3>
                       <p className="text-[10.5px] xl:text-[11.5px] text-zinc-600 dark:text-zinc-300 font-normal leading-[1.35] max-w-[130px] xl:max-w-[155px]">
@@ -271,7 +275,7 @@ export default function AboutPage() {
                 {approachSteps.map((step, idx) => (
                   <React.Fragment key={step.name}>
                     <div className="w-[190px] h-[190px] sm:w-[210px] sm:h-[210px] rounded-full border border-zinc-200 dark:border-white/10 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950 shadow-md hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:border-zinc-400 dark:hover:border-white/50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col items-center justify-center p-4 sm:p-5 text-center group cursor-default apple-reveal">
-                      <h3 className="text-base sm:text-lg font-bold font-display uppercase tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors mb-1.5">
+                      <h3 className="text-base sm:text-lg font-bold font-display tracking-tight text-zinc-950 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-colors mb-1.5">
                         {step.name}
                       </h3>
                       <p className="text-xs text-zinc-600 dark:text-zinc-300 font-normal leading-snug max-w-[150px] sm:max-w-[170px]">

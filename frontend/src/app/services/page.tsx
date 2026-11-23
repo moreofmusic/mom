@@ -142,15 +142,14 @@ export default function ServicesPage() {
             {/* Standard Hero Section Header */}
             <div className="border-b border-zinc-200 dark:border-white/10 pb-6 sm:pb-8 space-y-3 apple-reveal">
               <div>
-                <h1 className="relative inline-block py-1 text-xs sm:text-[13px] font-extrabold tracking-[0.22em] uppercase text-zinc-950 dark:text-white">
+                <span className="text-xs sm:text-[13px] font-sans font-extrabold tracking-[0.22em] uppercase text-zinc-400 dark:text-zinc-400 block">
                   SERVICES
-                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-zinc-950 dark:bg-white rounded-full" />
-                </h1>
+                </span>
               </div>
 
-              <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display apple-reveal apple-delay-100">
+              <h1 className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display apple-reveal apple-delay-100">
                 Everything Your Brand Needs to Grow.
-              </p>
+              </h1>
 
               <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl apple-reveal apple-delay-200">
                 From building brand awareness to generating leads and strengthening customer relationships, we bring your marketing activities together under one strategic approach.
