@@ -81,7 +81,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
                 </h3>
 
                 <p className="text-base sm:text-lg dark:text-white text-zinc-900 font-semibold font-display">
-                  Creating Moments. Building Brands. Driving Growth.
+                  Creating Moments. Building Brands. <span className="whitespace-nowrap">Driving Growth.</span>
                 </p>
 
                 <p className="text-sm sm:text-base dark:text-zinc-300 text-zinc-600 leading-relaxed font-light">

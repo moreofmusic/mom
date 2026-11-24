@@ -123,8 +123,10 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                   <span className="hidden sm:inline">Moments<br />of<br />Marketing</span>
                 </h2>
 
-                <span className="text-[10px] sm:text-xs md:text-sm font-sans font-medium sm:font-bold tracking-normal sm:tracking-wide text-zinc-400 group-hover:text-zinc-200 mt-2 sm:mt-3 md:mt-4 text-center px-1 sm:px-4 leading-tight sm:leading-snug transition-colors duration-300 max-w-[240px] sm:max-w-none">
-                  Creating Moments. Building Brands. Driving Growth.
+                <span className="text-[10px] sm:text-xs md:text-sm font-sans font-medium sm:font-bold tracking-normal sm:tracking-wide text-zinc-400 group-hover:text-zinc-200 mt-2 sm:mt-3 md:mt-4 text-center px-1 sm:px-4 leading-tight sm:leading-snug transition-colors duration-300 max-w-[280px] sm:max-w-none">
+                  Creating Moments. Building Brands.
+                  <br />
+                  <span className="whitespace-nowrap">Driving Growth.</span>
                 </span>
               </div>
             </button>

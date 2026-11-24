@@ -302,7 +302,9 @@ export default function TheCompanyPage() {
             {/* ---------------- 5. CLOSING BRAND TAGLINE ---------------- */}
             <div className="pt-6 sm:pt-10 pb-4 text-center apple-reveal">
               <p className="text-base sm:text-lg md:text-xl font-bold font-display dark:text-zinc-200 text-zinc-800 tracking-tight">
-                Creating Moments. Building Brands. Driving Growth.
+                Creating Moments. Building Brands.
+                <br />
+                <span className="whitespace-nowrap">Driving Growth.</span>
               </p>
             </div>
 

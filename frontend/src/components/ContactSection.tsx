@@ -194,7 +194,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                 Moments of Marketing &bull; More of Music
               </span>
               <p className="text-xs dark:text-zinc-400 text-zinc-600 font-light mt-1">
-                Creating Moments. Building Brands. Driving Growth.
+                Creating Moments. Building Brands. <span className="whitespace-nowrap">Driving Growth.</span>
               </p>
             </div>
           </div>
