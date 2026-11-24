@@ -30,8 +30,8 @@ export default function Navbar({
   const isMusic = activeEntity === 'music' || pathname === '/music';
 
   // Determine active tab directly from current route
-  let currentTab = 'about';
-  if (pathname === '/about' || pathname === '/home') currentTab = 'about';
+  let currentTab = 'the-company';
+  if (pathname === '/the-company' || pathname === '/about' || pathname === '/home') currentTab = 'the-company';
   else if (pathname === '/services') currentTab = 'services';
   else if (pathname === '/contact') currentTab = 'contact';
 
@@ -45,7 +45,7 @@ export default function Navbar({
   }, []);
 
   const marketingTabs: { id: string; path: string; label: string }[] = [
-    { id: 'about', path: '/about', label: 'THE COMPANY' },
+    { id: 'the-company', path: '/the-company', label: 'THE COMPANY' },
     { id: 'services', path: '/services', label: 'SERVICES' },
     { id: 'contact', path: '/contact', label: 'CONTACT' },
   ];
