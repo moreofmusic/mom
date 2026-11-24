@@ -107,7 +107,7 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
 
   return (
     <section id="services" className="py-24 sm:py-32 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Header & Filter Tabs: Represent Mgmt Scale */}
         <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-8 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">

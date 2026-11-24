@@ -112,7 +112,7 @@ export default function AboutPage() {
       <AppleScrollReveal />
 
       <div className="relative z-10 flex-1 transition-all duration-300 pt-[88px] sm:pt-[104px] md:pt-[124px]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
           
           <div className="space-y-12 sm:space-y-16">
 
@@ -129,7 +129,7 @@ export default function AboutPage() {
               </div>
 
               {/* Massive Display Headline: Moments of Marketing Large & Prominent, At and Tagline in Smaller Font Size */}
-              <h1 className="max-w-6xl mb-8 sm:mb-12">
+              <h1 className="w-full mb-8 sm:mb-12">
                 <div className="flex flex-wrap items-baseline gap-2 sm:gap-3.5">
                   <span className="text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] font-bold font-sans tracking-tight text-zinc-950 dark:text-white">
                     At
@@ -139,7 +139,7 @@ export default function AboutPage() {
                   </span>
                 </div>
                 <span className="text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] font-bold font-sans tracking-tight text-zinc-950 dark:text-white mt-3 sm:mt-5 md:mt-6 block leading-snug whitespace-nowrap">
-                  we create Moments, Build Brands and Drive Growth.
+                  We Create Moments, Build Brands and Drive Growth.
                 </span>
               </h1>
 
@@ -156,7 +156,7 @@ export default function AboutPage() {
 
             {/* ---------------- OUR VALUES ---------------- */}
             <section className="space-y-5">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-2 apple-reveal">
+              <div className="border-t border-zinc-200 dark:border-white/10 pt-8 sm:pt-10 mb-6 space-y-2 apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
                   Our Values
                 </h2>
@@ -196,7 +196,7 @@ export default function AboutPage() {
 
             {/* ---------------- 4. WHY CHOOSE MOM? ---------------- */}
             <section className="space-y-5">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1 apple-reveal">
+              <div className="border-t border-zinc-200 dark:border-white/10 pt-8 sm:pt-10 mb-6 space-y-1 apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
                   Why Choose MOM?
                 </h2>
@@ -238,7 +238,7 @@ export default function AboutPage() {
 
             {/* ---------------- 5. OUR APPROACH ---------------- */}
             <section className="space-y-6">
-              <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1 apple-reveal">
+              <div className="border-t border-zinc-200 dark:border-white/10 pt-8 sm:pt-10 mb-6 space-y-1 apple-reveal">
                 <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
                   Our Approach
                 </h2>

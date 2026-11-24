@@ -84,7 +84,7 @@ export default function WorkAndRosterSection({ onSelectService }: WorkAndRosterS
 
   return (
     <section id="roster" className="py-20 sm:py-28 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Exact Screenshot 2 Header: "The roster." with Right-Aligned Italic Subtitle */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-16 pb-8 border-b dark:border-white/[0.08] border-zinc-200">

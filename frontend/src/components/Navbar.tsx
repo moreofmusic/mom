@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { Menu, X, Sun, Moon, MessageCircle, Phone, Mail } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
-import WhatsAppIcon from './WhatsAppIcon';
 import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
@@ -133,16 +132,16 @@ export default function Navbar({
 
             {/* ================= RIGHT UTILITY CONTROLS ================= */}
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-              {/* WhatsApp Direct */}
+              {/* Direct Message */}
               <a
                 href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 sm:p-2.5 rounded-full border border-black/10 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:shadow-[0_0_12px_rgba(37,211,102,0.25)] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs"
-                title="Chat on WhatsApp (+91 9226042236)"
-                aria-label="WhatsApp"
+                className="p-2 sm:p-2.5 rounded-full border border-black/10 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl hover:border-zinc-400 dark:hover:border-white/30 hover:bg-black/5 dark:hover:bg-white/10 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs"
+                title="Message Us (+91 9226042236)"
+                aria-label="Message"
               >
-                <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
+                <MessageCircle className="w-4 h-4 text-zinc-900 dark:text-white flex-shrink-0" />
               </a>
 
               {/* Dark / Light Mode Toggle */}
@@ -227,10 +226,10 @@ export default function Navbar({
                   href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
                   target="_blank"
                   rel="noreferrer"
-                  className="py-2 px-1 rounded-lg border border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center gap-1.5 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-bold hover:bg-emerald-500/20 transition-colors"
+                  className="py-2 px-1 rounded-lg border border-zinc-300 dark:border-white/10 flex items-center justify-center gap-1.5 text-[11px] font-mono dark:text-white text-zinc-900 font-bold hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 >
-                  <WhatsAppIcon className="w-3.5 h-3.5 flex-shrink-0" />
-                  <span>WhatsApp</span>
+                  <MessageCircle className="w-3.5 h-3.5 text-zinc-900 dark:text-white flex-shrink-0" />
+                  <span>Message</span>
                 </a>
                 <a
                   href="tel:+919226042236"

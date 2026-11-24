@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import { ArrowUpRight, Music, Radio, Mic, Disc, Sliders, Volume2, Sparkles, Check, Phone, Mail } from 'lucide-react';
+import { ArrowUpRight, Music, Radio, Mic, Disc, Sliders, Volume2, Sparkles, Check, Phone, Mail, MessageCircle } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
-import WhatsAppIcon from './WhatsAppIcon';
 
 interface MoreOfMusicLandingProps {
   onOpenLeadModal: (serviceName?: string) => void;
@@ -116,7 +115,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
       
       {/* ----------------- TOP HERO: MORE OF MUSIC ----------------- */}
       <section className="pt-4 sm:pt-6">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           <div className="border-b border-zinc-200 dark:border-white/10 pb-8 sm:pb-10 space-y-3">
             {/* Main Headline */}
             <h1 className="page-hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-display uppercase tracking-tight text-zinc-950 dark:text-white leading-tight">
@@ -143,7 +142,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
 
       {/* ----------------- SECTION 1: THE SOUND DESKS ----------------- */}
       <section id="services" className="pt-2">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b dark:border-white/[0.08] border-zinc-200">
             <div className="space-y-2 max-w-3xl">
@@ -242,7 +241,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
 
       {/* ----------------- SECTION 2: THE SOUND ROSTER & PRODUCTIONS ----------------- */}
       <section id="roster" className="py-8">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 pb-6 border-b dark:border-white/[0.08] border-zinc-200">
             <div className="space-y-2">
@@ -317,7 +316,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
 
       {/* ----------------- SECTION 3: THE 4-STEP STUDIO PROCESS ----------------- */}
       <section id="approach" className="py-8">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           
           <div className="max-w-3xl mb-12 pb-6 border-b dark:border-white/[0.08] border-zinc-200 space-y-2">
             <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
@@ -362,7 +361,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
 
       {/* ----------------- SECTION 4: DIRECT STUDIO BOOKING & CONTACT ----------------- */}
       <section id="contact" className="py-12 border-t dark:border-white/[0.08] border-zinc-200">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           
           <div className="max-w-4xl mb-10 space-y-3">
             <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase dark:text-zinc-400 text-zinc-500 block font-mono">
@@ -405,7 +404,7 @@ export default function MoreOfMusicLanding({ onOpenLeadModal }: MoreOfMusicLandi
               rel="noreferrer"
               className="px-8 py-4 rounded-full border border-zinc-300 dark:border-white/20 hover:border-black dark:hover:border-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 active:scale-95 dark:text-white text-zinc-900 shadow-sm flex items-center gap-2"
             >
-              <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
+              <MessageCircle className="w-4 h-4 flex-shrink-0" />
               <span>WHATSAPP STUDIO DIRECT</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>

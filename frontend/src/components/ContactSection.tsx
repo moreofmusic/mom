@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Phone, Mail, ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Phone, Mail, ArrowRight, CheckCircle2, AlertCircle, MessageCircle } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
-import WhatsAppIcon from './WhatsAppIcon';
 
 interface ContactSectionProps {
   preselectedService?: string;
@@ -102,7 +101,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Section Header: Exact Screenshot 3 Callout */}
         <div className="max-w-4xl mb-16 space-y-4">
@@ -235,12 +234,10 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                         href={status.whatsappUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-semibold shadow-lg transition-all"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-950 dark:bg-white text-white dark:text-black text-xs font-semibold shadow-lg hover:opacity-90 transition-all"
                       >
-                        <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-xs">
-                          <WhatsAppIcon className="w-3.5 h-3.5 flex-shrink-0" />
-                        </div>
-                        <span>Open in WhatsApp (+91 9226042236)</span>
+                        <MessageCircle className="w-4 h-4 text-white dark:text-black flex-shrink-0" />
+                        <span>Open Chat (+91 9226042236)</span>
                       </a>
                       {status.mailtoUrl && (
                         <a

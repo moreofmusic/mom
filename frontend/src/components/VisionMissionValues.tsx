@@ -29,7 +29,7 @@ export default function VisionMissionValues() {
 
   return (
     <section id="about" className="py-24 sm:py-32 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16 space-y-4">

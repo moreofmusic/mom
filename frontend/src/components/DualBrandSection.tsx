@@ -10,7 +10,7 @@ export default function DualBrandSection({ onOpenLeadModal }: { onOpenLeadModal:
 
   return (
     <section id="company" className="py-20 sm:py-28 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
 
         {/* Exact Screenshot 3 Heading: "A full-stack growth company. Not an agency." */}
         <div className="space-y-6 pb-12 border-b dark:border-white/[0.08] border-zinc-200">

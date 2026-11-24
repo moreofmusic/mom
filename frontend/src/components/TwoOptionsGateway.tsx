@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, Sun, Moon } from 'lucide-react';
-import WhatsAppIcon from './WhatsAppIcon';
+import { ArrowUpRight, Sun, Moon, MessageCircle } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import ComingSoonModal from './ComingSoonModal';
 
@@ -18,24 +17,24 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
   return (
     <div className="min-h-screen flex flex-col justify-between dark:bg-black bg-[#F8FAFC] dark:text-white text-zinc-900 transition-colors duration-300 relative overflow-hidden">
       
-      {/* Subtle Background Glow - Apple Ambient Atmosphere */}
+      {/* Subtle Background Glow - Clean Minimal Neutral Atmosphere */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/4 -left-32 w-[550px] h-[550px] rounded-full bg-[#E11D48]/[0.15] blur-[150px] animate-apple-ambient" />
-        <div className="absolute top-1/4 -right-32 w-[550px] h-[550px] rounded-full bg-zinc-500/[0.05] dark:bg-zinc-400/[0.05] blur-[140px] animate-apple-ambient [animation-delay:4s]" />
+        <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-zinc-500/[0.04] dark:bg-zinc-500/[0.04] blur-[140px] animate-apple-ambient" />
+        <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] rounded-full bg-zinc-500/[0.04] dark:bg-zinc-500/[0.04] blur-[140px] animate-apple-ambient [animation-delay:4s]" />
       </div>
 
       {/* ----------------- TOP MINIMAL HEADER (WHATSAPP + THEME TOGGLE) ----------------- */}
-      <header className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 pt-3 sm:pt-6 pb-1 sm:pb-2 flex items-center justify-end gap-2 sm:gap-3 relative z-20">
-        {/* WhatsApp Direct */}
+      <header className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-3 sm:pt-6 pb-1 sm:pb-2 flex items-center justify-end gap-2 sm:gap-3 relative z-20">
+        {/* Direct Message */}
         <a
           href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20visited%20your%20website%20and%20want%20to%20connect."
           target="_blank"
           rel="noreferrer"
-          className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-black/10 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:shadow-[0_0_12px_rgba(37,211,102,0.25)] flex items-center justify-center transition-all cursor-pointer active:scale-90 shadow-xs"
-          title="Chat on WhatsApp (+91 9226042236)"
-          aria-label="WhatsApp"
+          className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-black/10 dark:border-white/10 dark:bg-white/[0.05] bg-black/[0.03] backdrop-blur-xl hover:border-zinc-400 dark:hover:border-white/30 hover:bg-black/5 dark:hover:bg-white/10 flex items-center justify-center transition-all cursor-pointer active:scale-90 shadow-xs"
+          title="Message Us (+91 9226042236)"
+          aria-label="Message"
         >
-          <WhatsAppIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5 flex-shrink-0" />
+          <MessageCircle className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-zinc-900 dark:text-white flex-shrink-0" />
         </a>
 
         {/* Theme Toggle */}
@@ -59,7 +58,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
       </header>
 
       {/* ----------------- CENTER MAIN: PURE MOM LOGO + 2 OPTIONS PERFECTLY VERTICALLY CENTERED ----------------- */}
-      <main className="w-full max-w-6xl mx-auto px-3.5 sm:px-8 lg:px-12 flex-1 flex flex-col justify-center items-center relative z-10 py-1 sm:py-6 my-auto">
+      <main className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex-1 flex flex-col justify-center items-center relative z-10 py-1 sm:py-6 my-auto">
         
         {/* Clean MOM Logo - Centered Directly Above Cards (Shifted Up for Optical Perfection and Balanced Mobile Rhythm) */}
         <div className="w-full flex items-center justify-center -mt-8 xs:-mt-10 sm:-mt-12 md:-mt-16 mb-6 xs:mb-7 sm:mb-10 md:mb-14 lg:mb-16 animate-in fade-in slide-in-from-top-4 duration-1000">
@@ -82,17 +81,11 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           <div className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 [animation-delay:150ms]">
             <button
               onClick={() => setComingSoonOpen(true)}
-              className="w-full h-44 sm:h-60 md:h-72 lg:h-80 bg-gradient-to-b from-[#130307] via-black to-black text-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 flex flex-col items-center justify-center relative overflow-hidden group border-2 border-rose-500/60 dark:border-rose-500/70 hover:border-rose-400 dark:hover:border-rose-400 shadow-[0_10px_30px_rgba(225,29,72,0.18)] dark:shadow-[0_0_35px_rgba(225,29,72,0.25)] hover:shadow-[0_16px_50px_rgba(225,29,72,0.4)] dark:hover:shadow-[0_0_60px_rgba(225,29,72,0.6)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] active:scale-[0.98] apple-shimmer-beam"
+              className="w-full h-44 sm:h-60 md:h-72 lg:h-80 bg-black text-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 flex flex-col items-center justify-center relative overflow-hidden group border-2 border-zinc-700/70 dark:border-zinc-800 hover:border-rose-500 dark:hover:border-rose-500 shadow-md dark:shadow-none hover:shadow-2xl dark:hover:shadow-none transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] active:scale-[0.98]"
               title="More of Music (Coming Soon — Under Development)"
             >
-              {/* Subtle Red Ambient Glow behind card */}
-              <div className="absolute inset-0 bg-rose-500/[0.06] group-hover:bg-rose-500/[0.16] transition-colors duration-500 pointer-events-none" />
-
-              {/* Shimmer Light Beam on Hover with Red Glow */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-rose-500/25 to-transparent transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none" />
-
-              {/* Top Corner Action Indicator in Stylized Red */}
-              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-7 h-7 sm:w-10 sm:h-10 rounded-full border border-rose-500/60 bg-rose-500/20 text-rose-300 group-hover:border-rose-300 group-hover:bg-rose-500 group-hover:text-white group-hover:rotate-45 group-hover:scale-110 group-hover:shadow-[0_0_18px_rgba(225,29,72,0.85)] shadow-[0_0_10px_rgba(225,29,72,0.35)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
+              {/* Top Corner Action Indicator - Grey initially, Red on Hover (Clean, Zero Glow) */}
+              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-7 h-7 sm:w-10 sm:h-10 rounded-full border border-zinc-700/80 dark:border-zinc-800 bg-white/[0.04] text-zinc-400 group-hover:border-rose-500 group-hover:bg-rose-500 group-hover:text-white group-hover:rotate-45 group-hover:scale-110 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center shadow-xs">
                 <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform" />
               </div>
 
@@ -102,7 +95,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
                   More of Music
                 </h2>
 
-                <span className="text-[9px] sm:text-[11px] md:text-xs font-mono font-bold tracking-wider sm:tracking-[0.18em] uppercase text-rose-500 dark:text-rose-400 mt-2 sm:mt-3 md:mt-4 inline-flex items-center justify-center gap-1 sm:gap-1.5 drop-shadow-[0_0_10px_rgba(225,29,72,0.7)] text-center whitespace-nowrap">
+                <span className="text-[9px] sm:text-[11px] md:text-xs font-mono font-bold tracking-wider sm:tracking-[0.18em] uppercase text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-300 dark:group-hover:text-zinc-300 mt-2 sm:mt-3 md:mt-4 inline-flex items-center justify-center gap-1 sm:gap-1.5 transition-colors duration-300 text-center whitespace-nowrap">
                   <span>COMING SOON</span>
                   <span>&bull;</span>
                   <span>UNDER DEVELOPMENT</span>
@@ -115,17 +108,11 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
           <div className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 [animation-delay:300ms]">
             <button
               onClick={() => onSelectEntity('marketing')}
-              className="w-full h-44 sm:h-60 md:h-72 lg:h-80 bg-gradient-to-b from-[#111113] via-black to-black text-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 flex flex-col items-center justify-center relative overflow-hidden group border-2 border-zinc-500/70 dark:border-zinc-500/70 hover:border-zinc-300 dark:hover:border-zinc-200 shadow-[0_10px_30px_rgba(0,0,0,0.18)] dark:shadow-[0_0_35px_rgba(255,255,255,0.08)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_60px_rgba(255,255,255,0.22)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] active:scale-[0.98] apple-shimmer-beam"
+              className="w-full h-44 sm:h-60 md:h-72 lg:h-80 bg-black text-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 flex flex-col items-center justify-center relative overflow-hidden group border-2 border-zinc-700/70 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-200 shadow-md dark:shadow-none hover:shadow-2xl dark:hover:shadow-none transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] active:scale-[0.98]"
               title="Moments of Marketing – Creating Moments. Building Brands. Driving Growth."
             >
-              {/* Subtle Grey Ambient Glow behind card */}
-              <div className="absolute inset-0 bg-zinc-500/[0.06] group-hover:bg-zinc-400/[0.14] transition-colors duration-500 pointer-events-none" />
-
-              {/* Shimmer Light Beam on Hover with Silver/Grey Glow */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-zinc-400/25 to-transparent transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none" />
-
-              {/* Top Corner Action Indicator in Stylized Grey */}
-              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-7 h-7 sm:w-10 sm:h-10 rounded-full border border-zinc-400/60 bg-zinc-700/30 text-zinc-300 group-hover:border-white group-hover:bg-white group-hover:text-black group-hover:rotate-45 group-hover:scale-110 group-hover:shadow-[0_0_18px_rgba(255,255,255,0.85)] shadow-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
+              {/* Top Corner Action Indicator - Grey initially, White on Hover (Clean, Zero Glow) */}
+              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-7 h-7 sm:w-10 sm:h-10 rounded-full border border-zinc-700/80 dark:border-zinc-800 bg-white/[0.04] text-zinc-400 group-hover:border-white group-hover:bg-white group-hover:text-black group-hover:rotate-45 group-hover:scale-110 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center shadow-xs">
                 <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform" />
               </div>
 
@@ -147,7 +134,7 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
       </main>
 
       {/* ----------------- BOTTOM CLEAN COPYRIGHT: CENTER ALIGNED ----------------- */}
-      <footer className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 py-2 sm:py-5 relative z-10">
+      <footer className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-2 sm:py-5 relative z-10">
         <div className="flex items-center justify-center text-[10px] sm:text-xs dark:text-zinc-500 text-zinc-500 font-mono text-center">
           <span>&copy; 2026 MOM &bull; All Rights Reserved.</span>
         </div>

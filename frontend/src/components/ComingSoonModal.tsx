@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { X, Clock, ArrowRight } from 'lucide-react';
+import { X, Clock, ArrowRight, MessageCircle } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import WhatsAppIcon from './WhatsAppIcon';
 
 interface ComingSoonModalProps {
   isOpen: boolean;
@@ -45,13 +44,11 @@ export default function ComingSoonModal({
       className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto"
       onClick={onClose}
     >
-      {/* Modal Container */}
+      {/* Modal Container with Clean Crisp Red Outline */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-xl rounded-3xl border-2 border-[#E11D48]/75 dark:border-[#E11D48]/80 bg-white dark:bg-zinc-950 p-6 sm:p-9 shadow-[0_0_60px_rgba(225,29,72,0.35)] overflow-hidden animate-in zoom-in-95 duration-200 text-center my-auto"
+        className="relative w-full max-w-xl rounded-3xl border-2 border-rose-600/80 dark:border-rose-500 bg-white dark:bg-zinc-950 p-6 sm:p-9 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 text-center my-auto"
       >
-        {/* Subtle Ambient Red Backlight */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-[#E11D48]/20 blur-[100px] pointer-events-none" />
 
         {/* Close Button (X) */}
         <button
@@ -62,9 +59,9 @@ export default function ComingSoonModal({
           <X className="w-4 h-4" />
         </button>
 
-        {/* Animated Status Pill */}
-        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#E11D48]/40 bg-[#E11D48]/10 text-[#E11D48] dark:text-rose-400 text-[9.5px] sm:text-[11px] font-mono font-bold uppercase tracking-wider mb-5 shadow-[0_0_15px_rgba(225,29,72,0.2)] whitespace-nowrap">
-          <Clock className="w-3.5 h-3.5 animate-spin [animation-duration:6s] shrink-0" />
+        {/* Status Pill with Crisp Red Text */}
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-rose-500/30 dark:border-rose-500/40 bg-rose-500/5 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 text-[9.5px] sm:text-[11px] font-mono font-bold uppercase tracking-wider mb-5 whitespace-nowrap">
+          <Clock className="w-3.5 h-3.5 animate-spin [animation-duration:6s] shrink-0 text-rose-600 dark:text-rose-400" />
           <span>COMING SOON &bull; UNDER DEVELOPMENT</span>
         </div>
 
@@ -95,12 +92,10 @@ export default function ComingSoonModal({
             href="https://wa.me/917000083119?text=Hi%20MOM%20Team%2C%20I%20have%20an%20inquiry%20regarding%20More%20of%20Music."
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all duration-300 cursor-pointer active:scale-95 shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_24px_rgba(37,211,102,0.6)] whitespace-nowrap"
+            className="w-full sm:w-auto px-5 py-3 rounded-full border-2 border-rose-600 dark:border-rose-500 hover:border-rose-500 dark:hover:border-rose-400 text-white bg-transparent hover:bg-rose-500/10 text-[11px] sm:text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap"
           >
-            <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-xs">
-              <WhatsAppIcon className="w-3.5 h-3.5 flex-shrink-0" />
-            </div>
-            <span className="whitespace-nowrap font-bold">Inquire on WhatsApp</span>
+            <MessageCircle className="w-4 h-4 text-white flex-shrink-0" />
+            <span className="whitespace-nowrap font-bold text-white">Inquire on WhatsApp</span>
           </a>
 
           {onExploreMarketing && (

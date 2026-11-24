@@ -19,7 +19,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
 import AppleScrollReveal from '@/components/AppleScrollReveal';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function ServicesPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -135,7 +134,7 @@ export default function ServicesPage() {
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-gradient-to-b from-white/[0.05] via-zinc-500/[0.03] to-transparent blur-3xl rounded-full animate-apple-ambient -z-0" />
 
       <div className="relative z-10 flex-1 transition-all duration-300 pt-[88px] sm:pt-[104px] md:pt-[124px]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
           
           <div className="space-y-10 sm:space-y-12">
             
@@ -152,15 +151,10 @@ export default function ServicesPage() {
               </div>
 
               {/* Massive Display Headline matching The Company Style */}
-              <h1 className="max-w-6xl mb-8 sm:mb-12">
-                <div className="flex flex-wrap items-baseline gap-2 sm:gap-3.5">
-                  <span className="text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] font-bold font-sans tracking-tight text-zinc-950 dark:text-white">
-                    Everything Your Brand
-                  </span>
-                  <span className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-serif italic font-normal tracking-tight text-zinc-950 dark:text-white leading-[1.04]">
-                    Needs to Grow.
-                  </span>
-                </div>
+              <h1 className="w-full mb-8 sm:mb-12">
+                <span className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-serif italic font-normal tracking-tight text-zinc-950 dark:text-white leading-[1.04] block">
+                  Empowering Your Brand.
+                </span>
               </h1>
 
               {/* Editorial Lead Paragraph matching The Company Style with Original Content */}
@@ -230,7 +224,7 @@ export default function ServicesPage() {
                         className="w-full py-3.5 rounded-xl border border-zinc-300 dark:border-white/20 dark:bg-white/[0.02] bg-zinc-50 dark:hover:bg-white dark:hover:text-black dark:hover:border-white hover:bg-zinc-950 hover:text-white hover:border-zinc-950 text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-xs apple-btn-tactile text-zinc-900 dark:text-white group/btn"
                         title={`Inquire about ${s.title} on WhatsApp`}
                       >
-                        <WhatsAppIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5 flex-shrink-0 transition-transform group-hover/btn:scale-110" />
+                        <MessageCircle className="w-4 h-4 sm:w-4.5 sm:h-4.5 flex-shrink-0 transition-transform group-hover/btn:scale-110" />
                         <span>WhatsApp</span>
                       </a>
                     </div>

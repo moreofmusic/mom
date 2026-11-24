@@ -14,7 +14,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
 import AppleScrollReveal from '@/components/AppleScrollReveal';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function ContactPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -106,7 +105,7 @@ export default function ContactPage() {
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-gradient-to-b from-white/[0.05] via-zinc-500/[0.03] to-transparent blur-3xl rounded-full animate-apple-ambient -z-0" />
 
       <div className="relative z-10 flex-1 transition-all duration-300 pt-[88px] sm:pt-[104px] md:pt-[124px]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300">
           
           <div className="space-y-10 sm:space-y-12">
             
@@ -122,16 +121,11 @@ export default function ContactPage() {
                 </span>
               </div>
 
-              {/* Massive Display Headline matching The Company Style */}
-              <h1 className="max-w-6xl mb-8 sm:mb-12">
-                <div className="flex flex-wrap items-baseline gap-2 sm:gap-3.5">
-                  <span className="text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] font-bold font-sans tracking-tight text-zinc-950 dark:text-white">
-                    Let&apos;s make your
-                  </span>
-                  <span className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-serif italic font-normal tracking-tight text-zinc-950 dark:text-white leading-[1.04]">
-                    next moment count.
-                  </span>
-                </div>
+              {/* Massive Display Headline */}
+              <h1 className="w-full mb-8 sm:mb-12">
+                <span className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-serif italic font-normal tracking-tight text-zinc-950 dark:text-white leading-[1.04] block">
+                  Make Your Next Move Count.
+                </span>
               </h1>
 
               {/* Editorial Lead Paragraph matching The Company Style with Original Content */}
@@ -176,10 +170,10 @@ export default function ContactPage() {
                   href="https://wa.me/919226042236?text=Hi%20MOM%20Team%2C%20I%20have%20an%20inquiry%20regarding%20Moments%20of%20Marketing."
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 dark:bg-white/[0.01] bg-white shadow-xs group apple-card-hover apple-shimmer-beam hover:border-emerald-500/50"
+                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-zinc-200 dark:border-white/10 dark:bg-white/[0.01] bg-white shadow-xs group apple-card-hover apple-shimmer-beam hover:border-zinc-400 dark:hover:border-white/30"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 flex items-center justify-center border border-emerald-500/20">
-                    <WhatsAppIcon className="w-5 h-5 flex-shrink-0" />
+                  <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white border border-zinc-200/50 dark:border-white/5">
+                    <MessageCircle className="w-5 h-5 flex-shrink-0" />
                   </div>
                   <div>
                     <span className="text-[10px] tracking-wider uppercase text-zinc-500 block font-mono">WhatsApp</span>
@@ -370,7 +364,7 @@ export default function ContactPage() {
                     suppressHydrationWarning
                     className="w-full py-3.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 apple-btn-tactile shadow-md transition-all cursor-pointer disabled:opacity-50"
                   >
-                    <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
+                    <MessageCircle className="w-4 h-4 flex-shrink-0" />
                     <span>{loading ? 'Submitting...' : 'Submit Inquiry & Chat on WhatsApp'}</span>
                     <ArrowRight className="w-4 h-4 ml-0.5" />
                   </button>

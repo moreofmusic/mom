@@ -19,7 +19,7 @@ export default function DualPortalGateway({
 
   return (
     <section className="relative pt-28 sm:pt-36 pb-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         
         {/* Top Tagline from User PPT (Non-clickable: Strictly NO OUTLINE) */}
         <div className="mb-4">

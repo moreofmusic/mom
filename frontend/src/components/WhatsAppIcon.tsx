@@ -1,61 +1,12 @@
 import React from 'react';
+import { MessageCircle } from 'lucide-react';
 
 interface WhatsAppIconProps {
   className?: string;
   colored?: boolean;
 }
 
-export default function WhatsAppIcon({ className = 'w-4 h-4', colored = true }: WhatsAppIconProps) {
-  if (!colored) {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        width="24"
-        height="24"
-        className={className}
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <path d="M12.04 2C6.502 2 2.008 6.493 2.008 12.03c0 1.77.462 3.498 1.34 5.02L2 22l5.099-1.338c1.474.804 3.136 1.228 4.94 1.228 5.537 0 10.03-4.493 10.03-10.03S17.577 2 12.04 2zm0 18.358c-1.536 0-3.043-.414-4.359-1.195l-.313-.186-3.238.85.864-3.158-.204-.325a8.293 8.293 0 01-1.272-4.384c0-4.597 3.74-8.337 8.338-8.337 4.597 0 8.337 3.74 8.337 8.337 0 4.598-3.74 8.338-8.338 8.338z" />
-        <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.301-.776.978-.952 1.179-.175.2-.351.226-.652.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.675-2.087-.175-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.175.2-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.676-1.63-.927-2.232-.244-.587-.493-.507-.677-.516-.175-.008-.376-.01-.576-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.479 1.078 2.909 1.228 3.109.15.2 2.122 3.24 5.141 4.544.718.31 1.279.495 1.716.634.721.229 1.377.197 1.895.12.578-.087 1.78-.727 2.03-1.43.251-.702.251-1.304.176-1.43-.075-.125-.276-.2-.577-.35z" />
-      </svg>
-    );
-  }
-
-  // Official Authentic WhatsApp Icon:
-  // Layer 1: Solid White Boundary (ensures speech bubble shape is clearly defined even on green backgrounds)
-  // Layer 2: Solid WhatsApp Green Speech Bubble (#25D366)
-  // Layer 3: Solid Pure White Handset (#FFFFFF)
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width="24"
-      height="24"
-      className={className}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      {/* Outer White Boundary Layer */}
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12 1.25C6.07 1.25 1.25 6.07 1.25 12c0 1.95.52 3.78 1.45 5.37L1.25 22.75l5.51-1.41c1.54.85 3.29 1.33 5.24 1.33 5.93 0 10.75-4.82 10.75-10.75S17.93 1.25 12 1.25z"
-        fill="#FFFFFF"
-      />
-      {/* Solid WhatsApp Green Speech Bubble (#25D366) */}
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.17-1.32c1.43.79 3.06 1.24 4.83 1.24 5.52 0 10-4.48 10-10S17.52 2 12 2z"
-        fill="#25D366"
-      />
-      {/* Solid Pure White Handset (#FFFFFF) */}
-      <path
-        d="M17.47 14.38c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.77.98-.95 1.18-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.23-.24-.59-.49-.51-.68-.52-.17 0-.37-.01-.57-.01-.2 0-.53.08-.8.38-.28.3-1.06 1.03-1.06 2.51 0 1.48 1.08 2.91 1.23 3.11.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.57-.09 1.77-.73 2.02-1.43.25-.7.25-1.3.18-1.43-.08-.12-.28-.2-.58-.35z"
-        fill="#FFFFFF"
-      />
-    </svg>
-  );
+export default function WhatsAppIcon({ className = 'w-4 h-4 text-white', colored = false }: WhatsAppIconProps) {
+  // Clean Message Icon in White as requested
+  return <MessageCircle className={`text-white ${className}`} />;
 }

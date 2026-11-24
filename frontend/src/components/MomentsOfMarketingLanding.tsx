@@ -30,7 +30,6 @@ import {
   Rocket,
 } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
-import WhatsAppIcon from './WhatsAppIcon';
 
 interface MomentsOfMarketingLandingProps {
   activeTab: 'home' | 'about' | 'services' | 'contact';
@@ -93,7 +92,7 @@ export default function MomentsOfMarketingLanding({
   const renderMobileTabs = () => null;
 
   // Common Page Container Class to guarantee 100% IDENTICAL top gap across all pages
-  const pageContainerClass = "max-w-6xl mx-auto px-5 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300";
+  const pageContainerClass = "max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-4 sm:pt-6 pb-16 sm:pb-24 animate-in fade-in duration-300";
 
   // =================================================================================
   // PAGE 1: HOME
@@ -240,7 +239,7 @@ export default function MomentsOfMarketingLanding({
           
           {/* ---------------- OUR VALUES ---------------- */}
           <section className="space-y-5">
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6">
+            <div className="border-t border-zinc-200 dark:border-white/10 pt-8 sm:pt-10 mb-6">
               <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
                 Our Values
               </h2>
@@ -317,7 +316,7 @@ export default function MomentsOfMarketingLanding({
 
           {/* ---------------- 4. WHY CHOOSE MOM? ---------------- */}
           <section className="space-y-5">
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-3.5 mb-6 space-y-1">
+            <div className="border-t border-zinc-200 dark:border-white/10 pt-8 sm:pt-10 mb-6 space-y-1">
               <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
                 Why Choose MOM?
               </h2>
@@ -349,7 +348,7 @@ export default function MomentsOfMarketingLanding({
 
           {/* ---------------- 5. OUR APPROACH ---------------- */}
           <section className="space-y-6 text-center">
-            <div className="border-b border-zinc-200 dark:border-white/10 pb-4 mb-6 space-y-1 text-center">
+            <div className="border-t border-zinc-200 dark:border-white/10 pt-8 sm:pt-10 mb-6 space-y-1 text-center">
               <h2 className="section-title text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight text-zinc-950 dark:text-white">
                 Our Approach
               </h2>
@@ -527,7 +526,7 @@ export default function MomentsOfMarketingLanding({
             </div>
 
             <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display">
-              Everything Your Brand Needs to Grow.
+              Empowering Your Brand.
             </p>
 
             <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
@@ -614,8 +613,8 @@ export default function MomentsOfMarketingLanding({
               </span>
             </div>
 
-            <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display uppercase tracking-tight">
-              LET&apos;S MAKE YOUR NEXT MOMENT COUNT.
+            <p className="text-base sm:text-lg md:text-xl font-bold dark:text-zinc-200 text-zinc-800 font-display whitespace-nowrap">
+              Make Your Next Move Count.
             </p>
 
             <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-3xl">
@@ -778,7 +777,7 @@ export default function MomentsOfMarketingLanding({
                       type="submit"
                       className="w-full py-3.5 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-black text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md hover:opacity-90 active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2"
                     >
-                      <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
+                      <MessageCircle className="w-4 h-4 flex-shrink-0" />
                       <span>Send Inquiry to WhatsApp &rarr;</span>
                     </button>
                   </form>
