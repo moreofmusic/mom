@@ -146,7 +146,6 @@ export default function TwoOptionsGateway({ onSelectEntity }: TwoOptionsGatewayP
       <ComingSoonModal
         isOpen={comingSoonOpen}
         onClose={() => setComingSoonOpen(false)}
-        onExploreMarketing={() => onSelectEntity('marketing')}
       />
 
     </div>

@@ -1,19 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
 import TwoOptionsGateway from '@/components/TwoOptionsGateway';
-import ComingSoonModal from '@/components/ComingSoonModal';
 
 export default function GatewayPage() {
-  const router = useRouter();
-  const [comingSoonOpen, setComingSoonOpen] = useState(false);
-
   const handleSelectEntity = (entity: 'marketing' | 'music') => {
     if (entity === 'marketing') {
-      router.push('/the-company');
-    } else if (entity === 'music') {
-      setComingSoonOpen(true);
+      window.location.href = 'https://momentsofmarketing.com';
     }
   };
 
@@ -23,12 +16,6 @@ export default function GatewayPage() {
       suppressHydrationWarning
     >
       <TwoOptionsGateway onSelectEntity={handleSelectEntity} />
-
-      <ComingSoonModal
-        isOpen={comingSoonOpen}
-        onClose={() => setComingSoonOpen(false)}
-        onExploreMarketing={() => router.push('/the-company')}
-      />
     </main>
   );
 }

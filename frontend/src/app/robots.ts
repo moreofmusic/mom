@@ -6,7 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/'],
       },
       {
         // Explicitly allow modern AI Search Engines & LLM crawlers
@@ -20,7 +19,6 @@ export default function robots(): MetadataRoute.Robots {
           'Bingbot',
         ],
         allow: '/',
-        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://momagency.com/sitemap.xml',

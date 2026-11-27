@@ -92,10 +92,10 @@ export default function ComingSoonModal({
             href="https://wa.me/917000083119?text=Hi%20MOM%20Team%2C%20I%20have%20an%20inquiry%20regarding%20More%20of%20Music."
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto px-5 py-3 rounded-full border-2 border-rose-600 dark:border-rose-500 hover:border-rose-500 dark:hover:border-rose-400 text-white bg-transparent hover:bg-rose-500/10 text-[11px] sm:text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap"
+            className="w-full sm:w-auto px-5 py-3 rounded-full border-2 border-rose-600 dark:border-rose-500 hover:border-rose-500 dark:hover:border-rose-400 text-rose-600 dark:text-white bg-transparent hover:bg-rose-500/10 text-[11px] sm:text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer active:scale-95 whitespace-nowrap"
           >
-            <MessageCircle className="w-4 h-4 text-white flex-shrink-0" />
-            <span className="whitespace-nowrap font-bold text-white">Inquire on WhatsApp</span>
+            <MessageCircle className="w-4 h-4 text-rose-600 dark:text-white flex-shrink-0" />
+            <span className="whitespace-nowrap font-bold">Inquire on WhatsApp</span>
           </a>
 
           {onExploreMarketing && (
