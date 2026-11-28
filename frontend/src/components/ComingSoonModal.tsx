@@ -2,7 +2,6 @@
 
 import React, { useEffect } from 'react';
 import { X, Clock, ArrowRight, MessageCircle } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 
 interface ComingSoonModalProps {
   isOpen: boolean;
@@ -15,7 +14,6 @@ export default function ComingSoonModal({
   onClose,
   onExploreMarketing,
 }: ComingSoonModalProps) {
-  const { theme } = useTheme();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -47,7 +45,7 @@ export default function ComingSoonModal({
       {/* Modal Container with Clean Crisp Red Outline */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-xl rounded-3xl border-2 border-rose-600/80 dark:border-rose-500 bg-white dark:bg-zinc-950 p-6 sm:p-9 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 text-center my-auto"
+        className="relative w-full max-w-xl max-h-[90dvh] overflow-y-auto rounded-3xl border-2 border-rose-600/80 dark:border-rose-500 bg-white dark:bg-zinc-950 p-5 sm:p-9 shadow-2xl text-center my-auto"
       >
 
         {/* Close Button (X) */}
@@ -60,24 +58,22 @@ export default function ComingSoonModal({
         </button>
 
         {/* Status Pill with Crisp Red Text */}
-        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-rose-500/30 dark:border-rose-500/40 bg-rose-500/5 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 text-[9.5px] sm:text-[11px] font-mono font-bold uppercase tracking-wider mb-5 whitespace-nowrap">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-rose-500/30 dark:border-rose-500/40 bg-rose-500/5 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
           <Clock className="w-3.5 h-3.5 animate-spin [animation-duration:6s] shrink-0 text-rose-600 dark:text-rose-400" />
           <span>COMING SOON &bull; UNDER DEVELOPMENT</span>
         </div>
 
-        {/* Complete MOM Logo with MORE OF MUSIC (Scaled Slightly Smaller as Requested) */}
+        {/* Complete MOM Logo with MORE OF MUSIC */}
         <div className="flex justify-center mb-5 sm:mb-6">
           <img
             src="/mom-logo-more-of-music.png"
             alt="MOM More of Music Logo"
-            className={`h-11 sm:h-14 md:h-16 w-auto object-contain transition-all ${
-              theme === 'light' ? 'invert' : ''
-            }`}
+            className="h-11 sm:h-14 md:h-16 w-auto object-contain transition-all theme-logo-invert"
           />
         </div>
 
         {/* Detailed Brand Copy (Paragraph 1 & 2) */}
-        <div className="space-y-3.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-lg mx-auto mb-7 font-normal text-left sm:text-center">
+        <div className="space-y-3.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-lg mx-auto mb-7 font-normal text-center">
           <p>
             MOM (More of Music) is an artist management, music tour management and corporate event management company that brings talent, creativity and professional execution together to create memorable experiences.
           </p>
